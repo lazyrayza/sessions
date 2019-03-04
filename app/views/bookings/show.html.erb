@@ -1,10 +1,10 @@
 <div class="container">
   <h1>Booking Details</h1>
-  <h2>Starting from:</h2> <p><%=@booking.start_date%></p>
-  <h2>Ending On:</h2> <p><%= @booking.end_date %></p>
+  <h2>Starting from:</h2> <p><%=@booking.start_time%></p>
+  <h2>Ending On:</h2> <p><%= @booking.end_time %></p>
 
-  <p><strong>Starting in:</strong> <%= (@booking.start_date - Date.today).to_i %> Days</p>
-  <p><strong>Booking Duration: </strong><%= (@booking.end_date - @booking.start_date).to_i  %> Days</p>
+  <p><strong>Starting in:</strong> <%= (@booking.start_time - Date.today).to_i %> Days</p>
+  <p><strong>Booking Duration: </strong><%= (@booking.end_time - @booking.start_time).to_i  %> Days</p>
   <% if @booking.status %>
     <p><strong>Status: </strong>Confirmed <img src="https://image.flaticon.com/icons/svg/240/240103.svg" width="20"></img></p>
   <% else %>
