@@ -1,0 +1,12 @@
+
+<% @therapists.each do |therapist| %>
+
+<p><%= therapist.first_name %></p>
+<h2><%= therapist.last_name %></h2>
+<p><%= therapist.address %></p>
+<%= link_to "View", user_path(therapist) %>
+<br>
+<% end %>
+
+
+<%= link_to "Home", root_path, class: "btn btn-primary" %>

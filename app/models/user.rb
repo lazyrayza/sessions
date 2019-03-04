@@ -10,4 +10,8 @@ class User < ApplicationRecord
   has_many :chat_room_participations
   has_many :chat_rooms, through: :chat_room_participations
   has_many :requests
+
+  def full_name
+    first_name + " " + last_name
+  end
 end

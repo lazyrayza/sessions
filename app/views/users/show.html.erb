@@ -1,0 +1,33 @@
+<h1><%= @user.first_name %> <%= @user.last_name %></h1>
+<p><strong>Email:</strong> <%= @user.email %></p>
+<table class="table table-bordered">
+          <tbody>
+            <thead>
+              <th>Expertise</th>
+              <th>Language</th>
+              </thead>
+              <tr>
+                <td> <%= @user.expertise%></td>
+                <td> <%= @user.languages%></td>
+                </tr>
+          </tbody>
+      </table>
+
+
+  </div>
+    <div class="align-buttons">
+      <%= link_to users_path do %>
+        <div class="btn btn-secondary">
+          Back
+        </div>
+        <% end  %>
+      <%= link_to new_user_booking_path(@user) do %>
+        <div class="btn btn-primary">
+          Book
+        </div>
+        <% end %>
+      </div>
+<%= link_to "See reviews", user_reviews_path(@user) %>
+  </div>
+</div>
+
