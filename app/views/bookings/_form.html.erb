@@ -1,0 +1,30 @@
+<div class="container">
+  <%= simple_form_for [therapist, booking] do |f| %>
+    <% if @booking.errors.any? %>
+      <div class="errors-container">
+        <%= f.error_notification %>
+        <ul>
+          <% booking.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="form-inputs">
+      <%= f.input :start_date %>
+    </div>
+    <br>
+    <div class="form-inputs">
+      <%= f.input :end_date %>
+    </div>
+    <br>
+    <div class="form-inputs">
+      <%= f.input :status %>
+    </div>
+
+    <div class="form-actions">
+      <%= f.button :submit %>
+    </div>
+  <% end %>
+</div>
