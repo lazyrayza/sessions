@@ -5,14 +5,10 @@ class MessagesController < ApplicationController
     @message.chat_room = @chat_room
     @message.user = current_user
     if @message.save
-      ApplicationCable.server.broadcast("chat_room_#{chat_room.id}", {
-        message: @message.to_json
-      });
       respond_to do |format|
         format.html { redirect_to chat_room_path(@chat_room) }
         format.js
       end
-      raise
     else
       respond_to do |format|
         format.html { render "chat_rooms/show" }
