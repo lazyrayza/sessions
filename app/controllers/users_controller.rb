@@ -3,10 +3,7 @@ class UsersController < ApplicationController
 
   def index
     if params[:query].present?
-      sql_query = "title ILIKE :query OR syllabus"
-      ILIKE :query
-      @therapist =
-        User.where(sql_query, query: "%#{params[:query]}%", therapist: true).where.not(latitude: nil, longitude: nil)
+      @therapists = User.search_by_expertise_and_full_name(params[:query]).where.not(latitude: nil, longitude: nil).where(therapist: true)
     else
       @therapists = User.where(therapist: true).where.not(latitude: nil, longitude: nil)
     end
