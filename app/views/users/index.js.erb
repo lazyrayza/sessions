@@ -1,4 +1,6 @@
-console.log("hey ajax");
-var newCardsContainer = document.querySelector(".cards-container")
-newCardsContainer.innerHTML = "";
-newCardsContainer.innerHTML = '<%= j render "users", therapists: @therapists %>'
+function refreshCards(innerHTML) {
+  newCardsContainer = document.querySelector(".cards-container")
+  newCardsContainer.innerHTML = innerHTML;
+}
+
+refreshCards('<%= j render "users", therapists: @therapists %>')
