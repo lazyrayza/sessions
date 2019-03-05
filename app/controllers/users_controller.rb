@@ -2,19 +2,17 @@ class UsersController < ApplicationController
   before_action :find_user, only: [:show, :update, :destroy, :edit]
 
   def index
-    @therapists = User.where(therapist: true)
-    # @therapist = @therapist.select { |therapist| therapist.latitude != nil && therapist.longitude != nil }
-    # @markers = @therapist.map do |therapist|
-    #   {
-    #     lng: therapist.longitude,
-    #     lat: therapist.latitude,
-    #     infoWindow: render_to_string(partial: "infowindow", locals: { therapist: therapist }),
-    #     image_url: helpers.asset_url('therapist.png')
-    #   }
-    # end
+    @therapists = User.where(therapist: true).where.not(latitude: nil, longitude: nil)
   end
 
   def show
+    @markers =
+      {
+        lng: @user.longitude,
+        lat: @user.latitude,
+        infoWindow: render_to_string(partial: "infowindow", locals: { therapist: @user }),
+        image_url: helpers.asset_url('therapist.png')
+      }
   end
 
   def new

@@ -1,5 +1,6 @@
 <h1><%= @user.first_name %> <%= @user.last_name %></h1>
 <p><strong>Email:</strong> <%= @user.email %></p>
+<p><strong>Address:</strong> <%= @user.address %></p>
 <table class="table table-bordered">
           <tbody>
             <thead>
@@ -31,3 +32,12 @@
   </div>
 </div>
 
+
+<div
+  id="map"
+  style="width: 100%;
+  overflow: hidden;
+  height: 600px;"
+  data-markers="<%= @markers.to_json %>"
+  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+></div>
