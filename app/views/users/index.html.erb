@@ -1,3 +1,11 @@
+<!-- Search -->
+<%= form_tag users_path, method: :get do %>
+<%= text_field_tag :query,
+  params[:query],
+  class: "form-control",
+  placeholder: "Find a therapist or expert" %>
+<% end %>
+<!-- End Search -->
 
 <% @therapists.each do |therapist| %>
 
@@ -10,6 +18,3 @@
 
 
 <%= link_to "Home", root_path, class: "btn btn-primary" %>
-
-
-

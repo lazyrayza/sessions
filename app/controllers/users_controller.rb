@@ -2,7 +2,14 @@ class UsersController < ApplicationController
   before_action :find_user, only: [:show, :update, :destroy, :edit]
 
   def index
-    @therapists = User.where(therapist: true).where.not(latitude: nil, longitude: nil)
+    if params[:query].present?
+      sql_query = "title ILIKE :query OR syllabus"
+      ILIKE :query
+      @therapist =
+        User.where(sql_query, query: "%#{params[:query]}%", therapist: true).where.not(latitude: nil, longitude: nil)
+    else
+      @therapists = User.where(therapist: true).where.not(latitude: nil, longitude: nil)
+    end
   end
 
   def show
