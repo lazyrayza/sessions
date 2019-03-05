@@ -29,17 +29,13 @@ class BookingsController < ApplicationController
     @therapist = User.find(params[:user_id])
     @booking.therapist = @therapist
     if @booking.save
-      #respond_to do |format|
-        #format.html { redirect_to booking_path(@booking) }
-        #format.js
-      #end
-      redirect_to booking_path(@booking), notice: 'Booking has been made!'
+      redirect_to booking_path(@booking)
     else
       render :new
-      #respond_to do |format|
-        #format.html {render 'bookings/show'}
-        #format.js
-      #end
+      # respond_to do |format|
+      #   format.html { render 'bookings/show' }
+      #   format.js
+      # end
     end
   end
 

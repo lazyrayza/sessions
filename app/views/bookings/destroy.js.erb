@@ -1,0 +1,18 @@
+bookingForm = document.getElementById('new_booking')
+
+<% if @booking.persisted? %>
+  // Get the review
+  newBooking = '<p><%= @booking.description %></p>'
+  // Access the list of reviews
+  bookings = document.getElementById('new_booking')
+  // Insert the review
+  bookings.insertAdjacentHTML('beforeend', newBooking)
+  // Find the element
+  // Clear it
+  bookingForm.innerHTML = "<%= j render 'shared/form', therapist: @therapist, booking: Booking.new %>"
+<% else %>
+  // Get the form
+  // Rerender it
+  bookingForm.innerHTML = "<%= j render 'shared/form', therapist: @therapist, booking: @booking %>"
+<% end %>
+

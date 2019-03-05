@@ -37,7 +37,7 @@
                   </td>
                 <% end %>
                 <td>
-                  <%= link_to booking_path(booking), method: :delete, data: { confirm: "Are you sure?" } do %>
+                  <%= link_to booking_path(booking), method: :delete, data: { confirm: "Are you sure?" }, remote: true do %>
                     <i class="fa fa-trash destroy_dose"></i>
                   <% end %>
                 </td>
