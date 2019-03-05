@@ -24,7 +24,7 @@
                 <% else %>
                   <td>Pending Confirmation <img src="https://image.flaticon.com/icons/svg/240/240260.svg" width="20"></img></td>
                 <% end %>
-                <td><%= (booking.start_time - Date.today).to_i  %></td>
+                <td><%= (booking.start_time.to_date - Date.today).to_i  %></td>
                 <td><%= (booking.end_time - booking.start_time).to_i  %></td>
                 <td><%= link_to "View booking", booking_path(booking) %></td>
                 <% if current_user.therapist %>
