@@ -1,12 +1,14 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
+  root to: 'therapies#index'
 
   resources :users, only: [:show] do
     resources :bookings, only: [:new, :create]
     resources :reviews, except: [:destroy, :edit, :update]
   end
 
+  resources :therapies, only: [:index, :show]
   resources :reviews, only: [:show]
   resources :request
   resources :chat_room
