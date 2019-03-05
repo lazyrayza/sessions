@@ -1,0 +1,17 @@
+ <div class="container">
+  <div class="profile-box">
+    <div>
+      <h2>Hello
+        <% if current_user.first_name == nil %>
+          <%= current_user.email %>
+          <% else %>
+          <%= current_user.full_name %></h2>
+          <% end %>
+
+        <%if current_user.first_name == nil %>
+          <p><%= link_to "Edit profile", edit_user_registration_path, class: "btn btn-primary" %></p>
+        <% end %>
+    </div>
+
+  <%= link_to "Home", root_path, class: "btn btn-secondary" %>
+</div>
