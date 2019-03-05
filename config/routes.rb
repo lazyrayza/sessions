@@ -1,16 +1,18 @@
 Rails.application.routes.draw do
-  devise_for :users
-  root to: 'pages#home'
+ devise_for :users
+ root to: 'pages#home'
 
-  resources :users do
+  resources :users, only: [:show, :index] do
     resources :bookings, only: [:new, :create]
-    resources :reviews, except: [:destroy, :edit, :update, :show]
+    resources :reviews, except: [:destroy, :edit, :update]
   end
 
-  resources :request
-  resources :chat_room
-  resources :chatroom_participants
-  resources :bookings, except: [:new, :create]
-
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+   resources :reviews, only: [:show]
+   resources :request
+   resources :chatroom_participants
+   resources :chat_rooms, only: [ :show, :destroy ]  do
+    resources :messages, only: [ :create ]
+    resources :bookings, except: [:new, :create]
+   end
+ get "/profile", to: "pages#profile"
 end

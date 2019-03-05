@@ -2,19 +2,17 @@ class UsersController < ApplicationController
   before_action :find_user, only: [:show, :update, :destroy, :edit]
 
   def index
-    @therapists = User.where(therapist: true)
-    # @therapist = @therapist.select { |therapist| therapist.latitude != nil && therapist.longitude != nil }
-    # @markers = @therapist.map do |therapist|
-    #   {
-    #     lng: therapist.longitude,
-    #     lat: therapist.latitude,
-    #     infoWindow: render_to_string(partial: "infowindow", locals: { therapist: therapist }),
-    #     image_url: helpers.asset_url('therapist.png')
-    #   }
-    # end
+    @therapists = User.where(therapist: true).where.not(latitude: nil, longitude: nil)
   end
 
   def show
+    @markers =
+      {
+        lng: @user.longitude,
+        lat: @user.latitude,
+        infoWindow: render_to_string(partial: "infowindow", locals: { therapist: @user }),
+        image_url: helpers.asset_url('therapist.png')
+      }
   end
 
   def new
@@ -32,7 +30,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(users_params)
     if @user.save
-      redirect_to "/", notice: 'User has been made!'
+      redirect_to "/", notice: 'User has been updated!'
     else
       render :new
     end
@@ -44,10 +42,6 @@ class UsersController < ApplicationController
   def destroy
     @user.destroy
     redirect_to new_user_session_path
-  end
-
-  def article_params
-    params.require(:article).permit(:title, :body, :photo)
   end
 
   private
