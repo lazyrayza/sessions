@@ -4,7 +4,7 @@
       <div class="chat-header"><h4>#<%= @chat_room.name %></h4></div>
       <div class="messages">
         <% @chat_room.messages.each do |message| %>
-          <%= render "messages/message", message: message %>
+          <%= render "messages/message", message: message, user_is_messages_author: true %>
         <% end %>
       </div>
       <div id="create-message">
@@ -24,12 +24,15 @@
       {
         received: (data) => {
           if (data.current_user_id !== <%= current_user.id %>) {
+            received: (data) => {
+              console.log(data);
+            }
             const messagesContainer = document.querySelector('.messages');
             messagesContainer.insertAdjacentHTML('beforeend', data.message_partial);
             scrollLastMessageIntoView();
           }
         }
       }
-    })
+    )
   </script>
 <% end %>
