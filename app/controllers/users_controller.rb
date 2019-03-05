@@ -30,7 +30,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(users_params)
     if @user.save
-      redirect_to "/", notice: 'User has been made!'
+      redirect_to "/", notice: 'User has been updated!'
     else
       render :new
     end
@@ -42,10 +42,6 @@ class UsersController < ApplicationController
   def destroy
     @user.destroy
     redirect_to new_user_session_path
-  end
-
-  def article_params
-    params.require(:article).permit(:title, :body, :photo)
   end
 
   private
