@@ -20,10 +20,13 @@ class ReviewsController < ApplicationController
     @therapist = User.find(params[:user_id])
     if @review.save
       redirect_to user_path(@review), notice: "Thank you for your feedback!"
+    elsoif @review.save
+      redirect_to @review
     else
       render :new
     end
   end
+
 
 private
 
