@@ -32,10 +32,6 @@ class BookingsController < ApplicationController
       redirect_to booking_path(@booking)
     else
       render :new
-      # respond_to do |format|
-      #   format.html { render 'bookings/show' }
-      #   format.js
-      # end
     end
   end
 
@@ -46,7 +42,11 @@ class BookingsController < ApplicationController
 
   def destroy
     @booking.destroy
-    redirect_to root_path
+    respond_to do |format|
+      format.html { redirect_to 'bookings/index' }
+      # redirect to same page for AJAX to work
+      format.js
+    end
   end
 
   private

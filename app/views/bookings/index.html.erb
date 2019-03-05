@@ -2,46 +2,23 @@
     <div class="col-sm-12 col-md-6">
       <h3>Bookings</h3>
         <table class="table table-bordered">
-          <tbody>
-            <thead>
-              <th>Therapist</th>
-              <th>Starting Date</th>
-              <th>End time</th>
-              <th>Status</th>
-              <th>Days to start</th>
-              <th>Duration</th>
-              <th>View</th>
-              <% if current_user.therapist %>
-                <th>Confirm</th>
-              <% end %>
-              <th>Delete</th>
-            </thead>
+          <thead>
+            <th>Therapist</th>
+            <th>Starting Date</th>
+            <th>End time</th>
+            <th>Status</th>
+            <th>Days to start</th>
+            <th>Duration</th>
+            <th>View</th>
+            <% if current_user.therapist %>
+              <th>Confirm</th>
+            <% end %>
+            <th>Delete</th>
+          </thead>
+          <tbody class="table-body">
             <% @bookings.each do |booking| %>
-              <tr>
-                <td><%= booking.therapist.full_name %></td>
-                <td><%= booking.start_time %></td>
-                <td><%= booking.end_time %></td>
-                <% if booking.status  %>
-                  <td>Confirmed <img src="https://image.flaticon.com/icons/svg/240/240103.svg" width="20"></img></td>
-                <% else %>
-                  <td>Pending Confirmation <img src="https://image.flaticon.com/icons/svg/240/240260.svg" width="20"></img></td>
-                <% end %>
-                <td><%= (booking.start_time.to_date - Date.today).to_i  %></td>
-                <td><%= (booking.end_time - booking.start_time).to_i  %></td>
-                <td><%= link_to "View booking", booking_path(booking) %></td>
-                <% if current_user.therapist %>
-                  <td>
-                    <%= link_to booking_path(booking, booking: { status: true }), method: :patch, notice: "Booking confirmed" do %>
-                     <img src="https://image.flaticon.com/icons/svg/138/138773.svg" width="50" text-align="center"></img>
-                    <% end %>
-                  </td>
-                <% end %>
-                <td>
-                  <%= link_to booking_path(booking), method: :delete, data: { confirm: "Are you sure?" }, remote: true do %>
-                    <i class="fa fa-trash destroy_dose"></i>
-                  <% end %>
-                </td>
-              </tr>
+              <%= render 'table', booking: booking %>
+              <!-- Render partial of table of the booking -->
             <% end %>
           </tbody>
         </table>
