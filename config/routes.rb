@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
   resources :reviews, only: [:show]
   resources :request
-  resources :chat_room
+  resources :chat_rooms, only: [ :show, :destroy ]
   resources :chatroom_participants
   get "/profile", to: "pages#profile"
 end

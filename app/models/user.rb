@@ -14,6 +14,8 @@ class User < ApplicationRecord
   has_many :chat_room_participations
   has_many :chat_rooms, through: :chat_room_participations
   has_many :requests
+  has_many :messages, dependent: :destroy
+
 
   def full_name
     first_name + " " + last_name
