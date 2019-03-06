@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
  devise_for :users
    root to: 'pages#home'
-   post '/sessions', to: 'sessions#create'
-    mount ActionCable.server, at: '/cable'
 
   resources :users, only: [:show, :index] do
     resources :reviews, except: [:destroy, :edit, :update]
@@ -12,6 +10,10 @@ Rails.application.routes.draw do
   resources :request
   resources :chatroom_participants
   resources :chat_rooms, only: [ :show, :destroy ]  do
+    collection do
+      post '/sessions', to: 'video_sessions#create'
+      mount ActionCable.server, at: '/cable'
+    end
     resources :messages, only: [ :create ]
   end
   resources :bookings, except: [:new, :create] do
