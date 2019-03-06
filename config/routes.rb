@@ -1,19 +1,27 @@
 Rails.application.routes.draw do
  devise_for :users
- root to: 'pages#home'
+   root to: 'pages#home'
 
   resources :users, only: [:show, :index] do
-    resources :bookings, only: [:new, :create]
     resources :reviews, except: [:destroy, :edit, :update]
+    resources :bookings, only: [:new, :create]
   end
-
-   resources :reviews, only: [:show]
-   resources :request
-   resources :chatroom_participants
-   resources :chat_rooms, only: [ :show, :destroy ]  do
+  resources :reviews, only: [:show]
+  resources :request
+  resources :chatroom_participants
+  resources :chat_rooms, only: [ :show, :destroy ]  do
+    collection do
+      post '/sessions', to: 'video_sessions#create'
+      mount ActionCable.server, at: '/cable'
+    end
     resources :messages, only: [ :create ]
-    resources :bookings, except: [:new, :create]
-   end
- get "/profile", to: "pages#profile"
+  end
+  resources :bookings, except: [:new, :create] do
+      resources :chat_rooms, only: [:new, :create]
+    end
+
+  get "/profile", to: "pages#profile"
+
+
 end
 
