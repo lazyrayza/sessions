@@ -19,9 +19,5 @@ Rails.application.routes.draw do
   resources :bookings, except: [:new, :create] do
       resources :chat_rooms, only: [:new, :create]
     end
-
-  get "/profile", to: "pages#profile"
-
-
+   get "/profile", to: "pages#profile"
 end
-
