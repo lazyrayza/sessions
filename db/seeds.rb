@@ -16,7 +16,8 @@ end
 20.times do
 
   reviews = Review.create!(
-    description: Faker::Lorem.characters(150) ,
+    description: Faker::Lorem.characters(150),
     therapist_id: User.all.sample.id,
     )
 end
+
