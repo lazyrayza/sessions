@@ -3,8 +3,8 @@ Rails.application.routes.draw do
  root to: 'pages#home'
 
   resources :users, only: [:show, :index] do
-    resources :bookings, only: [:new, :create]
     resources :reviews, except: [:destroy, :edit, :update]
+    resources :bookings, only: [:new, :create]
   end
 
    resources :reviews, only: [:show]
@@ -12,8 +12,12 @@ Rails.application.routes.draw do
    resources :chatroom_participants
    resources :chat_rooms, only: [ :show, :destroy ]  do
     resources :messages, only: [ :create ]
-    resources :bookings, except: [:new, :create]
    end
+
+  resources :bookings, except: [:new, :create] do
+    resources :chat_rooms, only: [:new, :create]
+  end
+
  get "/profile", to: "pages#profile"
 end
 
