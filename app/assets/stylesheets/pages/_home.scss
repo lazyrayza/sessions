@@ -1,1 +1,22 @@
-// Specific CSS for your home-page
+.banner {
+  background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.5)), url("banner.jpg");
+  background-size: cover;
+  height: calc(100vh - 66px);
+  background-position: center;
+}
+
+.headers-text {
+  // text-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+  font-weight: 700;
+  padding-top: 50vh;
+  padding-left: 10vw;
+  color: #FFFFFF;
+  h2 {
+    font-weight: 300;
+    letter-spacing: 1px;
+  }
+  h1 {
+    font-size: $font-size-h1;
+  }
+}
+
