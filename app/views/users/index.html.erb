@@ -8,14 +8,38 @@
 <% end %>
 <!-- End Search -->
 
-<div class="cards-container">
-  <% @therapists.each do |therapist| %>
-    <p><%= therapist.first_name %></p>
-    <h2><%= therapist.last_name %></h2>
-    <p><%= therapist.address %></p>
-    <%= link_to "View", user_path(therapist), class: "btn btn-primary" %>
-    <br>
-  <% end %>
+<div class="index-container">
+  <div class="big-box">
+    <div class="container-holder">
+      <div class="row">
+        <% @therapists.each do |therapist| %>
+          <div class="col-sm-4" style="padding: 10px">
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <div data-aos="flip-left" class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://source.unsplash.com/featured/?{waiter}<%= (1..100000).to_a.sample %>');">
+                    <div class="card-description">
+                      <p><%= therapist.first_name %></p>
+                      <h2><%= therapist.last_name %></h2>
+                    </div>
+                </div>
+                <div class="flip-card-back">
+                  <h2><%= therapist.full_name %></h2>
+                  <p><%= therapist.address %></p>
+                  <% if therapist.photo.url.nil? %>
+                  <%= image_tag "https://www.shareicon.net/data/128x128/2016/09/01/822739_user_512x512.png", class: "avatar-small" %>
+                  <% else %>
+                  <%= cl_image_tag therapist.photo, height: 40, width: 40, crop: :fill, class: "avatar-small" %>
+                  <% end %>
+                    <%= link_to "View", user_path(therapist), class: 'card-link' %>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+
   <br>
   <%= link_to "Home", root_path, class: "btn btn-primary" %>
 </div>
