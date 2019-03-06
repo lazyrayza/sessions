@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   resources :chatroom_participants
   resources :chat_rooms, only: [ :show, :destroy ]  do
   resources :messages, only: [ :create ]
+  resources :bookings, except: [:new, :create]
+
   end
   get "/profile", to: "pages#profile"
 end
