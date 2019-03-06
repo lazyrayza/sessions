@@ -20,3 +20,11 @@ end
     therapist_id: User.all.sample.id,
     )
 end
+
+
+3.times do
+  chatrooms = ChatRoom.create! (
+    name: Faker::Name.first_name,
+    bookings_id: bookings.all.sample.id,
+    )
+end
