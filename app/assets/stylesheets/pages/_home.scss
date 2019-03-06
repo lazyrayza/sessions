@@ -22,6 +22,9 @@
   h1 {
     font-size: $font-size-h1;
   }
+  .main-button {
+    margin-top: 8px;
+  }
   .primary-button {
     font-family: $body-font;
     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
