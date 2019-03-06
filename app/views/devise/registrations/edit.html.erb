@@ -1,66 +1,68 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<div class="container">
+  <h2>Edit <%= resource_name.to_s.humanize %></h2>
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= f.error_notification %>
+  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+    <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :email, required: true, autofocus: true %>
+    <div class="form-inputs">
+      <%= f.input :email, required: true, autofocus: true %>
 
-    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-      <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
-    <% end %>
-    <%= f.input :current_password,
-                hint: "Enter your current password to confirm your changes",
-                required: true,
-                input_html: { autocomplete: "current-password" } %>
-    <h1>Details</h1>
-    <% if :therapist %>
-      <%= f.input :photo %>
-      <%= f.input :photo_cache,
-                  as: :hidden,
+      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+        <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+      <% end %>
+      <%= f.input :current_password,
+                  hint: "Enter your current password to confirm your changes",
+                  required: true,
+                  input_html: { autocomplete: "current-password" } %>
+      <h1>Details</h1>
+      <% if :therapist %>
+        <%= f.input :photo %>
+        <%= f.input :photo_cache,
+                    as: :hidden,
+                    required: true %>
+      <% else %>
+        <%= f.input :photo %>
+        <%= f.input :photo_cache,
+                    as: :hidden,
+                    required: false %>
+      <% end %>
+      <%= f.input :first_name,
                   required: true %>
-    <% else %>
-      <%= f.input :photo %>
-      <%= f.input :photo_cache,
-                  as: :hidden,
+      <%= f.input :last_name,
+                  required: true %>
+      <%= f.input :address,
                   required: false %>
-    <% end %>
-    <%= f.input :first_name,
-                required: true %>
-    <%= f.input :last_name,
-                required: true %>
-    <%= f.input :address,
-                required: false %>
-    <%= f.input :phone_number,
-                required: false %>
-    <% if :therapist %>
-      <%= f.input :languages,
-                  required: true %>
-    <% else %>
-      <%= f.input :languages,
+      <%= f.input :phone_number,
                   required: false %>
-    <% end %>
-    <% if :therapist %>
-      <%= f.input :expertise,
-                  required: true %>
-    <% end %>
-    <h1>Change your password</h1>
-    <%= f.input :password,
-                hint: "Leave it blank if you don't want to change your password",
-                required: false,
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :password_confirmation,
-                required: false,
-                input_html: { autocomplete: "new-password" } %>
-  </div>
+      <% if :therapist %>
+        <%= f.input :languages,
+                    required: true %>
+      <% else %>
+        <%= f.input :languages,
+                    required: false %>
+      <% end %>
+      <% if :therapist %>
+        <%= f.input :expertise,
+                    required: true %>
+      <% end %>
+      <h1>Change your password</h1>
+      <%= f.input :password,
+                  hint: "Leave it blank if you don't want to change your password",
+                  required: false,
+                  input_html: { autocomplete: "new-password" } %>
+      <%= f.input :password_confirmation,
+                  required: false,
+                  input_html: { autocomplete: "new-password" } %>
+    </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Update" %>
-  </div>
-<% end %>
+    <div class="form-actions">
+      <%= f.button :submit, "Update" %>
+    </div>
+  <% end %>
 
-<h3>Cancel my account</h3>
+  <h3>Cancel my account</h3>
 
-<p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+  <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 
-<%= link_to "Back", :back %>
+  <%= link_to "Back", :back %>
+</div>
