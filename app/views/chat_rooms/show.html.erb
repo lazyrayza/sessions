@@ -46,8 +46,8 @@
     <% content_for :after_js do %>
       <script>
         scrollLastMessageIntoView();
-        App['chatrooms_<%= @chatrooms.id %>'] = App.cable.subscriptions.create(
-          { channel: 'ChatRoomsChannel', chatrooms_id: <%= @chatrooms.id %> }, {
+        App['chat_room_<%= @chatrooms.id %>'] = App.cable.subscriptions.create(
+          { channel: 'ChatRoomsChannel', chat_room_id: <%= @chatrooms.id %> }, {
             received: (data) => {
               console.log(data);
                   if (data.current_user_id !== <%= current_user.id %>) {
