@@ -1,5 +1,6 @@
 <div class="container">
   <h1>Booking Details</h1>
+  <h2><%= @booking.therapist.first_name %> <%= @booking.therapist.last_name %></h2>
   <h2>Starting from:</h2> <p><%=@booking.start_time%></p>
   <h2>Ending On:</h2> <p><%= @booking.end_time %></p>
 
@@ -17,3 +18,5 @@
 <%= link_to "Review your Therapist", new_user_review_path(@booking) %>
 <br>
 <%= link_to "View bookings", bookings_path(@booking) %>
+<%= link_to "Chat", booking_chat_rooms_path(@booking), :method => :post %>
+
