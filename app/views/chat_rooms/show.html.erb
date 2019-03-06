@@ -1,35 +1,61 @@
-<div class="container">
-  <div class="row">
-    <div class="col-sm-6 col-sm-offset-3">
-      <div class="chat-header"><h4>#TESTING</h4></div>
-      <div class="messages">
-        <% @chatrooms.messages.each do |message| %>
-          <%= render "messages/message", message: message, user_is_messages_author: message.user == current_user %>
-        <% end %>
-      </div>
-      <div id="create-message">
-        <%= simple_form_for [ @chatrooms, Message.new ], remote: true do |f| %>
-          <%= f.input :content, label: false %>
-        <% end %>
+<div class="big-box">
+  <div class="left-box">
+    <h1>Action Cable Signaling Server</h1>
+
+    <div>Random User ID:
+      <span id="current-user"><%= @random_number %></span>
+    </div>
+
+    <div id="remote-video-container"></div>
+    <video id="local-video" autoplay></video>
+
+    <hr />
+
+    <button onclick="handleJoinSession()">
+      Join Room
+    </button>
+
+    <button onclick="handleLeaveSession()">
+      Leave Room
+    </button>
+
+  </div>
+  <div class="right-box">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6 col-sm-offset-3">
+          <div class="chat-header"><h4>#TESTING</h4></div>
+          <div class="messages">
+            <% @chatrooms.messages.each do |message| %>
+              <%= render "messages/message", message: message, user_is_messages_author: message.user == current_user %>
+            <% end %>
+          </div>
+          <div id="create-message">
+            <%= simple_form_for [ @chatrooms, Message.new ], remote: true do |f| %>
+              <%= f.input :content, label: false %>
+            <% end %>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
 
 
-<% content_for :after_js do %>
-  <script>
-    scrollLastMessageIntoView();
-    App['chat_room_<%= @chatrooms.id %>'] = App.cable.subscriptions.create(
-      { channel: 'ChatRoomsChannel', chatrooms_id: <%= @chatrooms.id %> }, {
-        received: (data) => {
-              if (data.current_user_id !== <%= current_user.id %>) {
-              const messagesContainer = document.querySelector('.messages');
-              messagesContainer.insertAdjacentHTML('beforeend', data.message_partial);
-            scrollLastMessageIntoView();
+    <% content_for :after_js do %>
+      <script>
+        scrollLastMessageIntoView();
+        App['chat_room_<%= @chatrooms.id %>'] = App.cable.subscriptions.create(
+          { channel: 'ChatRoomsChannel', chatrooms_id: <%= @chatrooms.id %> }, {
+            received: (data) => {
+                  if (data.current_user_id !== <%= current_user.id %>) {
+                  const messagesContainer = document.querySelector('.messages');
+                  messagesContainer.insertAdjacentHTML('beforeend', data.message_partial);
+                scrollLastMessageIntoView();
+              }
+            }
           }
-        }
-      }
-    )
-  </script>
-<% end %>
+        )
+      </script>
+    <% end %>
+
+      </div>
+</div>

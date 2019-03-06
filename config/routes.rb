@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
  devise_for :users
- root to: 'pages#home'
+   root to: 'pages#home'
+   post '/sessions', to: 'sessions#create'
+    mount ActionCable.server, at: '/cable'
 
   resources :users, only: [:show, :index] do
     resources :reviews, except: [:destroy, :edit, :update]
