@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2019_03_06_000750) do
+=======
+ActiveRecord::Schema.define(version: 2019_03_06_114701) do
+>>>>>>> 7fbe63fde0c392a6dffb6847183b73071707d348
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +27,10 @@ ActiveRecord::Schema.define(version: 2019_03_06_000750) do
     t.boolean "accepted", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "status", default: false
+    t.text "description"
+    t.bigint "chat_rooms_id"
+    t.index ["chat_rooms_id"], name: "index_bookings_on_chat_rooms_id"
     t.index ["client_id"], name: "index_bookings_on_client_id"
     t.index ["therapist_id"], name: "index_bookings_on_therapist_id"
   end
@@ -30,6 +38,9 @@ ActiveRecord::Schema.define(version: 2019_03_06_000750) do
   create_table "chat_rooms", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "name"
+    t.bigint "booking_id"
+    t.index ["booking_id"], name: "index_chat_rooms_on_booking_id"
   end
 
   create_table "chatroom_participants", force: :cascade do |t|
@@ -39,6 +50,16 @@ ActiveRecord::Schema.define(version: 2019_03_06_000750) do
     t.datetime "updated_at", null: false
     t.index ["chat_room_id"], name: "index_chatroom_participants_on_chat_room_id"
     t.index ["user_id"], name: "index_chatroom_participants_on_user_id"
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.string "content"
+    t.bigint "chat_room_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["chat_room_id"], name: "index_messages_on_chat_room_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
   create_table "requests", force: :cascade do |t|
@@ -83,8 +104,12 @@ ActiveRecord::Schema.define(version: 2019_03_06_000750) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "bookings", "chat_rooms", column: "chat_rooms_id"
+  add_foreign_key "chat_rooms", "bookings"
   add_foreign_key "chatroom_participants", "chat_rooms"
   add_foreign_key "chatroom_participants", "users"
+  add_foreign_key "messages", "chat_rooms"
+  add_foreign_key "messages", "users"
   add_foreign_key "requests", "chat_rooms"
   add_foreign_key "requests", "users"
 end
