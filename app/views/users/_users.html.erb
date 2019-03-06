@@ -2,6 +2,6 @@
   <p><%= therapist.first_name %></p>
   <h2><%= therapist.last_name %></h2>
   <p><%= therapist.address %></p>
-  <%= link_to "View", user_path(therapist) %>
+  <%= link_to "View", user_path(therapist), class: "btn btn-primary" %>
   <br>
 <% end %>
