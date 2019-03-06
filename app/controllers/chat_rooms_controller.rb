@@ -1,6 +1,7 @@
 class ChatRoomsController < ApplicationController
   def show
     @random_number = rand(0...10_000)
+
     @chatrooms = ChatRoom.includes(messages: :user).find(params[:id])
     unless current_user == @chatrooms.booking.therapist || current_user == @chatrooms.booking.client
       redirect_to root_path
