@@ -1,10 +1,12 @@
 <!-- Search -->
-<%= form_tag users_path, method: :get, remote: true do %>
+<%= form_tag users_path, method: :get, remote: true, id: "search-form" do %>
   <%= text_field_tag :query,
     params[:query],
     class: "form-control",
-    placeholder: "Browse a therapist or field of expertise"
-    %>
+    placeholder: "Browse a therapist or field of expertise",
+    id: "input"
+  %>
+  <%= submit_tag "Search", id: "submit" %>
 <% end %>
 <!-- End Search -->
 
@@ -13,9 +15,22 @@
     <p><%= therapist.first_name %></p>
     <h2><%= therapist.last_name %></h2>
     <p><%= therapist.address %></p>
-    <%= link_to "View", user_path(therapist), class: "btn btn-primary %>
+    <%= link_to "View", user_path(therapist), class: "btn btn-primary" %>
     <br>
   <% end %>
   <br>
   <%= link_to "Home", root_path, class: "btn btn-primary" %>
 </div>
+
+<!--AJAX Search Form -->
+
+<script>
+  let formSelect = document.getElementById("search-form");
+  let searchInput = document.getElementById("input");
+  let submitButton = document.getElementById("submit");
+
+  searchInput.addEventListener("keyup", (event) => {
+    submitButton.click();
+  });
+</script>
+<!-- End AJAX Search Form -->

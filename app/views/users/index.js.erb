@@ -1,6 +1,6 @@
-function refreshCards(innerHTML) {
+ function refreshCards(innerHTML) {
   newCardsContainer = document.querySelector(".cards-container")
   newCardsContainer.innerHTML = innerHTML;
-}
+ }
 
-refreshCards('<%= j render "users", therapists: @therapists %>')
+refreshCards('<%= j render "users", therapists: @therapists %>');
