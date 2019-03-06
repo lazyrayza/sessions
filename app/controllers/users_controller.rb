@@ -2,7 +2,16 @@ class UsersController < ApplicationController
   before_action :find_user, only: [:show, :update, :destroy, :edit]
 
   def index
-    @therapists = User.where(therapist: true).where.not(latitude: nil, longitude: nil)
+    if params[:query].present?
+      @therapists = User.search_by_expertise_and_full_name(params[:query])
+      respond_to do |format|
+        format.html { render users_path }
+        format.js
+      end
+      # @therapists = User.search_by_expertise_and_full_name(params[:query]).where.not(latitude: nil, longitude: nil).where(therapist: true)
+    else
+      @therapists = User.where(therapist: true).where.not(latitude: nil, longitude: nil)
+    end
   end
 
   def show

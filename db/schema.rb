@@ -23,6 +23,8 @@ ActiveRecord::Schema.define(version: 2019_03_05_153049) do
     t.boolean "accepted", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "status", default: false
+    t.text "description"
     t.index ["client_id"], name: "index_bookings_on_client_id"
     t.index ["therapist_id"], name: "index_bookings_on_therapist_id"
   end

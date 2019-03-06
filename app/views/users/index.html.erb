@@ -1,15 +1,21 @@
-
-<% @therapists.each do |therapist| %>
-
-<p><%= therapist.first_name %></p>
-<h2><%= therapist.last_name %></h2>
-<p><%= therapist.address %></p>
-<%= link_to "View", user_path(therapist) %>
-<br>
+<!-- Search -->
+<%= form_tag users_path, method: :get, remote: true do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Browse a therapist or field of expertise"
+    %>
 <% end %>
+<!-- End Search -->
 
-
-<%= link_to "Home", root_path, class: "btn btn-primary" %>
-
-
-
+<div class="cards-container">
+  <% @therapists.each do |therapist| %>
+    <p><%= therapist.first_name %></p>
+    <h2><%= therapist.last_name %></h2>
+    <p><%= therapist.address %></p>
+    <%= link_to "View", user_path(therapist), class: "btn btn-primary %>
+    <br>
+  <% end %>
+  <br>
+  <%= link_to "Home", root_path, class: "btn btn-primary" %>
+</div>

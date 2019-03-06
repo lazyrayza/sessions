@@ -20,4 +20,11 @@ class User < ApplicationRecord
   def full_name
     first_name + " " + last_name
   end
+
+  include PgSearch
+  pg_search_scope :search_by_expertise_and_full_name,
+                  against: [:first_name, :last_name, :expertise],
+                  using: {
+                    tsearch: { prefix: true }
+                  }
 end

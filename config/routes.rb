@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  devise_for :users
-  root to: 'pages#home'
+ devise_for :users
+ root to: 'pages#home'
 
   resources :users, only: [:show, :index] do
     resources :bookings, only: [:new, :create]
@@ -15,5 +15,9 @@ Rails.application.routes.draw do
   resources :bookings, except: [:new, :create]
 
   end
+
   get "/profile", to: "pages#profile"
+
+
 end
+
