@@ -9,7 +9,9 @@
     </li>
     <% @booking.each do |booking| %>
     <li class="table-row">
-      <div class="col col-1" data-label="Therapist"><%= image_tag booking.therapist.photo ? booking.therapist.photo : "logo.png" %> alt="" <%= booking.therapist.full_name %></div>
+      <div class="col col-1" data-label="Therapist">
+        <%= image_tag "logo.png", class: "avatar-therapist" %>
+        <%= booking.therapist.full_name %></div>
       <div class="col col-2" data-label="Schedule"><%= booking.start_time %></div>
       <div class="col col-3" data-label="Amount"><%= booking.therapist.price %> (Pending)</div>
       <div class="col col-4" data-label="Status">Pending</div>
