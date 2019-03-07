@@ -31,3 +31,81 @@
 .current-password {
   width: 380px;
 }
+
+.first-name-last-name-inline {
+  display: flex;
+  justify-content: space-around;
+}
+
+.first-name-inline {
+  width: 380px;
+}
+
+.last-name-inline {
+  width: 380px;
+}
+
+.edit-user {
+  display: flex;
+  margin-left: 20px;
+  flex-direction: column;
+}
+
+.phone-languages {
+  display: flex;
+  justify-content: space-around;
+}
+
+.phone-number {
+  width: 380px;
+}
+
+.languages {
+  width: 380px;
+}
+
+.address {
+  width: 800px;
+  margin-left: 20px;
+}
+
+.change-password {
+  display: flex;
+  margin-left: 20px;
+}
+
+
+.passwords {
+  display: flex;
+  justify-content: space-around;
+}
+
+.password-change {
+  width: 380px;
+}
+
+.password-confirmation {
+  width: 380px;
+}
+
+.form-actions {
+  display: flex;
+  margin-left: 20px;
+}
+
+.bottom-row {
+  margin-left: 20px;
+}
+
+.bottom-btn {
+  display: flex;
+  justify-content: space-around;
+}
+
+.back {
+
+}
+
+.cancel {
+
+}

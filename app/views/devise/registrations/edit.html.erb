@@ -1,11 +1,35 @@
 <div class="container">
   <div class="profile-box">
-    <h2>Edit <%= resource_name.to_s.humanize %></h2>
+    <div class="edit-user">
+      <h2>Edit <%= resource_name.to_s.humanize %></h2>
 
-  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-    <%= f.error_notification %>
+    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+      <%= f.error_notification %>
+      <% if current_user.therapist %>
+        <%= f.input :photo %>
+        <%= f.input :photo_cache,
+                    as: :hidden,
+                    required: true %>
+      <% else %>
+        <%= f.input :photo %>
+        <%= f.input :photo_cache,
+                    as: :hidden,
+                    required: false %>
+      <% end %>
 
+    </div>
     <div class="form-inputs">
+    <div class="first-name-last-name-inline">
+      <div class="first-name-inline">
+        <%= f.input :first_name,
+                    required: true %>
+      </div>
+      <div class="last-name-inline">
+        <%= f.input :last_name,
+                    required: true %>
+      </div>
+    </div>
+
       <div class="inline-input">
         <div class="email">
           <%= f.input :email, required: true, autofocus: true %>
@@ -18,62 +42,68 @@
                     hint: "Enter your current password to confirm your changes",
                     required: true,
                     input_html: { autocomplete: "current-password" } %>
-
-        </div>
-
       </div>
-    <h2>Details</h2>
-    <% if current_user.therapist %>
-      <%= f.input :photo %>
-      <%= f.input :photo_cache,
-                  as: :hidden,
-                  required: true %>
-    <% else %>
-      <%= f.input :photo %>
-      <%= f.input :photo_cache,
-                  as: :hidden,
+    </div>
+    <div class="address">
+      <%= f.input :address,
                   required: false %>
-    <% end %>
-    <%= f.input :first_name,
-                required: true %>
-    <%= f.input :last_name,
-                required: true %>
-    <%= f.input :address,
-                required: false %>
-    <%= f.input :phone_number,
-                required: false %>
-    <% if current_user.therapist %>
-      <%= f.input :languages,
-                  required: true %>
-      <% else %>
-        <%= f.input :languages,
+    </div>
+    <div class="phone-languages">
+      <div class="phone-number">
+        <%= f.input :phone_number,
                     required: false %>
-    <% end %>
+      </div>
+      <div class="languages">
+              <% if current_user.therapist %>
+        <%= f.input :languages,
+                    required: true %>
+        <% else %>
+          <%= f.input :languages,
+                      required: false %>
+      <% end %>
+      </div>
+    </div>
     <% if current_user.therapist %>
       <%= f.input :expertise,
                   required: true %>
     <% end %>
+    <div class="change-password">
     <h2>Change your password</h2>
-    <%= f.input :password,
-                hint: "Leave it blank if you don't want to change your password",
-                required: false,
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :password_confirmation,
-                required: false,
-                input_html: { autocomplete: "new-password" } %>
   </div>
-
+  <div class="passwords">
+    <div class="password-change">
+      <%= f.input :password,
+                  hint: "Leave it blank if you don't want to change your password",
+                  required: false,
+                  input_html: { autocomplete: "new-password" } %>
+    </div>
+    <div class="password-confirmation">
+      <%= f.input :password_confirmation,
+                  required: false,
+                  input_html: { autocomplete: "new-password" } %>
+    </div>
+  </div>
+    </div>
     <div class="form-actions">
       <%= f.button :submit, "Update", class: "btn btn-primary" %>
     </div>
   <% end %>
   <br>
 
-  <h3>Cancel my account</h3>
+  <div class="bottom-row">
+    <h3>Cancel my account</h3>
+    <p>Unhappy?</p>
+    </div>
 
-  <p>Unhappy?</p>
-  <p><%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-secondary" %></p>
+    <div class="bottom-btn">
 
-  <%= link_to "Back", :back %>
+    <div class="back">
+      <%= link_to "Back", :back, class: "btn btn-secondary" %>
+    </div>
+
+    <div class="cancel">
+      <p><%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-secondary" %></p>
+      </div>
+    </div>
   </div>
 </div>
