@@ -1,2 +1,0 @@
-class Therapy < ApplicationRecord
-end
