@@ -1,3 +1,6 @@
+<div class="left-box">
+
+</div>
 <div class="container">
   <h1><%= @user.first_name %> <%= @user.last_name %></h1>
   <p><strong>Email:</strong> <%= @user.email %></p>
@@ -25,7 +28,7 @@
           </div>
           <% end %>
         </div>
-  <%= link_to "See reviews", user_reviews_path(@user) %>
+  <%= link_to "See reviews", booking_reviews_path(@user) %>
     </div>
   </div>
 </div>

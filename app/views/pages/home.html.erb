@@ -7,6 +7,14 @@
         <%= link_to new_user_registration_path do %>
           <button type="submit" class="primary-button">Start Your Journey</button>
         <% end %>
+      <% elsif user_signed_in? && current_user.therapist %>
+        <%= link_to profile_path do %>
+          <button type="submit" class="primary-button">My profile</button>
+        <% end %>
+      <% elsif user_signed_in? && !current_user.therapist %>
+        <%= link_to users_path do %>
+          <button type="submit" class="primary-button">Browse a therapist</button>
+        <% end %>
       <% end %>
     </div>
   </div>

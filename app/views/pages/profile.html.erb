@@ -2,6 +2,7 @@
   <div class="profile-box">
     <div>
       <h2>Hello
+        <% #raise %>
         <% if current_user.first_name == nil %>
           <%= current_user.email %>
           <% else %>
@@ -15,3 +16,25 @@
 
   <%= link_to "Home", root_path, class: "btn btn-secondary" %>
 </div>
+
+<table class="table table-bordered">
+        <thead>
+          <th>Therapist</th>
+          <th>Starting Date</th>
+          <th>End time</th>
+          <th>Status</th>
+          <th>Days to start</th>
+          <th>Duration</th>
+          <th>View</th>
+          <% if current_user.therapist %>
+            <th>Confirm</th>
+          <% end %>
+          <th>Delete</th>
+        </thead>
+        <tbody class="table-body">
+          <% @booking.each do |booking| %>
+            <%= render '/bookings/table', booking: booking %>
+            <!-- Render partial of table of the booking -->
+          <% end %>
+        </tbody>
+      </table>

@@ -3,9 +3,9 @@
   <td><%= booking.start_time %></td>
   <td><%= booking.end_time %></td>
   <% if booking.status  %>
-    <td>Confirmed <img src="https://image.flaticon.com/icons/svg/240/240103.svg" width="20"></img></td>
+    <td>Confirmed</td>
   <% else %>
-    <td>Pending Confirmation <img src="https://image.flaticon.com/icons/svg/240/240260.svg" width="20"></img></td>
+    <td>Pending Confirmation </td>
   <% end %>
   <td><%= (booking.start_time.to_date - Date.today).to_i  %></td>
   <td><%= (booking.end_time - booking.start_time).to_i  %></td>
