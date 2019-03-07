@@ -20,7 +20,7 @@ class UsersController < ApplicationController
         lng: @user.longitude,
         lat: @user.latitude,
         infoWindow: render_to_string(partial: "infowindow", locals: { therapist: @user }),
-        image_url: helpers.asset_url('therapist.png')
+        image_url: helpers.asset_url('logo.png')
       }
   end
 
