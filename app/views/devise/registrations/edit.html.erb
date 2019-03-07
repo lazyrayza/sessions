@@ -6,15 +6,22 @@
     <%= f.error_notification %>
 
     <div class="form-inputs">
-      <%= f.input :email, required: true, autofocus: true %>
+      <div class="inline-input">
+        <div class="email">
+          <%= f.input :email, required: true, autofocus: true %>
+          <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+          <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+        <% end %>
+        </div>
+        <div class="current-password">
+        <%= f.input :current_password,
+                    hint: "Enter your current password to confirm your changes",
+                    required: true,
+                    input_html: { autocomplete: "current-password" } %>
 
-    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-      <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
-    <% end %>
-    <%= f.input :current_password,
-                hint: "Enter your current password to confirm your changes",
-                required: true,
-                input_html: { autocomplete: "current-password" } %>
+        </div>
+
+      </div>
     <h2>Details</h2>
     <% if current_user.therapist %>
       <%= f.input :photo %>
@@ -70,5 +77,3 @@
   <%= link_to "Back", :back %>
   </div>
 </div>
-
-

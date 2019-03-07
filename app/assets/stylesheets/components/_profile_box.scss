@@ -18,3 +18,16 @@
   background-color: #489099;
   border: none;
 }
+
+.inline-input {
+  display: flex;
+  justify-content: space-around;
+}
+
+.email {
+  width: 380px;
+}
+
+.current-password {
+  width: 380px;
+}
