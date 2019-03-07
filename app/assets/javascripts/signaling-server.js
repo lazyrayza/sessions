@@ -42,7 +42,7 @@ document.onreadystatechange = () => {
 };
 
 const handleJoinSession = async () => {
-  App.session = await App.cable.subscriptions.create("SessionChannel", {
+  App.session = await App.cable.subscriptions.create("VideoSessionChannel", {
     connected: () => {
       broadcastData({
         type: JOIN_ROOM,
