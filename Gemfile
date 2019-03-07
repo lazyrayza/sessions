@@ -19,11 +19,7 @@ gem 'faker'
 gem "geocoder"
 gem 'carrierwave', '~> 1.2'
 gem 'cloudinary'
-<<<<<<< HEAD
-gem 'money-rails'
-=======
 gem 'pg_search'
->>>>>>> 7fbe63fde0c392a6dffb6847183b73071707d348
 
 group :development do
   gem 'web-console', '>= 3.3.0'

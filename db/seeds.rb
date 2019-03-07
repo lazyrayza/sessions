@@ -1,3 +1,8 @@
+require "faker"
+
+Review.destroy_all
+User.destroy_all
+
 20.times do
 
   therapists = User.create!(
@@ -9,7 +14,7 @@
     password: Faker::Internet.password,
     therapist: true,
     languages: Faker::ProgrammingLanguage.name,
-    expertise: Faker::Esport.game,
+    expertise: Faker::Esport.game
     )
 end
 
@@ -17,17 +22,22 @@ end
 
   reviews = Review.create!(
     description: Faker::Lorem.characters(150),
-    therapist_id: User.all.sample.id,
+    therapist_id: User.all.sample.id
     )
 end
 
-<<<<<<< HEAD
-=======
+# 3.times do
 
-3.times do
-  chatrooms = ChatRoom.create! (
-    name: Faker::Name.first_name,
-    bookings_id: bookings.all.sample.id,
+#   bookings = Booking.create!(
+#     booking_id: Faker::Lorem.characters(2),
+#     user_id: Faker::Lorem.characters(1)
+#     )
+# end
+
+
+5.times do
+  therapies = Therapy.create!(
+    name: Faker::Lorem.characters(5)
     )
 end
->>>>>>> 7fbe63fde0c392a6dffb6847183b73071707d348
+
