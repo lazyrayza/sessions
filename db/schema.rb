@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_07_144507) do
+ActiveRecord::Schema.define(version: 2019_03_07_173431) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 2019_03_07_144507) do
     t.boolean "accepted", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "status", default: false
+    t.string "status", default: "Pending"
     t.text "description"
     t.bigint "chat_rooms_id"
     t.index ["chat_rooms_id"], name: "index_bookings_on_chat_rooms_id"
@@ -70,13 +70,11 @@ ActiveRecord::Schema.define(version: 2019_03_07_144507) do
 
   create_table "reviews", force: :cascade do |t|
     t.text "description"
-    t.bigint "booking_id"
-    t.bigint "user_id"
+    t.bigint "therapist_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "rating"
-    t.index ["booking_id"], name: "index_reviews_on_booking_id"
-    t.index ["user_id"], name: "index_reviews_on_user_id"
+    t.index ["therapist_id"], name: "index_reviews_on_therapist_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -104,8 +102,6 @@ ActiveRecord::Schema.define(version: 2019_03_07_144507) do
   end
 
   add_foreign_key "bookings", "chat_rooms", column: "chat_rooms_id"
-  add_foreign_key "bookings", "users", column: "client_id"
-  add_foreign_key "bookings", "users", column: "therapist_id"
   add_foreign_key "chat_rooms", "bookings"
   add_foreign_key "chatroom_participants", "chat_rooms"
   add_foreign_key "chatroom_participants", "users"
@@ -113,6 +109,4 @@ ActiveRecord::Schema.define(version: 2019_03_07_144507) do
   add_foreign_key "messages", "users"
   add_foreign_key "requests", "chat_rooms"
   add_foreign_key "requests", "users"
-  add_foreign_key "reviews", "bookings"
-  add_foreign_key "reviews", "users"
 end
