@@ -2,6 +2,7 @@
   <div class="profile-box">
     <div class="edit-user">
       <h2>Edit <%= resource_name.to_s.humanize %></h2>
+      <br>
 
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
       <%= f.error_notification %>
@@ -92,7 +93,6 @@
 
   <div class="bottom-row">
     <h3>Cancel my account</h3>
-    <p>Unhappy?</p>
     </div>
 
     <div class="bottom-btn">
