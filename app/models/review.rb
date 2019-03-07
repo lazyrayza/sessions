@@ -1,4 +1,5 @@
 class Review < ApplicationRecord
-  belongs_to :therapist, class_name: :User, foreign_key: "therapist_id"
+  belongs_to :user
+  belongs_to :booking
   validates :description, presence: true
 end

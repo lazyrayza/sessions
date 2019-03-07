@@ -7,16 +7,17 @@
   <p><strong>Starting in:</strong> <%= (@booking.start_time.to_date - Date.today).to_i %> Days</p>
   <p><strong>Booking Duration: </strong><%= (@booking.end_time - @booking.start_time).to_i  %> Days</p>
   <% if @booking.status %>
-    <p><strong>Status: </strong>Confirmed <img src="https://image.flaticon.com/icons/svg/240/240103.svg" width="20"></img></p>
+    <p><strong>Status: </strong>Confirmed</p>
   <% else %>
-    <p><strong>Status: </strong>Pending Confirmation <img src="https://image.flaticon.com/icons/svg/240/240260.svg" width="20"></img></p>
+    <p><strong>Status: </strong>Pending Confirmation</p>
 <% end  %>
-
-
+  <p><%= @booking.description %></p>
 <%= link_to "Edit your booking", edit_booking_path(@booking) %>
 <br>
-<%= link_to "Review your Therapist", new_user_review_path(@booking) %>
+<%= link_to "Review your Therapist", new_booking_review_path(@booking) %>
 <br>
 <%= link_to "View bookings", bookings_path(@booking) %>
 <%= link_to "Chat", booking_chat_rooms_path(@booking), :method => :post %>
 
+
+<%= @booking.client_id %>
