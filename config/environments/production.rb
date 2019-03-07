@@ -17,7 +17,7 @@ Rails.application.configure do
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
 
-  config.action_cable.url = 'ws://yourapp.herokuapp.com/cable'
+  config.action_cable.url = 'ws://sessions78.herokuapp.com/cable'
   config.action_cable.allowed_request_origins = [ '*' ]
 
   # Ensures that a master key has been made available in either ENV["RAILS_MASTER_KEY"]
