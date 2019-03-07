@@ -70,11 +70,13 @@ ActiveRecord::Schema.define(version: 2019_03_06_114701) do
 
   create_table "reviews", force: :cascade do |t|
     t.text "description"
-    t.bigint "therapist_id"
+    t.bigint "booking_id"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "rating"
-    t.index ["therapist_id"], name: "index_reviews_on_therapist_id"
+    t.index ["booking_id"], name: "index_reviews_on_booking_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -101,6 +103,8 @@ ActiveRecord::Schema.define(version: 2019_03_06_114701) do
   end
 
   add_foreign_key "bookings", "chat_rooms", column: "chat_rooms_id"
+  add_foreign_key "bookings", "users", column: "client_id"
+  add_foreign_key "bookings", "users", column: "therapist_id"
   add_foreign_key "chat_rooms", "bookings"
   add_foreign_key "chatroom_participants", "chat_rooms"
   add_foreign_key "chatroom_participants", "users"
@@ -108,4 +112,6 @@ ActiveRecord::Schema.define(version: 2019_03_06_114701) do
   add_foreign_key "messages", "users"
   add_foreign_key "requests", "chat_rooms"
   add_foreign_key "requests", "users"
+  add_foreign_key "reviews", "bookings"
+  add_foreign_key "reviews", "users"
 end

@@ -1,6 +1,6 @@
-.card {
+.card1 {
   // display: grid;
-  height: 200px;
+  height: 250px;
   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
   background-size: cover !important;
   filter:opacity(80%);
@@ -39,7 +39,7 @@
   opacity: 0.1;
 }
 
-.card:hover {
+.card1:hover {
 box-shadow: 1px 2px 4px rgba(0, 0, 0, 1);
 }
 
@@ -48,10 +48,12 @@ box-shadow: 1px 2px 4px rgba(0, 0, 0, 1);
   flex-direction: row;
   width: 100%;
 }
-
+.lhs {
+  width: 20%;
+}
 
 .container-holder {
-  width: 80%;
+  width: 75%;
 }
 
 

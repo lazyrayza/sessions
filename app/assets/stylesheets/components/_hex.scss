@@ -1,17 +1,8 @@
 :root{
   --width: 100%;
-  --height: 100%;
   --border-width: 200px;
   --border-height: 200px;
 
-}
-
-html,body{
-  // background:radial-gradient(mistyrose,pink);
-  height:100%;
-  width:100%;
-  position:relative;
-  overflow:hidden;
 }
 
 .gallery{
@@ -46,8 +37,8 @@ img{
    background:linear-gradient(grey,lightgrey);
    width:var(--border-width);
    height:var(--border-height);
-   max-height:100px;
-   max-width:100px;
+   max-height:130px;
+   max-width:130px;
    transition:transform 0.2s;
    position:absolute;
    cursor:pointer;
