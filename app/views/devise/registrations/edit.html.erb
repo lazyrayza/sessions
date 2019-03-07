@@ -1,5 +1,6 @@
 <div class="container">
-  <h2>Edit <%= resource_name.to_s.humanize %></h2>
+  <div class="profile-box">
+    <h2>Edit <%= resource_name.to_s.humanize %></h2>
 
   <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
     <%= f.error_notification %>
@@ -14,7 +15,7 @@
                 hint: "Enter your current password to confirm your changes",
                 required: true,
                 input_html: { autocomplete: "current-password" } %>
-    <h1>Details</h1>
+    <h2>Details</h2>
     <% if current_user.therapist %>
       <%= f.input :photo %>
       <%= f.input :photo_cache,
@@ -45,7 +46,7 @@
       <%= f.input :expertise,
                   required: true %>
     <% end %>
-    <h1>Change your password</h1>
+    <h2>Change your password</h2>
     <%= f.input :password,
                 hint: "Leave it blank if you don't want to change your password",
                 required: false,
@@ -67,4 +68,7 @@
   <p><%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-secondary" %></p>
 
   <%= link_to "Back", :back %>
+  </div>
 </div>
+
+
