@@ -1,14 +1,21 @@
+
 <div class="index-container">
-  <div class="big-box">
+  <div class="big-box" style="padding: 0px 10px;">
+    <div class="lhs"></div>
     <div class="container-holder">
       <div class="row">
-        <% therapists.each do |therapist| %>
-          <div class="col-sm-2" style="padding: 10px">
-            <div data-aos="flip-left" class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://source.unsplash.com/featured/?{waiter}<%= (1..100000).to_a.sample %>');">
+        <% @therapists.each do |therapist| %>
+          <div class="col-sm-4" style="padding: 10px">
+            <div data-aos="flip-left" class="card1" style="background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)), url(<%= asset_path "card.png" %>)">
+                <div class="clipped-border" >
+                  <img src="https://source.unsplash.com/featured/?{people}<%= (1..1000).to_a.sample %>" id="clipped">
+                  <%= link_to "View", user_path(therapist), class: 'card-link' %>
+                </div>
               <div class="card-description">
                 <p><%= therapist.first_name %></p>
                 <h2><%= therapist.last_name %></h2>
-              <%= link_to "View", user_path(therapist), class: 'card-link' %>
+                 <%= link_to "View", user_path(therapist), class: 'card-link' %>
+                  <%# cl_image_tag therapist.photo, height: 40, width: 40, crop: :fill, class: "avatar-small" %>
               </div>
             </div>
           </div>
