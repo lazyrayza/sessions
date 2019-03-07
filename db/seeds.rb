@@ -14,7 +14,8 @@ User.destroy_all
     password: Faker::Internet.password,
     therapist: true,
     languages: Faker::ProgrammingLanguage.name,
-    expertise: Faker::Esport.game
+    expertise: Faker::Esport.game,
+    price: rand(0..100)
     )
 end
 
@@ -25,19 +26,3 @@ end
     therapist_id: User.all.sample.id
     )
 end
-
-# 3.times do
-
-#   bookings = Booking.create!(
-#     booking_id: Faker::Lorem.characters(2),
-#     user_id: Faker::Lorem.characters(1)
-#     )
-# end
-
-
-5.times do
-  therapies = Therapy.create!(
-    name: Faker::Lorem.characters(5)
-    )
-end
-
