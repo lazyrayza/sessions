@@ -9,7 +9,7 @@
     password: Faker::Internet.password,
     therapist: true,
     languages: Faker::ProgrammingLanguage.name,
-    expertise: Faker::Esport.game,
+    expertise: Faker::Esport.game
     )
 end
 
@@ -17,14 +17,14 @@ end
 
   reviews = Review.create!(
     description: Faker::Lorem.characters(150) ,
-    therapist_id: User.all.sample.id,
+    therapist_id: User.all.sample.id
     )
 end
 
 
 3.times do
-  chatrooms = ChatRoom.create! (
+  chatrooms = ChatRoom.create!(
     name: Faker::Name.first_name,
-    bookings_id: bookings.all.sample.id,
+    bookings_id: Booking.all.sample.id
     )
 end
