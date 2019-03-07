@@ -15,7 +15,7 @@
     <div class="container-holder">
       <div class="row">
         <% @therapists.each do |therapist| %>
-          <div class="col-sm-4" style="padding: 10px">
+          <div class="col-sm-2" style="padding: 10px">
             <div class="flip-card">
               <div class="flip-card-inner">
                 <div class="flip-card-front">
@@ -41,10 +41,11 @@
           </div>
         <% end %>
       </div>
-
+</div>
+</div>
+</div>
   <br>
   <%= link_to "Home", root_path, class: "btn btn-primary" %>
-</div>
 
 <!--AJAX Search Form -->
 <script>

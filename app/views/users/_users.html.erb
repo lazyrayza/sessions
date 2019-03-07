@@ -1,7 +1,19 @@
-<% therapists.each do |therapist| %>
-  <p><%= therapist.first_name %></p>
-  <h2><%= therapist.last_name %></h2>
-  <p><%= therapist.address %></p>
-  <%= link_to "View", user_path(therapist), class: "btn btn-primary" %>
-  <br>
-<% end %>
+<div class="index-container">
+  <div class="big-box">
+    <div class="container-holder">
+      <div class="row">
+        <% therapists.each do |therapist| %>
+          <div class="col-sm-2" style="padding: 10px">
+            <div data-aos="flip-left" class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://source.unsplash.com/featured/?{waiter}<%= (1..100000).to_a.sample %>');">
+              <div class="card-description">
+                <p><%= therapist.first_name %></p>
+                <h2><%= therapist.last_name %></h2>
+              <%= link_to "View", user_path(therapist), class: 'card-link' %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

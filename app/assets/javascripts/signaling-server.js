@@ -13,9 +13,12 @@ let pcPeers = {};
 let localstream;
 
 window.onload = () => {
-  currentUser = document.getElementById("current-user").innerHTML;
-  localVideo = document.getElementById("local-video");
-  remoteVideoContainer = document.getElementById("remote-video-container");
+  user = document.getElementById("current-user")
+  if (user) {
+    currentUser = document.getElementById("current-user").innerHTML;
+    localVideo = document.getElementById("local-video");
+    remoteVideoContainer = document.getElementById("remote-video-container");
+  }
 };
 
 // Ice Credentials
