@@ -35,6 +35,11 @@ class BookingsController < ApplicationController
     end
   end
 
+    therapist = Therapist.find(params[:teddy_id])
+    booking = Order.create!(amount: therapist.price, state: 'pending', user: current_user)
+
+  redirect_to new_order_payment_path(order)
+
   def edit
     # @booking = current_user.client_bookings
     # @therapist = @booking.therapist

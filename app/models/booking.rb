@@ -5,7 +5,7 @@ class Booking < ApplicationRecord
   validate :end_time_cannot_be_in_the_past
   validates :description, presence: true
 
-
+  monetize :amount_cents
   def end_time_cannot_be_in_the_past
     if end_time.present? && end_time < Date.today
       errors.add(:end_date, "can't be in the past")

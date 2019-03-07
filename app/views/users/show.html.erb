@@ -12,6 +12,8 @@
           <td> <%= @user.expertise%></td>
           <td> <%= @user.languages%></td>
           <td><<p>Amount: <%= humanized_money_with_symbol(@user.price) %></p></td>
+          <td><%= hidden_field_tag 'teddy_id', @teddy.id %></td>
+
           </tr>
     </tbody>
   </table>
