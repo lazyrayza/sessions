@@ -1,10 +1,9 @@
 <div class="container">
-  <div class="profile-box">
-    <div class="edit-user">
+  <div class="edit-profile-container">
+    <div class="edit-profile-box">
       <h2>Edit <%= resource_name.to_s.humanize %></h2>
       <br>
-
-    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+      <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
       <%= f.error_notification %>
       <% if current_user.therapist %>
         <%= f.input :photo %>
@@ -17,19 +16,17 @@
                     as: :hidden,
                     required: false %>
       <% end %>
-
-    </div>
-    <div class="form-inputs">
-    <div class="first-name-last-name-inline">
-      <div class="first-name-inline">
+      <div class="names-box">
+        <div class="first-name-input">
         <%= f.input :first_name,
                     required: true %>
-      </div>
-      <div class="last-name-inline">
+        </div>
+        <div class="last-name-input">
         <%= f.input :last_name,
                     required: true %>
+        </div>
+
       </div>
-    </div>
 
       <div class="inline-input">
         <div class="email">
