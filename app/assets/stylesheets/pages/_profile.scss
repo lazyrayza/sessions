@@ -1,0 +1,70 @@
+.container-table {
+  display: flex;
+}
+
+.table-title {
+  font-weight: 700;
+  color: #FFFFFF;
+  font-size: 24px;
+  background-color: #6ECAD6;
+}
+
+.responsive-table {
+  margin-top: 5vh;
+  flex-grow: 2;
+  max-width: 1000px;
+  padding-left: 3vw;
+  padding-right: 10px;
+}
+.responsive-table {
+  li {
+    border-radius: 3px;
+    padding: 25px 30px;
+    display: flex;
+    margin-bottom: 25px;
+    justify-content: space-evenly;
+  }
+  .table-header {
+    font-size: 18px;
+    color: #FFFFFF;
+    font-weight: 700;
+    background-color: #489099;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .table-row {
+    font-size: 18px;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 9px 0px rgba(0,0,0,0.1);
+  }
+  .col-1 {
+    margin: 0 4px;
+    flex-basis: 20%;
+  }
+  .col-2 {
+    flex-basis: 20%;
+  }
+  .col-3 {
+    flex-basis: 20%;
+  }
+  .col-4 {
+    flex-basis: 20%;
+  }
+  .col-5 {
+    flex-basis: 20%;
+  }
+  .submit-status-button {
+    font-family: $body-font;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    background-color: #6ECAD6;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+}

@@ -13,9 +13,12 @@ let pcPeers = {};
 let localstream;
 
 window.onload = () => {
-  currentUser = document.getElementById("current-user").innerHTML;
-  localVideo = document.getElementById("local-video");
-  remoteVideoContainer = document.getElementById("remote-video-container");
+  user = document.getElementById("current-user")
+  if (user) {
+    currentUser = document.getElementById("current-user").innerHTML;
+    localVideo = document.getElementById("local-video");
+    remoteVideoContainer = document.getElementById("remote-video-container");
+  }
 };
 
 // Ice Credentials
@@ -39,7 +42,7 @@ document.onreadystatechange = () => {
 };
 
 const handleJoinSession = async () => {
-  App.session = await App.cable.subscriptions.create("SessionChannel", {
+  App.session = await App.cable.subscriptions.create("VideoSessionChannel", {
     connected: () => {
       broadcastData({
         type: JOIN_ROOM,
@@ -182,7 +185,7 @@ const broadcastData = data => {
   fetch("sessions", {
     method: "POST",
     body: JSON.stringify(data),
-    headers: { "content-type": "application/json" }
+    headers: { "content-type": "application/json", "X-CSRF-Token": document.querySelector('meta[name=csrf-token]').content }
   });
 };
 

@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resources :reviews, except: [:destroy, :edit, :update]
     resources :bookings, only: [:new, :create, :show]
      resources :payments, only: [:new, :create]
+
   end
   resources :reviews, only: [:show]
   resources :request
@@ -17,7 +18,9 @@ Rails.application.routes.draw do
     end
     resources :messages, only: [ :create ]
   end
+
   resources :bookings, except: [:new, :create] do
+      resources :reviews, except: [:destroy, :edit, :update]
       resources :chat_rooms, only: [:new, :create]
     end
    get "/profile", to: "pages#profile"

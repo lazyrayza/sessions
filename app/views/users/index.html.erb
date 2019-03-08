@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!-- Search -->
 <%= form_tag users_path, method: :get, remote: true, id: "search-form" do %>
   <%= text_field_tag :query,
@@ -19,20 +20,67 @@
 
     <%= link_to "View", user_path(therapist), class: "btn btn-primary" %>
     <br>
+=======
+<div class="container">
+    <!-- Search -->
+  <%= form_tag users_path, method: :get, remote: true, id: "search-form" do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Browse a therapist or field of expertise",
+      id: "input"
+    %>
+    <%= submit_tag "Search", id: "submit" %>
+>>>>>>> 7f588c6b3bc44fed98135296fd9a594021e5737c
   <% end %>
+  <!-- End Search -->
+
+<div class="index-container">
+  <div class="big-box" style="padding: 0px 10px;">
+    <div class="lhs"></div>
+    <div class="container-holder">
+      <div class="row">
+        <% @therapists.each do |therapist| %>
+          <div class="col-sm-4" style="padding: 10px">
+            <div data-aos="flip-left" class="card1" style="background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)), url(<%= asset_path "card.png" %>)">
+                <div class="clipped-border" >
+                  <img src="https://source.unsplash.com/featured/?{people}<%= (1..1000).to_a.sample %>" id="clipped">
+                  <%= link_to "View", user_path(therapist), class: 'card-link' %>
+                </div>
+              <div class="card-description">
+                <p><%= therapist.first_name %></p>
+                <h2><%= therapist.last_name %></h2>
+                 <%= link_to "View", user_path(therapist), class: 'card-link' %>
+                  <%# cl_image_tag therapist.photo, height: 40, width: 40, crop: :fill, class: "avatar-small" %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
   <br>
   <%= link_to "Home", root_path, class: "btn btn-primary" %>
-</div>
 
-<!--AJAX Search Form -->
-<script>
-  let formSelect = document.getElementById("search-form");
-  let searchInput = document.getElementById("input");
-  let submitButton = document.getElementById("submit");
+  <!--AJAX Search Form -->
+  <script>
+    let formSelect = document.getElementById("search-form");
+    let searchInput = document.getElementById("input");
+    let submitButton = document.getElementById("submit");
 
+<<<<<<< HEAD
   searchInput.addEventListener("keyup", (event) => {
     submitButton.click();
   });
 </script>
 <!-- End AJAX Search Form -->
 
+=======
+    searchInput.addEventListener("keyup", (event) => {
+      submitButton.click();
+    });
+  </script>
+  <!-- End AJAX Search Form -->
+</div>
+>>>>>>> 7f588c6b3bc44fed98135296fd9a594021e5737c

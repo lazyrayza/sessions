@@ -3,6 +3,7 @@ require "faker"
 Review.destroy_all
 User.destroy_all
 
+
 20.times do
 
   therapists = User.create!(
@@ -19,10 +20,13 @@ User.destroy_all
     )
 end
 
-20.times do
+# 20.times do
 
-  reviews = Review.create!(
-    description: Faker::Lorem.characters(150),
-    therapist_id: User.all.sample.id
-    )
-end
+#   reviews = Review.create!(
+#     description: Faker::Lorem.characters(150),
+#     therapist_id: User.all.sample.id
+# =======
+#     expertise: Faker::Esport.game
+# >>>>>>> 7f588c6b3bc44fed98135296fd9a594021e5737c
+#     )
+# end

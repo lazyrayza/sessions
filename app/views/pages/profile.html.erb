@@ -1,17 +1,26 @@
- <div class="container">
-  <div class="profile-box">
-    <div>
-      <h2>Hello
-        <% if current_user.first_name == nil %>
-          <%= current_user.email %>
-          <% else %>
-          <%= current_user.full_name %></h2>
-          <% end %>
-
-        <%if current_user.first_name == nil %>
-          <p><%= link_to "Edit profile", edit_user_registration_path, class: "btn btn-primary" %></p>
-        <% end %>
-    </div>
-
-  <%= link_to "Home", root_path, class: "btn btn-secondary" %>
-</div>
+<div class="container-table">
+  <ul class="responsive-table">
+    <li class=table-title>UPCOMING SESSIONS</li>
+    <li class="table-header">
+      <div class="col col-1">Therapist</div>
+      <div class="col col-2">Schedule</div>
+      <div class="col col-3">Amount</div>
+      <div class="col col-4">Status</div>
+    </li>
+    <% @booking.each do |booking| %>
+      <li class="table-row">
+        <div class="col col-1" data-label="Therapist">
+          <%= image_tag "logo.png", class: "avatar-therapist" %>
+          <%= booking.therapist.full_name %></div>
+        <div class="col col-2" data-label="Schedule"><%= booking.start_time %></div>
+        <div class="col col-3" data-label="Amount"><%= booking.therapist.price %> (Pending)</div>
+        <div class="col col-4" data-label="Status">
+          <%= simple_form_for booking, class: "status-form", method: :patch, url: booking_path(booking) do |f| %>
+            <%= f.input :status, label: false, collection: ["Pending", "Confirmed", "Cancelled"], input_html: { multiple: false, class: "multiple-select" }  %>
+            <%= f.button :submit, class: "submit-status-button" %>
+            <% end %>
+        </div>
+    </li>
+  <% end %>
+  </ul>
+ </div>

@@ -102,7 +102,10 @@ ActiveRecord::Schema.define(version: 2019_03_08_111836) do
     t.float "latitude"
     t.float "longitude"
     t.string "price", default: "£0"
+<<<<<<< HEAD
     t.integer "price_cents", default: 0, null: false
+=======
+>>>>>>> 7f588c6b3bc44fed98135296fd9a594021e5737c
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
