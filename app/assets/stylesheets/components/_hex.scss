@@ -42,6 +42,9 @@ img{
    transition:transform 0.2s;
    position:absolute;
    cursor:pointer;
+  left: 0px;
+  top: 0px;
+  z-index: -1;
 }
 
 
