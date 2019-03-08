@@ -1,21 +1,23 @@
 <div class="container">
   <div class="edit-profile-container">
     <div class="edit-profile-box">
-      <h2>Edit <%= resource_name.to_s.humanize %></h2>
-      <br>
-      <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-      <%= f.error_notification %>
-      <% if current_user.therapist %>
-        <%= f.input :photo %>
-        <%= f.input :photo_cache,
-                    as: :hidden,
-                    required: true %>
-      <% else %>
-        <%= f.input :photo %>
-        <%= f.input :photo_cache,
-                    as: :hidden,
-                    required: false %>
-      <% end %>
+      <div class="profile-upload">
+        <h2>Edit <%= resource_name.to_s.humanize %></h2>
+        <br>
+        <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+        <%= f.error_notification %>
+        <% if current_user.therapist %>
+          <%= f.input :photo %>
+          <%= f.input :photo_cache,
+                      as: :hidden,
+                      required: true %>
+        <% else %>
+          <%= f.input :photo %>
+          <%= f.input :photo_cache,
+                      as: :hidden,
+                      required: false %>
+        <% end %>
+      </div>
       <div class="names-box">
         <div class="first-name-input">
         <%= f.input :first_name,
@@ -91,8 +93,9 @@
     </div>
   <% end %>
 
-    <div class="line"></div>
+    <div class="line-break"></div>
 
+  <br>
   <br>
   <br>
 
