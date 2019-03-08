@@ -1,26 +1,27 @@
-<div class="container-table">
-  <ul class="responsive-table">
-    <li class=table-title>UPCOMING SESSIONS</li>
-    <li class="table-header">
-      <div class="col col-1">Therapist</div>
-      <div class="col col-2">Schedule</div>
-      <div class="col col-3">Amount</div>
-      <div class="col col-4">Status</div>
-    </li>
-    <% @booking.each do |booking| %>
-      <li class="table-row">
-        <div class="col col-1" data-label="Therapist">
-          <%= image_tag "logo.png", class: "avatar-therapist" %>
-          <%= booking.therapist.full_name %></div>
-        <div class="col col-2" data-label="Schedule"><%= booking.start_time %></div>
-        <div class="col col-3" data-label="Amount"><%= booking.therapist.price %> (Pending)</div>
-        <div class="col col-4" data-label="Status">
-          <%= simple_form_for booking, class: "status-form", method: :patch, url: booking_path(booking) do |f| %>
-            <%= f.input :status, label: false, collection: ["Pending", "Confirmed", "Cancelled"], input_html: { multiple: false, class: "multiple-select" }  %>
-            <%= f.button :submit, class: "submit-status-button" %>
-            <% end %>
-        </div>
-    </li>
-  <% end %>
-  </ul>
+<div class="container-upcoming-table">
+    <ul class="responsive-table">
+      <li class=table-title>UPCOMING SESSIONS</li>
+      <li class="table-header">
+        <div class="col col-1">Therapist</div>
+        <div class="col col-2">Schedule</div>
+        <div class="col col-3">Amount</div>
+        <div class="col col-4">Status</div>
+      </li>
+      <% @booking.each do |booking| %>
+        <li class="table-row">
+          <div class="col col-1" data-label="Therapist">
+            <%= image_tag "logo.png", class: "avatar-therapist" %>
+            <%= booking.therapist.full_name %></div>
+          <div class="col col-2" data-label="Schedule"><%= booking.start_time %></div>
+          <div class="col col-3" data-label="Amount"><%= booking.therapist.price %> (Pending)</div>
+          <div class="col col-4" data-label="Status">
+            <%= simple_form_for booking, class: "status-form", method: :patch, url: booking_path(booking) do |f| %>
+              <%= f.input :status, label: false, collection: ["Pending", "Confirmed", "Cancelled"], input_html: { multiple: false, class: "multiple-select" }  %>
+              <%= f.button :submit, class: "submit-status-button" %>
+              <% end %>
+          </div>
+      </li>
+    <% end %>
+    </ul>
+
  </div>
