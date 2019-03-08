@@ -1,3 +1,40 @@
+<div class="banneri"  style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.5)), url(
+<% if current_user.gender == "female"%>
+<%= asset_path "female.jpg" %>
+<% else %>
+<%= asset_path "male.jpg" %>
+)">
+</div>
+
+<div class="avatr-hex">
+
+</div>
+
+<div class="holding-container">
+
+    <div class="conatiner-ls">
+      <div class="container-description">
+      </div>
+      <div class="container-languages">
+      </div>
+    </div>
+    <div class="container-rs">
+      <div class="container-reviews">
+        <div class="card"></div>
+      </div>
+      <div class="price">
+      </div>
+      <div class="btn"></div>
+    </div>
+
+</div>
+
+
+</div>
+
+
+
+
 <div class="container">
   <div class="left-box">
   <h1><%= @user.first_name %> <%= @user.last_name %></h1>
