@@ -185,7 +185,7 @@ const broadcastData = data => {
   fetch("sessions", {
     method: "POST",
     body: JSON.stringify(data),
-    headers: { "content-type": "application/json" }
+    headers: { "content-type": "application/json", "X-CSRF-Token": document.querySelector('meta[name=csrf-token]').content }
   });
 };
 
