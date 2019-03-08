@@ -7,7 +7,7 @@
   <p><strong>Starting in:</strong> <%= (@booking.start_time.to_date - Date.today).to_i %> Days</p>
   <p><strong>Booking Duration: </strong><%= (@booking.end_time - @booking.start_time).to_i  %> Days</p>
   <% if @booking.status %>
-    <p><strong>Status: </strong>Confirmed</p>
+    <p><strong>Status: </strong><%= @booking.status %></p>
   <% else %>
     <p><strong>Status: </strong>Pending Confirmation</p>
 <% end  %>
