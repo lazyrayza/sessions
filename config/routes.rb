@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :index] do
     resources :reviews, except: [:destroy, :edit, :update]
     resources :bookings, only: [:new, :create, :show]
+     resources :payments, only: [:new, :create]
   end
   resources :reviews, only: [:show]
   resources :request
