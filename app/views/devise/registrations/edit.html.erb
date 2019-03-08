@@ -35,7 +35,7 @@
         <div class="email">
           <%= f.input :email, required: true, autofocus: true %>
           <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-          <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+            <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
         <% end %>
         </div>
         <div class="current-password">
@@ -43,7 +43,7 @@
                     hint: "Enter your current password to confirm your changes",
                     required: true,
                     input_html: { autocomplete: "current-password" } %>
-      </div>
+        </div>
     </div>
     <div class="address">
       <%= f.input :address,
@@ -55,8 +55,8 @@
                     required: false %>
       </div>
       <div class="languages">
-              <% if current_user.therapist %>
-        <%= f.input :languages,
+        <% if current_user.therapist %>
+          <%= f.input :languages,
                     required: true %>
         <% else %>
           <%= f.input :languages,
@@ -73,7 +73,7 @@
     <% if current_user.therapist %>
       <%= f.input :price,
                   required: true %>
-    <% else %>
+    <% end %>
   </div>
   <div class="passwords">
     <div class="password-change">
