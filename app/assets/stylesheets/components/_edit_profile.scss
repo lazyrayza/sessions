@@ -21,11 +21,11 @@
     }
 
     .line-break {
-      width: 825px;
+      width: 790px;
       height: 47px;
       border-bottom: 1px solid #9c9c9c;
       position: absolute;
-      margin-left: 6px;
+      margin-left: 25px;
     }
   .edit-profile-box {
     margin: 16px 8px;
@@ -86,6 +86,23 @@
     }
     .password-confirmation {
       width: 380px;
+    }
+  }
+  .bottom-row {
+    h2 {
+      margin: 20px 0 30px 15px;
+    }
+    .bottom-btn {
+      display: flex;
+      justify-content: space-around;
+
+      .back {
+        .btn-secondary {
+          padding: 10px 30px 10px 30px;
+        }
+      }
+      .cancel {
+      }
     }
   }
 }
