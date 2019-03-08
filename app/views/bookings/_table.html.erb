@@ -3,7 +3,7 @@
   <td><%= booking.start_time %></td>
   <td><%= booking.end_time %></td>
   <% if booking.status  %>
-    <td>Confirmed</td>
+    <td><%= booking.status %></td>
   <% else %>
     <td>Pending Confirmation </td>
   <% end %>

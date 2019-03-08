@@ -15,9 +15,9 @@
         <div class="col col-2" data-label="Schedule"><%= booking.start_time %></div>
         <div class="col col-3" data-label="Amount"><%= booking.therapist.price %> (Pending)</div>
         <div class="col col-4" data-label="Status">
-          <%= simple_form_for booking, method: :patch, url: booking_path(booking) do |f| %>
+          <%= simple_form_for booking, class: "status-form", method: :patch, url: booking_path(booking) do |f| %>
             <%= f.input :status, label: false, collection: ["Pending", "Confirmed", "Cancelled"], input_html: { multiple: false, class: "multiple-select" }  %>
-            <%= f.button :submit %>
+            <%= f.button :submit, class: "submit-status-button" %>
             <% end %>
         </div>
     </li>

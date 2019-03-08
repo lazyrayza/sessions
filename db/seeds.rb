@@ -23,7 +23,7 @@ puts "Starting seed"
     languages: Faker::ProgrammingLanguage.name,
     expertise: Faker::Esport.game,
     bio: Faker::Hipster.paragraph
-    )
+        )
 end
 puts "done main users"
 

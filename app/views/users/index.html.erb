@@ -1,14 +1,15 @@
-<!-- Search -->
-<%= form_tag users_path, method: :get, remote: true, id: "search-form" do %>
-  <%= text_field_tag :query,
-    params[:query],
-    class: "form-control",
-    placeholder: "Browse a therapist or field of expertise",
-    id: "input"
-  %>
-  <%= submit_tag "Search", id: "submit" %>
-<% end %>
-<!-- End Search -->
+<div class="container">
+    <!-- Search -->
+  <%= form_tag users_path, method: :get, remote: true, id: "search-form" do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Browse a therapist or field of expertise",
+      id: "input"
+    %>
+    <%= submit_tag "Search", id: "submit" %>
+  <% end %>
+  <!-- End Search -->
 
 <div class="index-container">
   <div class="big-box" style="padding: 0px 10px;">
@@ -38,14 +39,15 @@
   <br>
   <%= link_to "Home", root_path, class: "btn btn-primary" %>
 
-<!--AJAX Search Form -->
-<script>
-  let formSelect = document.getElementById("search-form");
-  let searchInput = document.getElementById("input");
-  let submitButton = document.getElementById("submit");
+  <!--AJAX Search Form -->
+  <script>
+    let formSelect = document.getElementById("search-form");
+    let searchInput = document.getElementById("input");
+    let submitButton = document.getElementById("submit");
 
-  searchInput.addEventListener("keyup", (event) => {
-    submitButton.click();
-  });
-</script>
-<!-- End AJAX Search Form -->
+    searchInput.addEventListener("keyup", (event) => {
+      submitButton.click();
+    });
+  </script>
+  <!-- End AJAX Search Form -->
+</div>
