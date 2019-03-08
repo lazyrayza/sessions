@@ -8,6 +8,7 @@
           <%= f.error_notification %>
 
           <div class="form-inputs">
+            <%= f.input :therapist, as: :radio_buttons %>
             <%= f.input :email,
                         required: true,
                         autofocus: true,
@@ -31,4 +32,3 @@
 
   </div>
 </div>
-
