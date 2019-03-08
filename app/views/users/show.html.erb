@@ -1,77 +1,53 @@
-<div class="banneri"  style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.5)), url(
-<% if current_user.gender == "female"%>
-<%= asset_path "female.jpg" %>
-<% else %>
-<%= asset_path "male.jpg" %>
-)">
-</div>
-
-<div class="avatr-hex">
-
+<div class="banneri"  style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.5)), url(<%= asset_path "female.jpg" %>)">
 </div>
 
 <div class="holding-container">
 
+  <div class="clipped-border" >
+    <img src="https://source.unsplash.com/featured/?{people}<%= (1..1000).to_a.sample %>" id="clipped">
+  </div>
+
     <div class="conatiner-ls">
       <div class="container-description">
+        <h1><%= @user.first_name %> <%= @user.last_name %></h1>
+        <h2><%= @user.address %></h2>
+        <%= @user.bio %>
+          <p><strong><%= @user.languages%></strong> </p>
+     </div>
+     <div id="map"
+      style="width: 80%;
+      height: 400px;"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+      >
       </div>
-      <div class="container-languages">
-      </div>
-    </div>
-    <div class="container-rs">
-      <div class="container-reviews">
-        <div class="card"></div>
-      </div>
-      <div class="price">
-      </div>
-      <div class="btn"></div>
-    </div>
-
-</div>
-
-
-</div>
-
-
-
-
-<div class="container">
-  <div class="left-box">
-  <h1><%= @user.first_name %> <%= @user.last_name %></h1>
-  <p><strong>Email:</strong> <%= @user.email %></p>
-  <table class="table table-bordered">
-    <tbody>
-      <thead>
-        <th>Expertise</th>
-        <th>Language</th>
-        </thead>
-        <tr>
-          <td> <%= @user.expertise%></td>
-          <td> <%= @user.languages%></td>
-          </tr>
-    </tbody>
-  </table>
-      <div class="align-buttons">
-        <%= link_to users_path do %>
-          <div class="btn btn-secondary">
-            Back
-          </div>
-          <% end  %>
-        <%= link_to new_user_booking_path(@user) do %>
-          <div class="btn btn-primary">
-            Book
-          </div>
-          <% end %>
-        </div>
   </div>
-  <%= link_to "See reviews", booking_reviews_path(@user) %>
+
+
+    <div class="container-rs">
+
+      <div class="container-reviews">
+        <h2>Reviews</h2>
+        <%# @user.therapist_bookings.review.each do |review| %>
+        <div class="card">
+          <p><%# review.user.first_name %><%# review.user.first_name %></p>
+          <%# review.user_id.photo.url %>
+          <%# review.description %>
+          <%# review.rating.times do %>
+<!--           <i class="fas fa-star stars"></i>
+ -->          <%# end %>
+          <%# end %>
+          <%# if current_user.bookings.include? @user.id %>
+          <%#end %>
+        </div>
+      <div class="primary-button">Price</div>
+      <%= link_to "Book", new_user_booking_path(@user), class: "primary-button"%>
+      </div>
+
     </div>
 
-<div
-  id="map"
-  style="width: 100%;
-  overflow: hidden;
-  height: 600px;"
-  data-markers="<%= @markers.to_json %>"
-  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+
+
+
 </div>
+
