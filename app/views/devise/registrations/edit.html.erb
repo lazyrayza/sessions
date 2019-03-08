@@ -32,7 +32,7 @@
     </div>
 
       <div class="inline-input">
-        <div class="email">
+        <div class="email-current-password">
           <%= f.input :email, required: true, autofocus: true %>
           <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
           <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
@@ -73,6 +73,7 @@
     <% if current_user.therapist %>
       <%= f.input :price,
                   required: true %>
+    <<% end %>
     <% else %>
   </div>
   <div class="passwords">
