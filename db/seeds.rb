@@ -1,3 +1,6 @@
+User.all.destroy_all
+Review.all.destroy_all
+
 20.times do
 
   therapists = User.create!(

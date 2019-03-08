@@ -8,5 +8,7 @@ class CreateBookings < ActiveRecord::Migration[5.2]
       t.boolean :accepted, default: false
       t.timestamps
     end
+    add_foreign_key :bookings, :users, column: :client_id, primary_key: :id
+    add_foreign_key :bookings, :users, column: :therapist_id, primary_key: :id
   end
 end

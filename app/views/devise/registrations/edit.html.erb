@@ -70,6 +70,10 @@
     <% end %>
     <div class="change-password">
     <h2>Change your password</h2>
+    <% if current_user.therapist %>
+      <%= f.input :price,
+                  required: true %>
+    <% else %>
   </div>
   <div class="passwords">
     <div class="password-change">
