@@ -28,17 +28,17 @@
 
       <div class="container-reviews">
         <h2>Reviews</h2>
-        <% @user.therapist_bookings.review.each do |review| %>
+        <%# @user.therapist_reviews.each do |review| %>
         <div class="card">
-          <p><% review.user.first_name %><%# review.user.first_name %></p>
-          <% review.user_id.photo.url %>
-          <% review.description %>
-          <% review.rating.times do %>
+          <p><%# review.user.first_name %><%# review.user.first_name %></p>
+          <%# review.user_id.photo.url %>
+          <%# review.description %>
+          <%# review.rating.times do %>
            <i class="fas fa-star stars"></i>
-           <% end %>
-          <% end %>
-          <% if current_user.bookings.include? @user.id %>
-          <% end %>
+           <%# end %>
+          <%# end %>
+          <%# if current_user.bookings.include? @user.id %>
+          <%# end %>
         </div>
       <div class="primary-button">Price</div>
       <%= link_to "Book", new_user_booking_path(@user), class: "primary-button"%>

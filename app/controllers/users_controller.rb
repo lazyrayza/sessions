@@ -22,6 +22,7 @@ class UsersController < ApplicationController
         infoWindow: render_to_string(partial: "infowindow", locals: { therapist: @user }),
         image_url: helpers.asset_url('therapist.png')
       }
+      # @reviews = Review.bookings.where(therapist_id: @user.id)
   end
 
   def new
