@@ -1,26 +1,4 @@
-<<<<<<< HEAD
-<!-- Search -->
-<%= form_tag users_path, method: :get, remote: true, id: "search-form" do %>
-  <%= text_field_tag :query,
-    params[:query],
-    class: "form-control",
-    placeholder: "Browse a therapist or field of expertise",
-    id: "input"
-  %>
-  <%= submit_tag "Search", id: "submit" %>
-<% end %>
-<!-- End Search -->
 
-<div class="cards-container">
-<% @therapists.each do |therapist| %>
-    <p><%= therapist.first_name %></p>
-    <h2><%= therapist.last_name %></h2>
-    <p><%= therapist.address %></p>
-    <p>Amount: <%= humanized_money_with_symbol(therapist.price) %></p>
-
-    <%= link_to "View", user_path(therapist), class: "btn btn-primary" %>
-    <br>
-=======
 <div class="container">
     <!-- Search -->
   <%= form_tag users_path, method: :get, remote: true, id: "search-form" do %>
@@ -31,7 +9,6 @@
       id: "input"
     %>
     <%= submit_tag "Search", id: "submit" %>
->>>>>>> 7f588c6b3bc44fed98135296fd9a594021e5737c
   <% end %>
   <!-- End Search -->
 
@@ -64,23 +41,15 @@
   <%= link_to "Home", root_path, class: "btn btn-primary" %>
 
   <!--AJAX Search Form -->
-  <script>
-    let formSelect = document.getElementById("search-form");
-    let searchInput = document.getElementById("input");
-    let submitButton = document.getElementById("submit");
+<script>
+  let formSelect = document.getElementById("search-form");
+  let searchInput = document.getElementById("input");
+  let submitButton = document.getElementById("submit");
 
-<<<<<<< HEAD
   searchInput.addEventListener("keyup", (event) => {
     submitButton.click();
   });
 </script>
 <!-- End AJAX Search Form -->
 
-=======
-    searchInput.addEventListener("keyup", (event) => {
-      submitButton.click();
-    });
-  </script>
-  <!-- End AJAX Search Form -->
-</div>
->>>>>>> 7f588c6b3bc44fed98135296fd9a594021e5737c
+
