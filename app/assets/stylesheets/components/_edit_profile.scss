@@ -1,0 +1,28 @@
+.edit-profile-container {
+  background: white;
+  padding: 30px;
+  margin-top: 50px;
+  margin-bottom: 100px;
+  margin-left: 70px;
+  border-radius: 3px;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  width: 900px;
+
+  .edit-profile-box {
+    margin: 16px 8px;
+
+    .names-box {
+      display: flex;
+      justify-content: space-between;
+
+      .first-name-input {
+        flex-grow: 2;
+      }
+
+      .last-name-input {
+        flex-grow: 2;
+      }
+    }
+  }
+}
+
