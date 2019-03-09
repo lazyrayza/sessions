@@ -41,6 +41,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       t.references :booking
       t.string :photo
       t.boolean :therapist
+      t.references :review
 
       end
 

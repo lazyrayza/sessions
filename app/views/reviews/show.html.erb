@@ -1,7 +1,7 @@
 <h1 class = "title"> Show reviews </h1>
 <div class="container">
   <% therapist = User.find(@review.booking.therapist_id) %>
-  <% user = @review.user %>
+  <% user = @review.client %>
   <h1>Review</h1>
   <h2>Therapist: <%= therapist.first_name %> <%= therapist.last_name %></h2>
   <% @review.rating.times do %>
@@ -12,3 +12,4 @@
   <%# raise %>
   <p>Review Made By Client: <%= user.first_name %> <%= user.last_name %></p>
 </div>
+<%# raise %>

@@ -1,3 +1,0 @@
-class ChatroomParticipant < ApplicationRecord
-
-end

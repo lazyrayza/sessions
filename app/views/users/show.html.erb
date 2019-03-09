@@ -28,15 +28,15 @@
 
       <div class="container-reviews">
         <h2>Reviews</h2>
-        <%# @user.therapist_reviews.each do |review| %>
+        <% @reviews.each do |review| %>
         <div class="card">
-          <p><%# review.user.first_name %><%# review.user.first_name %></p>
-          <%# review.user_id.photo.url %>
-          <%# review.description %>
-          <%# review.rating.times do %>
+          <p><%= review.client.first_name %><%= review.client.first_name %></p>
+          <%# review.client_id.photo.url %>
+          <%= review.description %>
+          <%= review.rating.times do %>
            <i class="fas fa-star stars"></i>
-           <%# end %>
-          <%# end %>
+           <% end %>
+          <% end %>
           <%# if current_user.bookings.include? @user.id %>
           <%# end %>
         </div>
