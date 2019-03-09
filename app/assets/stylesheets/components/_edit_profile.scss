@@ -14,10 +14,18 @@
       margin-left: 25px;
     }
 
+    .btn-primary:hover {
+      background-color: #74d5e0;
+    }
+
     .btn-secondary {
       background-color: #489099;
       border: none;
-      margin-left: 25px;
+      margin-left: 20px;
+    }
+
+    .btn-secondary:hover {
+      background-color: #55a9b2;
     }
 
     .line-break {
@@ -94,14 +102,17 @@
     }
     .bottom-btn {
       display: flex;
-      justify-content: space-around;
+      justify-content: space-between;
 
       .back {
         .btn-secondary {
-          padding: 10px 30px 10px 30px;
+          padding: 10px 20px 10px 20px;
         }
       }
       .cancel {
+        .btn-secondary {
+          margin-right: 20px;
+        }
       }
     }
   }
