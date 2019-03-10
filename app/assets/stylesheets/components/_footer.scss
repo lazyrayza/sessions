@@ -1,0 +1,16 @@
+.footer-container {
+  display: flex;
+  justify-content: center;
+  background-color: #489099;
+  margin-top: 50px;
+  padding: 50px;
+  color: white;
+  width: 100%;
+  li {
+    display: inline-block;
+    a {
+      text-decoration: none;
+      color: white
+    }
+  }
+}

@@ -1,0 +1,17 @@
+.bookings-table {
+  margin-top: 100px;
+  width: 100%;
+  justify-content: center;
+}
+
+#bookings-index-btn {
+  display: flex;
+  justify-content: left;
+  .btn-primary {
+    background-color: #489099;
+    border: none;
+  }
+  .btn-primary:hover {
+    background-color: #55a9b2;
+  }
+}
