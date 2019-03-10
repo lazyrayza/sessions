@@ -12,13 +12,19 @@
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
         <li class="nav-item active">
-          <%= link_to "Blog", "#", class: "nav-link" %>
+          <%= link_to bookings_path(@booking) do %>
+            <i class="far fa-calendar-check"></i>
+          <% end %>
         </li>
         <li class="nav-item">
-          <%= link_to "How It Works", "#", class: "nav-link" %>
+          <%= link_to "Messages" do %>
+            <i class="far fa-comment-alt nav-link"></i>
+          <% end %>
         </li>
         <li class="nav-item">
-          <%= link_to "Links", "#", class: "nav-link" %>
+          <%= link_to "Notifications" do %>
+            <i class="far fa-bell nav-link"></i>
+          <% end %>
         </li>
         <ul class="nav-item dropdown">
           <%= image_tag "head.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
@@ -26,16 +32,8 @@
             <%= link_to profile_path do %>
                 <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
               <% end %>
-            <li>
-              <%= link_to "#" do %>
-                <i class="fa fa-cog"></i>  <%= t(".settings", default: "Settings") %>
-              <% end %>
-            </li>
-            <li>
-              <%= link_to destroy_user_session_path, method: :delete do %>
-                <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
-              <% end %>
-            </li>
+            <%= link_to "Settings", "#", class: "dropdown-item" %>
+            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </ul>
           </div>
         </li>

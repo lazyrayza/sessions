@@ -38,7 +38,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       t.string :phone_number
       t.string :languages
       t.string :expertise
-      t.text :bookings
+      t.references :booking
       t.string :photo
       t.boolean :therapist
 
