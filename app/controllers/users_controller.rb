@@ -1,6 +1,4 @@
-require 'builder'
-# require 'will_paginate'
-include ActionView::Helpers::NumberHelper
+
 class UsersController < ApplicationController
   before_action :find_user, only: [:show, :update, :destroy, :edit]
 
@@ -15,10 +13,7 @@ class UsersController < ApplicationController
     else
       @therapists = User.where(therapist: true).where.not(latitude: nil, longitude: nil)
     end
-    respond_to do |format|
-      format.html
-      format.js
-    end
+    # @therapist = User.find(params[:id])
     #  @filterrific = Filterrific.new(User, params[:filterrific])
     # @filterrific.select_options = {
     #   sorted_by: Users.options_for_sorted_by,
@@ -40,6 +35,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    @therapist = @user
     @markers =
       {
         lng: @user.longitude,
@@ -49,6 +45,10 @@ class UsersController < ApplicationController
       }
        @reviews = Review.where(therapist_id: @user.id)
 
+    respond_to do |format|
+    format.html
+    format.js
+    end
   end
 
   def new

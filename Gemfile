@@ -21,7 +21,7 @@ gem 'carrierwave', '~> 1.2'
 gem 'cloudinary'
 gem 'pg_search'
 gem 'filterrific'
-
+gem 'bootstrap'
 
 
 group :development do
