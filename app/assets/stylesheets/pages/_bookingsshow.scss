@@ -13,6 +13,11 @@
     padding-left: 50px;
 }
 
+.big-box {
+  display: flex;
+  flex-direction: column;
+}
+
 // .booking-card {
 //   align: center;
 //   display: flex;
@@ -83,8 +88,8 @@ p {
 
 .profile-card {
   background: #FFB300;
-  width: 56px;
-  height: 56px;
+  width: 300px;
+  height: 400px;
   position: absolute;
   left: 50%;
   top: 50%;

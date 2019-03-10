@@ -1,76 +1,77 @@
 <div class="banneri"  style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.5)), url(<%= asset_path "session-mountain.png" %>)">
 
-    <div class="clock">
-  <div class="clock__second"></div>
-  <div class="clock__minute"></div>
-    <div class="clock__hour"></div>
-  <div class="clock__axis"></div>
-    <section class="clock__indicator"></section>
-    <section class="clock__indicator"></section>
-    <section class="clock__indicator"></section>
-    <section class="clock__indicator"></section>
-    <section class="clock__indicator"></section>
-    <section class="clock__indicator"></section>
-    <section class="clock__indicator"></section>
-    <section class="clock__indicator"></section>
-    <section class="clock__indicator"></section>
-    <section class="clock__indicator"></section>
-    <section class="clock__indicator"></section>
-    <section class="clock__indicator"></section>
-    <section class="clock__indicator"></section>
-    <section class="clock__indicator"></section>
-    <section class="clock__indicator"></section>
-    <section class="clock__indicator"></section>
-    <section class="clock__indicator"></section>
-    <section class="clock__indicator"></section>
-    <section class="clock__indicator"></section>
-    <section class="clock__indicator"></section>
-    <section class="clock__indicator"></section>
-    <section class="clock__indicator"></section>
-    <section class="clock__indicator"></section>
-    <section class="clock__indicator"></section>
-    <section class="clock__indicator"></section>
-    <section class="clock__indicator"></section>
-    <section class="clock__indicator"></section>
-    <section class="clock__indicator"></section>
-    <section class="clock__indicator"></section>
-    <section class="clock__indicator"></section>
-    <section class="clock__indicator"></section>
-    <section class="clock__indicator"></section>
-    <section class="clock__indicator"></section>
-    <section class="clock__indicator"></section>
-    <section class="clock__indicator"></section>
-    <section class="clock__indicator"></section>
-    <section class="clock__indicator"></section>
-    <section class="clock__indicator"></section>
-    <section class="clock__indicator"></section>
-    <section class="clock__indicator"></section>
-    <section class="clock__indicator"></section>
-    <section class="clock__indicator"></section>
-    <section class="clock__indicator"></section>
-    <section class="clock__indicator"></section>
-    <section class="clock__indicator"></section>
-    <section class="clock__indicator"></section>
-    <section class="clock__indicator"></section>
-    <section class="clock__indicator"></section>
-    <section class="clock__indicator"></section>
-    <section class="clock__indicator"></section>
-    <section class="clock__indicator"></section>
-    <section class="clock__indicator"></section>
-    <section class="clock__indicator"></section>
-    <section class="clock__indicator"></section>
-    <section class="clock__indicator"></section>
-    <section class="clock__indicator"></section>
-    <section class="clock__indicator"></section>
-    <section class="clock__indicator"></section>
-    <section class="clock__indicator"></section>
-    <section class="clock__indicator"></section>
-</div>
-  <% if (@booking.start_time - Time.now) > 5 %>
-<div class="banneri-content">
-    <p id="count-down"> </p>
-  </div>
-</div>
+  <div class="clock">
+    <div class="clock__second"></div>
+      <div class="clock__minute"></div>
+        <div class="clock__hour"></div>
+          <div class="clock__axis"></div>
+            <section class="clock__indicator"></section>
+            <section class="clock__indicator"></section>
+            <section class="clock__indicator"></section>
+            <section class="clock__indicator"></section>
+            <section class="clock__indicator"></section>
+            <section class="clock__indicator"></section>
+            <section class="clock__indicator"></section>
+            <section class="clock__indicator"></section>
+            <section class="clock__indicator"></section>
+            <section class="clock__indicator"></section>
+            <section class="clock__indicator"></section>
+            <section class="clock__indicator"></section>
+            <section class="clock__indicator"></section>
+            <section class="clock__indicator"></section>
+            <section class="clock__indicator"></section>
+            <section class="clock__indicator"></section>
+            <section class="clock__indicator"></section>
+            <section class="clock__indicator"></section>
+            <section class="clock__indicator"></section>
+            <section class="clock__indicator"></section>
+            <section class="clock__indicator"></section>
+            <section class="clock__indicator"></section>
+            <section class="clock__indicator"></section>
+            <section class="clock__indicator"></section>
+            <section class="clock__indicator"></section>
+            <section class="clock__indicator"></section>
+            <section class="clock__indicator"></section>
+            <section class="clock__indicator"></section>
+            <section class="clock__indicator"></section>
+            <section class="clock__indicator"></section>
+            <section class="clock__indicator"></section>
+            <section class="clock__indicator"></section>
+            <section class="clock__indicator"></section>
+            <section class="clock__indicator"></section>
+            <section class="clock__indicator"></section>
+            <section class="clock__indicator"></section>
+            <section class="clock__indicator"></section>
+            <section class="clock__indicator"></section>
+            <section class="clock__indicator"></section>
+            <section class="clock__indicator"></section>
+            <section class="clock__indicator"></section>
+            <section class="clock__indicator"></section>
+            <section class="clock__indicator"></section>
+            <section class="clock__indicator"></section>
+            <section class="clock__indicator"></section>
+            <section class="clock__indicator"></section>
+            <section class="clock__indicator"></section>
+            <section class="clock__indicator"></section>
+            <section class="clock__indicator"></section>
+            <section class="clock__indicator"></section>
+            <section class="clock__indicator"></section>
+            <section class="clock__indicator"></section>
+            <section class="clock__indicator"></section>
+            <section class="clock__indicator"></section>
+            <section class="clock__indicator"></section>
+            <section class="clock__indicator"></section>
+            <section class="clock__indicator"></section>
+            <section class="clock__indicator"></section>
+            <section class="clock__indicator"></section>
+            <section class="clock__indicator"></section>
+        </div>
+        <% if (@booking.start_time - Time.now) > 5 %>
+          <div class="banneri-content">
+          <p id="count-down"> </p>
+        </div>
+      </div>
+
   <%  else %>
     <div class="big-box">
       <div class="left-box">
@@ -107,7 +108,7 @@
         </div>
       </div>
     </div>
-
+</div>
 
     <% content_for :after_js do %>
       <script>
@@ -128,8 +129,6 @@
 
       </script>
     <% end %>
-
-      </div>
 </div>
 </div>
 <script>
