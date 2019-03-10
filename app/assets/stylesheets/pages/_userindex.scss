@@ -32,7 +32,9 @@
 }
 
 .container-reviews {
-  overflow: scroll
+  overflow: scroll;
+  width: 60%;
+  height: 40%;
 }
 
 .mapboxgl-canvas {
