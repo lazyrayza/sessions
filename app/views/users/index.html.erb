@@ -1,3 +1,5 @@
+
+
 <div class="container">
     <!-- Search -->
   <%= form_tag users_path, method: :get, remote: true, id: "search-form" do %>
@@ -16,7 +18,7 @@
     <div class="lhs"></div>
     <div class="container-holder">
       <div class="row">
-        <% @therapist.each_with_index do |therapist, index| %>
+        <% @therapists.each do |therapist| %>
           <div class="col-sm-4" style="padding: 10px">
             <div data-aos="flip-left" class="card1" style="background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)), url(<%= asset_path "card.png" %>)">
                 <div class="clipped-border" >
@@ -27,16 +29,6 @@
               <div class="card-description">
                 <p><%= therapist.first_name %></p>
                 <h2><%= therapist.last_name %></h2>
-                div class="row">
-                 <a href="#open-modal_<%= therapist.id %>">
-                <button class="btn-buy-now" type="button">buy</button>
-                  <div class="span3">
-                    <%= render :partial => "show", :locals => { :therapist => therapist, :index => index }  %>
-                    <a href=<%="#myModal_#{index}"%> role="button" data-toggle="modal">
-                    </a>
-                  </div>
-                 <% end %>
-                </div>
                  <%= link_to "View", user_path(therapist), class: 'card-link' %>
                   <%# cl_image_tag therapist.photo, height: 40, width: 40, crop: :fill, class: "avatar-small" %>
               </div>
@@ -47,6 +39,11 @@
     </div>
   </div>
 </div>
+
+<div id="modal-container" class="modal fade"
+
+tabindex="-1" role="dialog">
+ </div>
   <br>
   <%= link_to "Home", root_path, class: "btn btn-primary" %>
 
@@ -61,4 +58,3 @@
     });
   </script>
   <!-- End AJAX Search Form -->
-
