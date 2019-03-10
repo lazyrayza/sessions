@@ -18,13 +18,19 @@
 
 .nav-item {
   text-decoration: none;
+  a {
+    text-decoration: none;
+  }
 }
 
 .fa-calendar-check {
   margin-right: 15px;
   margin-top: 15px;
   color: #7f7f7f;
-  text-decoration: none;
+
+  a {
+    text-decoration: none;
+  }
 }
 
 .fa-comment-alt {
