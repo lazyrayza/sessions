@@ -20,6 +20,14 @@
   text-decoration: none;
   a {
     text-decoration: none;
+    margin: 0 -20px 0 35px;
+    color: gray;
+  }
+}
+.nav-main-items {
+  margin-top: 10px;
+  li {
+    display: inline-block;
   }
 }
 
@@ -43,5 +51,7 @@
 }
 
 .fa-user {
-  text-decoration: none;
+  a {
+    text-decoration: none;
+  }
 }
