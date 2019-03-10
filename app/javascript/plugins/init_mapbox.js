@@ -26,7 +26,7 @@ const addMarkersToMap = (map, marker) => {
 
 const fitMapToMarkers = (map, markers) => {
   const bounds = new mapboxgl.LngLatBounds();
-  map.flyTo({center: [markers.lng, markers.lat], zoom: 9});
+  map.flyTo({center: [markers.lng, markers.lat], zoom: 12});
 };
 
 

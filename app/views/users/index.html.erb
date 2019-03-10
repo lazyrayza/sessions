@@ -21,7 +21,8 @@
             <div data-aos="flip-left" class="card1" style="background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)), url(<%= asset_path "card.png" %>)">
                 <div class="clipped-border" >
                   <img src="https://source.unsplash.com/featured/?{people}<%= (1..1000).to_a.sample %>" id="clipped">
-                  <%= link_to "View", user_path(therapist), class: 'card-link' %>
+                  <% link_to "View", user_path(therapist), class: 'card-link' %>
+
                 </div>
               <div class="card-description">
                 <p><%= therapist.first_name %></p>
@@ -36,7 +37,8 @@
     </div>
   </div>
 </div>
-<%# render 'modal', user: @user %>
+
+<div class="modal-content"></div>
   <br>
   <%= link_to "Home", root_path, class: "btn btn-primary" %>
 
@@ -51,4 +53,3 @@
     });
   </script>
   <!-- End AJAX Search Form -->
-</div>

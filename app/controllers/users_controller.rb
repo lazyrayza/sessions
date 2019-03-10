@@ -15,6 +15,10 @@ class UsersController < ApplicationController
     else
       @therapists = User.where(therapist: true).where.not(latitude: nil, longitude: nil)
     end
+    respond_to do |format|
+      format.html
+      format.js
+    end
     #  @filterrific = Filterrific.new(User, params[:filterrific])
     # @filterrific.select_options = {
     #   sorted_by: Users.options_for_sorted_by,

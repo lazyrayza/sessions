@@ -4,3 +4,6 @@ function refreshCards(innerHTML) {
  }
 
 refreshCards('<%= j render "users", therapists: @therapists %>');
+
+$("#modal-window").find(".modal-content").html("<%= j (render 'new') %>");
+$("#modal-window").modal();
