@@ -9,8 +9,6 @@ import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
 // loadDynamicBannerText();
 
 
-
-// import { initUpdateNavbarOnScroll } from '../components/navbar';
-// initUpdateNavbarOnScroll();
-
+import { initUpdateNavbarOnScroll } from '../components/navbar';
+initUpdateNavbarOnScroll();
 // ^^^ !For Update Navbar on Scroll. REF: https://kitt.lewagon.com/knowledge/lectures/05-Rails%2F04-Rails-mister-cocktail#source

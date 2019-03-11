@@ -7,7 +7,7 @@
           <th>Starting Date</th>
           <th>End time</th>
           <th>Status</th>
-          <th>Days to start</th>
+          <th id="days-booking-index" >Days to start</th>
           <th>Duration</th>
           <th>View</th>
           <% if current_user.therapist %>
@@ -22,7 +22,10 @@
           <% end %>
         </tbody>
       </table>
+  <div id="bookings-index-btn">
+    <%= link_to "Browse Therapist", users_path, class: "btn btn-primary" %>
+  </div>
   </div>
 </div>
 
-<%= link_to "Browse Therapist", users_path, class: "btn btn-primary" %>
+
