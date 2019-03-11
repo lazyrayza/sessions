@@ -1,0 +1,19 @@
+.footer-container {
+  position: relative;
+  bottom:0;
+  width:100%;
+  height:100px;
+  text-align: center;
+  background-color: #489099;
+  margin-top: 50px;
+  padding: 50px;
+  color: white;
+  li {
+    display: inline-block;
+    a {
+      text-decoration: none;
+      color: white;
+      margin-right: 50px;
+    }
+  }
+}
