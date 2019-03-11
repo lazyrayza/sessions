@@ -5,7 +5,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  # monetize :price_cents, allow_nil: true
+  monetize :price_cents
 
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?

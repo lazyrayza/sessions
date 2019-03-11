@@ -1,17 +1,5 @@
-<<<<<<< HEAD
-<div class="banneri"  style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.5)), url(
-<% if current_user.gender == "female"%>
-  <%= asset_path "female.jpg" %>
-<% else %>
-  <%= asset_path "male.jpg" %>
-)">
-</div>
-
-<div class="avatr-hex"></div>
-=======
 <div class="banneri"  style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.5)), url(<%= asset_path "female.jpg" %>)">
 </div>
->>>>>>> 863215332526729c365038d838bafc6f8e5d2fd9
 
 <div class="holding-container">
 
@@ -24,91 +12,23 @@
         <h1><%= @user.first_name %> <%= @user.last_name %></h1>
         <h2><%= @user.address %></h2>
         <%= @user.bio %>
-          <p><strong><%= @user.languages%></strong> </p>
      </div>
      <div id="map"
-      style="width: 80%;
-      height: 400px;"
+      style="width: 70%;
+      height: 300px;"
       data-markers="<%= @markers.to_json %>"
       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
       >
       </div>
-<<<<<<< HEAD
-      <div class="container-languages">
-      </div>
-    </div>
-    <div class="container-rs">
-      <div class="container-reviews">
-        <div class="card"></div>
-      </div>
-      <div class="price"></div>
-      <div class="btn"></div>
-    </div>
-=======
+      <br>
+          <h2><strong><%= @user.languages%></strong> </h2>
   </div>
->>>>>>> 863215332526729c365038d838bafc6f8e5d2fd9
 
 
-<<<<<<< HEAD
-<div class="container">
-  <div class="left-box">
-  <h1><%= @user.first_name %> <%= @user.last_name %></h1>
-  <p><strong>Email:</strong> <%= @user.email %></p>
-  <table class="table table-bordered">
-    <tbody>
-      <thead>
-        <th>Expertise</th>
-        <th>Language</th>
-        <th>Prices</th>
-        </thead>
-        <tr>
-          <td> <%= @user.expertise%></td>
-          <td> <%= @user.languages%></td>
-          <td><<p>Amount: <%= humanized_money_with_symbol(@user.price) %></p></td>
-          </tr>
-    </tbody>
-  </table>
-      <div class="align-buttons">
-        <%= link_to users_path do %>
-          <div class="btn btn-secondary">
-            Back
-          </div>
-          <% end  %>
-        <%= link_to new_user_booking_path(@user) do %>
-          <div class="btn btn-primary">
-            Book
-          </div>
-          <% end %>
-        </div>
-  </div>
-  <%= link_to "See reviews", booking_reviews_path(@user) %>
-    </div>
-=======
-    <div class="container-rs">
-
-      <div class="container-reviews">
-        <h2>Reviews</h2>
-        <%# @user.therapist_reviews.each do |review| %>
-        <div class="card">
-          <p><%# review.user.first_name %><%# review.user.first_name %></p>
-          <%# review.user_id.photo.url %>
-          <%# review.description %>
-          <%# review.rating.times do %>
-           <i class="fas fa-star stars"></i>
-           <%# end %>
-          <%# end %>
-          <%# if current_user.bookings.include? @user.id %>
-          <%# end %>
-        </div>
-      <div class="primary-button">Price</div>
-      <%= link_to "Book", new_user_booking_path(@user), class: "primary-button"%>
-      </div>
-
-    </div>
-
-
-
->>>>>>> 863215332526729c365038d838bafc6f8e5d2fd9
+  <!--  -->
 
 </div>
-
+<div class="bottom">
+  <div class="primary-button">Price</div>
+  <%= link_to "Book", new_user_booking_path(@user), class: "primary-button"%>
+</div>

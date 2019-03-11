@@ -6,11 +6,10 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show, :index] do
     resources :reviews, except: [:destroy, :edit, :update]
-    resources :bookings, only: [:new, :create, :show]
+    resources :bookings, only: [:new, :create, :show] do
      resources :payments, only: [:new, :create]
-
+    end
   end
-  resources :tr_profiles, only [:show, :index]
   resources :reviews, only: [:show]
   resources :request
   resources :chatroom_participants
