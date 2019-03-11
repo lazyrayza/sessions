@@ -5,16 +5,19 @@
   <div class="user-show-container">
     <div class="therapist-container">
       <div class="user-show-therapist-name">
-        <h3><strong><%= @user.first_name %> <%= @user.last_name %></strong></h3>
+        <h2><strong><%= @user.first_name %> <%= @user.last_name %></strong></h2>
       </div>
       <div class="user-show-therapist-address">
         <h4><%= @user.address %></h4>
       </div>
+      <div class="user-show-therapist-languages">
+        <h5><strong><%= @user.languages%></strong> </h5>
+      </div>
+      <br>
+      <br>
+      <br>
       <div class="user-show-therapist-description">
         <%= @user.bio %>
-      </div>
-      <div class="user-show-therapist-languages">
-        <h2><strong><%= @user.languages%></strong> </h2>
       </div>
     </div>
 
@@ -22,24 +25,32 @@
       <div class="user-show-book-btn">
         <%= link_to "Book", new_user_booking_path(@user), class: "primary-button-user-show"%>
       </div>
-      <div class="container-rs">
-        <div class="container-reviews">
-          <h2>Reviews</h2>
-          <% @reviews.each do |review| %>
-          <div class="card">
-            <p><%= review.client.first_name %><%= review.client.first_name %></p>
-            <%# review.client_id.photo.url %>
-            <%= review.description %>
-            <% counter = 0 %>
-            <% 5.times do %>
-              <i class="fa <%= review.rating > counter ? 'fa-star' : 'fa-star-o' %>"></i>
-              <% counter += 1 %>
-             <% end %>
-           </div>
-            <% end %>
-          </div>
-        </div>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
 
+
+      <div class="container-reviews">
+        <h4>Reviews</h4>
+        <% @reviews.each do |review| %>
+        <div class="card">
+          <p><%= review.client.first_name %><%= review.client.first_name %></p>
+          <%# review.client_id.photo.url %>
+          <%= review.description %>
+          <% counter = 0 %>
+          <% 5.times do %>
+            <i class="fa <%= review.rating > counter ? 'fa-star' : 'fa-star-o' %>"></i>
+            <% counter += 1 %>
+           <% end %>
+          </div>
+          <% end %>
+        </div>
+      </div>
+      </div>
     </div>
 
     <div class="map-container">
