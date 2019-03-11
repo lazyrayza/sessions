@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
+  get 'tr_profiles/controller'
    devise_for :users, controllers: { registrations: :registrations }
    root to: 'pages#home'
+
 
   resources :users, only: [:show, :index] do
     resources :reviews, except: [:destroy, :edit, :update]
@@ -8,6 +10,7 @@ Rails.application.routes.draw do
      resources :payments, only: [:new, :create]
 
   end
+  resources :tr_profiles, only [:show, :index]
   resources :reviews, only: [:show]
   resources :request
   resources :chatroom_participants

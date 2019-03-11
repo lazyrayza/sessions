@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row">
+    <h1>Therapist</h1>
+    <% @tr_profiles.each do |teddy| %>
+      <div class="col-sm-6 col-md-4">
+        <div class="thumbnail">
+          <div class="caption">
+            <h3><%= link_to teddy.name, teddy_path(teddy) %></h3>
+            <p><%= teddy.category.name %></p>
+            <p>$$$</p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
