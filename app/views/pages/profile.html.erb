@@ -1,7 +1,6 @@
 <div class="profile-container">
   <div class="tables-left">
 
-
     <!--UPCOMING SESSIONS TABLE -->
     <div class="upcoming-table">
       <div class="upcoming-table-title">UPCOMING SESSIONS</div>
@@ -81,14 +80,14 @@
         <div class="reviews-title">REVIEWS</div>
           <div class="reviews-card">
             <div class="card-body">
-              <% @booking.order("reviews_id desc").each do |booking| %>
+              <% @booking.each do |booking| %>
                 <% if current_user.therapist %>
                   <h3 class="card-title"><%= booking.client.full_name %></h3>
                 <% else %>
                   <h3 class="card-title"><%= booking.therapist.full_name %></h3>
                 <% end %>
                 <p class="card-text">
-
+                  <%= booking.reviews.first&.description %>
               <% end %>
 
 
@@ -101,32 +100,3 @@
     </div>
   </div>
 </div>
-
-
-<!--SCROLL BARS-->
-<script>
-
-  //UPCOMING TABLE
-
-  const upcomingDetails = document.querySelector(".upcoming-details");
-  const upcomingLabels = document.querySelectorAll(".upcoming-labels");
-
-  if (upcomingLabels.length > 5) {
-    upcomingDetails.classList.add("tables-overflow");
-  }
-
-  //HISTORY TABLE
-
-  const historyDetails = document.querySelector(".history-details");
-  const historyLabels = document.querySelectorAll(".history-labels");
-
-
-
-  if (historyLabels.length > 5) {
-    historyDetails.classList.add("tables-overflow");
-  }
-
-
-  //REVIEWS TABLE
-
-</script>

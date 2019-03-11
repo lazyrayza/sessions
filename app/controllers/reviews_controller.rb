@@ -10,12 +10,11 @@ class ReviewsController < ApplicationController
   def new
     @review = Review.new
     @booking = Booking.find(params[:booking_id])
-    @review.booking_id = @booking
   end
 
   def create
     @review = Review.new(review_params)
-    @review.booking = Booking.find(params[:booking_id].to_i)
+    @review.booking = Booking.find(params[:booking_id])
     @review.client_id = current_user.id
     @review.therapist_id = @review.booking.therapist_id
     p @review

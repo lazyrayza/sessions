@@ -15,7 +15,6 @@
   .tables-left {
     display: flex;
     flex-direction: column;
-    flex-grow: 2;
     margin-left: 16px;
 
 
@@ -45,7 +44,7 @@
 
       .upcoming-details {
         overflow-y: scroll;
-        height: 67vh;
+
 
         .upcoming-details-row {
           display: flex;
@@ -144,8 +143,6 @@
           font-size: 24px;
           background-color: #6ECAD6;
         }
-
-
       }
     }
   }
