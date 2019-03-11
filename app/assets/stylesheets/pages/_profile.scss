@@ -15,7 +15,7 @@
       flex-direction: column;
 
 
-      .table-title {
+      .upcoming-table-title {
         display: flex;
         justify-content: space-around;
         font-weight: 700;
@@ -25,7 +25,7 @@
         background-color: #6ECAD6;
       }
 
-      .description-row {
+      .upcoming-description-row {
         display: flex;
         color: #FFFFFF;
         font-weight: 700;
@@ -34,17 +34,18 @@
         background-color: #489099;
       }
 
-      .table-row {
+      .upcoming-table-row {
         display: flex;
         font-size: 18px;
         background-color: #ffffff;
         box-shadow: 0px 0px 9px 0px rgba(0,0,0,0.1);
         justify-content: space-between;
         padding: 25px 30px;
+        align-items: baseline;
 
-        .col-1 {
-          display: flex;
-          align-items: center;
+        .avatar-therapist {
+          width: 48px;
+          margin-right: 4px;
         }
 
         .submit-status-button {
@@ -70,7 +71,7 @@
 
       .history-table {
         width: 48%;
-        min-height: 40vh;
+        min-height: 42vh;
         font-weight: 700;
         margin: 10% 0;
         font-size: 24px;
@@ -87,21 +88,31 @@
           background-color: #6ECAD6;
         }
 
-        .description-row {
+        .history-description-row {
           display: flex;
           justify-content: space-between;
+          padding: 16px 8px;
           font-size: 1rem;
-          padding: 16px 32px;
           background-color: #489099;
           color: #FFFFFF;
         }
 
-        .table-row {
+        .history-table-row {
           display: flex;
           justify-content: space-between;
           color: #000000;
           font-weight: 300;
           font-size: 18px;
+          padding: 8px 4px;
+          align-items: baseline;
+
+          .table-row-overflow {
+            overflow: scroll;
+          }
+        }
+
+        hr {
+          margin: 0;
         }
       }
 
