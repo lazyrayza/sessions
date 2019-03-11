@@ -1,3 +1,4 @@
+<div id=<%="myModal_#{index}"%> class="modal-window">
 <div class="banneri"  style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.5)), url(<%= asset_path "female.jpg" %>)">
 </div>
 
@@ -9,9 +10,9 @@
 
     <div class="conatiner-ls">
       <div class="container-description">
-        <h1><%= @user.first_name %> <%= @user.last_name %></h1>
-        <h2><%= @user.address %></h2>
-        <%= @user.bio %>
+        <h1><%= therapist.first_name %> <%= therapist.last_name %></h1>
+        <h2><%= therapist.address %></h2>
+        <%= therapist.bio %>
      </div>
      <div id="map"
       style="width: 70%;
@@ -21,32 +22,23 @@
       >
       </div>
       <br>
-          <h2><strong><%= @user.languages%></strong> </h2>
+          <h2><strong><%= therapist.languages%></strong> </h2>
   </div>
+
 
   <div class="container-rs">
     <div class="container-reviews">
       <h2>Reviews</h2>
-      <% @reviews.each do |review| %>
-      <div class="card">
-        <p><%= review.client.first_name %><%= review.client.first_name %></p>
-        <%# review.client_id.photo.url %>
-        <%= review.description %>
-        <% counter = 0 %>
-        <% 5.times do %>
-          <i class="fa <%= review.rating > counter ? 'fa-star' : 'fa-star-o' %>"></i>
-          <% counter += 1 %>
-         <% end %>
-       </div>
-        <% end %>
+
       </div>
     </div>
   </div>
 
 </div>
-
-<div class="showbottom">
+<div class="bottom">
   <div class="primary-button">Price</div>
-  <%= link_to "Book", new_user_booking_path(@user), class: "primary-button"%>
+  <%= link_to "Book", new_user_booking_path(therapist), class: "primary-button"%>
 </div>
 
+
+</div>

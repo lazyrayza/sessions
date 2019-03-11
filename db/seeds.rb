@@ -4,7 +4,6 @@ puts "destroying users"
 Review.destroy_all
 ChatRoom.destroy_all
 Booking.destroy_all
-User.destroy_all
 puts "destroyed users"
 puts "destroying reviews"
 
