@@ -3,12 +3,11 @@ Rails.application.routes.draw do
    root to: 'pages#home'
 
   resources :users, only: [:show, :index] do
+  resources :reviews, only: [:index]
 
     resources :bookings, only: [:new, :create]
   end
   resources :reviews, only: [:show]
-  resources :request
-  resources :chatroom_participants
   resources :chat_rooms, only: [ :show, :destroy ]  do
     collection do
       post '/sessions', to: 'video_sessions#create'
@@ -18,7 +17,7 @@ Rails.application.routes.draw do
   end
 
   resources :bookings, except: [:new, :create] do
-      resources :reviews, except: [:destroy, :edit, :update]
+      resources :reviews, except: [:destroy, :edit, :update, :show, :index]
       resources :chat_rooms, only: [:new, :create]
     end
    get "/profile", to: "pages#profile"

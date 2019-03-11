@@ -3,33 +3,33 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>TODO</title>
+    <title>Sessions Therapy</title>
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= stylesheet_pack_tag 'application', media: 'all' %>
       <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
-<!--     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.css' rel='stylesheet' />
- -->  </head>
+<!--  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script> -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  </head>
+
   <body>
-      <% if action_name == "home" %>
-        <%= render 'shared/navbar' %>
-        <% else %>
-        <%= render 'shared/navbar-two' %>
-      <% end %>
+    <% if action_name == "home" %>
+      <%= render 'shared/navbar' %>
+    <% else %>
+      <%= render 'shared/navbar_pages' %>
+    <% end %>
 
     <%= render 'shared/flashes' %>
-    <div style="min-height: calc(100vh - 150px)">
-      <%= yield %>
-    </div>
+    <%= yield %>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
     <%= yield :after_js %>
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
+    <!-- <script src="https://unpkg.com/aos@next/dist/aos.js"></script> -->
+    <!--<script>
       AOS.init();
-    </script>
-    <%= render 'shared/footer' %>
+    </script>-->
   </body>
 </html>
