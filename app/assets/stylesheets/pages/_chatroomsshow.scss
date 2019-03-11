@@ -123,3 +123,23 @@ p {
 #video_overlays{
   display: flex;
 }
+
+.is-hidden {
+  display: none;
+}
+
+.btn {
+  background: #666;
+  color: #fff;
+  border-radius: 2px;
+  display: inline-block;
+  padding: 8px 15px;
+  &:hover {
+    cursor:pointer;
+    background: #888;
+  }
+}
+
+body {
+  padding: 40px;
+}

@@ -76,60 +76,28 @@
   </div>
 
 </div>
-<div class="big-box">
 
-<div class="middle">
-  <aside class="profile-card">
-    <header>
-      <!-- here’s the avatar -->
-      <a target="_blank" href="#">
-        <img src="http://lorempixel.com/150/150/people/" class="hoverZoomLink">
-      </a>
-      <!-- the username -->
-      <h1><%= @booking.therapist.full_name %></h1>
-      <!-- and role or location -->
-      <h3><%= ((@booking.end_time - @booking.start_time) / 60) / 60 %> Hours</h3>
-    </header>
-
-    <!-- bit of a bio; who are you? -->
-    <div class="profile-bio">
-      <%= @booking.description %>
+  <div class="card2">
+    <div class="thumbnail"><img class="left" src="https://cdn2.hubspot.net/hubfs/322787/Mychefcom/images/BLOG/Header-Blog/photo-culinaire-pexels.jpg"/></div>
+    <div class="right">
+      <h1><%= (((@booking.end_time - @booking.start_time) / 60) / 60).round(2) %> Hours</h1>
+      <div class="author"><img src="https://randomuser.me/api/portraits/men/95.jpg"/>
+        <h2><%= @booking.therapist.first_name %> <%= @booking.therapist.last_name %></h2>
+      </div>
+      <div class="separator"></div>
+      <p><%= @booking.description %></p>
       <strong>Status: <%= @booking.status %></strong>
     </div>
-
-    <!-- some social links to show off -->
-    <ul class="profile-social-links">
-      <li>
-        <a target="_blank" href="https://www.facebook.com/creativedonut">
-          <i class="fa fa-facebook"></i>
-        </a>
-      </li>
-      <li>
-        <a target="_blank" href="https://twitter.com/dropyourbass">
-          <i class="fa fa-twitter"></i>
-        </a>
-      </li>
-      <li>
-        <a target="_blank" href="https://github.com/vipulsaxena">
-          <i class="fa fa-github"></i>
-        </a>
-      </li>
-      <li>
-        <a target="_blank" href="https://www.behance.net/vipulsaxena">
-
-          <i class="fa fa-behance"></i>
-        </a>
-      </li>
+    <div class="bottom">
+     <h1><%= @booking.start_time.to_date %></h1>
+     <%# raise %>
+     <h1>JANUARY</h1>
+    <ul>
+      <li><i class="fa fa-eye fa-2x"></i></li>
+      <li><i class="fa fa-heart-o fa-2x"></i></li>
+      <li><i class="fa fa-envelope-o fa-2x"></i></li>
+      <li><i class="fa fa-share-alt fa-2x"></i></li>
     </ul>
-  </aside>
-</div>
-
-  <div class="bottom">
-    <%= link_to "Edit your booking", edit_booking_path(@booking), class: "btn btn-primary"%>
-    <%= link_to "Review your Therapist", new_booking_review_path(@booking), class: "btn btn-primary" %>
-    <%= link_to "View bookings", bookings_path(@booking), class: "btn btn-primary" %>
-    <%= link_to "Chat", booking_chat_rooms_path(@booking), :method => :post , class: "btn btn-primary"%>
-
-  </div>
-
+    <div class="fab"><i class="fa fa-arrow-down fa-3x"> </i></div>
+    </div>
 </div>

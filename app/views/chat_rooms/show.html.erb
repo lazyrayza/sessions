@@ -66,30 +66,29 @@
             <section class="clock__indicator"></section>
             <section class="clock__indicator"></section>
         </div>
-        <% if (@booking.start_time - Time.now) > 5 %>
-          <div class="banneri-content">
-          <p id="count-down"> </p>
+            <div class="banneri-content">
+              <p id="count-down" data-time="<%= @booking.start_time %>"> </p>
+            </div>
         </div>
-      </div>
 
-  <%  else %>
-    <div class="big-box">
-      <div class="left-box">
-        <h1>Session with <%= current_user.first_name %></h1>
-        <div id="remote-video-container">
-        <div id="video_overlays">
-          <video id="local-video" autoplay></video>
+        <div class="big-box">
+          <div class="left-box">
+            <h1>Session with <%= @booking.therapist.full_name %>at <%= @booking.start_time %></h1>
+              <span class="js-btn btn">Open Video Chat</span>
+                <div class='js-fade is-hidden' id="remote-video-container">
+                <div id="video_overlays">
+                  <video id="local-video" autoplay></video>
+                </div>
+                  <video id="remote-video" autoplay></video>
+              <button onclick="handleJoinSession()">
+                Join Room
+              </button>
+              <button onclick="handleLeaveSession()">
+                Leave Room
+              </button>
+          </div>
         </div>
-          <video id="remote-video" autoplay></video>
-      </div>
-    <button onclick="handleJoinSession()">
-      Join Room
-    </button>
-    <button onclick="handleLeaveSession()">
-      Leave Room
-    </button>
-</div>
-    <% end %>
+
   <div class="right-box">
     <div class="container">
       <div class="row">
@@ -109,7 +108,7 @@
       </div>
     </div>
 </div>
-
+</div>
     <% content_for :after_js do %>
       <script>
         scrollLastMessageIntoView();
@@ -129,7 +128,6 @@
 
       </script>
     <% end %>
-</div>
 </div>
 <script>
 var currentSec = getSecondsToday();
@@ -157,7 +155,8 @@ function getSecondsToday() {
 </script>
 <script>
 // Set the date we're counting down to
-var countDownDate = new Date("Jan 5, 2021 15:37:25").getTime();
+var countDownDate = new Date(document.getElementById('count-down').dataset.time);
+console.log(countDownDate);
 
 // Update the count down every 1 second
 var x = setInterval(function() {
@@ -175,8 +174,8 @@ var x = setInterval(function() {
   var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
   // Output the result in an element with id="count-down"
-  document.getElementById("count-down").innerHTML = days + "d " + hours + "h "
-  + minutes + "m " + seconds + "s " + "Until Your Session Starts";
+  document.getElementById("count-down").innerHTML = (days === 0 ? '' : (`${days}d `)) + (hours === 0 ? '' : (`${hours}h `))
+  + (minutes === 0 ? '' : (`${minutes}m `)) + (seconds === 0 ? '' : (`${seconds}s `)) + "Until Your Session Starts";
 
   // If the count down is over, write some text
   if (distance < 0) {
@@ -184,4 +183,48 @@ var x = setInterval(function() {
     document.getElementById("count-down").innerHTML = "EXPIRED";
   }
 }, 1000);
+</script>
+
+<script>
+  function fadeOut(el){
+  el.style.opacity = 1;
+
+  (function fade() {
+    if ((el.style.opacity -= .1) < 0) {
+      el.style.display = 'none';
+      el.classList.add('is-hidden');
+    } else {
+      requestAnimationFrame(fade);
+    }
+  })();
+}
+
+// fade in
+function fadeIn(el, display){
+  if (el.classList.contains('is-hidden')){
+    el.classList.remove('is-hidden');
+  }
+  el.style.opacity = 0;
+  el.style.display = display || "block";
+
+  (function fade() {
+    var val = parseFloat(el.style.opacity);
+    if (!((val += .1) > 1)) {
+      el.style.opacity = val;
+      requestAnimationFrame(fade);
+    }
+  })();
+}
+
+var btn = document.querySelector('.js-btn');
+var el = document.querySelector('.js-fade');
+
+btn.addEventListener('click', function(e){
+  if(el.classList.contains('is-hidden')){
+    fadeIn(el);
+  }
+  else {
+    fadeOut(el);
+  }
+});
 </script>
