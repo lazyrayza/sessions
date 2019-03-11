@@ -37,6 +37,9 @@
         font-size: 16px;
         cursor: pointer;
         // transition-duration: 0.4s;
+        a {
+          text-decoration: none;
+        }
       }
       .primary-button:hover {
         background-color: #74d5e0;
@@ -45,5 +48,14 @@
     .form-bottom-links {
         margin-top: 16px;
     }
+  }
+}
+
+.showbottom {
+  a {
+    text-decoration: none;
+  }
+  a:hover {
+    color: white;
   }
 }
