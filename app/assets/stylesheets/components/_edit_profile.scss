@@ -1,117 +1,122 @@
-.edit-profile-container {
-  background: white;
-  padding: 30px;
-  margin-top: 50px;
-  margin-bottom: 100px;
-  margin-left: 70px;
-  border-radius: 3px;
-  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-  width: 900px;
+.container {
+  margin-top: 100px;
 
-    .btn-primary {
-      background-color: #6ECAD6;
-      border: none;
-      margin-left: 25px;
+
+  .edit-profile-container {
+    background: white;
+    padding: 30px;
+    margin-top: 50px;
+    margin-bottom: 100px;
+    margin-left: 70px;
+    border-radius: 3px;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    width: 900px;
+
+      .btn-primary {
+        background-color: #6ECAD6;
+        border: none;
+        margin-left: 25px;
+      }
+
+      .btn-primary:hover {
+        background-color: #74d5e0;
+      }
+
+      .btn-secondary {
+        background-color: #489099;
+        border: none;
+        margin-left: 20px;
+      }
+
+      .btn-secondary:hover {
+        background-color: #55a9b2;
+      }
+
+      .line-break {
+        width: 790px;
+        height: 47px;
+        border-bottom: 1px solid #9c9c9c;
+        position: absolute;
+        margin-left: 25px;
+      }
+    .edit-profile-box {
+      margin: 16px 8px;
+
+      .profile-upload {
+        margin-left: 16px;
+      }
+
+      .names-box {
+        display: flex;
+        justify-content: space-around;
+
+        .first-name-input {
+          width: 380px;
+        }
+
+        .last-name-input {
+          width: 380px;
+        }
+      }
     }
-
-    .btn-primary:hover {
-      background-color: #74d5e0;
-    }
-
-    .btn-secondary {
-      background-color: #489099;
-      border: none;
-      margin-left: 20px;
-    }
-
-    .btn-secondary:hover {
-      background-color: #55a9b2;
-    }
-
-    .line-break {
-      width: 790px;
-      height: 47px;
-      border-bottom: 1px solid #9c9c9c;
-      position: absolute;
-      margin-left: 25px;
-    }
-  .edit-profile-box {
-    margin: 16px 8px;
-
-    .profile-upload {
-      margin-left: 16px;
-    }
-
-    .names-box {
+    .inline-input {
       display: flex;
       justify-content: space-around;
 
-      .first-name-input {
+      .email-current-password {
         width: 380px;
       }
-
-      .last-name-input {
+      .current-password {
         width: 380px;
       }
     }
-  }
-  .inline-input {
-    display: flex;
-    justify-content: space-around;
-
-    .email-current-password {
-      width: 380px;
+    .address {
+      margin: 0 16px 0 16px;
     }
-    .current-password {
-      width: 380px;
-    }
-  }
-  .address {
-    margin: 0 16px 0 16px;
-  }
-  .phone-languages {
-    display: flex;
-    justify-content: space-around;
-    .phone-number {
-      width: 380px;
-    }
-    .languages {
-      width: 380px;
-    }
-  }
-  .change-password {
-    h2 {
-      margin: 20px 0 20px 15px;
-    }
-  }
-  .passwords {
-    display: flex;
-    justify-content: space-around;
-
-
-    .password-change {
-      width: 380px;
-    }
-    .password-confirmation {
-      width: 380px;
-    }
-  }
-  .bottom-row {
-    h2 {
-      margin: 20px 0 30px 15px;
-    }
-    .bottom-btn {
+    .phone-languages {
       display: flex;
-      justify-content: space-between;
-
-      .back {
-        .btn-secondary {
-          padding: 10px 20px 10px 20px;
-        }
+      justify-content: space-around;
+      .phone-number {
+        width: 380px;
       }
-      .cancel {
-        .btn-secondary {
-          margin-right: 20px;
+      .languages {
+        width: 380px;
+      }
+    }
+    .change-password {
+      h2 {
+        margin: 20px 0 20px 15px;
+      }
+    }
+    .passwords {
+      display: flex;
+      justify-content: space-around;
+
+
+      .password-change {
+        width: 380px;
+      }
+      .password-confirmation {
+        width: 380px;
+      }
+    }
+    .bottom-row {
+      h2 {
+        margin: 20px 0 30px 15px;
+      }
+      .bottom-btn {
+        display: flex;
+        justify-content: space-between;
+
+        .back {
+          .btn-secondary {
+            padding: 10px 20px 10px 20px;
+          }
+        }
+        .cancel {
+          .btn-secondary {
+            margin-right: 20px;
+          }
         }
       }
     }
