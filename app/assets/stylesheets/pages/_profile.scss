@@ -1,8 +1,18 @@
 .container{
   display: flex;
   margin: 0;
+  margin-top: 60px;
 
-  .first-tables {
+  hr {
+    margin: 0;
+  }
+
+  h3 {
+    font-size: 16px;
+    font-weight: 700;
+  }
+
+  .tables-left {
     display: flex;
     flex-direction: column;
     flex-grow: 2;
@@ -13,7 +23,6 @@
       display: flex;
       margin-top: 32px;
       flex-direction: column;
-
 
       .upcoming-table-title {
         display: flex;
@@ -34,33 +43,37 @@
         background-color: #489099;
       }
 
-      .upcoming-table-row {
-        display: flex;
-        font-size: 18px;
-        background-color: #ffffff;
-        box-shadow: 0px 0px 9px 0px rgba(0,0,0,0.1);
-        justify-content: space-between;
-        padding: 25px 30px;
-        align-items: baseline;
+      .upcoming-details {
+        overflow-y: scroll;
+        height: 67vh;
 
-        .avatar-therapist {
-          width: 48px;
-          margin-right: 4px;
-        }
+        .upcoming-details-row {
+          display: flex;
+          font-size: 18px;
+          background-color: #ffffff;
+          justify-content: space-between;
+          padding: 25px 30px;
+          align-items: baseline;
 
-        .submit-status-button {
-          font-family: $body-font;
-          box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-          background-color: #6ECAD6;
-          border: none;
-          color: white;
-          padding: 15px 32px;
-          text-align: center;
-          text-decoration: none;
-          display: inline-block;
-          font-size: 16px;
-          margin: 4px 2px;
-          cursor: pointer;
+          .avatar-therapist {
+            width: 48px;
+            margin-right: 4px;
+          }
+
+          .submit-status-button {
+            font-family: $body-font;
+            box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+            background-color: #6ECAD6;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+          }
         }
       }
     }
@@ -71,7 +84,7 @@
 
       .history-table {
         width: 48%;
-        min-height: 42vh;
+        min-height: 40vh;
         font-weight: 700;
         margin: 10% 0;
         font-size: 24px;
@@ -97,23 +110,20 @@
           color: #FFFFFF;
         }
 
-        .history-table-row {
-          display: flex;
-          justify-content: space-between;
-          color: #000000;
-          font-weight: 300;
-          font-size: 18px;
-          padding: 8px 4px;
-          align-items: baseline;
+        .history-details {
+          overflow-y: scroll;
+          height: 32vh;
+        }
 
-          .table-row-overflow {
-            overflow: scroll;
+          .history-details-row {
+            display: flex;
+            justify-content: space-between;
+            color: #000000;
+            font-weight: 300;
+            font-size: 18px;
+            padding: 8px 4px;
+            align-items: baseline;
           }
-        }
-
-        hr {
-          margin: 0;
-        }
       }
 
       .reviews-table {
@@ -134,19 +144,9 @@
           font-size: 24px;
           background-color: #6ECAD6;
         }
+
+
       }
-    .submit-status-button {
-      font-family: $body-font;
-      background-color: #6ECAD6;
-      border: none;
-      color: white;
-      padding: 15px 32px;
-      text-align: center;
-      text-decoration: none;
-      display: inline-block;
-      font-size: 16px;
-      margin: 4px 2px;
-      cursor: pointer;
     }
   }
 }

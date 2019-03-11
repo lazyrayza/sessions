@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="first-tables">
+  <div class="tables-left">
 
 
     <!--UPCOMING SESSIONS TABLE -->
@@ -11,37 +11,41 @@
         <div class="col">AMOUNT</div>
         <div class="col">STATUS</div>
       </div>
-      <div class="upcoming-table-row">
-        <% @booking.each do |booking| %>
-          <% if current_user.therapist %>
-            <div class="col upcoming-labels" data-label="User">
-              <%= image_tag "logo.png", class: "avatar-therapist" %>
-              <%= booking.client.full_name %>
-            </div>
-          <% else %>
-            <div class="col upcoming-labels" data-label="User">
-              <%= image_tag "logo.png", class: "avatar-therapist" %>
-              <%= booking.therapist.full_name %>
-            </div>
-          <% end %>
-          <div class="col" data-label="Schedule"><%= booking.start_time %></div>
-          <div class="col" data-label="Amount"><%= booking.therapist.price %> (Pending)</div>
-          <div class="col" data-label="Status">
+      <div class="upcoming-details">
+        <% @booking.order("start_time asc").each do |booking| %>
+          <div class="upcoming-details-row">
             <% if current_user.therapist %>
-              <%= simple_form_for booking, class: "status-form", method: :patch, url: booking_path(booking) do |f| %>
-                  <%= f.input :status, label: false, collection: ["Pending", "Confirmed", "Cancelled"], input_html: { multiple: false, class: "multiple-select" }  %>
-                  <%= f.button :submit, class: "submit-status-button" %>
-              <% end %>
+              <div class="col upcoming-labels" data-label="User">
+                <%= image_tag "logo.png", class: "avatar-therapist" %>
+                <%= booking.client.full_name %>
+              </div>
             <% else %>
-              <%= booking.status %>
+              <div class="col upcoming-labels" data-label="User">
+                <%= image_tag "logo.png", class: "avatar-therapist" %>
+                <%= booking.therapist.full_name %>
+              </div>
             <% end %>
+            <div class="col" data-label="Schedule"><%= booking.start_time %></div>
+            <div class="col" data-label="Amount"><%= booking.therapist.price %> (Pending)</div>
+            <div class="col" data-label="Status">
+              <% if current_user.therapist %>
+                <%= simple_form_for booking, class: "status-form", method: :patch, url: booking_path(booking) do |f| %>
+                    <%= f.input :status, label: false, collection: ["Pending", "Confirmed", "Cancelled"], input_html: { multiple: false, class: "multiple-select" }  %>
+                    <%= f.button :submit, class: "submit-status-button" %>
+                <% end %>
+              <% else %>
+                <%= booking.status %>
+              <% end %>
+            </div>
           </div>
+          <hr />
         <% end %>
       </div>
     </div>
 
 
     <div class="bottom-tables">
+
       <!-- HISTORY TABLE -->
       <div class="history-table">
         <div class="history-title">HISTORY</div>
@@ -53,8 +57,9 @@
             <% end %>
             <div class="col" data-label="Date">DATE</div>
           </div>
-          <div class="history-table-row">
-            <% @booking.each do |booking| %>
+          <div class="history-details">
+            <% @booking.order("start_time asc").each do |booking| %>
+              <div class="history-details-row">
                 <% if current_user.therapist %>
                   <div class="col history-labels" data-label="User">
                     <%= booking.client.full_name %>
@@ -65,28 +70,69 @@
                   </div>
                 <% end %>
               <div class="col" data-label="Date"><%= booking.start_time %></div>
+              </div>
+              <hr />
             <% end %>
-          </div>
-          <hr />
         </div>
+      </div>
 
       <!-- REVIEWS TABLE -->
       <div class="reviews-table">
         <div class="reviews-title">REVIEWS</div>
+          <div class="reviews-card">
+            <div class="card-body">
+              <% @booking.order("start_time asc").each do |booking| %>
+              <%= raise %>
+                <% if current_user.therapist %>
+                  <h3 class="card-title"><%= booking.client.full_name %></h3>
+                <% else %>
+                  <h3 class="card-title"><%= booking.therapist.full_name %></h3>
+                <% end %>
+                <p class="card-text">
+
+              <% end %>
+
+
+
+
+
+
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="card-link">Card link</a>
+              <a href="#" class="card-link">Another link</a>
+            </div>
+          </div>
+      </div>
     </div>
+  </div>
 </div>
 
 
+<!--SCROLL BARS-->
 <script>
 
-  const historyTableRow = document.querySelector(".history-table-row");
-  const upcomingTableRow = document.querySelector(".upcoming-table-row");
+  //UPCOMING TABLE
 
-  const testClass = document.querySelectorAll(".history-labels");
+  const upcomingDetails = document.querySelector(".upcoming-details");
+  const upcomingLabels = document.querySelectorAll(".upcoming-labels");
 
-  if (testClass.length > 5) {
-    historyTableRow.classList.add("table-row-overflow");
+  if (upcomingLabels.length > 5) {
+    upcomingDetails.classList.add("tables-overflow");
   }
+
+  //HISTORY TABLE
+
+  const historyDetails = document.querySelector(".history-details");
+  const historyLabels = document.querySelectorAll(".history-labels");
+
+
+
+  if (historyLabels.length > 5) {
+    historyDetails.classList.add("tables-overflow");
+  }
+
+
+  //REVIEWS TABLE
 
 </script>
 
