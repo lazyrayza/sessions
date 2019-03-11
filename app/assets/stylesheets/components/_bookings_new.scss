@@ -1,0 +1,16 @@
+.bookings-container {
+  border: solid 1px #9c9c9c;
+  border-radius: 4px;
+  padding: 30px;
+  margin-top: 30px;
+
+  .booking-update-btn {
+    display: flex;
+    .btn-primary {
+      background-color: #6ECAD6;
+      border: none;
+      margin-left: auto;
+      margin-top: 10px;
+    }
+  }
+}

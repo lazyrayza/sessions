@@ -10,14 +10,15 @@
     <p><strong>Status: </strong><%= @booking.status %></p>
   <% else %>
     <p><strong>Status: </strong>Pending Confirmation</p>
-<% end  %>
-  <p><%= @booking.description %></p>
-<%= link_to "Edit your booking", edit_booking_path(@booking) %>
-<br>
-<%= link_to "Review your Therapist", new_booking_review_path(@booking) %>
-<br>
-<%= link_to "View bookings", bookings_path(@booking) %>
-<%= link_to "Chat", booking_chat_rooms_path(@booking), :method => :post %>
+  <% end  %>
+    <p><%= @booking.description %></p>
+  <%= link_to "Edit your booking", edit_booking_path(@booking) %>
+  <br>
+  <%= link_to "Review your Therapist", new_booking_review_path(@booking) %>
+  <br>
+  <%= link_to "View bookings", bookings_path(@booking) %>
+  <%= link_to "Chat", booking_chat_rooms_path(@booking), :method => :post %>
 
 
-<%= @booking.client_id %>
+  <%= @booking.client_id %>
+</div>
