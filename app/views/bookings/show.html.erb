@@ -1,24 +1,103 @@
-<div class="container">
-  <h1>Booking Details</h1>
-  <h2><%= @booking.therapist.first_name %> <%= @booking.therapist.last_name %></h2>
-  <h2>Starting from:</h2> <p><%=@booking.start_time%></p>
-  <h2>Ending On:</h2> <p><%= @booking.end_time %></p>
+<div class="banneri"  style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.5)), url(<%= asset_path "session-stars.png" %>)">
+  <div class="clock">
+  <div class="clock__second"></div>
+  <div class="clock__minute"></div>
+    <div class="clock__hour"></div>
+  <div class="clock__axis"></div>
+    <section class="clock__indicator"></section>
+    <section class="clock__indicator"></section>
+    <section class="clock__indicator"></section>
+    <section class="clock__indicator"></section>
+    <section class="clock__indicator"></section>
+    <section class="clock__indicator"></section>
+    <section class="clock__indicator"></section>
+    <section class="clock__indicator"></section>
+    <section class="clock__indicator"></section>
+    <section class="clock__indicator"></section>
+    <section class="clock__indicator"></section>
+    <section class="clock__indicator"></section>
+    <section class="clock__indicator"></section>
+    <section class="clock__indicator"></section>
+    <section class="clock__indicator"></section>
+    <section class="clock__indicator"></section>
+    <section class="clock__indicator"></section>
+    <section class="clock__indicator"></section>
+    <section class="clock__indicator"></section>
+    <section class="clock__indicator"></section>
+    <section class="clock__indicator"></section>
+    <section class="clock__indicator"></section>
+    <section class="clock__indicator"></section>
+    <section class="clock__indicator"></section>
+    <section class="clock__indicator"></section>
+    <section class="clock__indicator"></section>
+    <section class="clock__indicator"></section>
+    <section class="clock__indicator"></section>
+    <section class="clock__indicator"></section>
+    <section class="clock__indicator"></section>
+    <section class="clock__indicator"></section>
+    <section class="clock__indicator"></section>
+    <section class="clock__indicator"></section>
+    <section class="clock__indicator"></section>
+    <section class="clock__indicator"></section>
+    <section class="clock__indicator"></section>
+    <section class="clock__indicator"></section>
+    <section class="clock__indicator"></section>
+    <section class="clock__indicator"></section>
+    <section class="clock__indicator"></section>
+    <section class="clock__indicator"></section>
+    <section class="clock__indicator"></section>
+    <section class="clock__indicator"></section>
+    <section class="clock__indicator"></section>
+    <section class="clock__indicator"></section>
+    <section class="clock__indicator"></section>
+    <section class="clock__indicator"></section>
+    <section class="clock__indicator"></section>
+    <section class="clock__indicator"></section>
+    <section class="clock__indicator"></section>
+    <section class="clock__indicator"></section>
+    <section class="clock__indicator"></section>
+    <section class="clock__indicator"></section>
+    <section class="clock__indicator"></section>
+    <section class="clock__indicator"></section>
+    <section class="clock__indicator"></section>
+    <section class="clock__indicator"></section>
+    <section class="clock__indicator"></section>
+    <section class="clock__indicator"></section>
+    <section class="clock__indicator"></section>
+  </div>
+  <div class="banner-info" style="padding-bottom: 120px">
+    <% if current_user.full_name == nil %>
+   Hello: <%= current_user.email %><
+    <% else %>
+    Hello:<%= current_user.full_name %>
+    <% end %>
+    <br>
+    Welcome to your Booking Info
+  </div>
 
-  <p><strong>Starting in:</strong> <%= (@booking.start_time.to_date - Date.today).to_i %> Days</p>
-  <p><strong>Booking Duration: </strong><%= (@booking.end_time - @booking.start_time).to_i  %> Days</p>
-  <% if @booking.status %>
-    <p><strong>Status: </strong><%= @booking.status %></p>
-  <% else %>
-    <p><strong>Status: </strong>Pending Confirmation</p>
-  <% end  %>
-    <p><%= @booking.description %></p>
-  <%= link_to "Edit your booking", edit_booking_path(@booking) %>
-  <br>
-  <%= link_to "Review your Therapist", new_booking_review_path(@booking) %>
-  <br>
-  <%= link_to "View bookings", bookings_path(@booking) %>
-  <%= link_to "Chat", booking_chat_rooms_path(@booking), :method => :post %>
+</div>
 
-
-  <%= @booking.client_id %>
+  <div class="card2">
+    <div class="thumbnail"><img class="left" src="https://cdn2.hubspot.net/hubfs/322787/Mychefcom/images/BLOG/Header-Blog/photo-culinaire-pexels.jpg"/></div>
+    <div class="right">
+      <h1><%= (((@booking.end_time - @booking.start_time) / 60) / 60).round(2) %> Hours</h1>
+      <div class="author"><img src="https://randomuser.me/api/portraits/men/95.jpg"/>
+        <h2><%= @booking.therapist.first_name %> <%= @booking.therapist.last_name %></h2>
+      </div>
+      <div class="separator"></div>
+      <p><%= @booking.description %></p>
+      <strong>Status: <%= @booking.status %></strong>
+    </div>
+    <div class="bottom">
+     <h1><%= @booking.start_time.to_date %></h1>
+     <%# raise %>
+     <h1>JANUARY</h1>
+    <ul>
+      <li><i class="fa fa-eye fa-2x"></i></li>
+      <li><i class="fa fa-heart-o fa-2x"></i></li>
+      <li><i class="fa fa-envelope-o fa-2x"></i></li>
+      <li><i class="fa fa-share-alt fa-2x"></i></li>
+    </ul>
+    <div class="fab"><i class="fa fa-arrow-down fa-3x"> </i></div>
+    </div>
 </div>
