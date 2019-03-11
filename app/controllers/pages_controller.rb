@@ -4,7 +4,6 @@ class PagesController < ApplicationController
   def profile
     @user = current_user
     @booking = Booking.where(client_id: current_user.id)
-    # @user.bookings = @booking
   end
 
   def home

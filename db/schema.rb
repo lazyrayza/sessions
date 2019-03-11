@@ -78,7 +78,7 @@ ActiveRecord::Schema.define(version: 2019_03_09_145218) do
     t.string "phone_number"
     t.string "languages"
     t.string "expertise"
-    t.text "bookings"
+    t.bigint "booking_id"
     t.string "photo"
     t.boolean "therapist"
     t.bigint "review_id"
@@ -87,6 +87,7 @@ ActiveRecord::Schema.define(version: 2019_03_09_145218) do
     t.string "price", default: "£0"
     t.string "gender"
     t.text "bio"
+    t.index ["booking_id"], name: "index_users_on_booking_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["review_id"], name: "index_users_on_review_id"
