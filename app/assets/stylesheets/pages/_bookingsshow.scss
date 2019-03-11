@@ -35,7 +35,7 @@
 /*Just the background stuff */
 
 /* The card */
-.card2 {
+.cardx {
   position: relative;
   height: 450px;
   width: 900px;
@@ -105,7 +105,10 @@ h2 {
   padding-top: 8px;
   margin-right: 6px;
   text-align: right;
-  font-size: 0.8rem;
+  font-size: 1.8rem;
+}
+h3{
+  font-size: 5rem;
 }
 
 .separator {
@@ -135,14 +138,18 @@ h6 {
 
 /* Those futur buttons */
 ul {
-  // margin-left: 250px;
+  margin-top:20px;
+  margin-left: 50px;
 }
 
 li {
   display: inline;
   list-style: none;
-  padding-right: 40px;
-  color: #7B7B7B;
+  padding-right: 4px;
+  // color: #7B7B7B;
+  font-size: 4rem;
+  color: #6ECAD6;
+
 }
 
 /* Floating action button */
@@ -152,7 +159,7 @@ li {
   bottom: -40px;
   box-sizing: border-box;
   padding-top: 18px;
-  background-color: #1875D0;
+  background-color:  #6ECAD6;
   width: 80px;
   height: 80px;
   color: white;
