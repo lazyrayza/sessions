@@ -1,71 +1,62 @@
-.therapist-card-container {
+.user-show-container {
   display: flex;
-  justify-content: center;
-  margin: 50px 0 0 0;
-  .holding-container {
-    border-radius: 4px;
-    background-image: url('session-mountain.png');
-    background-repeat: no-repeat;
-    background-size: 800px;
-  }
-  .holding-container {
+  background-color: white;
+  height: 600px;
+  padding: 40px;
+  // .therapist-container {
+  //   display: flex;
+  //   justify-content: left;
+  //   .user-show-therapist-name {
+  //     display: flex;
+  //     justify-content: flex-start;
+  //   }
+  // }
+  .user-show-therapist-description {
     display: flex;
-    align-items: baseline;
-    background-color: white;
-    height: 600px;
-    width: 800px;
-    justify-content: center;
-    padding: 25px;
-  }
-
-  .showbottom {
-    a {
-      text-decoration: none;
-    }
-    a:hover {
-      color: white;
-    }
-  }
-  .container-rs {
-    justify-content: flex-end;
-  }
-  .container-description {
-    display: flex;
-    margin-top: 100px;
-    justify-content: baseline;
-  }
-  .container-reviews {
-  overflow: scroll;
-  height: 40%;
   }
 }
+
+  .therapist-reviews-container {
+    // overflow: scroll;
+    width: 100%;
+    .user-show-book-btn {
+      display: flex;
+      justify-content: flex-end;
+      a {
+        text-decoration: none;
+      }
+      a:hover {
+        color: white;
+        background-color: #74d5e0;
+      }
+    }
+  }
+
+
 
 
 .banneri {
   background-size: cover;
-  height: calc(40vh - 46px);
   background-position: center;
-  display: flex;
-  align-items: center;
+  height: 350px;
 }
 
-.primary-button {
-    font-family: $body-font;
-    border-radius: 4px;
-    background-color: #6ECAD6;
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    cursor: pointer;
-  }
+.primary-button-user-show {
+  font-family: $body-font;
+  border-radius: 4px;
+  background-color: #6ECAD6;
+  border: none;
+  color: white;
+  padding: 12px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+}
 .container-rs {
   width: 100%;
 }
 .conatiner-ls {
   width: 100%;
 }
-
