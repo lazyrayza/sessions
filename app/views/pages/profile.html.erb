@@ -38,7 +38,6 @@
               <% end %>
             </div>
           </div>
-<<<<<<< HEAD
           <hr />
         <% end %>
       </div>
@@ -83,7 +82,6 @@
           <div class="reviews-card">
             <div class="card-body">
               <% @booking.order("start_time asc").each do |booking| %>
-              <%= raise %>
                 <% if current_user.therapist %>
                   <h3 class="card-title"><%= booking.client.full_name %></h3>
                 <% else %>
