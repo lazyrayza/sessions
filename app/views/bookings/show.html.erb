@@ -78,7 +78,7 @@
 </div>
 
   <div class="card2">
-    <div class="thumbnail"><img class="left" src="https://cdn2.hubspot.net/hubfs/322787/Mychefcom/images/BLOG/Header-Blog/photo-culinaire-pexels.jpg"/></div>
+    <div class="thumbnail"><img class="left" src="session-sunset.png"></div>
     <div class="right">
       <h1><%= (((@booking.end_time - @booking.start_time) / 60) / 60).round(2) %> Hours</h1>
       <div class="author"><img src="https://randomuser.me/api/portraits/men/95.jpg"/>
@@ -89,15 +89,13 @@
       <strong>Status: <%= @booking.status %></strong>
     </div>
     <div class="bottom">
-     <h1><%= @booking.start_time.to_date %></h1>
-     <%# raise %>
-     <h1>JANUARY</h1>
+     <h3><%= (@booking.start_time).strftime("%dth %B") %> </h3>
     <ul>
-      <li><i class="fa fa-eye fa-2x"></i></li>
-      <li><i class="fa fa-heart-o fa-2x"></i></li>
-      <li><i class="fa fa-envelope-o fa-2x"></i></li>
-      <li><i class="fa fa-share-alt fa-2x"></i></li>
+      <li><i class="far fa-edit"></i></li>
+<!--       <li><i class="fas fa-video fa-3x""></i></li>
+ -->      <li><i class="far fa-registered"></i></li>
+      <li><i class="fas fa-book-reader"></i></i></li>
     </ul>
-    <div class="fab"><i class="fa fa-arrow-down fa-3x"> </i></div>
+    <div class="fab"><i class="fas fa-video fa-3x""></i></div>
     </div>
 </div>

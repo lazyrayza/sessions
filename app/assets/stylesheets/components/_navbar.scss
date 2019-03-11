@@ -3,40 +3,72 @@
   background-color: transparent;
   transition: 0.5s background-color ease
 }
-
+.navbar-lewagon-home {
+  .nav-item {
+  text-decoration: none;
+  a {
+    text-decoration: none;
+    margin: 0 -20px 0 35px;
+    color: white;
+  }
+}
+}
 .navbar-lewagon-white {
   background-color: white;
+  .nav-item {
+    text-decoration: none;
+    a {
+      text-decoration: none;
+      margin: 0 -20px 0 35px;
+      color: gray;
+    }
+  }
 }
-
-// ^^^ !For Update Navbar on Scroll. REF: https://kitt.lewagon.com/knowledge/lectures/05-Rails%2F04-Rails-mister-cocktail#sourceimport 'bootstrap';import 'bootstrap';import 'bootstrap';import 'bootstrap';import 'bootstrap';import 'bootstrap';import 'bootstrap';import 'bootstrap';import 'bootstrap';import 'bootstrap';import 'bootstrap';import 'bootstrap';import 'bootstrap';import 'bootstrap';import 'bootstrap';import 'bootstrap';import 'bootstrap';import 'bootstrap';import 'bootstrap';import 'bootstrap';import 'bootstrap';import 'bootstrap';import 'bootstrap';import 'bootstrap';import 'bootstrap';import 'bootstrap';import 'bootstrap';import 'bootstrap';import 'bootstrap';import 'bootstrap';import 'bootstrap';import 'bootstrap';import 'bootstrap';import 'bootstrap';import 'bootstrap';import 'bootstrap';
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }
-
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
-
 .nav-item {
   text-decoration: none;
+  a {
+    text-decoration: none;
+    margin: 0 -20px 0 35px;
+    color: gray;
+  }
 }
-
+.nav-main-items {
+  margin-top: 10px;
+  li {
+    display: inline-block;
+  }
+}
 .fa-calendar-check {
   margin-right: 15px;
   margin-top: 15px;
   color: #7f7f7f;
-  text-decoration: none;
+  a {
+    text-decoration: none;
+  }
 }
-
 .fa-comment-alt {
   margin-right: 5px;
   margin-top: 8px;
 }
-
 .fa-bell {
   margin-top: 8px;
 }
-
 .fa-user {
-  text-decoration: none;
+  a {
+    text-decoration: none;
+  }
+}
+.login-home {
+  a {
+    margin: 0 0 0 0;
+  }
+}
+#navbar-two-white {
+  background-color: white;
 }
