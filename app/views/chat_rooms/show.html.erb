@@ -1,33 +1,99 @@
-<div class="big-box">
-  <div class="left-box">
-    <h1>Action Cable Signaling Server</h1>
+<div class="banneri"  style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.5)), url(<%= asset_path "session-mountain.png" %>)">
 
-    <div>Random User ID:
-      <span id="current-user"><%= @random_number %></span>
-    </div>
-        <div id="remote-video-container">
-        <div id="video_overlays">
-          <video id="local-video" autoplay></video>
+  <div class="clock">
+    <div class="clock__second"></div>
+      <div class="clock__minute"></div>
+        <div class="clock__hour"></div>
+          <div class="clock__axis"></div>
+            <section class="clock__indicator"></section>
+            <section class="clock__indicator"></section>
+            <section class="clock__indicator"></section>
+            <section class="clock__indicator"></section>
+            <section class="clock__indicator"></section>
+            <section class="clock__indicator"></section>
+            <section class="clock__indicator"></section>
+            <section class="clock__indicator"></section>
+            <section class="clock__indicator"></section>
+            <section class="clock__indicator"></section>
+            <section class="clock__indicator"></section>
+            <section class="clock__indicator"></section>
+            <section class="clock__indicator"></section>
+            <section class="clock__indicator"></section>
+            <section class="clock__indicator"></section>
+            <section class="clock__indicator"></section>
+            <section class="clock__indicator"></section>
+            <section class="clock__indicator"></section>
+            <section class="clock__indicator"></section>
+            <section class="clock__indicator"></section>
+            <section class="clock__indicator"></section>
+            <section class="clock__indicator"></section>
+            <section class="clock__indicator"></section>
+            <section class="clock__indicator"></section>
+            <section class="clock__indicator"></section>
+            <section class="clock__indicator"></section>
+            <section class="clock__indicator"></section>
+            <section class="clock__indicator"></section>
+            <section class="clock__indicator"></section>
+            <section class="clock__indicator"></section>
+            <section class="clock__indicator"></section>
+            <section class="clock__indicator"></section>
+            <section class="clock__indicator"></section>
+            <section class="clock__indicator"></section>
+            <section class="clock__indicator"></section>
+            <section class="clock__indicator"></section>
+            <section class="clock__indicator"></section>
+            <section class="clock__indicator"></section>
+            <section class="clock__indicator"></section>
+            <section class="clock__indicator"></section>
+            <section class="clock__indicator"></section>
+            <section class="clock__indicator"></section>
+            <section class="clock__indicator"></section>
+            <section class="clock__indicator"></section>
+            <section class="clock__indicator"></section>
+            <section class="clock__indicator"></section>
+            <section class="clock__indicator"></section>
+            <section class="clock__indicator"></section>
+            <section class="clock__indicator"></section>
+            <section class="clock__indicator"></section>
+            <section class="clock__indicator"></section>
+            <section class="clock__indicator"></section>
+            <section class="clock__indicator"></section>
+            <section class="clock__indicator"></section>
+            <section class="clock__indicator"></section>
+            <section class="clock__indicator"></section>
+            <section class="clock__indicator"></section>
+            <section class="clock__indicator"></section>
+            <section class="clock__indicator"></section>
+            <section class="clock__indicator"></section>
         </div>
-          <video id="remote-video" autoplay></video>
-      </div>
-    </div>
-    <hr />
+            <div class="banneri-content">
+              <p id="count-down" data-time="<%= @booking.start_time %>"> </p>
+            </div>
+        </div>
 
-  </div>
+        <div class="big-box">
+          <div class="left-box">
+            <h1>Session with <%= @booking.therapist.full_name %>at <%= @booking.start_time %></h1>
+              <span class="js-btn btn">Open Video Chat</span>
+                <div class='js-fade is-hidden' id="remote-video-container">
+                <div id="video_overlays">
+                  <video id="local-video" autoplay></video>
+                </div>
+                  <video id="remote-video" autoplay></video>
+              <button onclick="handleJoinSession()">
+                Join Room
+              </button>
+              <button onclick="handleLeaveSession()">
+                Leave Room
+              </button>
+          </div>
+        </div>
 
-    <button onclick="handleJoinSession()">
-      Join Room
-    </button>
-
-    <button onclick="handleLeaveSession()">
-      Leave Room
-    </button>
   <div class="right-box">
     <div class="container">
       <div class="row">
         <div class="col-sm-6 col-sm-offset-3">
-          <div class="chat-header"><h4>#TESTING</h4></div>
+          <div class="chat-header"><h4>Sessions Messenger(Therapist: <%= @booking.therapist.full_name %>)</h4></div>
           <div class="messages">
             <% @chatrooms.messages.each do |message| %>
               <%= render "messages/message", message: message, user_is_messages_author: message.user == current_user %>
@@ -41,8 +107,8 @@
         </div>
       </div>
     </div>
-
-
+</div>
+</div>
     <% content_for :after_js do %>
       <script>
         scrollLastMessageIntoView();
@@ -62,6 +128,103 @@
 
       </script>
     <% end %>
-
-      </div>
 </div>
+<script>
+var currentSec = getSecondsToday();
+
+var seconds = (currentSec / 60) % 1;
+var minutes = (currentSec / 3600) % 1;
+var hours = (currentSec / 43200) % 1;
+
+setTime(60 * seconds, "second");
+setTime(3600 * minutes, "minute");
+setTime(43200 * hours, "hour");
+
+function setTime(left, hand) {
+  $(".clock__" + hand).css("animation-delay", "" + left * -1 + "s");
+}
+
+function getSecondsToday() {
+  let now = new Date();
+
+  let today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+
+  let diff = now - today;
+  return Math.round(diff / 1000);
+}
+</script>
+<script>
+// Set the date we're counting down to
+var countDownDate = new Date(document.getElementById('count-down').dataset.time);
+console.log(countDownDate);
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get todays date and time
+  var now = new Date().getTime();
+
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
+
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  // Output the result in an element with id="count-down"
+  document.getElementById("count-down").innerHTML = (days === 0 ? '' : (`${days}d `)) + (hours === 0 ? '' : (`${hours}h `))
+  + (minutes === 0 ? '' : (`${minutes}m `)) + (seconds === 0 ? '' : (`${seconds}s `)) + "Until Your Session Starts";
+
+  // If the count down is over, write some text
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("count-down").innerHTML = "EXPIRED";
+  }
+}, 1000);
+</script>
+
+<script>
+  function fadeOut(el){
+  el.style.opacity = 1;
+
+  (function fade() {
+    if ((el.style.opacity -= .1) < 0) {
+      el.style.display = 'none';
+      el.classList.add('is-hidden');
+    } else {
+      requestAnimationFrame(fade);
+    }
+  })();
+}
+
+// fade in
+function fadeIn(el, display){
+  if (el.classList.contains('is-hidden')){
+    el.classList.remove('is-hidden');
+  }
+  el.style.opacity = 0;
+  el.style.display = display || "block";
+
+  (function fade() {
+    var val = parseFloat(el.style.opacity);
+    if (!((val += .1) > 1)) {
+      el.style.opacity = val;
+      requestAnimationFrame(fade);
+    }
+  })();
+}
+
+var btn = document.querySelector('.js-btn');
+var el = document.querySelector('.js-fade');
+
+btn.addEventListener('click', function(e){
+  if(el.classList.contains('is-hidden')){
+    fadeIn(el);
+  }
+  else {
+    fadeOut(el);
+  }
+});
+</script>

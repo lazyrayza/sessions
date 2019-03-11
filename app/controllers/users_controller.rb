@@ -1,3 +1,4 @@
+
 class UsersController < ApplicationController
   before_action :find_user, only: [:show, :update, :destroy, :edit]
 
@@ -12,9 +13,29 @@ class UsersController < ApplicationController
     else
       @therapists = User.where(therapist: true).where.not(latitude: nil, longitude: nil)
     end
+    # @therapist = User.find(params[:id])
+    #  @filterrific = Filterrific.new(User, params[:filterrific])
+    # @filterrific.select_options = {
+    #   sorted_by: Users.options_for_sorted_by,
+    #   with_cuisine: Users.options_for_select
+    # }
+    # @users = User.filterrific_find(@filterrific).page(params[:page]).languages
+
+    # respond_to do |format|
+    #   format.html
+    #   format.js
+    # end
+  end
+
+  def reset_filterrific
+    # Clear session persistence
+    session[:filterrific_restaurants] = nil
+    # Redirect back to the index action for default filter settings.
+    redirect_to action: :index
   end
 
   def show
+    @therapist = @user
     @markers =
       {
         lng: @user.longitude,
@@ -22,7 +43,12 @@ class UsersController < ApplicationController
         infoWindow: render_to_string(partial: "infowindow", locals: { therapist: @user }),
         image_url: helpers.asset_url('therapist.png')
       }
-      # @reviews = Review.bookings.where(therapist_id: @user.id)
+       @reviews = Review.where(therapist_id: @user.id)
+
+    respond_to do |format|
+    format.html
+    format.js
+    end
   end
 
   def new

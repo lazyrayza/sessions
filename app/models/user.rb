@@ -10,10 +10,18 @@ class User < ApplicationRecord
 
   has_many :therapist_bookings, class_name: :Booking, foreign_key: "therapist_id", dependent: :destroy
   has_many :client_bookings, class_name: :Booking, foreign_key: "client_id", dependent: :destroy
-  has_many :reviews, class_name: :Review, foreign_key: "therapist_id", through: :bookings
-  has_many :chat_rooms, through: :chat_room_participations
-  has_many :messages, dependent: :destroy
-
+  has_many :reviews # class_name: :Review, foreign_key: "review_id", through: :therapist_bookings
+  has_many :chat_rooms, through: :bookings
+  has_many :messages, through: :chat_rooms, dependent: :destroy
+  filterrific(
+    default_filter_params: { sorted_by: 'created_at_desc' },
+    available_filters: [
+      :sorted_by,
+      :search_query,
+      :with_country_id,
+      :with_created_at_gte
+    ]
+  )
   def full_name
     first_name + " " + last_name
   end
