@@ -77,8 +77,8 @@
 
 </div>
 
-  <div class="card2">
-    <div class="thumbnail"><img class="left" src="session-sunset.png"></div>
+  <div class="cardx">
+    <div class="thumbnail"><img class="left" style="url(<%= asset_path "sunset.png" %>)"></div>
     <div class="right">
       <h1><%= (((@booking.end_time - @booking.start_time) / 60) / 60).round(2) %> Hours</h1>
       <div class="author"><img src="https://randomuser.me/api/portraits/men/95.jpg"/>
@@ -99,3 +99,6 @@
     <div class="fab"><i class="fas fa-video fa-3x""></i></div>
     </div>
 </div>
+
+
+    <%= link_to "Review your Therapist", new_booking_review_path(@booking), class: "btn btn-primary" %>

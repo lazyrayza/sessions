@@ -33,7 +33,6 @@
         <p><%= review.client.first_name %><%= review.client.first_name %></p>
         <%# review.client_id.photo.url %>
         <%= review.description %>
-        <div >
         <% counter = 0 %>
         <% 5.times do %>
           <i class="fa <%= review.rating > counter ? 'fa-star' : 'fa-star-o' %>"></i>
@@ -46,7 +45,10 @@
   </div>
 
 </div>
-<div class="bottom">
+
+
+
+<div class="showbottom">
   <div class="primary-button">Price</div>
   <%= link_to "Book", new_user_booking_path(@user), class: "primary-button"%>
 </div>
