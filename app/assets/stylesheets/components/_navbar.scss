@@ -6,6 +6,12 @@
 .navbar-lewagon-home {
   .nav-item {
   text-decoration: none;
+  .login-home {
+    a {
+      margin: 0 0 0 0;
+    }
+  }
+
   a {
     text-decoration: none;
     margin: 0 -20px 0 35px;
@@ -65,11 +71,8 @@
     text-decoration: none;
   }
 }
-.login-home {
-  a {
-    margin: 0 0 0 0;
-  }
-}
+
 #navbar-two-white {
   background-color: white;
+  position: sticky;
 }
