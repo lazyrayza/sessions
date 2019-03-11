@@ -81,7 +81,7 @@
         <div class="reviews-title">REVIEWS</div>
           <div class="reviews-card">
             <div class="card-body">
-              <% @booking.order("start_time asc").each do |booking| %>
+              <% @booking.order("reviews_id desc").each do |booking| %>
                 <% if current_user.therapist %>
                   <h3 class="card-title"><%= booking.client.full_name %></h3>
                 <% else %>
@@ -90,10 +90,6 @@
                 <p class="card-text">
 
               <% end %>
-
-
-
-
 
 
               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
