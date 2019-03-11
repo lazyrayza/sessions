@@ -74,7 +74,7 @@
         <div class="big-box">
           <div class="left-box">
             <h1>Session with <%= @booking.therapist.full_name %>at <%= @booking.start_time %></h1>
-              <span class="js-btn btn">Open Video Chat</span>
+              <span class="js-btn btn"><i class="fas fa-video"></i></span>
                 <div class='js-fade is-hidden' id="remote-video-container">
                 <div id="video_overlays">
                   <video id="local-video" autoplay></video>
@@ -129,6 +129,7 @@
       </script>
     <% end %>
 </div>
+
 <script>
 var currentSec = getSecondsToday();
 
