@@ -16,7 +16,12 @@
 <!--     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.css' rel='stylesheet' />
  -->  </head>
   <body>
-    <%= render 'shared/navbar' %>
+      <% if action_name == "home" %>
+        <%= render 'shared/navbar' %>
+        <% else %>
+        <%= render 'shared/navbar-two' %>
+      <% end %>
+
     <%= render 'shared/flashes' %>
     <div style="min-height: calc(100vh - 150px)">
       <%= yield %>

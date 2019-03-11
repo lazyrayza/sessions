@@ -4,8 +4,26 @@
   transition: 0.5s background-color ease
 }
 
+.navbar-lewagon-home {
+  .nav-item {
+  text-decoration: none;
+  a {
+    text-decoration: none;
+    margin: 0 -20px 0 35px;
+    color: white;
+  }
+}
+}
 .navbar-lewagon-white {
   background-color: white;
+  .nav-item {
+    text-decoration: none;
+    a {
+      text-decoration: none;
+      margin: 0 -20px 0 35px;
+      color: gray;
+    }
+  }
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -60,4 +78,8 @@
   a {
     margin: 0 0 0 0;
   }
+}
+
+#navbar-two-white {
+  background-color: white;
 }
