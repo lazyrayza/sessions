@@ -37,42 +37,49 @@
       color: gray;
     }
     .user-show-therapist-languages {
-
+      display: flex;
+      justify-content: center;
+      border: solid 1px #74d5e0 ;
+      border-radius: 4px;
+      width: 90%;
+    }
+    .user-show-expertise {
+      width: 90%;
     }
   }
 }
 
-  .therapist-reviews-container {
-    height: 100%;
-    width: 50%;
-    .user-show-book-btn {
-      display: flex;
-      justify-content: flex-end;
-      a {
-        text-decoration: none;
-      }
-      a:hover {
-        color: white;
-        background-color: #74d5e0;
-      }
-      h3 {
-        margin-right: 332px;
-        margin-top: 10px;
-      }
+.therapist-reviews-container {
+  height: 100%;
+  width: 50%;
+  .user-show-book-btn {
+    display: flex;
+    justify-content: flex-end;
+    a {
+      text-decoration: none;
     }
-    .container-reviews {
-      overflow: scroll;
-      margin-top: 40px;
+    a:hover {
+      color: white;
+      background-color: #74d5e0;
     }
-    .card {
-    }
-    .review-icons-container {
-      display: flex;
-      i {
-        display: d-flex;
-      }
+    h3 {
+      margin-right: 332px;
+      margin-top: 10px;
     }
   }
+  .container-reviews {
+    overflow: scroll;
+    margin-top: 40px;
+  }
+  .card {
+  }
+  .review-icons-container {
+    display: flex;
+    i {
+      display: d-flex;
+    }
+  }
+}
 
 .primary-button-user-show {
   font-family: $body-font;
