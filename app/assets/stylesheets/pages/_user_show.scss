@@ -4,27 +4,31 @@
   height: 350px;
 }
 
-.user-show-container {
+.user-show-master-container {
   display: flex;
-  background-color: white;
-  height: 600px;
-  padding: 40px;
-  // .therapist-container {
-  //   display: flex;
-  //   justify-content: left;
-  //   .user-show-therapist-name {
-  //     display: flex;
-  //     justify-content: flex-start;
-  //   }
-  // }
-  .user-show-therapist-description {
+  .user-show-container {
     display: flex;
+    background-color: white;
+    height: 900px;
+    padding: 40px;
+    width: 100%;
+    // .therapist-container {
+    //   display: flex;
+    //   justify-content: left;
+    //   .user-show-therapist-name {
+    //     display: flex;
+    //     justify-content: flex-start;
+    //   }
+    // }
+    .user-show-therapist-description {
+      display: flex;
+    }
   }
 }
 
   .therapist-reviews-container {
     // overflow: scroll;
-    width: 100%;
+    width: 60%;
     .user-show-book-btn {
       display: flex;
       justify-content: flex-end;
