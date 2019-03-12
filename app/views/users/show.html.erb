@@ -12,7 +12,9 @@
         <h4><%= @user.address %></h4>
       </div>
       <div class="user-show-therapist-languages">
-        <h5><strong><%= @user.languages%></strong></h5>
+        <%= @user.languages.each do |language|%>
+        <h5><strong><%= language %></strong></h5>
+        <% end %>
       </div>
       <div class="user-show-expertise">
         <h5><strong><%= @user.expertise%></strong></h5>
