@@ -8,7 +8,7 @@
 .big-box {
   display: flex;
   flex-direction: row;
-  width: 100%;
+  // width: 100%;
 }
 .lhs {
   width: 20%;
@@ -60,7 +60,7 @@
 
 .cards-user {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 16px;
 }
 
@@ -137,7 +137,7 @@
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
 }
 .snip1336 .follow {
-  width: 120px;
+  width: 80px;
   height: 35px;
   margin-right: 4%;
   border-color: #489099;
@@ -146,15 +146,17 @@
 .snip1336 .info {
   border-color: #489099;
   color: #489099;
+  width: 80px;
+  height: 35px;
 }
-.snip1336 h2 {
+.snip1336 h4 {
   margin: 0 0 5px;
-  font-weight: 300;
+  font-weight: 400;
   color: #489099;
 }
-.snip1336 h2 span {
+.snip1336 h4 span {
   display: block;
-  font-size: 0.5em;
+  font-size: 0.8em;
   color: #2980b9;
 }
 .snip1336 p {
@@ -163,4 +165,17 @@
   letter-spacing: 1px;
   // opacity: 0.8;
   color: black;
+}
+.snip1336 i {
+  color: #489099;
+}
+.card-details {
+  display: flex;
+  justify-content: space-between;
+  .review-stars{
+    display: flex;
+     i {
+    padding: 0px 5px;
+      }
+  }
 }
