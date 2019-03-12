@@ -1,26 +1,92 @@
-<div class="container-table">
-  <ul class="responsive-table">
-    <li class=table-title>UPCOMING SESSIONS</li>
-    <li class="table-header">
-      <div class="col col-1">Therapist</div>
-      <div class="col col-2">Schedule</div>
-      <div class="col col-3">Amount</div>
-      <div class="col col-4">Status</div>
-    </li>
-    <% @booking.each do |booking| %>
-      <li class="table-row">
-        <div class="col col-1" data-label="Therapist">
-          <%= image_tag "logo.png", class: "avatar-therapist" %>
-          <%= booking.therapist.full_name %></div>
-        <div class="col col-2" data-label="Schedule"><%= booking.start_time %></div>
-        <div class="col col-3" data-label="Amount"><%= booking.therapist.price %> (Pending)</div>
-        <div class="col col-4" data-label="Status">
-          <%= simple_form_for booking, class: "status-form", method: :patch, url: booking_path(booking) do |f| %>
-            <%= f.input :status, label: false, collection: ["Pending", "Confirmed", "Cancelled"], input_html: { multiple: false, class: "multiple-select" }  %>
-            <%= f.button :submit, class: "submit-status-button" %>
+<div class="profile-container">
+  <div class="tables-left">
+
+    <!--UPCOMING SESSIONS TABLE -->
+    <div class="tables-box">
+      <div class="tables-title-row">UPCOMING SESSIONS</div>
+      <div class="description-row">
+        <div class="col">THERAPIST</div>
+        <div class="col">SCHEDULE</div>
+        <div class="col">AMOUNT</div>
+        <div class="col">STATUS</div>
+      </div>
+      <div class="upcoming-details">
+        <% @booking.order("start_time asc").each do |booking| %>
+          <div class="upcoming-details-row">
+            <% if current_user.therapist %>
+              <div class="col upcoming-labels" data-label="User">
+                <%= image_tag "logo.png", class: "user-avatar" %>
+                <%= booking.client.full_name %>
+              </div>
+            <% else %>
+              <div class="col upcoming-labels" data-label="User">
+                <%= image_tag "logo.png", class: "user-avatar" %>
+                <%= booking.therapist.full_name %>
+              </div>
             <% end %>
+            <div class="col" data-label="Schedule"><%= booking.start_time %></div>
+            <div class="col" data-label="Amount"><%= booking.therapist.price %></div>
+            <div class="col" data-label="Status">
+              <% if current_user.therapist %>
+                <%= simple_form_for booking, class: "status-form", method: :patch, url: booking_path(booking) do |f| %>
+                    <%= f.input :status, label: false, collection: ["Pending", "Confirmed", "Cancelled"], input_html: { multiple: false, class: "multiple-select" }  %>
+                    <%= f.button :submit, class: "primary-button" %>
+                <% end %>
+              <% else %>
+                <%= booking.status %>
+              <% end %>
+            </div>
+          </div>
+          <hr />
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <div class="tables-right">
+
+    <!--PROFILE TABLE-->
+    <div class="tables-box">
+      <div class="tables-title-row">PROFILE</div>
+        <div class="profile-details">
+          <div class="detail-row"><%= image_tag "logo.png", class: "user-profile-avatar" %></div>
+          <h3 class="detail-row"><%= current_user.full_name.upcase %></h3>
+          <div class="detail-row"><%= link_to "Edit Profile", edit_user_registration_path, class: 'primary-button' %></div>
         </div>
-    </li>
-  <% end %>
-  </ul>
- </div>
+    </div>
+
+
+
+    <!-- HISTORY TABLE -->
+    <div class="tables-box">
+      <div class="tables-title-row">HISTORY</div>
+        <div class="description-row">
+          <% if current_user.therapist %>
+            <div class="col" data-label="Client">CLIENT</div>
+          <% else %>
+            <div class="col" data-label="Therapist">THERAPIST</div>
+          <% end %>
+          <div class="col" data-label="Date">DATE</div>
+        </div>
+        <div class="history-details">
+          <% @booking.order("start_time asc").each do |booking| %>
+            <div class="history-details-row">
+              <% if current_user.therapist %>
+                <div class="col history-labels" data-label="User">
+                  <%= booking.client.full_name %>
+                </div>
+              <% else %>
+                <div class="col history-labels" data-label="User">
+                  <%= booking.therapist.full_name %>
+                </div>
+              <% end %>
+            <div class="col" data-label="Date"><%= booking.start_time %></div>
+            </div>
+            <hr />
+          <% end %>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+

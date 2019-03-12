@@ -21,6 +21,11 @@ gem 'carrierwave', '~> 1.2'
 gem 'cloudinary'
 gem 'pg_search'
 
+gem 'money-rails'
+gem 'stripe'
+gem 'filterrific'
+gem 'bootstrap'
+
 group :development do
   gem 'web-console', '>= 3.3.0'
 end

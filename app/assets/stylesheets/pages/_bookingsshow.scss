@@ -1,0 +1,172 @@
+.banner-info {
+ font-family: 'Share Tech Mono', monospace;
+  // padding-left: 80px;
+  font-size: 25px;
+    color: #ffffff;
+    text-align: center;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: #daf6ff;
+    text-shadow: 0 0 20px rgba(10, 175, 230, 1),  0 0 20px rgba(10, 175, 230, 0);
+    padding-left: 50px;
+}
+
+.big-box {
+  display: flex;
+  flex-direction: column;
+}
+.middle {
+  position: relative;
+  height: 400px;
+}
+.bottom {
+  display: flex;
+  flex-direction: row;
+  margin-top: 100px;
+  .btn-primary{
+    width: 20%;
+    padding: 10px;
+    margin: 10px;  }
+}
+
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+/*Just the background stuff */
+
+/* The card */
+.cardx {
+  position: relative;
+  height: 450px;
+  width: 900px;
+  margin: 200px auto;
+  background-color: #FFF;
+  -webkit-box-shadow: 10px 10px 93px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 93px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 10px 10px 93px 0px rgba(0, 0, 0, 0.75);
+
+
+/* Image on the left side */
+.thumbnail {
+  float: left;
+  position: absolute;
+  left: 30px;
+  top: -30px;
+  height: 320px;
+  width: 530px;
+  -webkit-box-shadow: 10px 10px 60px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 60px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 10px 10px 60px 0px rgba(0, 0, 0, 0.75);
+  overflow: hidden;
+}
+
+/*object-fit: cover; */
+/*object-position: center; */
+img.left {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: auto;
+  width: 100%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+/* Right side of the card */
+.right {
+  margin-left: 590px;
+  margin-right: 20px;
+}
+
+h1 {
+  padding-top: 15px;
+  font-size: 3.0rem;
+  color: #4B4B4B;
+}
+
+.author {
+  background-color: #6ECAD6;
+  height: 55px;
+  width: 70%;
+  border-radius: 20px;
+}
+
+.author > img {
+  padding-top: 5px;
+  margin-left: 5px;
+  float: left;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+}
+
+h2 {
+  padding-top: 8px;
+  margin-right: 6px;
+  text-align: right;
+  font-size: 1.8rem;
+}
+h3{
+  font-size: 5rem;
+}
+
+.separator {
+  margin-top: 10px;
+  border: 2px solid #489099;
+}
+
+p {
+  text-align: justify;
+  padding-top: 10px;
+  font-size: 1.5rem;
+  line-height: 150%;
+  color: #4B4B4B;
+  word-wrap: break-word;
+}
+
+/* DATE of release */
+h5 {
+  font-size: 6rem;
+  color: #C3C3C3;
+}
+
+h6 {
+  font-size: 2rem;
+  color: #C3C3C3;
+}
+
+/* Those futur buttons */
+ul {
+  margin-top:20px;
+  margin-left: 50px;
+}
+
+li {
+  display: inline;
+  list-style: none;
+  padding-right: 4px;
+  // color: #7B7B7B;
+  font-size: 4rem;
+  color: #6ECAD6;
+
+}
+
+/* Floating action button */
+.fab {
+  position: absolute;
+  right: 50px;
+  bottom: -40px;
+  box-sizing: border-box;
+  padding-top: 18px;
+  background-color:  #6ECAD6;
+  width: 80px;
+  height: 80px;
+  color: white;
+  text-align: center;
+  border-radius: 50%;
+  -webkit-box-shadow: 10px 10px 50px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 50px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 10px 10px 50px 0px rgba(0, 0, 0, 0.75);
+}
+}
