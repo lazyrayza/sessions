@@ -13,6 +13,14 @@
                       required: true,
                       collection: [["Therapist", true],["Client", false]],
                       input_html: { multiple: false, class: "multiple-select" }  %>
+          <%= f.input :first_name,
+                      required: true,
+                      autofocus: true,
+                      input_html: { autocomplete: "first_name" }, placeholder: "Ruby"  %>
+          <%= f.input :last_name,
+                      required: true,
+                      autofocus: true,
+                      input_html: { autocomplete: "last_name" }, placeholder: "Rails"  %>
           <%= f.input :email,
                       required: true,
                       autofocus: true,
