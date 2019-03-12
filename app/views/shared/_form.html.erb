@@ -1,4 +1,5 @@
 <div class="container">
+  <h1>Booking Session ...</h1>
   <div class="bookings-container">
     <%= simple_form_for([therapist, booking]) do |f| %>
       <% if @booking.errors.any? %>
@@ -15,11 +16,6 @@
       <div class="form-inputs">
         <%= f.input :start_time %>
       </div>
-      <br>
-      <div class="form-inputs">
-        <%= f.input :end_time %>
-      </div>
-      <br>
       <div class="form-inputs">
         <%= f.input :description %>
       </div>
