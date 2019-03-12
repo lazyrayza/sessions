@@ -80,7 +80,7 @@
   <div class="cardx">
     <div class="thumbnail"><img class="left" style="url(<%= asset_path "sunset.png" %>)"></div>
     <div class="right">
-      <h1><%= (((@booking.end_time - @booking.start_time) / 60) / 60).round(2) %> Hours</h1>
+      <h1><%= (@booking.start_time / 60 / 60.round(2)) %> Hours</h1>
       <div class="author"><img src="https://randomuser.me/api/portraits/men/95.jpg"/>
         <h2><%= @booking.therapist.first_name %> <%= @booking.therapist.last_name %></h2>
       </div>
