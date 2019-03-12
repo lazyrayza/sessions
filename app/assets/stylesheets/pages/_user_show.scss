@@ -17,6 +17,7 @@
     width: 100%;
     .therapist-container {
       margin-top: 80px;
+      width: 50%
     }
     .therapist-avatar-container {
       border-radius: 100px;
@@ -27,17 +28,10 @@
       border: solid white;
       left: 200px;
     }
-    // .therapist-container {
-    //   display: flex;
-    //   justify-content: left;
-    //   .user-show-therapist-name {
-    //     display: flex;
-    //     justify-content: flex-start;
-    //   }
-    // }
+
     .user-show-therapist-description {
       display: flex;
-      width: 80%;
+      width: 90%;
     }
     .user-show-therapist-address {
       color: gray;
@@ -50,7 +44,7 @@
 
   .therapist-reviews-container {
     height: 100%;
-    width: 60%;
+    width: 50%;
     .user-show-book-btn {
       display: flex;
       justify-content: flex-end;
