@@ -1,0 +1,55 @@
+.banneri {
+  background-size: cover;
+  background-position: center;
+  height: 350px;
+}
+
+.user-show-container {
+  display: flex;
+  background-color: white;
+  height: 600px;
+  padding: 40px;
+  // .therapist-container {
+  //   display: flex;
+  //   justify-content: left;
+  //   .user-show-therapist-name {
+  //     display: flex;
+  //     justify-content: flex-start;
+  //   }
+  // }
+  .user-show-therapist-description {
+    display: flex;
+  }
+}
+
+  .therapist-reviews-container {
+    // overflow: scroll;
+    width: 100%;
+    .user-show-book-btn {
+      display: flex;
+      justify-content: flex-end;
+      a {
+        text-decoration: none;
+      }
+      a:hover {
+        color: white;
+        background-color: #74d5e0;
+      }
+    }
+    .container-reviews {
+    }
+  }
+
+.primary-button-user-show {
+  font-family: $body-font;
+  border-radius: 4px;
+  background-color: #6ECAD6;
+  border: none;
+  color: white;
+  padding: 12px 22px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+}
