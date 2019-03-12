@@ -1,0 +1,41 @@
+.primary-button {
+  font-family: $body-font;
+  background: #6ECAD6 !important;
+  border: none;
+  color: white;
+  padding: 15px 32px !important;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px !important;
+  border: 4px solid #6ECAD6;
+
+  &:hover {
+    background: #FFFFFF !important;
+    text-decoration: none;
+    color: #6ECAD6;
+  }
+}
+
+.secondary-button {
+  font-family: $body-font;
+  background: #489099 !important;
+  border: none;
+  color: white;
+  padding: 15px 32px !important;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px !important;
+  border: 4px solid #489099;
+
+  &:hover {
+    background: #FFFFFF !important;
+    text-decoration: none;
+    color: #489099;
+  }
+}

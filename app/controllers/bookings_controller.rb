@@ -8,6 +8,7 @@ class BookingsController < ApplicationController
   end
 
   def show
+    @booking = current_user.client_bookings.where(state: 'Paid').find(params[:id])
   end
 
   def new
@@ -24,16 +25,21 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @booking = Booking.new(bookings_params)
-    @booking.client = current_user
     @therapist = User.find(params[:user_id])
-    @booking.therapist = @therapist
+    @booking = Booking.new(bookings_params)
+
+    @booking.therapist_id = @therapist.id
+    @booking.amount = @therapist.price
+    @booking.state = "Pending"
+    @booking.client = current_user
+
     if @booking.save
-      redirect_to booking_path(@booking)
+      redirect_to new_booking_payment_path(@booking)
     else
       render :new
     end
   end
+
 
   def edit
     # @booking = current_user.client_bookings
@@ -52,7 +58,7 @@ class BookingsController < ApplicationController
   private
 
   def bookings_params
-    params.require(:booking).permit(:start_time, :end_time, :description, :status)
+    params.require(:booking).permit(:start_time, :end_time, :description)
   end
 
   def find_booking

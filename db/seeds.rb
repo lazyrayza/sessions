@@ -1,3 +1,5 @@
+require "faker"
+
 puts "destroying users"
 Review.destroy_all
 ChatRoom.destroy_all
@@ -19,11 +21,10 @@ puts "Starting seed"
     email: Faker::Internet.email,
     password: Faker::Internet.password,
     therapist: true,
-    languages: Faker::ProgrammingLanguage.name,
-    expertise: Faker::Esport.game,
-    bio: Faker::Hipster.paragraph
-        )
+    expertise: Faker::Esport.game
+    )
 end
+
 puts "done main users"
 
 julia = User.create!(
@@ -34,7 +35,6 @@ julia = User.create!(
     email: "julia@stonetherapy.com",
     password: "123456",
     therapist: true,
-    languages: "English, French, Spanish",
     expertise: "Psycho-therapy",
     bio: Faker::Lorem.paragraph
   )
@@ -49,7 +49,6 @@ mario = User.create!(
     email: "mario@vtherapy.com",
     password: "123456",
     therapist: true,
-    languages: "English, French, Italian",
     expertise: "Calming-therapy, Marriage Counselling",
     bio: Faker::Lorem.paragraph
   )
@@ -64,23 +63,9 @@ brian = User.create!(
     email: "brian@getbetter.com",
     password: "123456",
     therapist: true,
-    languages: "English, French, Swahili",
     expertise: "Calming-therapy, Depression Counselling, Group-therapy",
     bio: Faker::Lorem.paragraph
   )
 
 
 puts "done brian"
-
-
-
-
-
-
-
-
-
-
-
-
-

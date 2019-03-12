@@ -1,51 +1,63 @@
-<div class="bannerx"  style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.5)), url(<%= asset_path "session-stars.png" %>)">
+<div class="banneri"  style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.5)), url(<%= asset_path "session-mountain.png" %>)">
 </div>
 
-<div class="holding-container">
-
-  <div class="avatar" >
-    <img src="https://source.unsplash.com/featured/?{people}<%= (1..1000).to_a.sample %>" id="clipped">
-  </div>
-
-    <div class="conatiner-ls">
-      <div class="container-description">
-        <h1><%= @user.first_name %> <%= @user.last_name %></h1>
-        <h2><%= @user.address %></h2>
-        <%= @user.bio %>
-     </div>
-     <div id="map"
-      style="width: 70%;
-      height: 300px;"
-      data-markers="<%= @markers.to_json %>"
-      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-      >
+<div class="user-show-master-container">
+  <div class="user-show-container">
+    <img class="therapist-avatar-container" src="https://pbs.twimg.com/profile_images/876792863459352577/SBLRu4VV_400x400.jpg" alt="">
+    <div class="therapist-container">
+      <div class="user-show-therapist-name">
+        <h2><strong><%= @user.first_name %> <%= @user.last_name %></strong></h2>
+      </div>
+      <div class="user-show-therapist-address">
+        <h4><%= @user.address %></h4>
+      </div>
+      <div class="user-show-therapist-languages">
+        <%= @user.languages.each do |language|%>
+        <h5><strong><%= language %></strong></h5>
+        <% end %>
+      </div>
+      <div class="user-show-expertise">
+        <h5><strong><%= @user.expertise%></strong></h5>
       </div>
       <br>
-          <h2><strong><%= @user.languages%></strong> </h2>
-  </div>
+      <div class="user-show-therapist-description">
+        <%= @user.bio %>
+      </div>
+    </div>
 
+    <div class="therapist-reviews-container">
+      <div class="user-show-book-btn">
+        <h3>Price</h3>
+        <%= link_to "Book", new_user_booking_path(@user), class: "primary-button-user-show"%>
+      </div>
+      <br>
+      <br>
+      <h4>Reviews</h4>
 
-  <div class="container-rs">
-    <div class="container-reviews">
-      <h2>Reviews</h2>
-      <% @reviews.each do |review| %>
-      <div class="card">
-        <p><%= review.client.first_name %><%= review.client.first_name %></p>
-        <%# review.client_id.photo.url %>
-        <%= review.description %>
-        <% counter = 0 %>
-        <% 5.times do %>
-          <i class="fa <%= review.rating > counter ? 'fa-star' : 'fa-star-o' %>"></i>
-          <% counter += 1 %>
-         <% end %>
-       </div>
+      <div class="container-reviews">
+        <% @reviews.each do |review| %>
+        <div class="card">
+          <p><%= review.client.first_name %><%= review.client.first_name %></p>
+          <%# review.client_id.photo.url %>
+          <%= review.description %>
+          <% counter = 0 %>
+          <div class="review-icons-container d-flex flex-row">
+            <% 5.times do %>
+            <i class="fa <%= review.rating > counter ? 'fa-star' : 'fa-star-o' %>"></i>
+            <% counter += 1 %>
+            <% end %>
+          </div>
+        </div>
         <% end %>
       </div>
     </div>
   </div>
-
-<div class="showbottom">
-  <div class="primary-button">Price</div>
-  <%= link_to "Book", new_user_booking_path(@user), class: "primary-button"%>
 </div>
+
+<div class="map-container">
+  <div id="map" style="width: 62%;
+    height: 400px;"
+    data-markers="<%= @markers.to_json %>"
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
 </div>
