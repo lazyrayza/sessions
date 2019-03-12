@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_11_152045) do
+ActiveRecord::Schema.define(version: 2019_03_12_113532) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,6 +42,12 @@ ActiveRecord::Schema.define(version: 2019_03_11_152045) do
     t.index ["booking_id"], name: "index_chat_rooms_on_booking_id"
   end
 
+  create_table "languages", force: :cascade do |t|
+    t.string "language_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "messages", force: :cascade do |t|
     t.string "content"
     t.bigint "chat_room_id"
@@ -65,6 +71,15 @@ ActiveRecord::Schema.define(version: 2019_03_11_152045) do
     t.index ["therapist_id"], name: "index_reviews_on_therapist_id"
   end
 
+  create_table "user_languages", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "language_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["language_id"], name: "index_user_languages_on_language_id"
+    t.index ["user_id"], name: "index_user_languages_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -77,7 +92,6 @@ ActiveRecord::Schema.define(version: 2019_03_11_152045) do
     t.string "last_name"
     t.text "address"
     t.string "phone_number"
-    t.string "languages"
     t.string "expertise"
     t.bigint "booking_id"
     t.string "photo"
@@ -85,7 +99,6 @@ ActiveRecord::Schema.define(version: 2019_03_11_152045) do
     t.bigint "review_id"
     t.float "latitude"
     t.float "longitude"
-    t.string "price", default: "£0"
     t.string "gender"
     t.text "bio"
     t.integer "price_cents", default: 0, null: false
@@ -104,4 +117,6 @@ ActiveRecord::Schema.define(version: 2019_03_11_152045) do
   add_foreign_key "reviews", "bookings"
   add_foreign_key "reviews", "users", column: "client_id"
   add_foreign_key "reviews", "users", column: "therapist_id"
+  add_foreign_key "user_languages", "languages"
+  add_foreign_key "user_languages", "users"
 end
