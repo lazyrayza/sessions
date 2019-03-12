@@ -54,7 +54,7 @@
                     required: false %>
       </div>
       <div class="languages">
-        <%= f.association :user_languages, required: false, collection: Language.all, label_method: :language_name, value_method: :id, input_html: { multiple: true, class: "multiple-select" }, include_hidden: false %>
+        <%= f.association :user_languages, required: true, collection: Language.all, label_method: :language_name, value_method: :id, input_html: { multiple: true, class: "multiple-select" }, include_hidden: false %>
         <% resource.languages.each do |l| %>
           <%= l.language_name %>
         <% end %>
