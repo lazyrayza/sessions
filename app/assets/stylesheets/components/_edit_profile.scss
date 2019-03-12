@@ -1,7 +1,3 @@
-h2 {
-      margin: 20px 0 20px 15px;
-    }
-
 .edit-profile-container {
   margin-top: 48px;
   display: flex;
@@ -99,9 +95,14 @@ h2 {
       margin-bottom: 14px;
     }
 
+    hr {
+        margin-bottom: 24px;
+      }
+
     .bottom-btn {
       display: flex;
       justify-content: space-between;
+
 
 
       .back {
