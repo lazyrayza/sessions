@@ -4,41 +4,82 @@
   height: 350px;
 }
 
-.user-show-container {
+.user-show-therapist-profile-avatar {
+}
+
+.user-show-master-container {
   display: flex;
-  background-color: white;
-  height: 600px;
-  padding: 40px;
-  // .therapist-container {
-  //   display: flex;
-  //   justify-content: left;
-  //   .user-show-therapist-name {
-  //     display: flex;
-  //     justify-content: flex-start;
-  //   }
-  // }
-  .user-show-therapist-description {
+  .user-show-container {
     display: flex;
+    background-color: white;
+    height: 800px;
+    padding: 50px 360px 50px 180px;
+    width: 100%;
+    .therapist-container {
+      margin-top: 80px;
+      width: 50%
+    }
+    .therapist-avatar-container {
+      border-radius: 100px;
+      height: 200px;
+      width: 200px;
+      position: relative;
+      top: -150px;
+      border: solid white;
+      left: 200px;
+    }
+
+    .user-show-therapist-description {
+      display: flex;
+      width: 90%;
+    }
+    .user-show-therapist-address {
+      color: gray;
+    }
+    .user-show-therapist-languages {
+      display: flex;
+      justify-content: center;
+      border: solid 1px #74d5e0 ;
+      border-radius: 4px;
+      width: 90%;
+    }
+    .user-show-expertise {
+      width: 90%;
+    }
   }
 }
 
-  .therapist-reviews-container {
-    // overflow: scroll;
-    width: 100%;
-    .user-show-book-btn {
-      display: flex;
-      justify-content: flex-end;
-      a {
-        text-decoration: none;
-      }
-      a:hover {
-        color: white;
-        background-color: #74d5e0;
-      }
+.therapist-reviews-container {
+  height: 100%;
+  width: 50%;
+  .user-show-book-btn {
+    display: flex;
+    justify-content: flex-end;
+    a {
+      text-decoration: none;
     }
-    .container-reviews {
+    a:hover {
+      color: white;
+      background-color: #74d5e0;
+    }
+    h3 {
+      margin-right: 332px;
+      margin-top: 10px;
     }
   }
+  .container-reviews {
+    overflow: scroll;
+    margin-top: 40px;
+  }
+  .card {
+  }
+  .review-icons-container {
+    display: flex;
+    i {
+      display: d-flex;
+    }
+  }
+}
 
 .primary-button-user-show {
   font-family: $body-font;
@@ -52,4 +93,13 @@
   display: inline-block;
   font-size: 16px;
   cursor: pointer;
+}
+
+.map-container {
+  display: flex;
+  justify-content: center;
+  #map {
+    border: solid;
+    margin-top: 50px;
+  }
 }
