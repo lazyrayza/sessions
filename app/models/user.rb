@@ -15,6 +15,8 @@ class User < ApplicationRecord
   has_many :reviews # class_name: :Review, foreign_key: "review_id", through: :therapist_bookings
   has_many :chat_rooms, through: :bookings
   has_many :messages, through: :chat_rooms, dependent: :destroy
+  has_many :user_languages, dependent: :destroy
+  has_many :languages, through: :user_languages
 
   def full_name
     first_name + " " + last_name
