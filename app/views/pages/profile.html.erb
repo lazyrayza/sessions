@@ -41,62 +41,48 @@
         <% end %>
       </div>
     </div>
+  </div>
+
+  <div class="tables-right">
+    <div class="calendar"></div>
 
 
-    <div class="bottom-tables">
-
-      <!-- HISTORY TABLE -->
-      <div class="history-table">
-        <div class="history-title">HISTORY</div>
-          <div class="history-description-row">
-            <% if current_user.therapist %>
-              <div class="col" data-label="Client">CLIENT</div>
-            <% else %>
-              <div class="col" data-label="Therapist">THERAPIST</div>
-            <% end %>
-            <div class="col" data-label="Date">DATE</div>
-          </div>
-          <div class="history-details">
-            <% @booking.order("start_time asc").each do |booking| %>
-              <div class="history-details-row">
-                <% if current_user.therapist %>
-                  <div class="col history-labels" data-label="User">
-                    <%= booking.client.full_name %>
-                  </div>
-                <% else %>
-                  <div class="col history-labels" data-label="User">
-                    <%= booking.therapist.full_name %>
-                  </div>
-                <% end %>
-              <div class="col" data-label="Date"><%= booking.start_time %></div>
-              </div>
-              <hr />
-            <% end %>
+    <!-- HISTORY TABLE -->
+    <div class="history-table">
+      <div class="history-title">HISTORY</div>
+        <div class="history-description-row">
+          <% if current_user.therapist %>
+            <div class="col" data-label="Client">CLIENT</div>
+          <% else %>
+            <div class="col" data-label="Therapist">THERAPIST</div>
+          <% end %>
+          <div class="col" data-label="Date">DATE</div>
         </div>
-      </div>
-
-      <!-- REVIEWS TABLE -->
-      <div class="reviews-table">
-        <div class="reviews-title">REVIEWS</div>
-          <div class="reviews-card">
-            <div class="card-body">
-              <% @booking.each do |booking| %>
-                <% if current_user.therapist %>
-                  <h3 class="card-title"><%= booking.client.full_name %></h3>
-                <% else %>
-                  <h3 class="card-title"><%= booking.therapist.full_name %></h3>
-                <% end %>
-                <p class="card-text">
-                  <%= booking.reviews.first&.description %>
+        <div class="history-details">
+          <% @booking.order("start_time asc").each do |booking| %>
+            <div class="history-details-row">
+              <% if current_user.therapist %>
+                <div class="col history-labels" data-label="User">
+                  <%= booking.client.full_name %>
+                </div>
+              <% else %>
+                <div class="col history-labels" data-label="User">
+                  <%= booking.therapist.full_name %>
+                </div>
               <% end %>
-
-
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="card-link">Card link</a>
-              <a href="#" class="card-link">Another link</a>
+            <div class="col" data-label="Date"><%= booking.start_time %></div>
             </div>
-          </div>
+            <hr />
+          <% end %>
       </div>
+    </div>
+
+
     </div>
   </div>
 </div>
+
+<script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.5.1/moment.min.js"></script>
+</script>
+

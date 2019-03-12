@@ -1,6 +1,6 @@
 <!-- app/views/payments/new.html.erb -->
-<h1>Purchase of therapy session <%= @booking.therapist_id %></h1>
-<%= form_tag user_booking_payments_path(current_user,@booking) do %>
+<h1>Purchase of therapy session with <%= @booking.therapist_id %></h1>
+<%= form_tag booking_payments_path (@booking) do %>
   <article>
     <label class="amount">
       <span>Amount: <%= humanized_money_with_symbol(@booking.amount) %></span>

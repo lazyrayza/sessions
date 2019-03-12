@@ -10,7 +10,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
 ActiveRecord::Schema.define(version: 2019_03_11_152045) do
 
   # These are extensions that must be enabled in order to support this database
@@ -86,9 +85,9 @@ ActiveRecord::Schema.define(version: 2019_03_11_152045) do
     t.bigint "review_id"
     t.float "latitude"
     t.float "longitude"
+    t.string "price", default: "£0"
     t.string "gender"
     t.text "bio"
-
     t.integer "price_cents", default: 0, null: false
     t.index ["booking_id"], name: "index_users_on_booking_id"
     t.index ["email"], name: "index_users_on_email", unique: true
@@ -102,8 +101,6 @@ ActiveRecord::Schema.define(version: 2019_03_11_152045) do
   add_foreign_key "chat_rooms", "bookings"
   add_foreign_key "messages", "chat_rooms"
   add_foreign_key "messages", "users"
-  add_foreign_key "reviews", "bookings"
-  add_foreign_key "reviews", "users"
   add_foreign_key "reviews", "bookings"
   add_foreign_key "reviews", "users", column: "client_id"
   add_foreign_key "reviews", "users", column: "therapist_id"
