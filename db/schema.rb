@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_12_113532) do
+ActiveRecord::Schema.define(version: 2019_03_12_130647) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 2019_03_12_113532) do
     t.string "status", default: "Pending"
     t.text "description"
     t.bigint "chat_rooms_id"
-    t.string "state"
+    t.string "state", default: "Pending"
     t.integer "amount_cents", default: 0, null: false
     t.jsonb "payment"
     t.index ["chat_rooms_id"], name: "index_bookings_on_chat_rooms_id"

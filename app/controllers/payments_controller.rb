@@ -17,7 +17,7 @@ class PaymentsController < ApplicationController
       currency:     @booking.amount.currency
     )
 
-    @booking.update(payment: charge.to_json, state: 'paid')
+    @booking.update(payment: charge.to_json, state: 'Paid')
 
     redirect_to booking_path(@booking)
 
