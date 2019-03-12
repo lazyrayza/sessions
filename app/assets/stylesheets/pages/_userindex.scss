@@ -5,10 +5,22 @@
   display: flex;
   align-items: center;
 }
+.big-box {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+.lhs {
+  width: 20%;
+}
+
+.container-holder {
+  width: 75%;
+}
 
 .holding-container {
   padding: 25px;
-  display: flex;
+  // display: flex;
 }
 .primary-button {
     font-family: $body-font;
@@ -46,9 +58,14 @@
          margin: 30px auto !important;
      }
 
-@import url(https://fonts.googleapis.com/css?family=Roboto:300,400,600);
+.cards-user {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+}
+
 .snip1336 {
-  font-family: 'Roboto', Arial, sans-serif;
+
   position: relative;
   overflow: hidden;
   margin: 10px;
@@ -73,7 +90,8 @@
 }
 .snip1336 figcaption {
   width: 100%;
-  background-color: #141414;
+  border: 1px solid #6ECAD6;
+  background-color: white;
   padding: 25px;
   position: relative;
 }
@@ -112,18 +130,27 @@
   bottom: 100%;
   left: 25px;
   z-index: 1;
-  max-width: 90px;
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
   opacity: 1;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
 }
 .snip1336 .follow {
+  width: 120px;
+  height: 35px;
   margin-right: 4%;
-  border-color: #2980b9;
-  color: #2980b9;
+  border-color: #489099;
+  color: #489099;
+}
+.snip1336 .info {
+  border-color: #489099;
+  color: #489099;
 }
 .snip1336 h2 {
   margin: 0 0 5px;
   font-weight: 300;
+  color: #489099;
 }
 .snip1336 h2 span {
   display: block;
@@ -134,5 +161,6 @@
   margin: 0 0 10px;
   font-size: 0.8em;
   letter-spacing: 1px;
-  opacity: 0.8;
+  // opacity: 0.8;
+  color: black;
 }

@@ -4,7 +4,6 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show, :index] do
   resources :reviews, only: [:index]
-
     resources :bookings, only: [:new, :create]
   end
   resources :reviews, only: [:show]
@@ -17,6 +16,7 @@ Rails.application.routes.draw do
   end
 
   resources :bookings, except: [:new, :create] do
+    resources :payments, only: [:new, :create]
       resources :reviews, except: [:destroy, :edit, :update, :show, :index]
       resources :chat_rooms, only: [:new, :create]
     end

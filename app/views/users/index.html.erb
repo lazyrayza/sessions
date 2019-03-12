@@ -12,31 +12,26 @@
   <% end %>
   <!-- End Search -->
 
-  <div class="big-box" style="padding: 0px 10px;">
-      <div class="container-holder">
-        <div class="lhs">
-          <div class="row">
-            <% @therapists.each do |therapist| %>
-              <div class="col-sm-4" style="padding: 10px">
-                <figure class="snip1336">
-                  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample87.jpg" alt="sample87" />
-                  <figcaption>
-                    <img src="https://source.unsplash.com/featured/?{people}<%= (1..1000).to_a.sample %>" alt="profile-sample4" class="profile" />
-                    <%= link_to "View", user_path(therapist), class: 'card-link' %>
-                  <h2><%= therapist.first_name %> <%= therapist.last_name %><span><%= therapist.expertise %></span></h2>
-                  <p>I'm looking for something that can deliver a 50-pound payload of snow on a small feminine target. Can you suggest something? Hello...? </p>
-                    <a href="user_path(therapist)" class="follow">Follow</a>
-                    <a href="#" class="info">More Info</a>
-                  </figcaption>
-                </figure>
-              </div>
-          </div>
-        <% end %>
-      </div>
-    </div>
+<div class="big-box" style="padding: 0px 10px;">
+  <div class="cards-user">
+    <% @therapists.each do |therapist| %>
+      <figure class="snip1336">
+        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample87.jpg" alt="sample87" />
+        <figcaption>
+          <img src="https://source.unsplash.com/featured/?{people}<%= (1..1000).to_a.sample %>" alt="profile-sample4" class="profile" />
+        <h2><%= therapist.first_name %></h2>
+        <h2><%= therapist.last_name %><span><%= therapist.expertise %></span></h2>
+        <p>I'm looking for something that can deliver a 50-pound payload of snow on a small feminine target. Can you suggest something? Hello...? </p>
+          <%= link_to "Book", user_path(therapist), class: 'info' %>
+          <button class="follow" data-toggle="modal" data-target="#myModal_<%= therapist.id %>"> View </button>
+          <%# link_to "Book", user_path(therapist), class: 'follow' %>
+        </figcaption>
+      </figure>
+      <%= render "show_modal", therapist: therapist %>
+    <% end %>
   </div>
 </div>
-  <%= link_to "Home", root_path, class: "btn btn-primary" %>
+</div>
 
   <!--AJAX Search Form -->
   <script>
