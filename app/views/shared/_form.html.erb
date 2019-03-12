@@ -1,14 +1,18 @@
 <div class="container">
-  <h1>Booking Session ...</h1>
   <div class="bookings-container">
+      <br>
+      <h2>Booking Session ...</h2>
+      <br>
     <%= simple_form_for([therapist, booking]) do |f| %>
       <% if @booking.errors.any? %>
         <div class="errors-container">
           <%= f.error_notification %>
           <ul>
+            <br>
             <% booking.errors.full_messages.each do |message| %>
               <li><%= message %></li>
             <% end %>
+            <br>
           </ul>
         </div>
       <% end %>
@@ -17,7 +21,8 @@
         <%= f.input :start_time %>
       </div>
       <div class="form-inputs">
-        <%= f.input :description %>
+        <%= f.input :description,
+        placeholder: "Tell us a little bit about what you would like to talk with your therapist..." %>
       </div>
       <div class="form-actions">
         <div class="booking-update-btn">
