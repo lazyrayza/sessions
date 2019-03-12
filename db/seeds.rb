@@ -1,3 +1,5 @@
+require "faker"
+
 puts "destroying users"
 Review.destroy_all
 ChatRoom.destroy_all
@@ -21,6 +23,10 @@ puts "Starting seed"
     therapist: true,
     languages: Faker::ProgrammingLanguage.name,
     expertise: Faker::Esport.game,
+    price: rand(0..100)
+    )
+end
+
     bio: Faker::Hipster.paragraph
         )
 end
@@ -71,16 +77,3 @@ brian = User.create!(
 
 
 puts "done brian"
-
-
-
-
-
-
-
-
-
-
-
-
-
