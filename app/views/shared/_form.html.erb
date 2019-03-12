@@ -1,6 +1,6 @@
 <div class="container">
   <div class="bookings-container">
-    <%= simple_form_for([@therapist, @booking]) do |f| %>
+    <%= simple_form_for([therapist, booking]) do |f| %>
       <% if @booking.errors.any? %>
         <div class="errors-container">
           <%= f.error_notification %>

@@ -12,12 +12,13 @@ class PaymentsController < ApplicationController
 
     charge = Stripe::Charge.create(
       customer:     customer.id,   # You should store this customer id and re-use it.
-      amount:       @booking.amount_cents,
+      amount:       1000, #@booking.amount_cents,
       description:  "Payment for teddy #{@booking.therapist_id} for order #{@booking.id}",
       currency:     @booking.amount.currency
     )
 
     @booking.update(payment: charge.to_json, state: 'paid')
+
     redirect_to booking_path(@booking)
 
   rescue Stripe::CardError => e
@@ -28,6 +29,6 @@ class PaymentsController < ApplicationController
   private
 
   def set_booking
-    @booking = current_user.client_bookings.where(state: "pending").find(params[:booking_id])
+    @booking = Booking.find(params[:booking_id])
   end
 end
