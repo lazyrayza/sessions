@@ -15,22 +15,22 @@
           <div class="upcoming-details-row">
             <% if current_user.therapist %>
               <div class="col upcoming-labels" data-label="User">
-                <%= image_tag "logo.png", class: "avatar-therapist" %>
+                <%= image_tag "logo.png", class: "user-avatar" %>
                 <%= booking.client.full_name %>
               </div>
             <% else %>
               <div class="col upcoming-labels" data-label="User">
-                <%= image_tag "logo.png", class: "avatar-therapist" %>
+                <%= image_tag "logo.png", class: "user-avatar" %>
                 <%= booking.therapist.full_name %>
               </div>
             <% end %>
             <div class="col" data-label="Schedule"><%= booking.start_time %></div>
-            <div class="col" data-label="Amount"><%= booking.therapist.price %> (Pending)</div>
+            <div class="col" data-label="Amount"><%= booking.therapist.price %></div>
             <div class="col" data-label="Status">
               <% if current_user.therapist %>
                 <%= simple_form_for booking, class: "status-form", method: :patch, url: booking_path(booking) do |f| %>
                     <%= f.input :status, label: false, collection: ["Pending", "Confirmed", "Cancelled"], input_html: { multiple: false, class: "multiple-select" }  %>
-                    <%= f.button :submit, class: "submit-status-button" %>
+                    <%= f.button :submit, class: "primary-button" %>
                 <% end %>
               <% else %>
                 <%= booking.status %>
@@ -44,12 +44,22 @@
   </div>
 
   <div class="tables-right">
-    <div class="calendar"></div>
+
+    <!--PROFILE TABLE-->
+    <div class="tables-box">
+      <div class="tables-title-row">PROFILE</div>
+        <div class="profile-details">
+          <div class="detail-row"><%= image_tag "logo.png", class: "user-profile-avatar" %></div>
+          <h3 class="detail-row"><%= current_user.full_name.upcase %></h3>
+          <div class="detail-row"><%= link_to "Edit Profile", edit_user_registration_path, class: 'primary-button' %></div>
+        </div>
+    </div>
+
 
 
     <!-- HISTORY TABLE -->
-    <div class="history-table">
-      <div class="history-title">HISTORY</div>
+    <div class="tables-box">
+      <div class="tables-title-row">HISTORY</div>
         <div class="history-description-row">
           <% if current_user.therapist %>
             <div class="col" data-label="Client">CLIENT</div>
@@ -76,13 +86,7 @@
           <% end %>
       </div>
     </div>
-
-
     </div>
   </div>
 </div>
-
-<script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.5.1/moment.min.js"></script>
-</script>
 
