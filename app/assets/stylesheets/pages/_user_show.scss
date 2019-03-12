@@ -4,14 +4,25 @@
   height: 350px;
 }
 
+.user-show-therapist-profile-avatar {
+}
+
 .user-show-master-container {
   display: flex;
   .user-show-container {
     display: flex;
     background-color: white;
-    height: 900px;
-    padding: 40px;
+    height: 600px;
+    padding: 50px 300px 50px 300px;
     width: 100%;
+    .therapist-avatar-container {
+      border-radius: 100px;
+      height: 200px;
+      width: 200px;
+      position: relative;
+      top: -150px;
+      border: solid white;
+    }
     // .therapist-container {
     //   display: flex;
     //   justify-content: left;
@@ -22,12 +33,20 @@
     // }
     .user-show-therapist-description {
       display: flex;
+      width: 80%;
+    }
+    .user-show-therapist-address {
+      color: gray;
+    }
+    .user-show-therapist-languages {
+
     }
   }
 }
 
   .therapist-reviews-container {
     // overflow: scroll;
+    height: 100%;
     width: 60%;
     .user-show-book-btn {
       display: flex;
@@ -41,6 +60,13 @@
       }
     }
     .container-reviews {
+      // overflow: scroll;
+    }
+    .review-icons-container {
+      display: flex;
+      i {
+        display: d-flex;
+      }
     }
   }
 
