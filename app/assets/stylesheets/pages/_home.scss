@@ -266,20 +266,39 @@ svg#dxp-curves, svg#commerce-curves, svg#analytics-cloud-curves {
   display: flex;
   flex-direction: row;
   padding-left: 150px;
+  background: white;
+  p {
+    color: #BDC3C7;
+  }
+  h1 {
+    color: #6ECAD6;
+  }
 }
 .middle-left{
   display: flex;
-  flex-direction: row
+  flex-direction: column;
 }
 .middle-icons{
   display: flex;
+  justify-content: space-between;
+  margin-bottom: 35px;
+  margin-top: 35px;
+  color: #489099;
 }
 
 .middle-someinfo {
   width: 60vh;
 }
-.middle-img {
-  float:left;
+.middle-img img {
   width: 756px;
   height: 640px;
+  margin-left: 190px;
+}
+.info-img {
+  display: flex;
+  img {
+    height: 45px;
+    width: 145px;
+    margin: 15px;
+  }
 }
