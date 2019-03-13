@@ -1,19 +1,11 @@
 <div class="container-booking">
   <div class="booking-box">
-    <div class='booking-title'>BOOKING SESSION...</div>
+    <div class='booking-title'>BOOKING</div>
     <%= simple_form_for([therapist, booking]) do |f| %>
-      <% if @booking.errors.any? %>
-        <div class="errors-container">
-          <%= f.error_notification %>
-          <ul>
-            <br>
-            <% booking.errors.full_messages.each do |message| %>
-              <li><%= message %></li>
-            <% end %>
-            <br>
-          </ul>
+      <div class="booking-box-details">
+        <div class="form-inputs">
+          <%= f.input :start_time %>
         </div>
-      <% end %>
       <div class="form-inputs">
         <%= f.input :description, label: 'Message the therapist',
         placeholder: "Briefly describe your story so the therapist can provide the best support...", input_html: { class: 'input-description'} %>
@@ -29,7 +21,7 @@
     <div class="booking-calendar-right">
     <%= simple_form_for([therapist, booking]) do |c| %>
       <div class="form-inputs">
-        <%= c.input :start_time, label: false, placeholder: "choose a date" %>
+        <%= c.input :start_time, label: false, placeholder: "Choose a date and time" %>
       </div>
     <% end %>
     </div>
@@ -43,3 +35,4 @@
     </div>
   </div>
 </div>
+

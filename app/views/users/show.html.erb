@@ -1,3 +1,7 @@
+<% content_for :meta_title, "#{@user.full_name} is on #{DEFAULT_META["meta_product_name"]}" %>
+<% content_for :meta_description, @user.expertise %>
+
+
 <div class="banneri"  style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.5)), url(<%= asset_path "session-mountain.png" %>)">
 </div>
 
@@ -37,7 +41,7 @@
       <br>
 
       <div class="container-reviews">
-      <h4><span>Reviews</span></h4>
+      <div class="tables-title-row">Reviews</div>
         <% @reviews.each do |review| %>
         <div class="review-card">
           <h5><%= review.client.full_name %></h5>

@@ -20,10 +20,16 @@
 
 .homepage-content {
   background-size: cover;
-  margin: 50px 0 0 0;
+  height: 606px;
+  display: flex;
+  justify-content: center;
+  // margin: 50px 0 0 0;
   h2 {
     text-align: center;
     margin: 0 0 50px 0;
+  }
+  a {
+    color: #6ECAD6;
   }
 }
 
@@ -166,7 +172,7 @@ html, body {
   }
   100% {
     color: #FFFFFF;
-    opactiy: 1;
+    opacity: 1;
     transform: translateY(0px);
   }
 }
@@ -193,7 +199,7 @@ html, body {
 }
 
 .cta-link {
-  color: #0B63CE;
+  color: #489099;
   font-weight: 600;
   margin: 0;
   text-align: center;
@@ -222,10 +228,10 @@ h3 {
 .max-width {
   align-items: center;
   display: flex;
-  margin: auto;
-  margin-top: 8em;
-  margin-bottom: 8em;
-  max-width: 75rem;
+  // margin: auto;
+  // margin-top: 8em;
+  // margin-bottom: 8em;
+  // max-width: 75rem;
 }
 
 .more-blue {
@@ -246,7 +252,7 @@ svg#dxp-curves, svg#commerce-curves, svg#analytics-cloud-curves {
 
 .home-middle {
   display: flex;
-  flex-direction: row;
+  justify-content: space-between;
   padding-left: 150px;
   background: white;
   p {
@@ -257,8 +263,9 @@ svg#dxp-curves, svg#commerce-curves, svg#analytics-cloud-curves {
   }
 }
 .middle-left{
-  display: flex;
-  flex-direction: column;
+  width: 25%;
+  margin: 128px;
+  justify-content: center;
 }
 .middle-icons{
   display: flex;
@@ -269,18 +276,19 @@ svg#dxp-curves, svg#commerce-curves, svg#analytics-cloud-curves {
 }
 
 .middle-someinfo {
-  width: 60vh;
 }
 .middle-img img {
   width: 756px;
   height: 640px;
   margin-left: 190px;
+  margin-top: 44px;
 }
 .info-img {
   display: flex;
+  margin-top: 40px;
   img {
     height: 45px;
     width: 145px;
-    margin: 15px;
+    margin: 0 20px 0 0;
   }
 }

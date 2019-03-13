@@ -62,7 +62,7 @@ GEM
       activemodel (>= 4.0.0)
       activesupport (>= 4.0.0)
       mime-types (>= 1.16)
-    cloudinary (1.11.1)
+    cloudinary (1.9.1)
       aws_cf_signer
       rest-client
     coderay (1.1.2)
@@ -254,7 +254,7 @@ DEPENDENCIES
   bootstrap
   bootstrap-datepicker-rails
   carrierwave (~> 1.2)
-  cloudinary
+  cloudinary (~> 1.9.1)
   devise
   dotenv-rails
   faker
