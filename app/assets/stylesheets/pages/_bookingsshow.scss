@@ -18,7 +18,7 @@
   background-position: center;
   display: flex;
   align-items: center;
-  margin-top: 68px;
+  // margin-top: 68px;
 }
 .big-box {
   display: flex;
@@ -30,8 +30,17 @@
 }
 .bottom {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  // justify-content: space-around;
   margin-top: 60px;
+  h3{
+  font-size: 60px;
+  color:#808080;
+  }
+  p {
+    font-size: 44px;
+    color:#808080;
+  }
   .btn-primary{
     width: 20%;
     padding: 10px;
@@ -221,4 +230,16 @@ li {
   -moz-box-shadow: 10px 10px 50px 0px rgba(0, 0, 0, 0.75);
   box-shadow: 10px 10px 50px 0px rgba(0, 0, 0, 0.75);
 }
+}
+.abso {
+  position: absolute;
+  top: 290px;
+  h3 {
+    padding: 0;
+    margin: 0;
+  }
+  p {
+    padding: 0;
+    margin: 0;
+  }
 }

@@ -71,43 +71,50 @@
             </div>
         </div>
 
-        <div class="big-box">
-          <div class="left-box">
-            <h1>Session with <%= @booking.therapist.full_name %>at <%= @booking.start_time.strftime('%Y-%m-%d') %></h1>
-              <span class="js-btn btn"><i class="fas fa-video"></i></span>
-                <div class='js-fade is-hidden' id="remote-video-container">
-                <div id="video_overlays">
-                  <video id="local-video" autoplay></video>
-                </div>
-                  <video id="remote-video" autoplay></video>
-              <button onclick="handleJoinSession()">
-                Join Room
-              </button>
-              <button onclick="handleLeaveSession()">
-                Leave Room
-              </button>
-          </div>
-        </div>
+      <div class="video-chat-info">
+        <h1>Session with <%= @booking.therapist.full_name %>at <%= @booking.start_time.strftime('%Y-%m-%d') %>
+        </h1>
+        <div>Random User ID:
+      <span id="current-user"><%= @random_number %></span>
+    </div>
+      </div>
+    <div class="video-main-box">
+      <div class="video-left-box">
+          <button onclick="handleJoinSession()">
+            Join Room
+          </button>
+          <button onclick="handleLeaveSession()">
+            Leave Room
+          </button>
+            <div id="remote-video-container">
+            <div id="video_overlays">
+              <video id="local-video" autoplay></video>
+            </div>
+              <video id="remote-video" autoplay></video>
+      </div>
+    </div>
 
-  <div class="right-box">
-    <div class="container">
+  <div class="video-right-box">
+    <div class="-chat-container">
       <div class="row">
-        <div class="col-sm-6 col-sm-offset-3">
-          <div class="chat-header"><h4>Sessions Messenger(Therapist: <%= @booking.therapist.full_name %>)</h4></div>
-          <div class="messages">
-            <% @chatrooms.messages.each do |message| %>
-              <%= render "messages/message", message: message, user_is_messages_author: message.user == current_user %>
-            <% end %>
-          </div>
-          <div id="create-message">
-            <%= simple_form_for [ @chatrooms, Message.new ], remote: true do |f| %>
-              <%= f.input :content, label: false %>
-            <% end %>
+        <div class="col-sm-12 col-sm-offset-3">
+          <div class="chat-shadow">
+            <div class="chat-header"><h4>Sessions Messenger(Therapist: <%= @booking.therapist.full_name %>)</h4></div>
+            <div class="messages">
+              <% @chatrooms.messages.each do |message| %>
+                <%= render "messages/message", message: message, user_is_messages_author: message.user == current_user %>
+              <% end %>
+            </div>
+            <div id="create-message" >
+              <%= simple_form_for [ @chatrooms, Message.new ], remote: true do |f| %>
+                <%= f.input :content, label: false, placeholder: "Type your message" %>
+              <% end %>
+            </div>
           </div>
         </div>
       </div>
     </div>
-</div>
+  </div>
 </div>
     <% content_for :after_js do %>
       <script>
@@ -129,6 +136,7 @@
       </script>
     <% end %>
 </div>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 <script>
 var currentSec = getSecondsToday();
@@ -219,13 +227,14 @@ function fadeIn(el, display){
 
 var btn = document.querySelector('.js-btn');
 var el = document.querySelector('.js-fade');
-
-btn.addEventListener('click', function(e){
-  if(el.classList.contains('is-hidden')){
-    fadeIn(el);
-  }
-  else {
-    fadeOut(el);
-  }
-});
+if (btn) {
+  btn.addEventListener('click', function(e){
+    if(el.classList.contains('is-hidden')){
+      fadeIn(el);
+    }
+    else {
+      fadeOut(el);
+    }
+  });
+}
 </script>
