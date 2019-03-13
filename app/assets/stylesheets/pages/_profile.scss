@@ -13,7 +13,7 @@ h3 {
   display: flex;
   margin: 0;
   justify-content: space-evenly;
-  margin-top: 32px;
+  margin: 32px 0;
 
   .tables-box{
     display: flex;
@@ -114,6 +114,7 @@ h3 {
 
         .detail-row {
           margin: 8px 0;
+          text-align: center;
         }
       }
 
