@@ -1,5 +1,5 @@
+<<<<<<< HEAD
 require "faker"
-
 
 puts "destroying users"
 Review.destroy_all
@@ -7,33 +7,41 @@ ChatRoom.destroy_all
 Booking.destroy_all
 puts "destroyed users"
 puts "destroying reviews"
-
-
 puts "destroyed reviews"
-
 puts "Starting seed"
 
 puts "making languages"
+
+english = Language.create!(
+  language_name: "English",
+  )
+
 
 
 english = Language.create!(
   language_name: "English",
   )
 
+
 puts "done english"
 french = Language.create!(
   language_name: "French",
   )
+
 
 puts "done english"
 spanish = Language.create!(
   language_name: "Spanish",
   )
 
+
+
 puts "done english"
 swahili = Language.create!(
   language_name: "Swahili",
   )
+
+
 
 puts "done english"
 creole = Language.create!(
@@ -43,8 +51,11 @@ creole = Language.create!(
 puts "done english"
 
 
-20.times do
+puts "done english"
 
+
+
+20.times do
   therapists = User.create!(
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
@@ -58,7 +69,9 @@ puts "done english"
 end
 
 
+
 puts "done main users"
+
 
 julia = User.create!(
   first_name: "Julia",
@@ -71,7 +84,14 @@ julia = User.create!(
     expertise: "Psycho-therapy",
     bio: Faker::Lorem.paragraph
   )
+
+
+
+
+
 puts "done julia"
+
+
 
 mario = User.create!(
   first_name: "Mario",
@@ -84,7 +104,14 @@ mario = User.create!(
     expertise: "Calming-therapy, Marriage Counselling",
     bio: Faker::Lorem.paragraph
   )
+
+
+
+puts "done languages"
+
+=======
 puts "done mario"
+
 
 brian = User.create!(
   first_name: "Brian",
@@ -98,7 +125,9 @@ brian = User.create!(
     bio: Faker::Lorem.paragraph
   )
 
+
 puts "done brian"
+
 
 john = User.create!(
   first_name: "Johnathan",
@@ -111,5 +140,7 @@ john = User.create!(
     expertise: "Depression Counselling",
     bio: Faker::Lorem.paragraph
   )
+
+
 
 puts "finished john"
