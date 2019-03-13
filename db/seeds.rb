@@ -90,9 +90,7 @@ mario = User.create!(
     bio: Faker::Lorem.paragraph
   )
 
-
 puts "done languages"
-
 
 
 brian = User.create!(
