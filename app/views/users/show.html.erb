@@ -1,6 +1,7 @@
 <div class="banneri"  style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.5)), url(<%= asset_path "session-mountain.png" %>)">
 </div>
 
+
 <div class="user-show-master-container">
   <div class="user-show-container">
     <img class="therapist-avatar-container" src="https://source.unsplash.com/featured/?{waiter}<%= (1..100000).to_a.sample %>" alt="">
@@ -12,9 +13,10 @@
         <h4><%= @user.address %></h4>
       </div>
       <div class="user-show-therapist-languages">
-        <%# raise %>
         <% @user.user_languages.each do |language|%>
+        <div class="language-tag">
         <h5><strong><%= language.language.language_name %></strong></h5>
+         </div>
         <% end %>
       </div>
       <div class="user-show-expertise">
