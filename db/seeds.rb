@@ -1,3 +1,6 @@
+require "faker"
+
+
 puts "destroying users"
 Review.destroy_all
 ChatRoom.destroy_all
@@ -9,6 +12,7 @@ puts "destroying reviews"
 puts "destroyed reviews"
 
 puts "Starting seed"
+
 puts "making languages"
 
 
@@ -49,65 +53,52 @@ puts "done english"
     email: Faker::Internet.email,
     password: Faker::Internet.password,
     therapist: true,
-    expertise: Faker::Esport.game,
-    bio: Faker::Hipster.paragraph
-        )
+    expertise: Faker::Esport.game
+    )
 end
+
+
 puts "done main users"
-
-puts "starting languages"
-
-20.times do
-
-language = Language.create!(
-          language_name: Faker::Nation.language
-          )
-end
 
 julia = User.create!(
   first_name: "Julia",
     last_name: "Stone",
     address: "Camden, London",
     phone_number: Faker::PhoneNumber.cell_phone_with_country_code,
-    email: "juliaa@stonetherapy.com",
+    email: "julia@stonetherapy.com",
     password: "123456",
     therapist: true,
     expertise: "Psycho-therapy",
     bio: Faker::Lorem.paragraph
   )
-
-# puts "done julia"
+puts "done julia"
 
 mario = User.create!(
   first_name: "Mario",
     last_name: "Vespachy",
     address: "South Kensington, London",
     phone_number: Faker::PhoneNumber.cell_phone_with_country_code,
-    email: "marioo@vtherapy.com",
+    email: "mario@vtherapy.com",
     password: "123456",
     therapist: true,
     expertise: "Calming-therapy, Marriage Counselling",
     bio: Faker::Lorem.paragraph
   )
-
-puts "done languages"
-
+puts "done mario"
 
 brian = User.create!(
   first_name: "Brian",
     last_name: "Delaweo",
     address: "South Kensington, London",
     phone_number: Faker::PhoneNumber.cell_phone_with_country_code,
-    email: "briann@getbetter.com",
+    email: "brian@getbetter.com",
     password: "123456",
     therapist: true,
-    expertise: "Calming-therapy, Group-therapy",
+    expertise: "Calming-therapy, Depression Counselling, Group-therapy",
     bio: Faker::Lorem.paragraph
   )
 
 puts "done brian"
-
-
 
 john = User.create!(
   first_name: "Johnathan",
