@@ -5,17 +5,34 @@
   display: flex;
   align-items: center;
 }
-.big-box {
+
+#search-form {
   display: flex;
-  flex-direction: row;
-  // width: 100%;
+  justify-content: space-between;
+  align-items: baseline;
+  margin: 24px 0;
+
+  #input {
+    padding: 26px;
+    font-size: 18px;
+    margin-right: 20px;
+
+    &:active, &:focus {
+    outline: none;
+    border: 1px solid #6ECAD6;
+    box-shadow: none;
+  }
+  }
+
 }
+
 .lhs {
   width: 20%;
 }
 
 .container-holder {
-  width: 75%;
+  display: flex;
+  flex-direction: row;
 }
 
 .holding-container {

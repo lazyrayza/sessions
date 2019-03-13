@@ -1,6 +1,7 @@
 <div class="container">
   <div class="login-container">
     <div class="form-login">
+      <% resource.errors.full_messages %>
       <h2>Sign up</h2>
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <%= f.error_notification %>
@@ -12,17 +13,14 @@
                       required: true,
                       collection: [["Therapist", true],["Client", false]],
                       input_html: { multiple: false, class: "multiple-select" }  %>
-
           <%= f.input :first_name,
                       required: true,
                       autofocus: true,
                       input_html: { autocomplete: "first_name" }, placeholder: "First Name"  %>
-
           <%= f.input :last_name,
                       required: true,
                       autofocus: true,
                       input_html: { autocomplete: "last_name" }, placeholder: "Last Name"  %>
-
           <%= f.input :email,
                       required: true,
                       autofocus: true,
@@ -30,10 +28,10 @@
           <%= f.input :password,
                       required: true,
                       hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                      input_html: { autocomplete: "new-password" }, placeholder: "******"  %>
+                      input_html: { autocomplete: "new-password" }, placeholder: "password"  %>
           <%= f.input :password_confirmation,
                       required: true,
-                      input_html: { autocomplete: "new-password" }, placeholder: "******"  %>
+                      input_html: { autocomplete: "new-password" }, placeholder: "password"  %>
         </div>
         <div class="form-actions-btn">
           <%= f.button :submit, "Register", class: "primary-button" %>

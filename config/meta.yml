@@ -1,0 +1,5 @@
+meta_product_name: "Sessions"
+meta_title: "Sessions - Therapy made easy"
+meta_description: "Find a specialist, start your therapy and change your life - wherever you are."
+meta_image: "cover.png" # should exist in `app/assets/images/`
+twitter_account: "@sessionsforall"   # required for Twitter Cards

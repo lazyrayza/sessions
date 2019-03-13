@@ -18,13 +18,15 @@ gem 'webpacker'
 gem 'faker'
 gem "geocoder"
 gem 'carrierwave', '~> 1.2'
-gem 'cloudinary'
+gem 'cloudinary', '~> 1.9.1'
 gem 'pg_search'
 
 gem 'money-rails'
 gem 'stripe'
 gem 'filterrific'
 gem 'bootstrap'
+gem 'bootstrap-datepicker-rails'
+
 
 group :development do
   gem 'web-console', '>= 3.3.0'
