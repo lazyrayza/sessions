@@ -1,31 +1,31 @@
-<div class="container">
-  <div class="bookings-container">
+<div class="container-booking">
+  <div class="booking-box">
+      <br>
+      <div class='booking-title'>BOOKING SESSION...</div>
+      <br>
     <%= simple_form_for([therapist, booking]) do |f| %>
       <% if @booking.errors.any? %>
         <div class="errors-container">
           <%= f.error_notification %>
           <ul>
+            <br>
             <% booking.errors.full_messages.each do |message| %>
               <li><%= message %></li>
             <% end %>
+            <br>
           </ul>
         </div>
       <% end %>
-
       <div class="form-inputs">
         <%= f.input :start_time %>
       </div>
-      <br>
       <div class="form-inputs">
-        <%= f.input :end_time %>
-      </div>
-      <br>
-      <div class="form-inputs">
-        <%= f.input :description %>
+        <%= f.input :description, label: 'Message the therapist',
+        placeholder: "Briefly describe your story so the therapist can provide the best support...", input_html: { class: 'input-description'} %>
       </div>
       <div class="form-actions">
         <div class="booking-update-btn">
-          <%= f.button :submit, class: "btn btn-primary" %>
+          <%= f.button :submit, class: "primary-button" %>
         </div>
       </div>
     <% end %>

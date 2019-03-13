@@ -7,7 +7,7 @@ initMapbox();
 import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
 // import { loadDynamicBannerText } from '../components/banner';
 // loadDynamicBannerText();
-
+import "../plugins/flatpickr"
 
 import { initUpdateNavbarOnScroll } from '../components/navbar';
 initUpdateNavbarOnScroll();

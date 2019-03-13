@@ -10,14 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_12_130647) do
+ActiveRecord::Schema.define(version: 2019_03_12_182236) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "bookings", force: :cascade do |t|
-    t.datetime "start_time"
-    t.datetime "end_time"
+    t.string "start_time"
     t.bigint "client_id"
     t.bigint "therapist_id"
     t.boolean "accepted", default: false
@@ -42,6 +41,15 @@ ActiveRecord::Schema.define(version: 2019_03_12_130647) do
     t.index ["booking_id"], name: "index_chat_rooms_on_booking_id"
   end
 
+  create_table "chatroom_participants", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "chat_room_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["chat_room_id"], name: "index_chatroom_participants_on_chat_room_id"
+    t.index ["user_id"], name: "index_chatroom_participants_on_user_id"
+  end
+
   create_table "languages", force: :cascade do |t|
     t.string "language_name"
     t.datetime "created_at", null: false
@@ -56,6 +64,16 @@ ActiveRecord::Schema.define(version: 2019_03_12_130647) do
     t.datetime "updated_at", null: false
     t.index ["chat_room_id"], name: "index_messages_on_chat_room_id"
     t.index ["user_id"], name: "index_messages_on_user_id"
+  end
+
+  create_table "requests", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "chat_room_id"
+    t.boolean "accepted"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["chat_room_id"], name: "index_requests_on_chat_room_id"
+    t.index ["user_id"], name: "index_requests_on_user_id"
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -112,8 +130,12 @@ ActiveRecord::Schema.define(version: 2019_03_12_130647) do
   add_foreign_key "bookings", "users", column: "client_id"
   add_foreign_key "bookings", "users", column: "therapist_id"
   add_foreign_key "chat_rooms", "bookings"
+  add_foreign_key "chatroom_participants", "chat_rooms"
+  add_foreign_key "chatroom_participants", "users"
   add_foreign_key "messages", "chat_rooms"
   add_foreign_key "messages", "users"
+  add_foreign_key "requests", "chat_rooms"
+  add_foreign_key "requests", "users"
   add_foreign_key "reviews", "bookings"
   add_foreign_key "reviews", "users", column: "client_id"
   add_foreign_key "reviews", "users", column: "therapist_id"

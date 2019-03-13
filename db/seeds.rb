@@ -1,4 +1,4 @@
-
+<<<<<<< HEAD
 require "faker"
 
 puts "destroying users"
@@ -9,6 +9,7 @@ puts "destroyed users"
 puts "destroying reviews"
 puts "destroyed reviews"
 puts "Starting seed"
+
 puts "making languages"
 
 english = Language.create!(
@@ -63,21 +64,13 @@ puts "done english"
     email: Faker::Internet.email,
     password: Faker::Internet.password,
     therapist: true,
-    expertise: Faker::Esport.game,
-    bio: Faker::Hipster.paragraph
-        )
+    expertise: Faker::Esport.game
+    )
 end
+
+
+
 puts "done main users"
-
-
-puts "starting languages"
-
-20.times do
-
-language = Language.create!(
-          language_name: Faker::Nation.language
-          )
-end
 
 
 julia = User.create!(
@@ -85,7 +78,7 @@ julia = User.create!(
     last_name: "Stone",
     address: "Camden, London",
     phone_number: Faker::PhoneNumber.cell_phone_with_country_code,
-    email: "juliaa@stonetherapy.com",
+    email: "julia@stonetherapy.com",
     password: "123456",
     therapist: true,
     expertise: "Psycho-therapy",
@@ -93,7 +86,11 @@ julia = User.create!(
   )
 
 
-# puts "done julia"
+
+
+
+puts "done julia"
+
 
 
 mario = User.create!(
@@ -101,7 +98,7 @@ mario = User.create!(
     last_name: "Vespachy",
     address: "South Kensington, London",
     phone_number: Faker::PhoneNumber.cell_phone_with_country_code,
-    email: "marioo@vtherapy.com",
+    email: "mario@vtherapy.com",
     password: "123456",
     therapist: true,
     expertise: "Calming-therapy, Marriage Counselling",
@@ -109,26 +106,27 @@ mario = User.create!(
   )
 
 
+
 puts "done languages"
 
+=======
+puts "done mario"
 
->>>>>>> d3a7223cf9abb1b0803354aba545d5901d708218
+
 brian = User.create!(
   first_name: "Brian",
     last_name: "Delaweo",
     address: "South Kensington, London",
     phone_number: Faker::PhoneNumber.cell_phone_with_country_code,
-    email: "briann@getbetter.com",
+    email: "brian@getbetter.com",
     password: "123456",
     therapist: true,
-    expertise: "Calming-therapy, Group-therapy",
+    expertise: "Calming-therapy, Depression Counselling, Group-therapy",
     bio: Faker::Lorem.paragraph
   )
 
 
 puts "done brian"
-
-
 
 
 john = User.create!(
