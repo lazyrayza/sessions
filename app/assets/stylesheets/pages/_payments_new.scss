@@ -1,0 +1,36 @@
+.payments-new-master-container {
+  display: flex;
+  justify-content: center;
+  .payments-new-container {
+    background-color: white;
+    border-radius: 4px;
+    padding: 40px;
+    margin: 30px 0 30px 0;
+    width: 800px;
+    .payments-new-therapist-avatar {
+      display: flex;
+      justify-content: center;
+      img {
+        border-radius: 100px;
+        height: 200px;
+        width: 200px;
+      }
+    }
+    .payments-new-colour-block {
+      // background-color: blue;
+      // height: 200px;
+    }
+    .payments-new-therapist-name {
+      text-align: center;
+    }
+    .payments-new-therapist-description {
+      // border: solid gray 0.5px;
+      // padding: 20px;
+      // border-radius: 4px;
+    }
+    .new-payment {
+      text-align: end;
+    }
+  }
+}
+

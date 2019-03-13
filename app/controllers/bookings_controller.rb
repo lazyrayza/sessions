@@ -40,7 +40,6 @@ class BookingsController < ApplicationController
     end
   end
 
-
   def edit
     # @booking = current_user.client_bookings
     # @therapist = @booking.therapist
