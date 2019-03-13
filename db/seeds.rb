@@ -9,6 +9,36 @@ puts "destroying reviews"
 puts "destroyed reviews"
 
 puts "Starting seed"
+puts "making languages"
+
+
+english = Language.create!(
+  language_name: "English",
+  )
+
+puts "done english"
+french = Language.create!(
+  language_name: "French",
+  )
+
+puts "done english"
+spanish = Language.create!(
+  language_name: "Spanish",
+  )
+
+puts "done english"
+swahili = Language.create!(
+  language_name: "Swahili",
+  )
+
+puts "done english"
+creole = Language.create!(
+  language_name: "Creole",
+  )
+
+puts "done english"
+
+
 20.times do
 
   therapists = User.create!(
@@ -34,52 +64,63 @@ language = Language.create!(
           )
 end
 
-puts "done languages"
-
-
-# julia = User.create!(
-#   first_name: "Julia",
-#     last_name: "Stone",
-#     address: "Camden, London",
-#     phone_number: Faker::PhoneNumber.cell_phone_with_country_code,
-#     email: "julia@stonetherapy.com",
-#     password: "123456",
-#     therapist: true,
-#     languages: "English, French, Spanish",
-#     expertise: "Psycho-therapy",
-#     bio: Faker::Lorem.paragraph
-#   )
+julia = User.create!(
+  first_name: "Julia",
+    last_name: "Stone",
+    address: "Camden, London",
+    phone_number: Faker::PhoneNumber.cell_phone_with_country_code,
+    email: "juliaa@stonetherapy.com",
+    password: "123456",
+    therapist: true,
+    expertise: "Psycho-therapy",
+    bio: Faker::Lorem.paragraph
+  )
 
 # puts "done julia"
 
-# mario = User.create!(
-#   first_name: "Mario",
-#     last_name: "Vespachy",
-#     address: "South Kensington, London",
-#     phone_number: Faker::PhoneNumber.cell_phone_with_country_code,
-#     email: "mario@vtherapy.com",
-#     password: "123456",
-#     therapist: true,
-#     languages: "English, French, Italian",
-#     expertise: "Calming-therapy, Marriage Counselling",
-#     bio: Faker::Lorem.paragraph
-#   )
-
-# puts "done mario"
-
-# brian = User.create!(
-#   first_name: "Brian",
-#     last_name: "Delaweo",
-#     address: "South Kensington, London",
-#     phone_number: Faker::PhoneNumber.cell_phone_with_country_code,
-#     email: "brian@getbetter.com",
-#     password: "123456",
-#     therapist: true,
-#     languages: "English, French, Swahili",
-#     expertise: "Calming-therapy, Depression Counselling, Group-therapy",
-#     bio: Faker::Lorem.paragraph
-#   )
+mario = User.create!(
+  first_name: "Mario",
+    last_name: "Vespachy",
+    address: "South Kensington, London",
+    phone_number: Faker::PhoneNumber.cell_phone_with_country_code,
+    email: "marioo@vtherapy.com",
+    password: "123456",
+    therapist: true,
+    expertise: "Calming-therapy, Marriage Counselling",
+    bio: Faker::Lorem.paragraph
+  )
 
 
-# puts "done brian"
+puts "done languages"
 
+
+
+brian = User.create!(
+  first_name: "Brian",
+    last_name: "Delaweo",
+    address: "South Kensington, London",
+    phone_number: Faker::PhoneNumber.cell_phone_with_country_code,
+    email: "briann@getbetter.com",
+    password: "123456",
+    therapist: true,
+    expertise: "Calming-therapy, Group-therapy",
+    bio: Faker::Lorem.paragraph
+  )
+
+puts "done brian"
+
+
+
+john = User.create!(
+  first_name: "Johnathan",
+    last_name: "Olujemba",
+    address: "Croydon, London",
+    phone_number: Faker::PhoneNumber.cell_phone_with_country_code,
+    email: "john@gOlutherapy.com",
+    password: "123456",
+    therapist: true,
+    expertise: "Depression Counselling",
+    bio: Faker::Lorem.paragraph
+  )
+
+puts "finished john"
