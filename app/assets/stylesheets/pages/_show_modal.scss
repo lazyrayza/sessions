@@ -5,6 +5,101 @@
   // margin: 300px ;
 }
 
-.outside-modal {
+.modal-body {
   // background: grey;
+      padding: 0rem;
+  .modal-banneri{
+    background-size: cover;
+    background-position: center;
+    height: 313px;
+  }
+  .modal-therapist-avatar-container {
+      border-radius: 100px;
+      height: 200px;
+      width: 200px;
+      position: relative;
+      top: -150px;
+      border: solid white;
+      left: 50px;
+  }
+  .modal-master-box {
+    display: flex;
+    margin-top: -130px;
+    justify-content: space-between;
+    .modal-user-show-book-btn{
+      display: flex;
+    }
+    .modal-right-side {
+      display: flex;
+      flex-direction: column;
+          margin: 0px 50px;
+          width: 50%;
+      .modal-user-show-book-btn{
+        display: flex;
+      }
+    }
+    .modal-container-reviews {
+    overflow-y: scroll;
+    margin-top: 40px;
+    width: 600px;
+    box-shadow: -12px 14px 5px 0px rgba(227,227,227,1);
+    border-radius: 10px;
+    background-color: #f9f9f9;
+        width: 400px;
+        height: 300px;
+
+    h4 span{
+      color: #489099 ;
+      // border-radius: 12px;
+      // margin-top: 8px;
+    }
+    .tables-title-row {
+    border-radius: 8px 8px 0 0;
+    display: flex;
+    justify-content: space-around;
+    font-weight: 700;
+    padding: 16px 0;
+    color: #FFFFFF;
+    font-size: 24px;
+    background-color: #6ECAD6;
+  }
+  }
 }
+}
+
+.modal-left-side{
+  width: 50%;
+  margin: 0px 50px;
+}
+.modal-user-show-expertise {
+      display: flex;
+      justify-content: space-around;
+      width: 40%;
+      border: 2px solid #489099;
+      border-radius: 12px;
+      margin: 4px;
+      text-align: center;
+      p {
+       color: #489099;
+       font-size: 18px;
+      }
+    }
+.modal-user-show-therapist-languages {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+    .modal-language {
+      display: flex;
+      border: solid 2px #74d5e0 ;
+      border-radius: 12px;
+      width: 30%;
+      margin: 4px;
+      text-align: center;
+      padding: 2px;
+      // vertical-align: baseline;
+      p {
+        font-size: 18px;
+        color: #74d5e0;
+      }
+}
+    }
