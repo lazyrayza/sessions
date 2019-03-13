@@ -1,5 +1,6 @@
 require "faker"
 
+
 puts "destroying users"
 Review.destroy_all
 ChatRoom.destroy_all
@@ -11,6 +12,37 @@ puts "destroying reviews"
 puts "destroyed reviews"
 
 puts "Starting seed"
+
+puts "making languages"
+
+
+english = Language.create!(
+  language_name: "English",
+  )
+
+puts "done english"
+french = Language.create!(
+  language_name: "French",
+  )
+
+puts "done english"
+spanish = Language.create!(
+  language_name: "Spanish",
+  )
+
+puts "done english"
+swahili = Language.create!(
+  language_name: "Swahili",
+  )
+
+puts "done english"
+creole = Language.create!(
+  language_name: "Creole",
+  )
+
+puts "done english"
+
+
 20.times do
 
   therapists = User.create!(
@@ -25,18 +57,8 @@ puts "Starting seed"
     )
 end
 
+
 puts "done main users"
-
-puts "starting languages"
-
-20.times do
-
-language = Language.create!(
-          language_name: Faker::Nation.language
-          )
-end
-
-puts "done languages"
 
 julia = User.create!(
   first_name: "Julia",
@@ -49,7 +71,6 @@ julia = User.create!(
     expertise: "Psycho-therapy",
     bio: Faker::Lorem.paragraph
   )
-
 puts "done julia"
 
 mario = User.create!(
@@ -63,7 +84,6 @@ mario = User.create!(
     expertise: "Calming-therapy, Marriage Counselling",
     bio: Faker::Lorem.paragraph
   )
-
 puts "done mario"
 
 brian = User.create!(
@@ -78,5 +98,18 @@ brian = User.create!(
     bio: Faker::Lorem.paragraph
   )
 
-
 puts "done brian"
+
+john = User.create!(
+  first_name: "Johnathan",
+    last_name: "Olujemba",
+    address: "Croydon, London",
+    phone_number: Faker::PhoneNumber.cell_phone_with_country_code,
+    email: "john@gOlutherapy.com",
+    password: "123456",
+    therapist: true,
+    expertise: "Depression Counselling",
+    bio: Faker::Lorem.paragraph
+  )
+
+puts "finished john"

@@ -1,113 +1,163 @@
-<div class="container">
-  <div class="edit-profile-container">
-    <div class="edit-profile-box">
+<div class="edit-profile-container">
+  <div class="edit-profile-box">
+    <!-- UPLOAD PHOTO -->
+    <div class="edit-title">EDIT PROFILE</div>
+    <div class="edit-details">
       <div class="profile-upload">
-        <h2>Edit <%= resource_name.to_s.humanize %></h2>
-        <br>
         <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
         <%= f.error_notification %>
         <% if current_user.therapist %>
-          <%= f.input :photo %>
-          <%= f.input :photo_cache,
-                      as: :hidden,
-                      required: true %>
+        <%= f.input :photo %>
+        <%= f.input :photo_cache,
+        as: :hidden,
+        required: true %>
         <% else %>
-          <%= f.input :photo %>
-          <%= f.input :photo_cache,
-                      as: :hidden,
-                      required: false %>
+        <%= f.input :photo %>
+        <%= f.input :photo_cache,
+        as: :hidden,
+        required: false %>
         <% end %>
       </div>
+
+
+      <!-- NAMES -->
       <div class="names-box">
         <div class="first-name-input">
-        <%= f.input :first_name,
-                    required: true %>
+          <%= f.input :first_name,
+          required: true %>
         </div>
         <div class="last-name-input">
-        <%= f.input :last_name,
-                    required: true %>
+          <%= f.input :last_name,
+          required: true %>
         </div>
-
       </div>
+
+      <!-- EMAIL & CURRENT PASSWORD -->
 
       <div class="inline-input">
         <div class="email-current-password">
           <%= f.input :email, required: true, autofocus: true %>
           <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-            <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+          <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
           <% end %>
         </div>
+
         <div class="current-password">
-        <%= f.input :current_password,
-                    hint: "Enter your current password to confirm your changes",
-                    required: true,
-                    input_html: { autocomplete: "current-password" } %>
-        </div>
-    </div>
-    <div class="address">
-      <%= f.input :address,
-                  required: false %>
-    </div>
-    <div class="phone-languages">
-      <div class="phone-number">
-        <%= f.input :phone_number,
-                    required: false %>
-      </div>
-      <div class="languages">
-        <%= f.association :user_languages, required: false, collection: Language.all, label_method: :language_name, value_method: :id, input_html: { multiple: true, class: "multiple-select" }, include_hidden: false %>
-        <% resource.languages.each do |l| %>
-          <%= l.language_name %>
-        <% end %>
-      </div>
-    </div>
-    <% if current_user.therapist %>
-      <%= f.input :expertise,
-                  required: true %>
-    <% end %>
-    <div class="change-password">
-    <h2>Change your password</h2>
-    <% if current_user.therapist %>
-      <%= f.input :price,
-                  required: true %>
-    <% end %>
-  </div>
-  <div class="passwords">
-    <div class="password-change">
-      <%= f.input :password,
-                  hint: "Leave it blank if you don't want to change your password",
-                  required: false,
-                  input_html: { autocomplete: "new-password" } %>
-    </div>
-    <div class="password-confirmation">
-      <%= f.input :password_confirmation,
-                  required: false,
-                  input_html: { autocomplete: "new-password" } %>
-    </div>
-  </div>
-    </div>
-    <div class="form-actions">
-      <%= f.button :submit, "Update", class: "btn btn-primary" %>
-    </div>
-  <% end %>
-
-    <div class="line-break"></div>
-
-  <br>
-  <br>
-  <br>
-
-  <div class="bottom-row">
-    <h2>Cancel my account</h2>
-    <div class="bottom-btn">
-
-      <div class="back">
-        <%= link_to "Back", :back, class: "btn btn-secondary" %>
-      </div>
-
-      <div class="cancel">
-        <p><%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-secondary" %></p>
+          <%= f.input :current_password,
+          hint: "Enter your current password to confirm your changes",
+          required: true,
+          input_html: { autocomplete: "current-password" } %>
         </div>
       </div>
+
+      <!-- ADDRESS -->
+      <div class="address">
+        <%= f.input :address,
+        required: false %>
+      </div>
+
+      <!-- PHONE, GENDER & LANGUAGES -->
+      <div class="phone-gender-languages">
+        <div class="phone-gender">
+          <div class="phone-number">
+            <%= f.input :phone_number,
+            required: false %>
+          </div>
+
+
+          <div class="gender">
+            <%= f.input :gender,
+            required: false,
+            collection:
+            ["Female", "Male", "Non-Binary", "Other"],
+            input_html: {
+              multiple: false,
+              class: "multiple-select"
+              },
+              include_hidden: false %>
+            </div>
+          </div>
+
+          <div class="languages">
+            <%= f.association :user_languages,
+            required: true,
+            label: "Languages (select multiple if apply)",
+            collection: Language.all,
+            label_method: :language_name,
+            value_method: :id,
+            input_html: {
+              multiple: true,
+              class: "languages-multiple-select"
+              },
+              include_hidden: false %>
+            </div>
+          </div>
+
+          <!-- EXPERTISE -->
+          <% if current_user.therapist %>
+          <%= f.input :expertise,
+          required: true %>
+          <% end %>
+
+          <!-- CHANGE PASSWORD -->
+          <div class="change-password">
+            <h2>Change your password</h2>
+            <% if current_user.therapist %>
+            <%= f.input :price,
+            required: true %>
+            <% end %>
+          </div>
+
+          <div class="passwords">
+            <div class="password-change">
+              <%= f.input :password,
+              hint: "Leave it blank if you don't want to change your password",
+              required: false,
+              input_html: { autocomplete: "new-password" } %>
+            </div>
+            <div class="password-confirmation">
+              <%= f.input :password_confirmation,
+              required: false,
+              input_html: { autocomplete: "new-password" } %>
+            </div>
+
+          </div>
+
+          <!-- UPDATE BUTTON -->
+          <div class="form-actions">
+            <%= f.button :submit, "Update", class: "primary-button" %>
+          </div>
+          <% end %>
+          <div class="bottom-row">
+            <hr/>
+            <h2>Cancel my account</h2>
+
+            <br>
+            <br>
+
+            <div class="bottom-btn">
+              <div class="back">
+                <%= link_to "Back", :back, class: "secondary-button" %>
+              </div>
+
+              <div class="cancel">
+                <p>
+                  <%= link_to "Cancel my account",
+                  registration_path(resource_name),
+                  data: {
+                    confirm: "Are you sure?"
+                  },
+                  method: :delete,
+                  class: "secondary-button" %>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
+    <script>
+      document.addEventListener("DOMContentLoaded", (event) => {
+        window.scrollTo({top: 0});
+      })
+    </script>

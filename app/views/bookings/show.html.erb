@@ -1,4 +1,4 @@
-<div class="banneri"  style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.5)), url(<%= asset_path "session-stars.png" %>)">
+<div class="bannerx"  style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.5)), url(<%= asset_path "session-stars.png" %>)">
   <div class="clock">
   <div class="clock__second"></div>
   <div class="clock__minute"></div>
@@ -76,29 +76,41 @@
   </div>
 
 </div>
-
   <div class="cardx">
-    <div class="thumbnail"><img class="left" style="url(<%= asset_path "sunset.png" %>)"></div>
+    <div class="thumbnail"><img class="left" src="https://res.cloudinary.com/dnqrlagsz/image/upload/v1552398008/computer-contemporary-cup-1251833.jpg"/></div>
     <div class="right">
       <h1><%= (@booking.start_time / 60 / 60.round(2)) %> Hours</h1>
       <div class="author"><img src="https://randomuser.me/api/portraits/men/95.jpg"/>
-        <h2><%= @booking.therapist.first_name %> <%= @booking.therapist.last_name %></h2>
+        <h4><%= @booking.therapist.first_name %> <%= @booking.therapist.last_name %></h4>
       </div>
       <div class="separator"></div>
       <p><%= @booking.description %></p>
       <strong>Status: <%= @booking.status %></strong>
     </div>
     <div class="bottom">
-     <h3><%= (@booking.start_time).strftime("%dth %B") %> </h3>
-    <ul>
-      <li><i class="far fa-edit"></i></li>
-<!--       <li><i class="fas fa-video fa-3x""></i></li>
- -->      <li><i class="far fa-registered"></i></li>
-      <li><i class="fas fa-book-reader"></i></i></li>
-    </ul>
-    <div class="fab"><i class="fas fa-video fa-3x""></i></div>
-    </div>
+     <h1><%= (@booking.start_time).strftime("%dth") %> </h1>
+     <br>
+     <h1><%= (@booking.start_time).strftime("%B") %> </h1>
+       <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="Booking">
+          <a href=" <%= booking_chat_rooms_path(@booking) %> "><div class="fab1"><i class="far fa-edit fa-3x"></i></div></a>
+        </span>
+
+        <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="Disabled tooltip">
+          <div class="fab2"><i class="far fa-registered fa-3x"></i>
+          </div>
+        </span>
+
+        <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="Disabled tooltip">
+          <div class="fab3"><i class="fas fa-book-reader fa-3x"></i>
+          </div>
+        </span>
+        <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="Chatroom">
+          <div class="fab"><i class="fas fa-video fa-3x""></i>
+          </div>
+        </span>
+          </div>
 </div>
 
+    <%= link_to "Chat", booking_chat_rooms_path(@booking), :method => :post , class: "btn btn-primary"%>
 
     <%= link_to "Review your Therapist", new_booking_review_path(@booking), class: "btn btn-primary" %>

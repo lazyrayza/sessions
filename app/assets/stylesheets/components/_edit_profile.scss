@@ -1,117 +1,106 @@
 .edit-profile-container {
-  background: white;
-  padding: 30px;
-  margin-top: 50px;
-  margin-bottom: 100px;
-  margin-left: 70px;
-  border-radius: 3px;
-  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-  width: 900px;
+  margin-top: 48px;
+  display: flex;
+  justify-content: space-around;
 
-    .btn-primary {
-      background-color: #6ECAD6;
-      border: none;
-      margin-left: 25px;
-    }
-
-    .btn-primary:hover {
-      background-color: #74d5e0;
-    }
-
-    .btn-secondary {
-      background-color: #489099;
-      border: none;
-      margin-left: 20px;
-    }
-
-    .btn-secondary:hover {
-      background-color: #55a9b2;
-    }
-
-    .line-break {
-      width: 790px;
-      height: 47px;
-      border-bottom: 1px solid #9c9c9c;
-      position: absolute;
-      margin-left: 25px;
-    }
   .edit-profile-box {
-    margin: 16px 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background: white;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    width: 900px;
+    border-radius: 8px;
 
-    .profile-upload {
-      margin-left: 16px;
-    }
-
-    .names-box {
+    .edit-title {
+      border-radius :8px 8px 0 0;
       display: flex;
       justify-content: space-around;
-
-      .first-name-input {
-        width: 380px;
-      }
-
-      .last-name-input {
-        width: 380px;
-      }
+      font-weight: 700;
+      padding: 32px 0;
+      color: #FFFFFF;
+      font-size: 24px;
+      background-color: #6ECAD6;
+      margin-bottom: 16px;
     }
-  }
-  .inline-input {
-    display: flex;
-    justify-content: space-around;
-
-    .email-current-password {
-      width: 380px;
-    }
-    .current-password {
-      width: 380px;
-    }
-  }
-  .address {
-    margin: 0 16px 0 16px;
-  }
-  .phone-languages {
-    display: flex;
-    justify-content: space-around;
-    .phone-number {
-      width: 380px;
-    }
-    .languages {
-      width: 380px;
-    }
-  }
-  .change-password {
-    h2 {
-      margin: 20px 0 20px 15px;
-    }
-  }
-  .passwords {
-    display: flex;
-    justify-content: space-around;
-
-
-    .password-change {
-      width: 380px;
-    }
-    .password-confirmation {
-      width: 380px;
-    }
-  }
-  .bottom-row {
-    h2 {
-      margin: 20px 0 30px 15px;
-    }
-    .bottom-btn {
-      display: flex;
-      justify-content: space-between;
-
-      .back {
-        .btn-secondary {
-          padding: 10px 20px 10px 20px;
+    .edit-details {
+      margin: 12px 26px;
+      .names-box {
+        display: flex;
+        justify-content: space-between;
+        .first-name-input {
+          width: 48%;
+        }
+        .last-name-input {
+          width: 48%;
         }
       }
-      .cancel {
-        .btn-secondary {
-          margin-right: 20px;
+      .inline-input {
+        display: flex;
+        justify-content: space-between;
+        .email-current-password {
+          width: 48%;
+        }
+        .current-password {
+          width: 48%;
+        }
+      }
+      .address {
+      }
+      .phone-gender-languages {
+        display: flex;
+        justify-content: space-between;
+        .phone-gender {
+          display: flex;
+          flex-direction: column;
+          width: 48%;
+        }
+        .languages {
+          .languages-multiple-select{
+            height: 121px;
+          }
+          width: 48%;
+        }
+      }
+      .passwords {
+        display: flex;
+        justify-content: space-between;
+        .password-change {
+          width: 48%;
+        }
+        .password-confirmation {
+          width: 48%;
+        }
+      }
+      .form-actions {
+        margin-bottom: 14px;
+        .primary-button {
+          padding: 14px 18px !important;
+        }
+      }
+      hr {
+        margin-bottom: 24px;
+      }
+      .bottom-btn {
+        display: flex;
+        justify-content: space-between;
+
+        .back {
+          .secondary-button {
+            padding: 14px 26px !important;
+          }
+        }
+        .cancel {
+          .secondary-button {
+            background: #489099 !important;
+            color: white;
+            text-decoration: none !important;
+            &:hover {
+              background: #55a9b2 !important;
+              text-decoration: none !important;
+              color: white !important;
+            }
+          }
         }
       }
     }

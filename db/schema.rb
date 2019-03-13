@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 2019_03_12_182236) do
     t.string "status", default: "Pending"
     t.text "description"
     t.bigint "chat_rooms_id"
-    t.string "state"
+    t.string "state", default: "Pending"
     t.integer "amount_cents", default: 0, null: false
     t.jsonb "payment"
     t.index ["chat_rooms_id"], name: "index_bookings_on_chat_rooms_id"
