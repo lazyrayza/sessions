@@ -69,7 +69,7 @@
     <% if current_user.full_name == nil %>
    Hello: <%= current_user.email %><
     <% else %>
-    Hello:<%= current_user.full_name %>
+    Hello: <%= current_user.full_name %>
     <% end %>
     <br>
     Welcome to your Booking Info
@@ -87,13 +87,14 @@
       <p><%= @booking.description %></p>
       <strong>Status: <%= @booking.status %></strong>
     </div>
-    <div class="bottom">
-     <h1><%= (@booking.start_time).strftime("%dth") %> </h1>
-     <br>
-     <h1><%= (@booking.start_time).strftime("%B") %> </h1>
+    <div class="abso">
+     <h3><%= (@booking.start_time).strftime("%dth") %> </h3>
+     <p><strong><%= (@booking.start_time).strftime("%B") %></strong></p></div>
        <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="Booking">
-          <a href=" <%= booking_chat_rooms_path(@booking) %> "><div class="fab1"><i class="far fa-edit fa-3x"></i></div></a>
+        <%= link_to booking_chat_rooms_path(@booking), :method => :post do %>
+          <div class="fab1"><i class="far fa-edit fa-3x"></i></div></a>
         </span>
+        <% end %>
 
         <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="Disabled tooltip">
           <div class="fab2"><i class="far fa-registered fa-3x"></i>
@@ -109,7 +110,6 @@
           </div>
         </span>
           </div>
-</div>
 
     <%= link_to "Chat", booking_chat_rooms_path(@booking), :method => :post , class: "button-primary"%>
 
