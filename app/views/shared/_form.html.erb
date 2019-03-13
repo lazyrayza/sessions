@@ -29,7 +29,7 @@
     <div class="booking-calendar-right">
     <%= simple_form_for([therapist, booking]) do |c| %>
       <div class="form-inputs">
-        <%= c.input :start_time %>
+        <%= c.input :start_time, label: false, placeholder: "choose a date" %>
       </div>
     <% end %>
     </div>
