@@ -6,17 +6,18 @@
   .booking-box {
     display: flex;
     flex-direction: column;
-    background: white;
+    background: #FFFFFF;
     padding: 16px 32px;
     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
     width: 900px;
+    border-radius: 5px;
 
     .booking-title {
       display: flex;
       justify-content: space-around;
       font-weight: 700;
       padding: 32px 0;
-      color: #FFFFFF;
+      color: #000000;
       font-size: 24px;
       background-color: #6ECAD6;
       border-radius: 5px;
@@ -40,11 +41,42 @@
       }
     }
   }
-
   .booking-tables-right {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 20%;
+
+    .booking-calendar-right {
+        display: flex;
+        justify-content: space-evenly;
+        color: #000000;
+        background-color: #6ECAD6;
+        border-radius: 5px;
+        font-weight: 300;
+        font-size: 18px;
+        padding: 16px 0;
+        align-items: center;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    }
+
+    .booking-show-overview {
+      border-radius: 5px;
+      min-height: 40vh;
+      font-weight: 700;
+      font-size: 24px;
+      background-color: #FFFFFF;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+
+      .tables-title-row {
+        border-radius: 5px 0 0;
+        display: flex;
+        padding: 4px 0;
+        justify-content: space-around;
+        font-weight: 700;
+        color: #000000;
+        font-size: 24px;
+        background-color: #6ECAD6;
+      }
+    }
   }
 }
