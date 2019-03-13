@@ -5,9 +5,10 @@
 <div class="banneri"  style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.5)), url(<%= asset_path "session-mountain.png" %>)">
 </div>
 
+
 <div class="user-show-master-container">
   <div class="user-show-container">
-    <img class="therapist-avatar-container" src="https://pbs.twimg.com/profile_images/876792863459352577/SBLRu4VV_400x400.jpg" alt="">
+    <img class="therapist-avatar-container" src="https://source.unsplash.com/featured/?{waiter}<%= (1..100000).to_a.sample %>" alt="">
     <div class="therapist-container">
       <div class="user-show-therapist-name">
         <h2><strong><%= @user.first_name %> <%= @user.last_name %></strong></h2>
@@ -16,7 +17,11 @@
         <h4><%= @user.address %></h4>
       </div>
       <div class="user-show-therapist-languages">
-        <h5><strong><%= @user.languages%></strong></h5>
+        <% @user.user_languages.each do |language|%>
+        <div class="language-tag">
+        <h5><strong><%= language.language.language_name %></strong></h5>
+         </div>
+        <% end %>
       </div>
       <div class="user-show-expertise">
         <h5><strong><%= @user.expertise%></strong></h5>
@@ -29,17 +34,17 @@
 
     <div class="therapist-reviews-container">
       <div class="user-show-book-btn">
-        <h3>Price</h3>
+        <h>Price</h3>
         <%= link_to "Book", new_user_booking_path(@user), class: "primary-button-user-show"%>
       </div>
       <br>
       <br>
-      <h4>Reviews</h4>
 
       <div class="container-reviews">
+      <h4><span>Reviews</span></h4>
         <% @reviews.each do |review| %>
-        <div class="card">
-          <p><%= review.client.first_name %><%= review.client.first_name %></p>
+        <div class="review-card">
+          <h5><%= review.client.full_name %></h5>
           <%# review.client_id.photo.url %>
           <%= review.description %>
           <% counter = 0 %>
@@ -54,7 +59,7 @@
       </div>
     </div>
   </div>
-.
+</div>
 
 <div class="map-container">
   <div id="map" style="width: 62%;
@@ -63,4 +68,3 @@
     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
 </div>
-

@@ -1,4 +1,6 @@
+
 require "faker"
+
 puts "destroying users"
 Review.destroy_all
 ChatRoom.destroy_all
@@ -8,26 +10,50 @@ puts "destroying reviews"
 puts "destroyed reviews"
 puts "Starting seed"
 puts "making languages"
+
 english = Language.create!(
   language_name: "English",
   )
+
+
+
+english = Language.create!(
+  language_name: "English",
+  )
+
+
 puts "done english"
 french = Language.create!(
   language_name: "French",
   )
+
+
 puts "done english"
 spanish = Language.create!(
   language_name: "Spanish",
   )
+
+
+
 puts "done english"
 swahili = Language.create!(
   language_name: "Swahili",
   )
+
+
+
 puts "done english"
 creole = Language.create!(
   language_name: "Creole",
   )
+
 puts "done english"
+
+
+puts "done english"
+
+
+
 20.times do
   therapists = User.create!(
     first_name: Faker::Name.first_name,
@@ -37,10 +63,23 @@ puts "done english"
     email: Faker::Internet.email,
     password: Faker::Internet.password,
     therapist: true,
-    expertise: Faker::Esport.game
-    )
+    expertise: Faker::Esport.game,
+    bio: Faker::Hipster.paragraph
+        )
 end
 puts "done main users"
+
+
+puts "starting languages"
+
+20.times do
+
+language = Language.create!(
+          language_name: Faker::Nation.language
+          )
+end
+
+
 julia = User.create!(
   first_name: "Julia",
     last_name: "Stone",
@@ -52,7 +91,11 @@ julia = User.create!(
     expertise: "Psycho-therapy",
     bio: Faker::Lorem.paragraph
   )
+
+
 # puts "done julia"
+
+
 mario = User.create!(
   first_name: "Mario",
     last_name: "Vespachy",
@@ -64,7 +107,12 @@ mario = User.create!(
     expertise: "Calming-therapy, Marriage Counselling",
     bio: Faker::Lorem.paragraph
   )
-puts "done mario"
+
+
+puts "done languages"
+
+
+>>>>>>> d3a7223cf9abb1b0803354aba545d5901d708218
 brian = User.create!(
   first_name: "Brian",
     last_name: "Delaweo",
@@ -76,7 +124,13 @@ brian = User.create!(
     expertise: "Calming-therapy, Group-therapy",
     bio: Faker::Lorem.paragraph
   )
+
+
 puts "done brian"
+
+
+
+
 john = User.create!(
   first_name: "Johnathan",
     last_name: "Olujemba",
@@ -88,4 +142,7 @@ john = User.create!(
     expertise: "Depression Counselling",
     bio: Faker::Lorem.paragraph
   )
+
+
+
 puts "finished john"
