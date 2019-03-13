@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-require "faker"
 
 puts "destroying users"
 Review.destroy_all
@@ -109,7 +107,6 @@ mario = User.create!(
 
 puts "done languages"
 
-=======
 puts "done mario"
 
 
