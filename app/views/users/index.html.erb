@@ -1,20 +1,20 @@
 <div class="container">
     <!-- Search -->
-  <%= form_tag users_path, method: :get, remote: true, id: "search-form" do %>
-    <%= text_field_tag :query,
-      params[:query],
-      class: "form-control",
-      placeholder: "Browse a therapist or field of expertise",
-      id: "input"
-    %>
-    <%= submit_tag "Search", id: "submit" %>
-  <% end %>
+  <div class="search-field">
+    <%= form_tag users_path, method: :get, remote: true, id: "search-form" do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Browse a therapist or field of expertise",
+        id: "input"
+      %>
+      <%= submit_tag "Search", id: "submit", class: "primary-button" %>
+    <% end %>
+  </div>
   <!-- End Search -->
 
-<div class="big-box" style="padding: 0px 10px;">
-  <div class="leftsidebox">
+<div class="container-holder">
 
-  </div>
   <div class="cards-user">
     <% @therapists.each do |therapist| %>
       <figure class="snip1336">
