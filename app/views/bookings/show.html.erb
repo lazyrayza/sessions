@@ -88,13 +88,27 @@
       <strong>Status: <%= @booking.status %></strong>
     </div>
     <div class="bottom">
-     <h1><%= (@booking.start_time).strftime("%dth %B") %> </h1>
-      <a href=" <%= booking_chat_rooms_path(@booking) %> "><div class="fab1"><i class="far fa-edit fa-3x"></i></div></a>
-      <div class="fab2"><i class="far fa-registered fa-3x"></i></div>
-      <div class="fab3"><i class="fas fa-book-reader fa-3x"></i></div>
-    </ul>
-    <div class="fab"><i class="fas fa-video fa-3x""></i></div>
-    </div>
+     <h1><%= (@booking.start_time).strftime("%dth") %> </h1>
+     <br>
+     <h1><%= (@booking.start_time).strftime("%B") %> </h1>
+       <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="Booking">
+          <a href=" <%= booking_chat_rooms_path(@booking) %> "><div class="fab1"><i class="far fa-edit fa-3x"></i></div></a>
+        </span>
+
+        <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="Disabled tooltip">
+          <div class="fab2"><i class="far fa-registered fa-3x"></i>
+          </div>
+        </span>
+
+        <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="Disabled tooltip">
+          <div class="fab3"><i class="fas fa-book-reader fa-3x"></i>
+          </div>
+        </span>
+        <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="Chatroom">
+          <div class="fab"><i class="fas fa-video fa-3x""></i>
+          </div>
+        </span>
+          </div>
 </div>
 
     <%= link_to "Chat", booking_chat_rooms_path(@booking), :method => :post , class: "btn btn-primary"%>
