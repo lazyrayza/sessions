@@ -12,7 +12,14 @@
     text-shadow: 0 0 20px rgba(10, 175, 230, 1),  0 0 20px rgba(10, 175, 230, 0);
     padding-left: 50px;
 }
-
+.bannerx {
+  background-size: cover;
+  height: calc(40vh - 46px);
+  background-position: center;
+  display: flex;
+  align-items: center;
+  margin-top: 68px;
+}
 .big-box {
   display: flex;
   flex-direction: column;
@@ -24,7 +31,7 @@
 .bottom {
   display: flex;
   flex-direction: row;
-  margin-top: 100px;
+  margin-top: 60px;
   .btn-primary{
     width: 20%;
     padding: 10px;
@@ -39,7 +46,7 @@
   position: relative;
   height: 450px;
   width: 900px;
-  margin: 200px auto;
+  margin: 80px auto;
   background-color: #FFF;
   -webkit-box-shadow: 10px 10px 93px 0px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 10px 10px 93px 0px rgba(0, 0, 0, 0.75);
@@ -119,7 +126,7 @@ h3{
 p {
   text-align: justify;
   padding-top: 10px;
-  font-size: 1.5rem;
+  font-size: px;
   line-height: 150%;
   color: #4B4B4B;
   word-wrap: break-word;
@@ -159,7 +166,52 @@ li {
   bottom: -40px;
   box-sizing: border-box;
   padding-top: 18px;
-  background-color:  #6ECAD6;
+  background-color:  #489099;
+  width: 80px;
+  height: 80px;
+  color: white;
+  text-align: center;
+  border-radius: 50%;
+  -webkit-box-shadow: 10px 10px 50px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 50px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 10px 10px 50px 0px rgba(0, 0, 0, 0.75);
+}.fab1 {
+  position: absolute;
+  right: 140px;
+  bottom: -40px;
+  box-sizing: border-box;
+  padding-top: 18px;
+  background-color:  #489099;
+  width: 80px;
+  height: 80px;
+  color: white;
+  text-align: center;
+  border-radius: 50%;
+  -webkit-box-shadow: 10px 10px 50px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 50px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 10px 10px 50px 0px rgba(0, 0, 0, 0.75);
+}.fab2 {
+  position: absolute;
+  right: 230px;
+  bottom: -40px;
+  box-sizing: border-box;
+  padding-top: 18px;
+  background-color:  #489099;
+  width: 80px;
+  height: 80px;
+  color: white;
+  text-align: center;
+  border-radius: 50%;
+  -webkit-box-shadow: 10px 10px 50px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 50px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 10px 10px 50px 0px rgba(0, 0, 0, 0.75);
+}.fab3 {
+  position: absolute;
+  right: 320px;
+  bottom: -40px;
+  box-sizing: border-box;
+  padding-top: 18px;
+  background-color:  #489099;
   width: 80px;
   height: 80px;
   color: white;

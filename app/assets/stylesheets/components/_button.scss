@@ -10,12 +10,14 @@
   margin: 4px 2px;
   cursor: pointer;
   border-radius: 4px !important;
+
   &:hover {
     background: #74d5e0 !important;
     text-decoration: none;
     color: white;
   }
 }
+
 .secondary-button {
   font-family: $body-font;
   background: #489099 !important;
@@ -28,6 +30,7 @@
   margin: 4px 2px;
   cursor: pointer;
   border-radius: 4px !important;
+
   &:hover {
     background: #55a9b2 !important;
     text-decoration: none;

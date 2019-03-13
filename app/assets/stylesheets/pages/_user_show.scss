@@ -9,6 +9,7 @@
 
 .user-show-master-container {
   display: flex;
+  justify-content: space-between;
   .user-show-container {
     display: flex;
     background-color: white;
@@ -17,7 +18,10 @@
     width: 100%;
     .therapist-container {
       margin-top: 80px;
-      width: 50%
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+
     }
     .therapist-avatar-container {
       border-radius: 100px;
@@ -38,13 +42,21 @@
     }
     .user-show-therapist-languages {
       display: flex;
+      flex-direction: row;
       justify-content: center;
-      border: solid 1px #74d5e0 ;
-      border-radius: 4px;
-      width: 90%;
+    .language-tag {
+      border: solid 4px #74d5e0 ;
+      border-radius: 12px;
+      width: 30%;
+      margin: 4px;
+      }
     }
     .user-show-expertise {
-      width: 90%;
+      width: 30%;
+      border: 4px solid #489099;
+      border-radius: 12px;
+      margin: 4px;
+      text-align: center;
     }
   }
 }
@@ -52,6 +64,7 @@
 .therapist-reviews-container {
   height: 100%;
   width: 50%;
+
   .user-show-book-btn {
     display: flex;
     justify-content: flex-end;
@@ -70,14 +83,30 @@
   .container-reviews {
     overflow: scroll;
     margin-top: 40px;
-  }
-  .card {
+    width: 600px;
+    box-shadow: -12px 14px 5px 0px rgba(227,227,227,1);
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    h4 span{
+      color: #489099 ;
+      // border-radius: 12px;
+      // margin-top: 8px;
+    }
+
+
+  .review-card {
+    width: 600px;
+    padding: 10px;
+
   }
   .review-icons-container {
     display: flex;
+      float: right;
     i {
       display: d-flex;
+      color: #74d5e0 ;
     }
+  }
   }
 }
 

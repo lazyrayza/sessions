@@ -3,11 +3,14 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Sessions Therapy</title>
+    <title>Sessions - Therapy made easy</title>
+    <%= favicon_link_tag %>
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= stylesheet_pack_tag 'application', media: 'all' %>
+
+
 
       <!--<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />-->
 
@@ -27,7 +30,6 @@
     <% else %>
       <%= render 'shared/navbar_pages' %>
     <% end %>
-
     <%= render 'shared/flashes' %>
   <div>
     <div style="min-height: calc(100vh - 150px)">
