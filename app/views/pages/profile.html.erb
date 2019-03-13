@@ -7,7 +7,7 @@
       <div class="description-row">
         <div class="col">THERAPIST</div>
         <div class="col">SCHEDULE</div>
-        <div class="col">AMOUNT</div>
+        <div class="col">PAYMENT</div>
         <div class="col">STATUS</div>
       </div>
       <div class="upcoming-details">
@@ -25,7 +25,7 @@
               </div>
             <% end %>
             <div class="col" data-label="Schedule"><%= booking.start_time %></div>
-            <div class="col" data-label="Amount"><%= booking.therapist.price %></div>
+            <div class="col" data-label="Payment"><%= booking.state %></div>
             <div class="col" data-label="Status">
               <% if current_user.therapist %>
                 <%= simple_form_for booking, class: "status-form", method: :patch, url: booking_path(booking) do |f| %>
