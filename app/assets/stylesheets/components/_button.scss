@@ -10,11 +10,29 @@
   font-size: 16px;
   margin: 4px 2px;
   cursor: pointer;
-  border-radius: 4px;
-
+  border-radius: 4px !important;
   &:hover {
-    background-color: #74d5e0;
+    background: #74d5e0 !important;
     text-decoration: none;
     color: white;
   }
-} 
+}
+
+.secondary-button {
+  font-family: $body-font;
+  background: #489099 !important;
+  border: none;
+  color: white;
+  padding: 15px 32px !important;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px !important;
+  &:hover {
+    background: #55a9b2 !important;
+    text-decoration: none;
+    color: white;
+  }
+}

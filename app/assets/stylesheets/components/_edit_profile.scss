@@ -3,7 +3,6 @@
   display: flex;
   justify-content: space-around;
 
-
   .edit-profile-box {
     display: flex;
     flex-direction: column;
@@ -24,98 +23,87 @@
       background-color: #6ECAD6;
       margin-bottom: 16px;
     }
-
     .edit-details {
-      margin: 16px;
-
+      margin: 12px 26px;
       .names-box {
         display: flex;
         justify-content: space-between;
-
         .first-name-input {
           width: 48%;
         }
-
         .last-name-input {
           width: 48%;
         }
       }
-
-    .inline-input {
-      display: flex;
-      justify-content: space-between;
-
-      .email-current-password {
-        width: 48%;
-      }
-
-      .current-password {
-        width: 48%;
-      }
-    }
-
-    .address {
-
-    }
-
-    .phone-gender-languages {
-      display: flex;
-      justify-content: space-between;
-
-      .phone-gender {
+      .inline-input {
         display: flex;
-        flex-direction: column;
-        width: 48%;
-      }
-
-      .languages {
-        .languages-multiple-select{
-          height: 121px;
+        justify-content: space-between;
+        .email-current-password {
+          width: 48%;
         }
-
-        width: 48%;
+        .current-password {
+          width: 48%;
+        }
       }
-    }
-
-
-
-    .passwords {
-      display: flex;
-      justify-content: space-between;
-
-      .password-change {
-        width: 48%;
+      .address {
       }
-      .password-confirmation {
-        width: 48%;
+      .phone-gender-languages {
+        display: flex;
+        justify-content: space-between;
+        .phone-gender {
+          display: flex;
+          flex-direction: column;
+          width: 48%;
+        }
+        .languages {
+          .languages-multiple-select{
+            height: 121px;
+          }
+          width: 48%;
+        }
       }
-    }
-
-    .form-actions {
-      margin-bottom: 14px;
-    }
-
-    hr {
+      .passwords {
+        display: flex;
+        justify-content: space-between;
+        .password-change {
+          width: 48%;
+        }
+        .password-confirmation {
+          width: 48%;
+        }
+      }
+      .form-actions {
+        margin-bottom: 14px;
+        .primary-button {
+          padding: 14px 18px !important;
+        }
+      }
+      hr {
         margin-bottom: 24px;
       }
+      .bottom-btn {
+        display: flex;
+        justify-content: space-between;
 
-    .bottom-btn {
-      display: flex;
-      justify-content: space-between;
-
-      .back {
-        .btn-secondary {
-          padding: 10px 20px 10px 20px;
+        .back {
+          .secondary-button {
+            padding: 14px 26px !important;
+          }
+        }
+        .cancel {
+          .secondary-button {
+            background: #489099 !important;
+            color: white;
+            text-decoration: none !important;
+            &:hover {
+              background: #55a9b2 !important;
+              text-decoration: none !important;
+              color: white !important;
+            }
+          }
         }
       }
-      .cancel {
-        .btn-secondary {
-
-        }
-      }
-    }
     }
   }
 }
-
 
