@@ -1,5 +1,3 @@
-require "faker"
-
 puts "destroying users"
 Review.destroy_all
 ChatRoom.destroy_all
@@ -51,11 +49,20 @@ puts "done english"
     email: Faker::Internet.email,
     password: Faker::Internet.password,
     therapist: true,
-    expertise: Faker::Esport.game
-    )
+    expertise: Faker::Esport.game,
+    bio: Faker::Hipster.paragraph
+        )
 end
-
 puts "done main users"
+
+puts "starting languages"
+
+20.times do
+
+language = Language.create!(
+          language_name: Faker::Nation.language
+          )
+end
 
 julia = User.create!(
   first_name: "Julia",
@@ -83,7 +90,10 @@ mario = User.create!(
     bio: Faker::Lorem.paragraph
   )
 
-puts "done mario"
+
+puts "done languages"
+
+
 
 brian = User.create!(
   first_name: "Brian",
@@ -114,3 +124,4 @@ john = User.create!(
   )
 
 puts "finished john"
+
