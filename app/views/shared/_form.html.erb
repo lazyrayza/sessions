@@ -4,15 +4,13 @@
     <%= simple_form_for([therapist, booking]) do |f| %>
       <div class="booking-box-details">
         <div class="form-inputs">
-          <%= f.input :start_time %>
+          <%= f.input :description, label: 'Message the therapist',
+          placeholder: "Briefly describe your story so the therapist can provide the best support...", input_html: { class: 'input-description'} %>
         </div>
-      <div class="form-inputs">
-        <%= f.input :description, label: 'Message the therapist',
-        placeholder: "Briefly describe your story so the therapist can provide the best support...", input_html: { class: 'input-description'} %>
-      </div>
-      <div class="form-actions">
-        <div class="booking-update-btn">
-          <%= f.button :submit, class: "primary-button" %>
+        <div class="form-actions">
+          <div class="booking-update-btn">
+            <%= f.button :submit, class: "primary-button" %>
+          </div>
         </div>
       </div>
     <% end %>
