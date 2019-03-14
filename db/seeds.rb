@@ -62,7 +62,8 @@ puts "done english"
     email: Faker::Internet.email,
     password: Faker::Internet.password,
     therapist: true,
-    expertise: Faker::Esport.game
+    expertise: Faker::Esport.game,
+    price: 100
     )
 end
 
@@ -76,11 +77,12 @@ julia = User.create!(
     last_name: "Stone",
     address: "Camden, London",
     phone_number: Faker::PhoneNumber.cell_phone_with_country_code,
-    email: "julia@stonetherapy.com",
+    email: "juliaaa@stonetherapy.com",
     password: "123456",
     therapist: true,
     expertise: "Psycho-therapy",
-    bio: Faker::Lorem.paragraph
+    bio: Faker::Lorem.paragraph,
+    price: 300
   )
 
 
@@ -96,11 +98,12 @@ mario = User.create!(
     last_name: "Vespachy",
     address: "South Kensington, London",
     phone_number: Faker::PhoneNumber.cell_phone_with_country_code,
-    email: "mario@vtherapy.com",
+    email: "mariooo@vtherapy.com",
     password: "123456",
     therapist: true,
     expertise: "Calming-therapy, Marriage Counselling",
-    bio: Faker::Lorem.paragraph
+    bio: Faker::Lorem.paragraph,
+    price: 80
   )
 
 
@@ -115,11 +118,12 @@ brian = User.create!(
     last_name: "Delaweo",
     address: "South Kensington, London",
     phone_number: Faker::PhoneNumber.cell_phone_with_country_code,
-    email: "brian@getbetter.com",
+    email: "briannn@getbetter.com",
     password: "123456",
     therapist: true,
     expertise: "Calming-therapy, Depression Counselling, Group-therapy",
-    bio: Faker::Lorem.paragraph
+    bio: Faker::Lorem.paragraph,
+    price: 110
   )
 
 
@@ -131,11 +135,12 @@ john = User.create!(
     last_name: "Olujemba",
     address: "Croydon, London",
     phone_number: Faker::PhoneNumber.cell_phone_with_country_code,
-    email: "john@gOlutherapy.com",
+    email: "johnnn@gOlutherapy.com",
     password: "123456",
     therapist: true,
     expertise: "Depression Counselling",
-    bio: Faker::Lorem.paragraph
+    bio: Faker::Lorem.paragraph,
+    price: 140
   )
 
 
