@@ -17,9 +17,9 @@ class ReviewsController < ApplicationController
     @review.booking = Booking.find(params[:booking_id])
     @review.client_id = current_user.id
     @review.therapist_id = @review.booking.therapist_id
-    p @review
+    @review
     if @review.save!
-      redirect_to review_path(@review), notice: "Thank you for your feedback!"
+      redirect_to booking_path(@review.booking), notice: "Thank you for your feedback!"
     else
       render :new
     end
