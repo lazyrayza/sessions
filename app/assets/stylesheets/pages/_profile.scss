@@ -90,6 +90,7 @@ hr {
         flex-direction: column;
         align-items: center;
         border-radius: 8px;
+        margin-bottom: 13px;
 
         .user-profile-avatar{
           width: 48px;
@@ -107,7 +108,7 @@ hr {
       // HISTORY TABLE
       .history-details {
         overflow-y: scroll;
-        height: 33vh;
+        height: 30.5vh;
       }
 
       .history-details-row {
