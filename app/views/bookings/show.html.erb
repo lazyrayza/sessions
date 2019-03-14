@@ -106,15 +106,18 @@
         </span>
         <% end %>
 
-        <%= link_to booking_chat_rooms_path(@booking), :method => :post do %>
-        <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="Disabled tooltip">
+        <%= link_to bookings_path(@user), :method => :post do %>
+        <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="Bookings">
           <div class="fab3"><i class="fas fa-book-reader fa-3x"></i>
           </div>
         </span>
+        <% end %>
+        <%= link_to booking_chat_rooms_path(@booking), :method => :post do %>
         <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="Chatroom">
           <div class="fab"><i class="fas fa-video fa-3x""></i>
           </div>
         </span>
+        <% end %>
           </div>
 
     <%= link_to "Chat", booking_chat_rooms_path(@booking), :method => :post , class: "button-primary"%>
