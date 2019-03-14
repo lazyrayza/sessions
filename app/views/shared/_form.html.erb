@@ -4,6 +4,9 @@
     <%= simple_form_for([therapist, booking]) do |f| %>
       <div class="booking-box-details">
         <div class="form-inputs">
+          <%= f.input :start_time %>
+        </div>
+        <div class="form-inputs">
           <%= f.input :description, label: 'Message the therapist',
           placeholder: "Briefly describe your story so the therapist can provide the best support...", input_html: { class: 'input-description'} %>
         </div>
@@ -15,22 +18,4 @@
       </div>
     <% end %>
   </div>
-  <div class="booking-tables-right">
-    <div class="booking-calendar-right">
-    <%= simple_form_for([therapist, booking]) do |c| %>
-      <div class="form-inputs">
-        <%= c.input :start_time, label: false, placeholder: "Choose a date and time" %>
-      </div>
-    <% end %>
-    </div>
-    <div class="booking-show-overview">
-      <div class="tables-title-row">THERAPIST</div>
-        <div class="profile-details">
-          <div class="detail-row"><%= image_tag "logo.png", class: "user-profile-avatar" %>
-          </div>
-          <h3 class="detail-row"><%= current_user.client_bookings.last.therapist.full_name.upcase %></h3>
-      </div>
-    </div>
-  </div>
 </div>
-
