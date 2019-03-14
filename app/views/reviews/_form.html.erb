@@ -1,13 +1,20 @@
-<div class="container">
-  <%= simple_form_for [@booking, @review] do |f| %>
-  <div class="form-inputs">
-      <%= f.input :rating, collection: 0..5 %>
+<div class="container-review">
+  <div class="review-box">
+    <div class="review-title">
+      <h2>Review: <%= @booking.therapist.full_name.upcase %></h2>
+      <%= simple_form_for [@booking, @review] do |f| %>
+    </div>
+    <div class="review-box-details">
+      <div class="form-inputs">
+          <%= f.input :rating, collection: 0..5 %>
+      </div>
+      <div class="form-inputs">
+        <%= f.input :description , as: :text , :input_html => {:minlength => 150 , maxlength: 300} %>
+      </div>
+      <div class="form-actions">
+        <%= f.button :submit %>
+      </div>
+      <% end %>
+    </div>
   </div>
-  <div class="form-inputs">
-    <%= f.input :description , as: :text , :input_html => {:minlength => 150 , maxlength: 300} %>
-  </div>
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
-  <% end %>
 </div>
