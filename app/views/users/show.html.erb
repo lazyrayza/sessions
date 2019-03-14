@@ -33,10 +33,7 @@
     </div>
 
     <div class="therapist-reviews-container">
-      <div class="user-show-book-btn">
-        <h>Price</h3>
-        <%= link_to "Book", new_user_booking_path(@user), class: "primary-button-user-show"%>
-      </div>
+        <h3>Price</h3>
       <br>
       <br>
 
@@ -56,6 +53,11 @@
           </div>
         </div>
         <% end %>
+      </div>
+      <br>
+      <br>
+      <div class="user-show-book-btn">
+        <%= link_to "Book", new_user_booking_path(@user), class: "primary-button-user-show"%>
       </div>
     </div>
   </div>

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 require "faker"
 
 puts "destroying users"
@@ -109,7 +108,6 @@ mario = User.create!(
 
 puts "done languages"
 
-=======
 puts "done mario"
 
 
