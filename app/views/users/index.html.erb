@@ -40,8 +40,6 @@
         <% end %>
       <%= link_to "Book", user_path(therapist), class: 'primary-button' %>
         <button class="primary-button" data-toggle="modal" data-target="#myModal_<%= therapist.id %>"> View </button>
-      <!--   <button class="primary-button" data-toggle="modal" data-target="#myModal_<%= therapist.id %>"> Book </button> -->
-        <%# link_to "Book", user_path(therapist), class: 'follow' %>
       </figcaption>
     </figure>
     <%= render "show_modal", therapist: therapist %>
