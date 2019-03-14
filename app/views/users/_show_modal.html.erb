@@ -1,6 +1,5 @@
 <div id="myModal_<%= therapist.id %>" class="modal fade" aria-labelledby="myLargeModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
-    <div class="modal-content">
       <div class="modal-body">
         <div class="modal-content">
           <div class="modal-banneri"  style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.5)), url(<%= asset_path "session-mountain.png" %>)">
@@ -33,12 +32,7 @@
                 </div>
               </div>
               <div class="modal-right-side">
-                <div class="modal-user-show-book-btn">
-                  <h3>Price</h3>
-                  <%= link_to "Book", new_user_booking_path(therapist), class: "primary-button-user-show"%>
-                </div>
-                <br>
-                <br>
+                <h3>Price</h3>
                 <div class="modal-container-reviews">
                    <div class="tables-title-row">REVIEWS</div>
                   <% if therapist.therapist_reviews != nil %>
@@ -58,11 +52,14 @@
                     <% end %>
                   <% end %>
                 </div>
+                <br>
+                <div class="modal-user-show-book-btn">
+                  <%= link_to "Book", new_user_booking_path(therapist), class: "primary-button-user-show"%>
+                </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
   </div>
 </div>
 
@@ -71,6 +68,8 @@
 
 
 
+<!--     <div class="modal-content"> -->
+<!--     </div> -->
 
 
 
