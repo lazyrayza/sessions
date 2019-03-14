@@ -10,10 +10,9 @@
    <br>
    <br>
    <div class="payments-new-therapist-name">
-    <h2>Booking session with:</h2>
-    <h2><%= @booking.therapist.full_name.upcase %></h2>
+    <h2 class="secondary-colour">Booking session with:</h2>
+    <h2 class="primary-colour"><%= @booking.therapist.full_name.upcase %></h2>
    </div>
-   <br>
    <br>
    <div class="payments-new-therapist-description">
     <h4>Description:</h4>
@@ -23,7 +22,7 @@
     <br>
     <hr>
     <br>
-    <br>
+
 
    <div class="new-payment">
      <%= form_tag booking_payments_path (@booking) do %>
@@ -32,7 +31,6 @@
         <h4>Amount: <%= humanized_money_with_symbol(@booking.amount) %></h4>
       </label>
     </article>
-    <br>
     <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
     data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
     data-name="My Session"
