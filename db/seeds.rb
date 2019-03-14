@@ -15,41 +15,36 @@ english = Language.create!(
   )
 
 
-
-english = Language.create!(
-  language_name: "English",
-  )
-
-
 puts "done english"
+
 french = Language.create!(
   language_name: "French",
   )
 
 
-puts "done english"
+puts "done french"
 spanish = Language.create!(
   language_name: "Spanish",
   )
 
 
 
-puts "done english"
+puts "done spanish"
 swahili = Language.create!(
   language_name: "Swahili",
   )
 
 
 
-puts "done english"
+puts "done swahili"
 creole = Language.create!(
   language_name: "Creole",
   )
 
-puts "done english"
+puts "done creole"
 
 
-puts "done english"
+puts "done languages"
 
 
 
@@ -81,6 +76,7 @@ julia = User.create!(
     password: "123456",
     therapist: true,
     expertise: "Psycho-therapy",
+    languages:
     bio: Faker::Lorem.paragraph,
     price: 300
   )

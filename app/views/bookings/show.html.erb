@@ -79,7 +79,7 @@
   <div class="cardx">
     <div class="thumbnail"><img class="left" src="https://res.cloudinary.com/dnqrlagsz/image/upload/v1552398008/computer-contemporary-cup-1251833.jpg"/></div>
     <div class="right">
-      <h1><%= (@booking.start_time).gsub(/\d{4}-\d{2}-\d{2}\s/,'') %> Start</h1>
+      <h1><% (@booking.start_time).gsub(/\d{4}-\d{2}-\d{2}\s/,'') %> Booking Confirmation</h1>
       <%# raise %>
       <div class="author"><img src="https://randomuser.me/api/portraits/men/95.jpg"/>
         <h4><%= @booking.therapist.first_name %> <%= @booking.therapist.last_name %></h4>
@@ -89,27 +89,35 @@
       <strong>Status: <%= @booking.status %></strong>
     </div>
     <div class="abso">
-     <h3><%= (@booking.start_time).gsub(/\s\d{2}:\d{2}/, '').gsub(/\d{4}-\d{2}-/, '') %>th </h3>
-     <p><strong><%= Date::MONTHNAMES[(@booking.start_time).gsub(/\d{2}\s\d{2}:\d{2}/, '').gsub(/\d{4}-/, '').to_i] %></strong></p></div>
-       <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="Booking">
+     <h3><%= (@booking.start_time).gsub(/\s\d{2}:\d{2}/, '').gsub(/\d{4}-\d{2}-/, '') %> <%= Date::MONTHNAMES[(@booking.start_time).gsub(/\d{2}\s\d{2}:\d{2}/, '').gsub(/\d{4}-/, '').to_i] %> </h3>
+        <p>Start at <%= (@booking.start_time).gsub(/\d{4}-\d{2}-\d{2}\s/,'') %> </p>
+      </div>
+
+       <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="Edit Booking">
         <%= link_to booking_chat_rooms_path(@booking), :method => :post do %>
           <div class="fab1"><i class="far fa-edit fa-3x"></i></div></a>
-        </span>
         <% end %>
+        </span>
 
-        <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="Disabled tooltip">
+        <%= link_to booking_chat_rooms_path(@booking), :method => :post do %>
+        <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="Review">
           <div class="fab2"><i class="far fa-registered fa-3x"></i>
           </div>
         </span>
+        <% end %>
 
-        <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="Disabled tooltip">
+        <%= link_to bookings_path(@user), :method => :post do %>
+        <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="Bookings">
           <div class="fab3"><i class="fas fa-book-reader fa-3x"></i>
           </div>
         </span>
+        <% end %>
+        <%= link_to booking_chat_rooms_path(@booking), :method => :post do %>
         <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="Chatroom">
           <div class="fab"><i class="fas fa-video fa-3x""></i>
           </div>
         </span>
+        <% end %>
           </div>
 
     <%= link_to "Chat", booking_chat_rooms_path(@booking), :method => :post , class: "button-primary"%>
