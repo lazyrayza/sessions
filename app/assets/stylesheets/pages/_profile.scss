@@ -1,6 +1,4 @@
-hr {
-  margin: 0;
-}
+
 
 .profile-container{
   display: flex;
@@ -8,6 +6,10 @@ hr {
   justify-content: space-evenly;
   margin: 32px 0;
   height: 100vh;
+
+  hr {
+    margin: 0;
+  }
 
   .tables-box{
     display: flex;
@@ -31,7 +33,7 @@ hr {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     color: #FFFFFF;
-    background-color: #489099;
+    background-color: #CCCCCC;
     text-align: center;
 
   }
