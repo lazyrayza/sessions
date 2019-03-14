@@ -3,6 +3,10 @@
   background-color: transparent;
   transition: 0.5s background-color ease;
 }
+
+.navbar-brand{
+  width: 65px;
+}
 .navbar-lewagon-home {
   .nav-item {
   text-decoration: none;
@@ -44,7 +48,7 @@
   }
 }
 .nav-main-items {
-  margin-top: 10px;
+  margin-top: 3px;
   li {
     display: inline-block;
   }
