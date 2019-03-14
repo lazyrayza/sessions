@@ -1,7 +1,7 @@
 <div class="container-review">
   <div class="review-box">
     <div class="review-title">
-      <h2>Review: <%= @booking.therapist.full_name.upcase %></h2>
+      <h2>REVIEW <%= @booking.therapist.full_name.upcase %></h2>
       <%= simple_form_for [@booking, @review] do |f| %>
     </div>
     <div class="review-box-details">
