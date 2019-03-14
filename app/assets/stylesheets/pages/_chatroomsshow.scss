@@ -122,9 +122,11 @@ $feature : #4b9aaa;
 // }
 .video-chat-info {
   // justify-content: center;
+  background: white;
 }
 .video-main-box {
   display: flex;
+  background: white;
 }
 .video-left-box {
   width: 50%;
@@ -173,6 +175,12 @@ $feature : #4b9aaa;
 
 
 #local-video{
+  border: 2px solid #6ECAD6;
+  box-shadow: -15px 10px 12px 0px rgba(194,192,194,1);
+  border-radius: 20px;
+  width: 70%;
+}
+#remote-video{
   border: 2px solid #6ECAD6;
   box-shadow: -15px 10px 12px 0px rgba(194,192,194,1);
   border-radius: 20px;
