@@ -1,57 +1,47 @@
-  .banneri {
+.banneri {
     background-size: cover;
     height: calc(40vh - 46px);
     background-position: center;
     display: flex;
     align-items: center;
   }
-
   #search-form {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
     margin: 24px 0;
-
     #input {
       font-size: 18px;
       margin-right: 20px;
-
       &:active, &:focus {
       outline: none;
       border: 1px solid #6ECAD6;
       box-shadow: none;
     }
   }
-
   }
-
   .lhs {
     width: 20%;
   }
-
   .container-holder {
     display: flex;
     flex-direction: row;
   }
-
   .holding-container {
     padding: 25px;
     // display: flex;
   }
-
   .container-rs {
     width: 50%;
   }
   .conatiner-ls {
     width: 50%;
   }
-
   .container-reviews {
     overflow: scroll;
     width: 60%;
     height: 40%;
   }
-
   .mapboxgl-canvas {
     height: 600px;
     width: 600px;
@@ -60,16 +50,13 @@
            width: 600px !important;
            margin: 30px auto !important;
        }
-
   .cards-user {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 16px 0;
     margin-bottom: 16px;
   }
-
   .snip1336 {
-
     position: relative;
     overflow: hidden;
     margin: 10px;
@@ -112,8 +99,6 @@
     border-color: transparent transparent transparent white;
     border: 0px 1px solid #6ECAD6;
   }
-
-
   .snip1336 .profile {
     border-radius: 50%;
     position: absolute;
@@ -162,24 +147,32 @@
   .card-details {
     display: flex;
     justify-content: space-between;
-    flex-direction: column;
-    .review-stars{
+    .card-name-details {
       display: flex;
-      justify-content: space-between;
-      padding-top: 16px;
-       i {
-      padding: 0px 5px;
-        }
-
-      .price-tag {
-        display: flex;
-        align-items: center;
+      flex-direction: column;
+      .card-expertise {
         p {
-          font-size: 24px;
-          font-weight: 700;
+          font-size: 18px;
+          margin-top: 20px !important;
         }
-
-
       }
     }
-  }
+    .review-stars{
+      display: flex;
+      padding-top: 16px;
+       i {
+        padding: 0px 5px;
+        color: #000000;
+        }
+      }
+    }
+  .card-price-view {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 16px;
+      p {
+        font-size: 24px;
+        font-weight: 700;
+      }
+    }

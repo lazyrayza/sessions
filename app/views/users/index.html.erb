@@ -14,6 +14,8 @@
   <!-- End Search -->
 
 
+<div class="container">
+
 <div class="cards-user">
   <% @therapists.each do |therapist| %>
     <figure class="snip1336">
@@ -21,7 +23,13 @@
       <figcaption>
       <%= cl_image_tag(therapist.photo.url, class: 'profile')%>
         <div class="card-details">
-          <h4><%= therapist.first_name %></h4>
+          <div class="card-name-details">
+              <h4><%= therapist.first_name %></h4>
+              <h4><%= therapist.last_name %></h4>
+              <div class="card-expertise">
+                <p><%= therapist.expertise %></p>
+              </div>
+            </div>
         <div class="review-stars">
           <% numreviews = therapist.therapist_reviews.count %>
             <% if numreviews != 0 %>
@@ -31,17 +39,17 @@
             <% end %>
             <% stars = sum / numreviews  %>
             <% stars.times do %>
-              <i class="far fa-star"></i>
+              <i class="fa fa-star"></i>
             <% end %>
           </div>
-          </div>
-            <h4><%= therapist.last_name %></h4>
-            <h4><span><%= therapist.expertise %></span></h4>
-        <% end %>
-        <div class="price-tag">
-          <p>£<%= therapist.price %></p>
         </div>
-        <button class="primary-button" data-toggle="modal" data-target="#myModal_<%= therapist.id %>"> View </button>
+
+        <% end %>
+
+        <div class="card-price-view">
+          <p>£<%= therapist.price %></p>
+          <button class="primary-button" data-toggle="modal" data-target="#myModal_<%= therapist.id %>"> View </button>
+        </div>
       </figcaption>
     </figure>
     <%= render "show_modal", therapist: therapist %>

@@ -4,7 +4,6 @@
   background: white;
   // margin: 300px ;
 }
-
 .modal-body {
   // background: grey;
   padding: 0rem;
@@ -63,7 +62,9 @@
       background-color: #f9f9f9;
       width: 400px;
       height: 300px;
-
+      .modal-review-card {
+        margin: 8px;
+      }
       h4 span{
         color: #489099 ;
       // border-radius: 12px;
@@ -82,7 +83,6 @@
   }
 }
 }
-
 .modal-left-side{
   width: 50%;
   margin: 45px 12px 0px 50px;
