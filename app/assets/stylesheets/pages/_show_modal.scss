@@ -64,6 +64,10 @@
       height: 300px;
       .modal-review-card {
         margin: 8px;
+
+        .modal-review-icons-container {
+          margin-top: 8px;
+        }
       }
       h4 span{
         color: #489099 ;
@@ -106,7 +110,6 @@
 }
 .modal-user-show-therapist-languages {
   display: flex;
-  justify-content: center;
   .modal-language {
     display: flex;
     justify-content: space-around;
