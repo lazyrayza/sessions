@@ -135,31 +135,31 @@
 
   </script>
 <% end %>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
 
 <script>
-var currentSec = getSecondsToday();
+// var currentSec = getSecondsToday();
 
-var seconds = (currentSec / 60) % 1;
-var minutes = (currentSec / 3600) % 1;
-var hours = (currentSec / 43200) % 1;
+// var seconds = (currentSec / 60) % 1;
+// var minutes = (currentSec / 3600) % 1;
+// var hours = (currentSec / 43200) % 1;
 
-setTime(60 * seconds, "second");
-setTime(3600 * minutes, "minute");
-setTime(43200 * hours, "hour");
+// setTime(60 * seconds, "second");
+// setTime(3600 * minutes, "minute");
+// setTime(43200 * hours, "hour");
 
-function setTime(left, hand) {
-  $(".clock__" + hand).css("animation-delay", "" + left * -1 + "s");
-}
+// function setTime(left, hand) {
+//   $(".clock__" + hand).css("animation-delay", "" + left * -1 + "s");
+// }
 
-function getSecondsToday() {
-  let now = new Date();
+// function getSecondsToday() {
+//   let now = new Date();
 
-  let today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+//   let today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
 
-  let diff = now - today;
-  return Math.round(diff / 1000);
-}
+//   let diff = now - today;
+//   return Math.round(diff / 1000);
+// }
 </script>
 <script>
 // Set the date we're counting down to
