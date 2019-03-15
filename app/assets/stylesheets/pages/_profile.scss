@@ -75,6 +75,8 @@
         .user-avatar {
           width: 30px;
           height: 30px;
+          border-radius: 50%;
+          object-fit: cover;
         }
       }
     }
@@ -111,7 +113,6 @@
           height: 48px;
           display: block;
           margin: 8px auto;
-          object-fit: cover;
         }
 
         .avatar-profile {
@@ -119,7 +120,8 @@
           height: 70px;
           display: block;
           margin: 8px auto;
-          border-radius: 50%
+          border-radius: 50%;
+          object-fit: cover;
 
         }
 
