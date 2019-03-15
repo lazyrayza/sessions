@@ -4,7 +4,8 @@
         <div class="modal-content">
           <div class="modal-banneri"  style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.5)), url(<%= asset_path "session-mountain.png" %>)">
             </div>
-              <img class="modal-therapist-avatar-container" src="https://pbs.twimg.com/profile_images/876792863459352577/SBLRu4VV_400x400.jpg" alt="">
+            <%= cl_image_tag(therapist.photo.url, class: 'modal-therapist-avatar-container')%>
+
 
 
             <div class="modal-master-box">

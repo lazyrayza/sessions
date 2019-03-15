@@ -77,7 +77,7 @@ mario = User.new(
     gender: "male"
   )
 mario.remote_photo_url = 'https://res.cloudinary.com/dnqrlagsz/image/upload/v1552644289/boy_2.jpg'
-maria.save
+mario.save
 
 puts "done mario"
 suze = User.new(
@@ -139,7 +139,7 @@ alex = User.new(
     price: 65,
     gender: "female"
   )
-alex.remote_photo_url = 'https://res.cloudinary.com/dnqrlagsz/image/upload/v1552644290/boy_4.jpg'
+alex.remote_photo_url = 'https://res.cloudinary.com/dnqrlagsz/image/upload/v1552645710/adult-beach-beard-736716.jpg'
 alex.save
 
 puts "done alex"
@@ -256,6 +256,23 @@ anna = User.new(
     price: 60,
     gender: "female"
   )
-anna.remote_photo_url = 'https://res.cloudinary.com/dnqrlagsz/image/upload/v1552644275/girl_1.jpg'
+anna.remote_photo_url = 'https://res.cloudinary.com/dnqrlagsz/image/upload/v1552645709/attractive-beautiful-beauty-764529.jpg'
 anna.save
 puts "done anna"
+
+
+
+
+raza = User.new(
+  first_name: "Raza",
+    last_name: "Pirbhai",
+    address: "Unit 4, Old School Workshops, London Road, Holyhead, LL65 3TL",
+    phone_number: "0762735652",
+    email: "raza@lewagon.com",
+    password: "123456",
+    therapist: false,
+    gender: "male"
+  )
+raza.remote_photo_url = 'https://res.cloudinary.com/dnqrlagsz/image/upload/v1552645883/raz.jpg'
+raza.save
+
