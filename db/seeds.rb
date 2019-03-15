@@ -51,6 +51,7 @@ julia = User.create!(
     This allows me to adapt my way of working to each client’s
     individual needs.",
     price: 50,
+    photo: "https://res.cloudinary.com/dnqrlagsz/image/upload/v1552644275/girl_4.jpg"
     gender: "female"
   )
 puts "done julia"
