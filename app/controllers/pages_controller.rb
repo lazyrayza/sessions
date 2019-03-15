@@ -4,6 +4,7 @@ class PagesController < ApplicationController
   def profile
     @user = current_user
     @booking = Booking.where(client_id: current_user.id)
+    @bookingtherapist = Booking.where(therapist_id: current_user.id)
   end
 
   def home
