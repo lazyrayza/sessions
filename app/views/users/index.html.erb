@@ -19,7 +19,7 @@
     <figure class="snip1336">
       <img src="https://res.cloudinary.com/dnqrlagsz/image/upload/v1552391869/card-photo.png" alt="sample87" />
       <figcaption>
-      <img src="https://source.unsplash.com/featured/?{people}<%= (1..1000).to_a.sample %>" alt="profile-sample4" class="profile" />
+      <%= cl_image_tag(therapist.photo.url) %>
         <div class="card-details">
           <h4><%= therapist.first_name %></h4>
         <div class="review-stars">

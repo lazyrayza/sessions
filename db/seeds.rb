@@ -30,7 +30,7 @@ creole = Language.create!(
   language_name: "Creole",
   )
 puts "done english"
-julia = User.create!(
+julia = User.new(
   first_name: "Julia",
     last_name: "Stone",
     address: "15FL West Building, No.668 East BeiJin Rd",
@@ -51,11 +51,14 @@ julia = User.create!(
     This allows me to adapt my way of working to each client’s
     individual needs.",
     price: 50,
-    photo: "https://res.cloudinary.com/dnqrlagsz/image/upload/v1552644275/girl_4.jpg"
     gender: "female"
   )
+julia.remote_photo_url = 'https://res.cloudinary.com/dnqrlagsz/image/upload/v1552644275/girl_4.jpg'
+julia.save
+
+
 puts "done julia"
-mario = User.create!(
+mario = User.new(
   first_name: "Mario",
     last_name: "Vespachy",
     address: "234 Wellington Street, Ottawa, Ontario, Canada, K1A 0G9",
@@ -73,8 +76,11 @@ mario = User.create!(
     price: 60,
     gender: "male"
   )
+mario.remote_photo_url = 'https://res.cloudinary.com/dnqrlagsz/image/upload/v1552644289/boy_2.jpg'
+maria.save
+
 puts "done mario"
-suze = User.create!(
+suze = User.new(
   first_name: "Suze",
     last_name: "Delaweo",
     address: "2 Holt Street, Surry Hills, NSW 2010, Australia",
@@ -91,8 +97,12 @@ suze = User.create!(
     price: 70,
     gender: "female"
   )
-puts "done brian"
-john = User.create!(
+suze.remote_photo_url = 'https://res.cloudinary.com/dnqrlagsz/image/upload/v1552644275/girl_3.jpg'
+suze.save
+
+puts "done suze"
+
+john = User.new(
   first_name: "Johnathan",
     last_name: "Olujemba",
     address: "87, Washdike Drove, PE20 2QA, Lincolnshire, England",
@@ -108,8 +118,11 @@ john = User.create!(
     price: 50,
     gender: "male"
   )
+john.remote_photo_url = 'https://res.cloudinary.com/dnqrlagsz/image/upload/v1552644289/boy_1.jpg'
+john.save
+
 puts "finished john"
-alex = User.create!(
+alex = User.new(
   first_name: "Alex",
     last_name: "Sarvin",
     address: "1, Church Farm Cottages, IP13 9PA, Cransford, Suffolk, England",
@@ -126,8 +139,11 @@ alex = User.create!(
     price: 65,
     gender: "female"
   )
+alex.remote_photo_url = 'https://res.cloudinary.com/dnqrlagsz/image/upload/v1552644290/boy_4.jpg'
+alex.save
+
 puts "done alex"
-andrew = User.create!(
+andrew = User.new(
   first_name: "Andrew",
     last_name: "Littlehorn",
     address: "86, Broomhall Road, EH12 7PW, Edinburgh, Scotland",
@@ -147,8 +163,11 @@ andrew = User.create!(
     price: 80,
     gender: "male"
   )
+andrew.remote_photo_url = 'https://res.cloudinary.com/dnqrlagsz/image/upload/v1552644290/boy_3.jpg'
+andrew.save
+
 puts "done andrew"
-kirk = User.create!(
+kirk = User.new(
   first_name: "Kirk",
     last_name: "Nelson",
     address: "28 Sydenham Hill, se26 6tp, London, England",
@@ -164,8 +183,11 @@ kirk = User.create!(
     price: 55,
     gender: "male"
   )
+kirk.remote_photo_url = 'https://res.cloudinary.com/dnqrlagsz/image/upload/v1552644290/boy_5.jpg'
+kirk.save
+
 puts "done ricardo"
-joel = User.create!(
+joel = User.new(
   first_name: "Ricardo",
     last_name: "Vieira",
     address: "Av. Santa Maria 11A, 2735-996 Agualva-Cacém, Portugal",
@@ -185,8 +207,11 @@ joel = User.create!(
     price: 50,
     gender: "male"
   )
+joel.remote_photo_url = 'https://res.cloudinary.com/dnqrlagsz/image/upload/v1552644875/ricardo.jpg'
+joel.save
+
 puts "done ricardo"
-leticia = User.create!(
+leticia = User.new(
   first_name: "Leticia",
     last_name: "Valles",
     address: "376 London Rd, Leicester, LE2 2PN ",
@@ -209,8 +234,11 @@ leticia = User.create!(
     price: 50,
     gender: "female"
   )
+leticia.remote_photo_url = 'https://res.cloudinary.com/dnqrlagsz/image/upload/v1552644275/girl_2.jpg'
+leticia.save
+
 puts "done leticia"
-anna = User.create!(
+anna = User.new(
   first_name: "Anna",
     last_name: "Sinksi",
     address: "Unit 4, Old School Workshops, London Road, Holyhead, LL65 3TL",
@@ -228,4 +256,6 @@ anna = User.create!(
     price: 60,
     gender: "female"
   )
+anna.remote_photo_url = 'https://res.cloudinary.com/dnqrlagsz/image/upload/v1552644275/girl_1.jpg'
+anna.save
 puts "done anna"
