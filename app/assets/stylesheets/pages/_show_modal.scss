@@ -94,32 +94,32 @@
   display: flex;
   justify-content: space-around;
   width: 40%;
-  border: 1px solid #489099;
+  border: 1px solid #CCCCCC;
   border-radius: 12px;
   margin: 4px;
   text-align: center;
   p {
-   color: #489099;
+   color: #CCCCCC;
    font-size: 18px;
    margin: 0 !important;
  }
 }
 .modal-user-show-therapist-languages {
   display: flex;
-  flex-direction: row;
   justify-content: center;
   .modal-language {
     display: flex;
-    border: solid 2px #74d5e0 ;
+    justify-content: space-around;
+    width: 40%;
+    border: 1px solid #6ECAD6;
     border-radius: 12px;
-    width: 30%;
     margin: 4px;
     text-align: center;
-    padding: 2px;
       // vertical-align: baseline;
       p {
+        color: #6ECAD6;
         font-size: 18px;
-        color: #74d5e0;
+        margin: 0 !important;
       }
     }
   }
