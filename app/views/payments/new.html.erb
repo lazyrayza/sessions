@@ -4,7 +4,7 @@
     <div class="payments-title">PAYMENT</div>
     <div class="payments-box">
       <div class="payments-new-therapist-avatar">
-       <img class="therapist-avatar-container" src="https://source.unsplash.com/featured/?{waiter}<%= (1..100000).to_a.sample %>" alt="">
+       <%= cl_image_tag @booking.therapist.photo.url, class: "therapist-avatar-container" %>
      </div>
      <br>
      <br>

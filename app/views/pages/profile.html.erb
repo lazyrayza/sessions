@@ -42,7 +42,9 @@
                 <% if current_user.therapist %>
                   <%= simple_form_for booking, class: "status-form", method: :patch, url: booking_path(booking) do |f| %>
                       <%= f.input :status, label: false, collection: ["Pending", "Confirmed", "Cancelled"], input_html: { multiple: false, class: "multiple-select" }  %>
-                      <%= f.button :submit, class: "primary-button" %>
+
+                        <%= f.button :submit, "Update", class: "primary-button update-button" %>
+
                   <% end %>
                 <% else %>
                   <%= booking.status %>
@@ -79,7 +81,7 @@
                 <% if current_user.therapist %>
                   <%= simple_form_for booking, class: "status-form", method: :patch, url: booking_path(booking) do |f| %>
                       <%= f.input :status, label: false, collection: ["Pending", "Confirmed", "Cancelled"], input_html: { multiple: false, class: "multiple-select" }  %>
-                      <%= f.button :submit, class: "primary-button" %>
+                      <%= f.button :submit, "Update", class: "primary-button" %>
                   <% end %>
                 <% else %>
                   <%= booking.status %>
