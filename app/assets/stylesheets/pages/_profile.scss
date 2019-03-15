@@ -1,19 +1,15 @@
-hr {
-  margin: 0;
-}
 
-h3 {
-  font-size: 32px;
-  font-family: $body-font;
-  font-weight: 700;
-
-}
 
 .profile-container{
   display: flex;
   margin: 0;
   justify-content: space-evenly;
   margin: 32px 0;
+  height: 100vh;
+
+  hr {
+    margin: 0;
+  }
 
   .tables-box{
     display: flex;
@@ -27,42 +23,56 @@ h3 {
     display: flex;
     justify-content: space-around;
     font-weight: 700;
-    padding: 32px 0;
+    padding: 16px 0;
     color: #FFFFFF;
-    font-size: 24px;
+    font-size: 18px;
     background-color: #6ECAD6;
   }
 
   .description-row {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     color: #FFFFFF;
-    font-weight: 700;
-    justify-content: space-around;
-    padding: 25px 30px;
-    background-color: #489099;
+    background-color: #CCCCCC;
+    text-align: center;
+
   }
 
   .tables-left {
     display: flex;
     flex-direction: column;
-    width: 60%;
+    width: 50%;
     border-radius: 8px;
 
-    .upcoming-details {
+    .upcoming-info {
       overflow-y: scroll;
-      height: 65vh;
+      height: 68vh;
 
-      .upcoming-details-row {
-        display: flex;
-        font-size: 18px;
+      .upcoming-info-row {
+        font-size: 14px;
         background-color: #ffffff;
-        justify-content: space-between;
-        padding: 25px 30px;
-        align-items: baseline;
+        padding: 10px 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        text-align: center;
+        align-items: center;
 
+        .primary-button {
+          margin: 0;
+
+          a {
+            text-decoration: none;
+            color: #ffffff;
+          }
+        }
+
+        .upcoming-names {
+          display: flex;
+          flex-direction: column;
+        }
         .user-avatar {
-          width: 48px;
-          margin-right: 4px;
+          width: 30px;
+          height: 30px;
         }
       }
     }
@@ -71,67 +81,70 @@ h3 {
   .tables-right {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     width: 20%;
 
     .tables-box {
-      border-radius: 8px;
-      min-height: 40vh;
-      font-weight: 700;
-      font-size: 24px;
-      background-color: #FFFFFF;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-
+      margin-bottom: 30px;
       .tables-title-row {
-        border-radius: 8px 8px 0 0;
-        display: flex;
-        padding: 4px 0;
-        justify-content: space-around;
-        font-weight: 700;
-        color: #FFFFFF;
-        font-size: 24px;
-        background-color: #6ECAD6;
+        padding: 8px 0;
       }
 
       .description-row {
-        font-size: 1rem;
+        grid-template-columns: 2fr 2fr;
       }
 
       // PROFILE TABLE
 
       .profile-details {
+        height: 28vh;
         display: flex;
         justify-content: space-evenly;
         flex-direction: column;
         align-items: center;
-        padding: 16px 0;
         border-radius: 8px;
+        margin-bottom: 13px;
 
         .user-profile-avatar{
-          width: 128px;
-          height: 128px;
+          width: 48px;
+          height: 48px;
+          display: block;
+          margin: 8px auto;
         }
 
-        .detail-row {
-          margin: 8px 0;
-          text-align: center;
+        .avatar-profile {
+          width: 70px;
+          height: 70px;
+          display: block;
+          margin: 8px auto;
+          border-radius: 50%
+
+        }
+
+        .head-row {
+          display: flex;
+          flex-direction: column;
         }
       }
 
       // HISTORY TABLE
       .history-details {
         overflow-y: scroll;
-        height: 28vh;
+        height: 30.5vh;
       }
 
       .history-details-row {
-        display: flex;
-        justify-content: space-between;
-        color: #000000;
-        font-weight: 300;
-        font-size: 18px;
-        padding: 8px 4px;
-        align-items: baseline;
+        font-size: 14px;
+        background-color: #ffffff;
+        padding: 10px 0;
+        display: grid;
+        grid-template-columns: 2fr 2fr;
+        text-align: center;
+
+        .history-labels {
+          display: flex;
+          align-items: center;
+          text-align: center;
+        }
       }
     }
   }

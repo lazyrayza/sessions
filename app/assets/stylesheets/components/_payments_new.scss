@@ -1,0 +1,54 @@
+.payments-new-master-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  margin: 32px;
+  .payments-new-container {
+    background-color: white;
+    width: 600px;
+    height: 620px;
+    border-radius: 8px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+
+
+    .payments-title {
+      border-radius: 8px 8px 0 0;
+      display: flex;
+      justify-content: space-around;
+      font-weight: 700;
+      padding: 16px 0;
+      color: #FFFFFF;
+      font-size: 18px;
+      background-color: #6ECAD6;
+    }
+
+    .payments-box{
+      margin: 32px;
+      .payments-new-therapist-avatar {
+        display: flex;
+        justify-content: center;
+        img {
+          border-radius: 100px;
+          height: 120px;
+          width: 120px;
+        }
+      }
+      .payments-new-therapist-name {
+        text-align: center;
+      }
+      .payments-new-therapist-description {
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+        overflow-y: auto;
+        word-break: break-all;
+        .hr {
+          margin: 16px 0;
+        }
+      }
+      .new-payment {
+        text-align: end;
+      }
+    }
+  }
+}

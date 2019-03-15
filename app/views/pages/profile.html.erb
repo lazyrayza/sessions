@@ -7,25 +7,32 @@
       <div class="description-row">
         <div class="col">THERAPIST</div>
         <div class="col">SCHEDULE</div>
-        <div class="col">PAYMENT</div>
         <div class="col">STATUS</div>
+        <div class="col">DETAILS</div>
       </div>
-      <div class="upcoming-details">
+      <div class="upcoming-info">
         <% @booking.order("start_time asc").each do |booking| %>
-          <div class="upcoming-details-row">
+          <div class="upcoming-info-row">
             <% if current_user.therapist %>
-              <div class="col upcoming-labels" data-label="User">
-                <%= image_tag "logo.png", class: "user-avatar" %>
-                <%= booking.client.full_name %>
+              <div class="col upcoming-labels upcoming-names" data-label="User">
+                <div class="upcoming-avatar">
+                  <%= image_tag "head.png", class: "user-avatar" %>
+                </div>
+                <div class="upcoming-full-name">
+                  <%= booking.client.full_name %>
+                </div>
               </div>
             <% else %>
-              <div class="col upcoming-labels" data-label="User">
-                <%= image_tag "logo.png", class: "user-avatar" %>
-                <%= booking.therapist.full_name %>
+              <div class="col upcoming-labels upcoming-names" data-label="User">
+                <div class="upcoming-avatar">
+                  <%= image_tag "head.png", class: "user-avatar" %>
+                </div>
+                <div class="upcoming-full-name">
+                  <%= booking.therapist.full_name %>
+                </div>
               </div>
             <% end %>
             <div class="col" data-label="Schedule"><%= booking.start_time %></div>
-            <div class="col" data-label="Payment"><%= booking.state %></div>
             <div class="col" data-label="Status">
               <% if current_user.therapist %>
                 <%= simple_form_for booking, class: "status-form", method: :patch, url: booking_path(booking) do |f| %>
@@ -36,6 +43,8 @@
                 <%= booking.status %>
               <% end %>
             </div>
+             <div class="col primary-button" data-label="Details"><%= link_to "View", booking_path(booking) %></div>
+
           </div>
           <hr />
         <% end %>
@@ -49,8 +58,14 @@
     <div class="tables-box">
       <div class="tables-title-row">PROFILE</div>
         <div class="profile-details">
-          <div class="detail-row"><%= image_tag "logo.png", class: "user-profile-avatar" %></div>
-          <h3 class="detail-row"><%= current_user.full_name.upcase %></h3>
+          <div class="head-row">
+            <% if current_user.photo.url == nil %>
+              <%= image_tag "head.png", class: "user-profile-avatar" %>
+            <% else %>
+              <%= image_tag current_user.photo.url, class: "avatar-profile" %>
+            <% end %>
+            <p><%= current_user.full_name.upcase %></p>
+          </div>
           <div class="detail-row"><%= link_to "Edit Profile", edit_user_registration_path, class: 'primary-button' %></div>
         </div>
     </div>

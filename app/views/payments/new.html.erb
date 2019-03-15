@@ -1,44 +1,38 @@
 <!-- app/views/payments/new.html.erb -->
 <div class="payments-new-master-container">
   <div class="payments-new-container">
-    <div class="payments-new-colour-block">
-
-    </div>
-    <div class="payments-new-therapist-avatar">
-     <img class="therapist-avatar-container" src="https://source.unsplash.com/featured/?{waiter}<%= (1..100000).to_a.sample %>" alt="">
+    <div class="payments-title">PAYMENT</div>
+    <div class="payments-box">
+      <div class="payments-new-therapist-avatar">
+       <img class="therapist-avatar-container" src="https://source.unsplash.com/featured/?{waiter}<%= (1..100000).to_a.sample %>" alt="">
+     </div>
+     <br>
+     <br>
+     <div class="payments-new-therapist-name">
+      <h2>SESSION WITH</h2>
+      <h2 style="font-weight: 700"><%= @booking.therapist.full_name.upcase %></h2>
+     </div>
+     <br>
+     <div class="payments-new-therapist-description">
+      <p>DESCRIPTION:</p>
+       <%= @booking.description %>
+     </div>
+     <hr/>
+     <div class="new-payment">
+       <%= form_tag booking_payments_path (@booking) do %>
+       <article>
+        <label class="amount">
+          <h4>Amount: <%= humanized_money_with_symbol(@booking.amount) %></h4>
+        </label>
+      </article>
+      <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+      data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+      data-name="<%=current_user.full_name %>'s Session"
+      data-email="<%= current_user.email %>"
+      data-amount="<%= @booking.amount_cents %>"
+      data-currency="<%= @booking.amount.currency %>"></script>
+      <% end %>
+     </div>
    </div>
-   <br>
-   <br>
-   <div class="payments-new-therapist-name">
-    <h2 class="secondary-colour">Booking session with:</h2>
-    <h2 class="primary-colour"><%= @booking.therapist.full_name.upcase %></h2>
-   </div>
-   <br>
-   <div class="payments-new-therapist-description">
-    <h4>Description:</h4>
-     <%= @booking.description %>
-   </div>
-    <br>
-    <br>
-    <hr>
-    <br>
-
-
-   <div class="new-payment">
-     <%= form_tag booking_payments_path (@booking) do %>
-     <article>
-      <label class="amount">
-        <h4>Amount: <%= humanized_money_with_symbol(@booking.amount) %></h4>
-      </label>
-    </article>
-    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-    data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-    data-name="My Session"
-    data-email="<%= current_user.email %>"
-    data-description="Session <%= @booking.therapist_id %>"
-    data-amount="<%= @booking.amount_cents %>"
-    data-currency="<%= @booking.amount.currency %>"></script>
-    <% end %>
-   </div>
-</div>
+  </div>
 </div>

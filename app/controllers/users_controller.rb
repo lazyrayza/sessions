@@ -9,22 +9,9 @@ class UsersController < ApplicationController
         format.html { render users_path }
         format.js
       end
-      # @therapists = User.search_by_expertise_and_full_name(params[:query]).where.not(latitude: nil, longitude: nil).where(therapist: true)
     else
       @therapists = User.where(therapist: true)
     end
-    # @therapist = User.find(params[:id])
-    #  @filterrific = Filterrific.new(User, params[:filterrific])
-    # @filterrific.select_options = {
-    #   sorted_by: Users.options_for_sorted_by,
-    #   with_cuisine: Users.options_for_select
-    # }
-    # @users = User.filterrific_find(@filterrific).page(params[:page]).languages
-
-    # respond_to do |format|
-    #   format.html
-    #   format.js
-    # end
   end
 
   def reset_filterrific
