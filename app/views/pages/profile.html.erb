@@ -59,7 +59,11 @@
       <div class="tables-title-row">PROFILE</div>
         <div class="profile-details">
           <div class="head-row">
-            <%= image_tag "head.png", class: "user-profile-avatar" %>
+            <% if current_user.photo.url == nil %>
+              <%= image_tag "head.png", class: "user-profile-avatar" %>
+            <% else %>
+              <%= image_tag current_user.photo.url, class: "avatar-profile" %>
+            <% end %>
             <p><%= current_user.full_name.upcase %></p>
           </div>
           <div class="detail-row"><%= link_to "Edit Profile", edit_user_registration_path, class: 'primary-button' %></div>

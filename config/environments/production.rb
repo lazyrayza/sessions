@@ -18,7 +18,7 @@ Rails.application.configure do
   config.action_controller.perform_caching = true
 
   config.action_cable.url = 'wss://sessionstherapy.herokuapp.com/cable'
-  config.action_cable.allowed_request_origins = [ '*' ]
+  config.action_cable.allowed_request_origins = [ 'https://sessionstherapy.herokuapp.com/', 'https://www.sessionstherapy.co.uk' ]
 
   # Ensures that a master key has been made available in either ENV["RAILS_MASTER_KEY"]
   # or in config/master.key. This key is used to decrypt credentials (and other encrypted files).
@@ -34,6 +34,8 @@ Rails.application.configure do
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
   config.assets.compile = false
+
+  config.force_ssl = true
 
   # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
 

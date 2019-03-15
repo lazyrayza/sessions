@@ -111,6 +111,15 @@
           margin: 8px auto;
         }
 
+        .avatar-profile {
+          width: 70px;
+          height: 70px;
+          display: block;
+          margin: 8px auto;
+          border-radius: 50%
+
+        }
+
         .head-row {
           display: flex;
           flex-direction: column;

@@ -1,141 +1,140 @@
-<div class="banneri"  style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.5)), url(<%= asset_path "session-mountain.png" %>)">
-
-  <div class="clock">
-    <div class="clock__second"></div>
+<div style="background: white;">
+  <div class="banneri"  style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.5)), url(<%= asset_path "session-mountain.png" %>)">
+    <div class="big-clock">
+      <div class="clock">
+      <div class="clock__second"></div>
       <div class="clock__minute"></div>
-        <div class="clock__hour"></div>
-          <div class="clock__axis"></div>
-            <section class="clock__indicator"></section>
-            <section class="clock__indicator"></section>
-            <section class="clock__indicator"></section>
-            <section class="clock__indicator"></section>
-            <section class="clock__indicator"></section>
-            <section class="clock__indicator"></section>
-            <section class="clock__indicator"></section>
-            <section class="clock__indicator"></section>
-            <section class="clock__indicator"></section>
-            <section class="clock__indicator"></section>
-            <section class="clock__indicator"></section>
-            <section class="clock__indicator"></section>
-            <section class="clock__indicator"></section>
-            <section class="clock__indicator"></section>
-            <section class="clock__indicator"></section>
-            <section class="clock__indicator"></section>
-            <section class="clock__indicator"></section>
-            <section class="clock__indicator"></section>
-            <section class="clock__indicator"></section>
-            <section class="clock__indicator"></section>
-            <section class="clock__indicator"></section>
-            <section class="clock__indicator"></section>
-            <section class="clock__indicator"></section>
-            <section class="clock__indicator"></section>
-            <section class="clock__indicator"></section>
-            <section class="clock__indicator"></section>
-            <section class="clock__indicator"></section>
-            <section class="clock__indicator"></section>
-            <section class="clock__indicator"></section>
-            <section class="clock__indicator"></section>
-            <section class="clock__indicator"></section>
-            <section class="clock__indicator"></section>
-            <section class="clock__indicator"></section>
-            <section class="clock__indicator"></section>
-            <section class="clock__indicator"></section>
-            <section class="clock__indicator"></section>
-            <section class="clock__indicator"></section>
-            <section class="clock__indicator"></section>
-            <section class="clock__indicator"></section>
-            <section class="clock__indicator"></section>
-            <section class="clock__indicator"></section>
-            <section class="clock__indicator"></section>
-            <section class="clock__indicator"></section>
-            <section class="clock__indicator"></section>
-            <section class="clock__indicator"></section>
-            <section class="clock__indicator"></section>
-            <section class="clock__indicator"></section>
-            <section class="clock__indicator"></section>
-            <section class="clock__indicator"></section>
-            <section class="clock__indicator"></section>
-            <section class="clock__indicator"></section>
-            <section class="clock__indicator"></section>
-            <section class="clock__indicator"></section>
-            <section class="clock__indicator"></section>
-            <section class="clock__indicator"></section>
-            <section class="clock__indicator"></section>
-            <section class="clock__indicator"></section>
-            <section class="clock__indicator"></section>
-            <section class="clock__indicator"></section>
-            <section class="clock__indicator"></section>
-        </div>
-            <div class="banneri-content">
-              <p id="count-down" data-time="<%= @booking.start_time %>"> </p>
-            </div>
-        </div>
+      <div class="clock__hour"></div>
+      <div class="clock__axis"></div>
+      <section class="clock__indicator"></section>
+      <section class="clock__indicator"></section>
+      <section class="clock__indicator"></section>
+      <section class="clock__indicator"></section>
+      <section class="clock__indicator"></section>
+      <section class="clock__indicator"></section>
+      <section class="clock__indicator"></section>
+      <section class="clock__indicator"></section>
+      <section class="clock__indicator"></section>
+      <section class="clock__indicator"></section>
+      <section class="clock__indicator"></section>
+      <section class="clock__indicator"></section>
+      <section class="clock__indicator"></section>
+      <section class="clock__indicator"></section>
+      <section class="clock__indicator"></section>
+      <section class="clock__indicator"></section>
+      <section class="clock__indicator"></section>
+      <section class="clock__indicator"></section>
+      <section class="clock__indicator"></section>
+      <section class="clock__indicator"></section>
+      <section class="clock__indicator"></section>
+      <section class="clock__indicator"></section>
+      <section class="clock__indicator"></section>
+      <section class="clock__indicator"></section>
+      <section class="clock__indicator"></section>
+      <section class="clock__indicator"></section>
+      <section class="clock__indicator"></section>
+      <section class="clock__indicator"></section>
+      <section class="clock__indicator"></section>
+      <section class="clock__indicator"></section>
+      <section class="clock__indicator"></section>
+      <section class="clock__indicator"></section>
+      <section class="clock__indicator"></section>
+      <section class="clock__indicator"></section>
+      <section class="clock__indicator"></section>
+      <section class="clock__indicator"></section>
+      <section class="clock__indicator"></section>
+      <section class="clock__indicator"></section>
+      <section class="clock__indicator"></section>
+      <section class="clock__indicator"></section>
+      <section class="clock__indicator"></section>
+      <section class="clock__indicator"></section>
+      <section class="clock__indicator"></section>
+      <section class="clock__indicator"></section>
+      <section class="clock__indicator"></section>
+      <section class="clock__indicator"></section>
+      <section class="clock__indicator"></section>
+      <section class="clock__indicator"></section>
+      <section class="clock__indicator"></section>
+      <section class="clock__indicator"></section>
+      <section class="clock__indicator"></section>
+      <section class="clock__indicator"></section>
+      <section class="clock__indicator"></section>
+      <section class="clock__indicator"></section>
+      <section class="clock__indicator"></section>
+      <section class="clock__indicator"></section>
+      <section class="clock__indicator"></section>
+      <section class="clock__indicator"></section>
+      <section class="clock__indicator"></section>
+      <section class="clock__indicator"></section>
+    </div>
+  </div>
 
-      <div class="video-chat-info">
-        <h1>Session with <%= @booking.therapist.full_name %>at <%= @booking.start_time.strftime('%Y-%m-%d') %>
-        </h1>
-        <div>Random User ID:
+    <div class="banneri-content">
+      <p>Session with <%= @booking.therapist.full_name %>
+    </p>
+    </div>
+    <div class="countdown-container">
+      <p id="count-down" data-time="<%= @booking.start_time %>"> </p>
+    </div>
+  </div>
+  <div class="video-chat-info">
+    <!-- <h1>Session with <%= @booking.therapist.full_name %>
+    </h1> -->
+    <div>Random User ID:
       <span id="current-user"><%= @random_number %></span>
     </div>
-      </div>
-    <div class="video-main-box">
-      <div class="video-left-box">
-          <button onclick="handleJoinSession()">
-            Join Room
-          </button>
-          <button onclick="handleLeaveSession()">
-            Leave Room
-          </button>
-            <div id="remote-video-container">
-            <div id="video_overlays">
-              <video id="local-video" autoplay></video>
-            </div>
-              <video id="remote-video" autoplay></video>
+  </div>
+  <div class="video-main-box">
+    <div class="video-left-box">
+      <div id="remote-video-container">
+        <div id="video_overlays">
+          <video id="local-video" autoplay></video>
+        </div>
+        <video id="remote-video" autoplay></video>
       </div>
     </div>
-
-  <div class="video-right-box">
-    <div class="-chat-container">
-      <div class="row">
-        <div class="col-sm-12 col-sm-offset-3">
-          <div class="chat-shadow">
-            <div class="chat-header"><h4>Sessions Messenger(Therapist: <%= @booking.therapist.full_name %>)</h4></div>
-            <div class="messages">
-              <% @chatrooms.messages.each do |message| %>
-                <%= render "messages/message", message: message, user_is_messages_author: message.user == current_user %>
-              <% end %>
-            </div>
-            <div id="create-message" >
-              <%= simple_form_for [ @chatrooms, Message.new ], remote: true do |f| %>
-                <%= f.input :content, label: false, placeholder: "Type your message" %>
-              <% end %>
-            </div>
+    <div class="video-right-box">
+      <div class="chat-container">
+        <div class="chat-shadow">
+          <div class="chat-header"><h4>Sessions Messenger</h4></div>
+          <div class="messages">
+            <% @chatrooms.messages.each do |message| %>
+              <%= render "messages/message", message: message, user_is_messages_author: message.user == current_user %>
+            <% end %>
+          </div>
+          <div id="create-message" >
+            <%= simple_form_for [ @chatrooms, Message.new ], remote: true do |f| %>
+              <%= f.input :content, label: false, placeholder: "Type your message" %>
+            <% end %>
           </div>
         </div>
       </div>
     </div>
+    <div class="phones">
+      <i class="fas fa-phone fa-2x" onclick="handleJoinSession()" style="color: green"></i>
+      <i class="fas fa-phone-slash fa-2x" onclick="handleLeaveSession()" style="color: red"></i>
+    </div>
   </div>
 </div>
-    <% content_for :after_js do %>
-      <script>
-        scrollLastMessageIntoView();
-        App['chat_room_<%= @chatrooms.id %>'] = App.cable.subscriptions.create(
-          { channel: 'ChatRoomsChannel', chat_room_id: <%= @chatrooms.id %> }, {
-            received: (data) => {
-              console.log(data);
-                  if (data.current_user_id !== <%= current_user.id %>) {
-                  const messagesContainer = document.querySelector('.messages');
-                  console.log(messagesContainer);
-                  messagesContainer.insertAdjacentHTML('beforeend', data.message_partial);
-                scrollLastMessageIntoView();
-              }
-            }
+<% content_for :after_js do %>
+  <script>
+    scrollLastMessageIntoView();
+    App['chat_room_<%= @chatrooms.id %>'] = App.cable.subscriptions.create(
+      { channel: 'ChatRoomsChannel', chat_room_id: <%= @chatrooms.id %> }, {
+        received: (data) => {
+          console.log(data);
+              if (data.current_user_id !== <%= current_user.id %>) {
+              const messagesContainer = document.querySelector('.messages');
+              console.log(messagesContainer);
+              messagesContainer.insertAdjacentHTML('beforeend', data.message_partial);
+            scrollLastMessageIntoView();
           }
-        )
+        }
+      }
+    )
 
-      </script>
-    <% end %>
-</div>
+  </script>
+<% end %>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 <script>
