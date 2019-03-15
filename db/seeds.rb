@@ -35,10 +35,10 @@ julia = User.create!(
     last_name: "Stone",
     address: "15FL West Building, No.668 East BeiJin Rd",
     phone_number: "07483969008",
-    email: "julia@stonetherapy.com",
+    email: "juliaa@stonetherapy.com",
     password: "123456",
     therapist: true,
-    expertise: "Addictions, Anxiety, Abuse, Trauma",
+    expertise: "Addictions",
     bio: "Hello, I'm Julia,  a qualified relational
     integrative therapist. This means that the relationship
     between client and therapist lies at the heart of my
@@ -50,7 +50,7 @@ julia = User.create!(
     approaches; humanistic, cognitive behavioural and psychodynamic.
     This allows me to adapt my way of working to each client’s
     individual needs.",
-    price_cents: 5000,
+    price: 50,
     gender: "female"
   )
 puts "done julia"
@@ -59,17 +59,17 @@ mario = User.create!(
     last_name: "Vespachy",
     address: "234 Wellington Street, Ottawa, Ontario, Canada, K1A 0G9",
     phone_number: "07470367654",
-    email: "mario@vtherapy.com",
+    email: "marioo@vtherapy.com",
     password: "123456",
     therapist: true,
-    expertise: "Integrative, Person centred, Psychodynamic",
+    expertise: "Psychodynamic",
     bio: "I'm Mario, a mindfulness-based integrative therapist. That's a
     of a mouthful, what does it mean ? I belive the healing quality of the relationship
     between client and therapist is the essential element for helping you experience a more rich and meaningful
     life. We wil use this to bring awareness to how your mind works and
     the thoughts and feelings you are struggling with. I will help you bring acceptance, allowing
     you to experience parts of yourself in a different way, and w will work together on the change you would like to see.",
-    price_cents: 6000,
+    price: 60,
     gender: "male"
   )
 puts "done mario"
@@ -78,16 +78,16 @@ suze = User.create!(
     last_name: "Delaweo",
     address: "2 Holt Street, Surry Hills, NSW 2010, Australia",
     phone_number: "07305074943",
-    email: "brian@getbetter.com",
+    email: "briann@getbetter.com",
     password: "123456",
     therapist: true,
-    expertise: "Trauma, Depression",
+    expertise: "Trauma",
     bio: "Lost ownership of your life? Want to take it back? But dont know
     how to do it? We are not dependent but interdependent. Thus, we often need help from others, and many
     of all our problems are explicit or implicitly relational by nature.
     Yet, being in a professional relationship with a therapist, we can have an insightggul understanding
     of our behavioural patterns, repressed feelings, and automatic negative thoughts.",
-    price_cents: 7000,
+    price: 70,
     gender: "female"
   )
 puts "done brian"
@@ -96,15 +96,15 @@ john = User.create!(
     last_name: "Olujemba",
     address: "87, Washdike Drove, PE20 2QA, Lincolnshire, England",
     phone_number: "07903496992",
-    email: "john@gOlutherapy.com",
+    email: "johnn@gOlutherapy.com",
     password: "123456",
     therapist: true,
-    expertise: "Existencial, Integrative, Psychodynamic",
+    expertise: "Existencial",
     bio: "Having started my career in mental health work, I trained as a psychoanalytic and have worked for
     over 25 years in the field. I initially trained at the Tavistock Clinic (London)
     in both the Adult and Child department. Although I trained as a Freudian psychoanalyst, I do not work primarily
     with that model. During my practice I have come to value a range of experince outside that model.",
-    price_cents: 5000,
+    price: 50,
     gender: "male"
   )
 puts "finished john"
@@ -113,16 +113,16 @@ alex = User.create!(
     last_name: "Sarvin",
     address: "1, Church Farm Cottages, IP13 9PA, Cransford, Suffolk, England",
     phone_number: "07483368103",
-    email: "alex@stonetherapy.com",
+    email: "alexx@stonetherapy.com",
     password: "123456",
     therapist: true,
-    expertise: "Eating disorders, Obessions, Self-harm",
+    expertise: "Eating disorders",
     bio: "I offer a warm and engaging approach to looking at
     how we can best support you in your situation. I will work
     with you to find out what you need to live a more fulfilling
     ife-how you can help make change and how to cope with the really
     difficult things that are out of your control.",
-    price_cents: 6500,
+    price: 65,
     gender: "female"
   )
 puts "done alex"
@@ -131,10 +131,10 @@ andrew = User.create!(
     last_name: "Littlehorn",
     address: "86, Broomhall Road, EH12 7PW, Edinburgh, Scotland",
     phone_number: "07910394223",
-    email: "andrew@stonetherapy.com",
+    email: "andreww@stonetherapy.com",
     password: "123456",
     therapist: true,
-    expertise: "Psychodynamic",
+    expertise: "Obessions",
     bio: "You may be considering therapy because of a specific
     problem or crisis in your life. You may be having difficulties
     n a relationship, or in your work or studies; you may be feeling
@@ -143,7 +143,7 @@ andrew = User.create!(
     you to see a happy and fruitful future for yourself. Therapy gives
     you the opportunity to explore this with me, at your own pace, in a
     safe setting.",
-    price_cents: 8000,
+    price: 80,
     gender: "male"
   )
 puts "done andrew"
@@ -152,18 +152,18 @@ kirk = User.create!(
     last_name: "Nelson",
     address: "28 Sydenham Hill, se26 6tp, London, England",
     phone_number: "07930033741",
-    email: "kirk@stonetherapy.com",
+    email: "kirkk@stonetherapy.com",
     password: "123456",
     therapist: true,
-    expertise: "Stress, CBT",
+    expertise: "Stress",
     bio: "As an integrative counsellor I am able to draw on knowledge
     and skills from various counselling approaches based on your
     individual circumstances in order to provide the most effective
     and personalised therapy for your needs.",
-    price_cents: 5500,
+    price: 55,
     gender: "male"
   )
-puts "done kirk"
+puts "done ricardo"
 joel = User.create!(
   first_name: "Ricardo",
     last_name: "Vieira",
@@ -172,7 +172,7 @@ joel = User.create!(
     email: "ricardo@sessionstherapy.com",
     password: "123456",
     therapist: true,
-    expertise: "CBT, Stress",
+    expertise: "Anxiety",
     bio: "My name is Ricardo Vieira. I am a CBT Qualified Counsellor &
     Supervisor with over a decade of experience of offering
     counselling services to individuals and groups, of adults
@@ -181,7 +181,7 @@ joel = User.create!(
     The BACP Register is accredited by the Professional Standards
     Authority for Health and Social Care, an independent regulatory
     body accountable to parliament.",
-    price_cents: 5000,
+    price: 50,
     gender: "male"
   )
 puts "done ricardo"
@@ -190,10 +190,10 @@ leticia = User.create!(
     last_name: "Valles",
     address: "376 London Rd, Leicester, LE2 2PN ",
     phone_number: "07636807008",
-    email: "leticia@stonetherapy.com",
+    email: "leticiaa@stonetherapy.com",
     password: "123456",
     therapist: true,
-    expertise: "Sexuality, Relationships",
+    expertise: "Sexuality",
     bio: "I work in English and Spanish with individuals -
     adults, children and adolescents - as well as couples.
     Short walking distance from Charing Cross, Leicester Sq or
@@ -205,7 +205,7 @@ leticia = User.create!(
     doesn't need to be dragging us down and making us feel doomed.
     My orientation is Integrative and Relational and as well as mind
     and emotions, my work can involve the body.",
-    price_cents: 5000,
+    price: 50,
     gender: "female"
   )
 puts "done leticia"
@@ -214,16 +214,17 @@ anna = User.create!(
     last_name: "Sinksi",
     address: "Unit 4, Old School Workshops, London Road, Holyhead, LL65 3TL",
     phone_number: "07094586590",
-    email: "anna@stonetherapy.com",
+    email: "annaa@stonetherapy.com",
     password: "123456",
     therapist: true,
-    expertise: "I'm a qualified integrative psychotherapist (Master's level)
+    expertise: "CBT",
+    bio: "I'm a qualified integrative psychotherapist (Master's level)
     with 3 different locations in central London. I work using a range of approaches
     from different schools of psychotherapy, as I believe everything depends on the given individual.
     My experience includes a wide range of clients, including bereavement,
     epression, anxiety, major life changes, divorce, infertility and miscarriage.
     I am also a member of BICA: British Infertility Counselling Association.",
-    price_cents: 6000,
+    price: 60,
     gender: "female"
   )
 puts "done anna"

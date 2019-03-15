@@ -13,7 +13,7 @@
                   <h3><strong><%= therapist.first_name %> <%= therapist.last_name %></strong></h3>
                 </div>
                 <div class="modal-user-show-therapist-address">
-                  <h4><%= therapist.address %></h4>
+                  <h5><%= therapist.address %></h5>
                 </div>
                 <div class="modal-user-show-therapist-languages">
                   <% therapist.languages.each do |language|%>
@@ -32,7 +32,7 @@
                 </div>
               </div>
               <div class="modal-right-side">
-                <h3>Price</h3>
+                <h3>£<%= therapist.price %></h3>
                 <div class="modal-container-reviews">
                    <div class="tables-title-row">REVIEWS</div>
                   <% if therapist.therapist_reviews != nil %>

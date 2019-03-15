@@ -170,5 +170,16 @@
        i {
       padding: 0px 5px;
         }
+
+      .price-tag {
+        display: flex;
+        align-items: center;
+        p {
+          font-size: 24px;
+          font-weight: 700;
+        }
+
+
+      }
     }
   }

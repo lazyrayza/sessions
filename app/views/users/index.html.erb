@@ -38,7 +38,9 @@
             <h4><%= therapist.last_name %></h4>
             <h4><span><%= therapist.expertise %></span></h4>
         <% end %>
-      <%= link_to "Book", users_path(therapist), class: 'primary-button' %>
+        <div class="price-tag">
+          <p>£<%= therapist.price %></p>
+        </div>
         <button class="primary-button" data-toggle="modal" data-target="#myModal_<%= therapist.id %>"> View </button>
       </figcaption>
     </figure>
