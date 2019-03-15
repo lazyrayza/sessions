@@ -7,12 +7,12 @@
       <div class="description-row">
         <div class="col">THERAPIST</div>
         <div class="col">SCHEDULE</div>
-        <div class="col">PAYMENT</div>
         <div class="col">STATUS</div>
+        <div class="col">DETAILS</div>
       </div>
-      <div class="upcoming-details">
+      <div class="upcoming-info">
         <% @booking.order("start_time asc").each do |booking| %>
-          <div class="upcoming-details-row">
+          <div class="upcoming-info-row">
             <% if current_user.therapist %>
               <div class="col upcoming-labels upcoming-names" data-label="User">
                 <div class="upcoming-avatar">
@@ -33,7 +33,6 @@
               </div>
             <% end %>
             <div class="col" data-label="Schedule"><%= booking.start_time %></div>
-            <div class="col" data-label="Payment"><%= booking.state %></div>
             <div class="col" data-label="Status">
               <% if current_user.therapist %>
                 <%= simple_form_for booking, class: "status-form", method: :patch, url: booking_path(booking) do |f| %>
@@ -44,6 +43,8 @@
                 <%= booking.status %>
               <% end %>
             </div>
+             <div class="col primary-button" data-label="Details"><%= link_to "View", booking_path(booking) %></div>
+
           </div>
           <hr />
         <% end %>

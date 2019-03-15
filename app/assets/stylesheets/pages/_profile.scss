@@ -44,17 +44,27 @@
     width: 50%;
     border-radius: 8px;
 
-    .upcoming-details {
+    .upcoming-info {
       overflow-y: scroll;
       height: 68vh;
 
-      .upcoming-details-row {
+      .upcoming-info-row {
         font-size: 14px;
         background-color: #ffffff;
         padding: 10px 0;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
         text-align: center;
+        align-items: center;
+
+        .primary-button {
+          margin: 0;
+
+          a {
+            text-decoration: none;
+            color: #ffffff;
+          }
+        }
 
         .upcoming-names {
           display: flex;

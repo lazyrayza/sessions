@@ -8,7 +8,7 @@ class BookingsController < ApplicationController
   end
 
   def show
-    @booking = current_user.client_bookings.where(state: 'Paid').find(params[:id])
+    @booking = current_user.client_bookings.find(params[:id])
   end
 
   def new
