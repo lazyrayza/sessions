@@ -83,7 +83,9 @@
   </div>
   <p id="my-confirmation">MY BOOKING CONFIRMATION</p>
   <div class="right">
-    <div class="author"><img src="https://randomuser.me/api/portraits/men/95.jpg"/>
+    <div class="author">
+<!--       <img src="https://randomuser.me/api/portraits/men/95.jpg"/>
+ -->      <%= cl_image_tag @booking.therapist.photo, style: 'object-fit: cover;' %>
       <h2 style="font-weight: 700"><%= @booking.therapist.full_name %></h2>
     </div>
     <hr/ style="margin: 0 8px">
