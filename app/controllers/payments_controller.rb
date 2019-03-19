@@ -11,7 +11,7 @@ class PaymentsController < ApplicationController
     )
 
     charge = Stripe::Charge.create(
-      customer:     customer.id,   # You should store this customer id and re-use it.
+      customer:     customer.id, # You should store this customer id and re-use it.
       amount:       1000, #@booking.amount_cents,
       description:  "Payment for teddy #{@booking.therapist_id} for order #{@booking.id}",
       currency:     @booking.amount.currency
@@ -21,9 +21,9 @@ class PaymentsController < ApplicationController
 
     redirect_to booking_path(@booking)
 
-  rescue Stripe::CardError => e
-    flash[:alert] = e.message
-    redirect_to new_booking_payment_path(@booking)
+    rescue Stripe::CardError => e
+      flash[:alert] = e.message
+      redirect_to new_booking_payment_path(@booking)
   end
 
   private

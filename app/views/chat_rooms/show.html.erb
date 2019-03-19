@@ -1,89 +1,88 @@
 <div style="background: white;">
-  <div class="banneri"  style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.5)), url(<%= asset_path "session-mountain.png" %>)">
+  <div class="banneri" style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.5)), url(<%= asset_path "session-mountain.png" %>)">
     <div class="big-clock">
       <div class="clock">
-      <div class="clock__second"></div>
-      <div class="clock__minute"></div>
-      <div class="clock__hour"></div>
-      <div class="clock__axis"></div>
-      <section class="clock__indicator"></section>
-      <section class="clock__indicator"></section>
-      <section class="clock__indicator"></section>
-      <section class="clock__indicator"></section>
-      <section class="clock__indicator"></section>
-      <section class="clock__indicator"></section>
-      <section class="clock__indicator"></section>
-      <section class="clock__indicator"></section>
-      <section class="clock__indicator"></section>
-      <section class="clock__indicator"></section>
-      <section class="clock__indicator"></section>
-      <section class="clock__indicator"></section>
-      <section class="clock__indicator"></section>
-      <section class="clock__indicator"></section>
-      <section class="clock__indicator"></section>
-      <section class="clock__indicator"></section>
-      <section class="clock__indicator"></section>
-      <section class="clock__indicator"></section>
-      <section class="clock__indicator"></section>
-      <section class="clock__indicator"></section>
-      <section class="clock__indicator"></section>
-      <section class="clock__indicator"></section>
-      <section class="clock__indicator"></section>
-      <section class="clock__indicator"></section>
-      <section class="clock__indicator"></section>
-      <section class="clock__indicator"></section>
-      <section class="clock__indicator"></section>
-      <section class="clock__indicator"></section>
-      <section class="clock__indicator"></section>
-      <section class="clock__indicator"></section>
-      <section class="clock__indicator"></section>
-      <section class="clock__indicator"></section>
-      <section class="clock__indicator"></section>
-      <section class="clock__indicator"></section>
-      <section class="clock__indicator"></section>
-      <section class="clock__indicator"></section>
-      <section class="clock__indicator"></section>
-      <section class="clock__indicator"></section>
-      <section class="clock__indicator"></section>
-      <section class="clock__indicator"></section>
-      <section class="clock__indicator"></section>
-      <section class="clock__indicator"></section>
-      <section class="clock__indicator"></section>
-      <section class="clock__indicator"></section>
-      <section class="clock__indicator"></section>
-      <section class="clock__indicator"></section>
-      <section class="clock__indicator"></section>
-      <section class="clock__indicator"></section>
-      <section class="clock__indicator"></section>
-      <section class="clock__indicator"></section>
-      <section class="clock__indicator"></section>
-      <section class="clock__indicator"></section>
-      <section class="clock__indicator"></section>
-      <section class="clock__indicator"></section>
-      <section class="clock__indicator"></section>
-      <section class="clock__indicator"></section>
-      <section class="clock__indicator"></section>
-      <section class="clock__indicator"></section>
-      <section class="clock__indicator"></section>
-      <section class="clock__indicator"></section>
+        <div class="clock__second"></div>
+        <div class="clock__minute"></div>
+        <div class="clock__hour"></div>
+        <div class="clock__axis"></div>
+        <section class="clock__indicator"></section>
+        <section class="clock__indicator"></section>
+        <section class="clock__indicator"></section>
+        <section class="clock__indicator"></section>
+        <section class="clock__indicator"></section>
+        <section class="clock__indicator"></section>
+        <section class="clock__indicator"></section>
+        <section class="clock__indicator"></section>
+        <section class="clock__indicator"></section>
+        <section class="clock__indicator"></section>
+        <section class="clock__indicator"></section>
+        <section class="clock__indicator"></section>
+        <section class="clock__indicator"></section>
+        <section class="clock__indicator"></section>
+        <section class="clock__indicator"></section>
+        <section class="clock__indicator"></section>
+        <section class="clock__indicator"></section>
+        <section class="clock__indicator"></section>
+        <section class="clock__indicator"></section>
+        <section class="clock__indicator"></section>
+        <section class="clock__indicator"></section>
+        <section class="clock__indicator"></section>
+        <section class="clock__indicator"></section>
+        <section class="clock__indicator"></section>
+        <section class="clock__indicator"></section>
+        <section class="clock__indicator"></section>
+        <section class="clock__indicator"></section>
+        <section class="clock__indicator"></section>
+        <section class="clock__indicator"></section>
+        <section class="clock__indicator"></section>
+        <section class="clock__indicator"></section>
+        <section class="clock__indicator"></section>
+        <section class="clock__indicator"></section>
+        <section class="clock__indicator"></section>
+        <section class="clock__indicator"></section>
+        <section class="clock__indicator"></section>
+        <section class="clock__indicator"></section>
+        <section class="clock__indicator"></section>
+        <section class="clock__indicator"></section>
+        <section class="clock__indicator"></section>
+        <section class="clock__indicator"></section>
+        <section class="clock__indicator"></section>
+        <section class="clock__indicator"></section>
+        <section class="clock__indicator"></section>
+        <section class="clock__indicator"></section>
+        <section class="clock__indicator"></section>
+        <section class="clock__indicator"></section>
+        <section class="clock__indicator"></section>
+        <section class="clock__indicator"></section>
+        <section class="clock__indicator"></section>
+        <section class="clock__indicator"></section>
+        <section class="clock__indicator"></section>
+        <section class="clock__indicator"></section>
+        <section class="clock__indicator"></section>
+        <section class="clock__indicator"></section>
+        <section class="clock__indicator"></section>
+        <section class="clock__indicator"></section>
+        <section class="clock__indicator"></section>
+        <section class="clock__indicator"></section>
+        <section class="clock__indicator"></section>
+      </div>
     </div>
-  </div>
 
     <div class="banneri-content">
-      <p>Session with <%= @booking.therapist.full_name %>
-    </p>
+      <p>Session with <%= @booking.therapist.full_name %></p>
     </div>
     <div class="countdown-container">
       <p id="count-down" data-time="<%= @booking.start_time %>"> </p>
     </div>
   </div>
+
   <div class="video-chat-info">
-    <!-- <h1>Session with <%= @booking.therapist.full_name %>
-    </h1> -->
     <div>Random User ID:
       <span id="current-user"><%= @random_number %></span>
     </div>
   </div>
+
   <div class="video-main-box">
     <div class="video-left-box">
       <div id="remote-video-container">
@@ -93,6 +92,7 @@
         <video id="remote-video" autoplay></video>
       </div>
     </div>
+
     <div class="video-right-box">
       <div class="chat-container">
         <div class="chat-shadow">
@@ -110,12 +110,14 @@
         </div>
       </div>
     </div>
+
     <div class="phones">
       <i class="fas fa-phone fa-2x" onclick="handleJoinSession()" style="color: green"></i>
       <i class="fas fa-phone-slash fa-2x" onclick="handleLeaveSession()" style="color: red"></i>
     </div>
   </div>
 </div>
+
 <% content_for :after_js do %>
   <script>
     scrollLastMessageIntoView();
@@ -132,35 +134,9 @@
         }
       }
     )
-
   </script>
 <% end %>
-<!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
 
-<script>
-// var currentSec = getSecondsToday();
-
-// var seconds = (currentSec / 60) % 1;
-// var minutes = (currentSec / 3600) % 1;
-// var hours = (currentSec / 43200) % 1;
-
-// setTime(60 * seconds, "second");
-// setTime(3600 * minutes, "minute");
-// setTime(43200 * hours, "hour");
-
-// function setTime(left, hand) {
-//   $(".clock__" + hand).css("animation-delay", "" + left * -1 + "s");
-// }
-
-// function getSecondsToday() {
-//   let now = new Date();
-
-//   let today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
-
-//   let diff = now - today;
-//   return Math.round(diff / 1000);
-// }
-</script>
 <script>
 // Set the date we're counting down to
 var countDownDate = new Date(document.getElementById('count-down').dataset.time);

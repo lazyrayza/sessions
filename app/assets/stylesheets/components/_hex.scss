@@ -32,16 +32,16 @@ img{
 
 .clipped-border{
   -webkit-clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
-   clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
-   padding:5px;
-   background:linear-gradient(grey,lightgrey);
-   width:var(--border-width);
-   height:var(--border-height);
-   max-height:130px;
-   max-width:130px;
-   transition:transform 0.2s;
-   position:absolute;
-   cursor:pointer;
+  clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
+  padding:5px;
+  background:linear-gradient(grey,lightgrey);
+  width:var(--border-width);
+  height:var(--border-height);
+  max-height:130px;
+  max-width:130px;
+  transition:transform 0.2s;
+  position:absolute;
+  cursor:pointer;
   left: 0px;
   top: 0px;
   z-index: -1;

@@ -1,46 +1,45 @@
 .payments-new-master-container {
   display: flex;
   justify-content: center;
+
   .payments-new-container {
     background-color: white;
     border-radius: 4px;
-
     width: 600px;
     height: 600px;
+
     .payments-new-therapist-avatar {
       display: flex;
       justify-content: center;
+
       img {
         border-radius: 100px;
         height: 120px;
         width: 120px;
-      object-fit: cover;
+        object-fit: cover;
       }
     }
-    .payments-new-colour-block {
-      // background-color: blue;
-      // height: 200px;
-    }
+
     .payments-new-therapist-name {
       text-align: center;
       .primary-colour {
         color: #6ECAD6;
       }
+
       .secondary-colour {
         color: #489099;
       }
+
     }
+
     .payments-new-therapist-description {
-      // border: solid gray 0.5px;
-      // padding: 20px;
-      // border-radius: 4px;
       word-wrap: break-word;
-      // overflow-y: scroll;
       overflow: auto;
       z-index: auto;
       position: relative;
       height: 100px !important
     }
+
     .new-payment {
       text-align: end;
     }

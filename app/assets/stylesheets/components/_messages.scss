@@ -16,12 +16,15 @@
   display: flex;
   margin-bottom: 10px;
   color: #555753;
+
   &.right {
     flex-direction: row-reverse;
+
     .message-content {
       background-color: #6ECAD6;
       text-align: right;
       padding: 4px 8px 2px 8px;
+
       h4 {
         color: black;
         font-size: 16px;
@@ -29,12 +32,14 @@
     }
   }
 }
+
 .message-content {
   background-color: #86BB71;
   border-radius: 3px;
   margin: 0 10px;
   padding: 11px 10px 8px 10px;
 }
+
 .avatar {
   width: 30px;
   height: 30px;
@@ -46,20 +51,24 @@
   // margin-bottom: 20px;
   border: 1px solid #ececec;
 }
+
 .message_content {
   margin-bottom: 0;
 }
+
 input.form-control {
   border: 1px solid #ECECEC;
   box-shadow: none;
   font-size: 14px;
   color: #868686;
+
   &:focus {
     outline: none;
     border: 1px solid blue;
     box-shadow: none;
   }
 }
+
 .chat-header {
   background-color: #489099;
   color: white;

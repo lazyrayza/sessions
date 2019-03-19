@@ -1,14 +1,12 @@
 class BookingsController < ApplicationController
-  before_action :find_booking, only: [:show, :update, :destroy, :edit]
+  before_action :find_booking, only: %i[show update destroy edit]
 
   def index
-    #need authorization for specific user to view his bookings
-    # @user = User.find(params[:user_id])
     @bookings = current_user.therapist ? current_user.therapist_bookings : current_user.client_bookings
   end
 
   def show
-    @booking = current_user.client_bookings.find(params[:id])
+    @booking = current_user.therapist_bookings.find(params[:id])
   end
 
   def new
@@ -18,7 +16,7 @@ class BookingsController < ApplicationController
 
   def update
     if @booking.update(bookings_params)
-      redirect_to booking_path(@booking), notice: 'Booking was updated!'
+      redirect_to profile_path, notice: 'Booking was updated!'
     else
       render :new
     end
@@ -41,8 +39,6 @@ class BookingsController < ApplicationController
   end
 
   def edit
-    # @booking = current_user.client_bookings
-    # @therapist = @booking.therapist
   end
 
   def destroy

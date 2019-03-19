@@ -1,9 +1,9 @@
 <div class="bannerx"  style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.5)), url(<%= asset_path "session-stars.png" %>)">
   <div class="clock">
-  <div class="clock__second"></div>
-  <div class="clock__minute"></div>
+    <div class="clock__second"></div>
+    <div class="clock__minute"></div>
     <div class="clock__hour"></div>
-  <div class="clock__axis"></div>
+    <div class="clock__axis"></div>
     <section class="clock__indicator"></section>
     <section class="clock__indicator"></section>
     <section class="clock__indicator"></section>
@@ -65,40 +65,40 @@
     <section class="clock__indicator"></section>
     <section class="clock__indicator"></section>
   </div>
+
   <div class="banner-info" style="padding-bottom: 120px">
     <% if current_user.full_name == nil %>
-   Hello: <%= current_user.email %><
+      Hello: <%= current_user.email %>
     <% else %>
-    Hello: <%= current_user.full_name %>
+      Hello: <%= current_user.full_name %>
     <% end %>
     <br>
     Welcome to your Booking Info
   </div>
-
 </div>
+
 <div class="mid-container">
   <div class="cardx">
-  <div class="thumbnail">
-    <img class="left" src="https://res.cloudinary.com/dnqrlagsz/image/upload/v1552398008/computer-contemporary-cup-1251833.jpg"/>
-  </div>
-  <p id="my-confirmation">MY BOOKING CONFIRMATION</p>
-  <div class="right">
-    <div class="author">
-<!--       <img src="https://randomuser.me/api/portraits/men/95.jpg"/>
- -->      <%= cl_image_tag @booking.therapist.photo, style: 'object-fit: cover;' %>
-      <h2 style="font-weight: 700"><%= @booking.therapist.full_name %></h2>
+    <div class="thumbnail">
+      <img class="left" src="https://res.cloudinary.com/dnqrlagsz/image/upload/v1552398008/computer-contemporary-cup-1251833.jpg"/>
     </div>
-    <hr/ style="margin: 0 8px">
-    <div class="booking-description">
-      <div style="font-weight: bold">DESCRIPTION:</div>
-      <p><%= @booking.description %></p>
+    <p id="my-confirmation">MY BOOKING CONFIRMATION</p>
+    <div class="right">
+      <div class="author">
+        <%= cl_image_tag @booking.therapist.photo, style: 'object-fit: cover;' %>
+        <h2 style="font-weight: 700"><%= @booking.therapist.full_name %></h2>
+      </div>
+      <hr/ style="margin: 0 8px">
+      <div class="booking-description">
+        <div style="font-weight: bold">DESCRIPTION:</div>
+        <p><%= @booking.description %></p>
+      </div>
     </div>
 
-  </div>
-  <div class="abso">
-    <h2><%= (@booking.start_time).gsub(/\s\d{2}:\d{2}/, '').gsub(/\d{4}-\d{2}-/, '') %> <%= Date::MONTHNAMES[(@booking.start_time).gsub(/\d{2}\s\d{2}:\d{2}/, '').gsub(/\d{4}-/, '').to_i] %> </h2>
-    <h4><%= (@booking.start_time).gsub(/\d{4}-\d{2}-\d{2}\s/,'') %> </h4>
-  </div>
+    <div class="abso">
+      <h2><%= (@booking.start_time).gsub(/\s\d{2}:\d{2}/, '').gsub(/\d{4}-\d{2}-/, '') %> <%= Date::MONTHNAMES[(@booking.start_time).gsub(/\d{2}\s\d{2}:\d{2}/, '').gsub(/\d{4}-/, '').to_i] %> </h2>
+      <h4><%= (@booking.start_time).gsub(/\d{4}-\d{2}-\d{2}\s/,'') %> </h4>
+    </div>
 
     <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="Edit Booking">
       <%= link_to edit_booking_path(@booking) do %>
@@ -106,25 +106,22 @@
       <% end %>
     </span>
 
-        <%= link_to new_booking_review_path(@booking) do %>
-        <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="Review">
-          <div class="fab2"><i class="far fa-registered fa-3x"></i>
-          </div>
-        </span>
-        <% end %>
+    <%= link_to new_booking_review_path(@booking) do %>
+      <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="Review">
+        <div class="fab2"><i class="far fa-registered fa-3x"></i></div>
+      </span>
+    <% end %>
 
-        <%= link_to profile_path do %>
-        <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="Profile">
-          <div class="fab3"><i class="fas fa-book-reader fa-3x"></i>
-          </div>
-        </span>
-        <% end %>
-        <%= link_to booking_chat_rooms_path(@booking), :method => :post do %>
-        <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="Chatroom">
-          <div class="fab"><i class="fas fa-video fa-3x""></i>
-          </div>
-        </span>
-        <% end %>
-          </div>
+    <%= link_to profile_path do %>
+      <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="Profile">
+        <div class="fab3"><i class="fas fa-book-reader fa-3x"></i></div>
+      </span>
+    <% end %>
+
+    <%= link_to booking_chat_rooms_path(@booking), :method => :post do %>
+      <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="Chatroom">
+        <div class="fab"><i class="fas fa-video fa-3x""></i></div>
+      </span>
+    <% end %>
   </div>
 </div>

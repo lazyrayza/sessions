@@ -5,7 +5,6 @@
 <div class="banneri"  style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.5)), url(<%= asset_path "session-mountain.png" %>)">
 </div>
 
-
 <div class="user-show-master-container">
   <div class="user-show-container">
     <img class="therapist-avatar-container" src="https://source.unsplash.com/featured/?{waiter}<%= (1..100000).to_a.sample %>" alt="">
@@ -18,9 +17,9 @@
       </div>
       <div class="user-show-therapist-languages">
         <% @user.user_languages.each do |language|%>
-        <div class="language-tag">
-        <h5><strong><%= language.language.language_name %></strong></h5>
-         </div>
+          <div class="language-tag">
+            <h5><strong><%= language.language.language_name %></strong></h5>
+          </div>
         <% end %>
       </div>
       <div class="user-show-expertise">
@@ -33,25 +32,24 @@
     </div>
 
     <div class="therapist-reviews-container">
-        <h3>Price</h3>
+      <h3>Price</h3>
       <br>
       <br>
 
       <div class="container-reviews">
-      <div class="tables-title-row">Reviews</div>
+        <div class="tables-title-row">Reviews</div>
         <% @reviews.each do |review| %>
-        <div class="review-card">
-          <h5><%= review.client.full_name %></h5>
-          <%# review.client_id.photo.url %>
-          <%= review.description %>
-          <% counter = 0 %>
-          <div class="review-icons-container d-flex flex-row">
-            <% 5.times do %>
-            <i class="fa <%= review.rating > counter ? 'fa-star' : 'fa-star-o' %>"></i>
-            <% counter += 1 %>
-            <% end %>
+          <div class="review-card">
+            <h5><%= review.client.full_name %></h5>
+            <%= review.description %>
+            <% counter = 0 %>
+            <div class="review-icons-container d-flex flex-row">
+              <% 5.times do %>
+                <i class="fa <%= review.rating > counter ? 'fa-star' : 'fa-star-o' %>"></i>
+                <% counter += 1 %>
+              <% end %>
+            </div>
           </div>
-        </div>
         <% end %>
       </div>
       <br>

@@ -1,6 +1,6 @@
 
 class UsersController < ApplicationController
-  before_action :find_user, only: [:show, :update, :destroy, :edit]
+  before_action :find_user, only: %i[show update destroy edit]
 
   def index
     if params[:query].present?
@@ -30,11 +30,11 @@ class UsersController < ApplicationController
         infoWindow: render_to_string(partial: "infowindow", locals: { therapist: @user }),
         image_url: helpers.asset_url('therapist.png')
       }
-       @reviews = Review.where(therapist_id: @user.id)
+    @reviews = Review.where(therapist_id: @user.id)
 
     respond_to do |format|
-    format.html
-    format.js
+      format.html
+      format.js
     end
   end
 

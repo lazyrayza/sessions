@@ -13,47 +13,44 @@
   </div>
   <!-- End Search -->
 
-
 <div class="container">
-
-<div class="cards-user">
-  <% @therapists.each do |therapist| %>
-    <figure class="snip1336">
-      <img src="https://res.cloudinary.com/dnqrlagsz/image/upload/v1552391869/card-photo.png" alt="sample87" />
-      <figcaption>
-      <%= cl_image_tag(therapist.photo.url, class: 'profile')%>
-        <div class="card-details">
-          <div class="card-name-details">
+  <div class="cards-user">
+    <% @therapists.each do |therapist| %>
+      <figure class="snip1336">
+        <img src="https://res.cloudinary.com/dnqrlagsz/image/upload/v1552391869/card-photo.png" alt="sample87" />
+        <figcaption>
+          <%= cl_image_tag(therapist.photo.url, class: 'profile')%>
+          <div class="card-details">
+            <div class="card-name-details">
               <h4><%= therapist.first_name %></h4>
               <h4><%= therapist.last_name %></h4>
               <div class="card-expertise">
                 <p><%= therapist.expertise %></p>
               </div>
             </div>
-        <div class="review-stars">
-          <% numreviews = therapist.therapist_reviews.count %>
-            <% if numreviews != 0 %>
-              <% sum = 0 %>
-            <% therapist.therapist_reviews.each do |review| %>
-              <% sum += review.rating %>
-            <% end %>
-            <% stars = sum / numreviews  %>
-            <% stars.times do %>
-              <i class="fa fa-star"></i>
-            <% end %>
+            <div class="review-stars">
+              <% numreviews = therapist.therapist_reviews.count %>
+              <% if numreviews != 0 %>
+                <% sum = 0 %>
+                <% therapist.therapist_reviews.each do |review| %>
+                  <% sum += review.rating %>
+                <% end %>
+                <% stars = sum / numreviews  %>
+                <% stars.times do %>
+                  <i class="fa fa-star"></i>
+                <% end %>
+              <% end %>
+            </div>
           </div>
-        </div>
 
-        <% end %>
-
-        <div class="card-price-view">
-          <p>£<%= therapist.price %></p>
-          <button class="primary-button" data-toggle="modal" data-target="#myModal_<%= therapist.id %>"> View </button>
-        </div>
-      </figcaption>
-    </figure>
-    <%= render "show_modal", therapist: therapist %>
-  <% end %>
+          <div class="card-price-view">
+            <p>£<%= therapist.price %></p>
+            <button class="primary-button" data-toggle="modal" data-target="#myModal_<%= therapist.id %>"> View </button>
+          </div>
+        </figcaption>
+      </figure>
+      <%= render "show_modal", therapist: therapist %>
+    <% end %>
   </div>
 </div>
 

@@ -6,13 +6,16 @@
   margin-top: 250px;
   font-weight: 700;
   color: #FFFFFF;
+
   h2 {
     font-weight: 300;
     letter-spacing: 1px;
   }
+
   h1 {
     font-size: $font-size-h1;
   }
+
   .primary-button {
     margin-top: 8px;
   }
@@ -23,11 +26,12 @@
   height: 140vh;
   display: flex;
   justify-content: center;
-  // margin: 50px 0 0 0;
+
   h2 {
     text-align: center;
     margin: 0 0 50px 0;
   }
+
   a {
     color: #6ECAD6;
   }
@@ -35,6 +39,7 @@
 
 .carousel {
   margin: 50px 0 0 0;
+
   img {
     width: 100%;
   }
@@ -68,25 +73,11 @@ a:hover {
 
 }
 
-// a {
-//   color: inherit;
-//   text-decoration: none;
-// }
-
-// body {
-// background: white;
-// // background-attachment: fixed;
-// // background-size: cover;
-// // background-position: center;
-// }
-
 html, body {
   // font-size: 16px;
   --speed: cubic-bezier(0.21, 0.66, 0.61, 1);
   --time-transition-in: .5s;
   --time-transition-out: .5s;
-  // --accent-1: #1AA0E8;
-  // --primary: #0B63CE;
 }
 
 //.card {
@@ -228,10 +219,6 @@ h3 {
 .max-width {
   align-items: center;
   display: flex;
-  // margin: auto;
-  // margin-top: 8em;
-  // margin-bottom: 8em;
-  // max-width: 75rem;
 }
 
 .more-blue {
@@ -255,9 +242,11 @@ svg#dxp-curves, svg#commerce-curves, svg#analytics-cloud-curves {
   justify-content: space-between;
   align-items: center;
   background: white;
+
   p {
     color: #BDC3C7;
   }
+
   h1 {
     color: #6ECAD6;
   }
@@ -266,10 +255,12 @@ svg#dxp-curves, svg#commerce-curves, svg#analytics-cloud-curves {
     width: 500px;
   }
 }
+
 .middle-left{
   width: 25%;
   margin: 128px;
 }
+
 .middle-icons{
   display: flex;
   justify-content: space-between;
@@ -277,7 +268,6 @@ svg#dxp-curves, svg#commerce-curves, svg#analytics-cloud-curves {
   width: 500px;
   color: #489099;
 }
-
 
 .info-img {
   display: flex;
