@@ -278,3 +278,13 @@ svg#dxp-curves, svg#commerce-curves, svg#analytics-cloud-curves {
     margin: 0 20px 0 0;
   }
 }
+
+.middle-img {
+  display: flex;
+  justify-content: space-around;
+  img {
+    margin: 16px 0;
+    height: 50%;
+    width: 50%;
+  }
+}
