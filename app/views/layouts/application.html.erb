@@ -29,19 +29,8 @@
     <meta name="twitter:creator" content="<%= DEFAULT_META["@sessionsforall"] %>">
     <meta name="twitter:image:src" content="<%= meta_image %>">
 
-
-
-      <!--<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />-->
-
-
-<!--     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" /> -->
-<!--     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
- -->    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-
-<!--     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.css' rel='stylesheet' />
- -->
+  </head>
 
   <body style="background: white">
     <% if action_name == "home" %>
@@ -50,17 +39,14 @@
       <%= render 'shared/navbar_pages' %>
     <% end %>
     <%= render 'shared/flashes' %>
-  <div>
-    <div style="min-height: calc(100vh - 150px)">
-    <%= yield %>
-  </div>
-    <%= javascript_include_tag 'application' %>
-    <%= javascript_pack_tag 'application' %>
-    <%= yield :after_js %>
-    <!-- <script src="https://unpkg.com/aos@next/dist/aos.js"></script> -->
-    <!--<script>
-      AOS.init();
-    </script>-->
+    <div>
+      <div style="min-height: calc(100vh - 150px)">
+        <%= yield %>
+      </div>
+      <%= javascript_include_tag 'application' %>
+      <%= javascript_pack_tag 'application' %>
+      <%= yield :after_js %>
+    </div>
     <%= render 'shared/footer' %>
   </body>
 </html>

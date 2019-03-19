@@ -3,6 +3,7 @@
   display: flex;
   justify-content: center;
   margin: 32px;
+
   .payments-new-container {
     background-color: white;
     width: 600px;
@@ -33,19 +34,23 @@
           width: 120px;
         }
       }
+
       .payments-new-therapist-name {
         text-align: center;
       }
+
       .payments-new-therapist-description {
         display: flex;
         justify-content: space-around;
         flex-direction: column;
         overflow-y: auto;
         word-break: break-all;
+
         .hr {
           margin: 16px 0;
         }
       }
+
       .new-payment {
         text-align: end;
       }

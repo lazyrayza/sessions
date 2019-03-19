@@ -1,15 +1,10 @@
 .banner {
   background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.5)), asset-url("banner.jpg");
-  // background-size: cover;
-  // height: calc(100vh - 66px);
-  // background-position: center;
-  // display: flex;
-  // align-items: center;
-    background-size: cover;
-    height: 157vh;
-    color: #eee;
-    margin-top: -545px;
-    .headers-text {
-      padding-top: 78vh;
-    }
+  background-size: cover;
+  height: 157vh;
+  color: #eee;
+  margin-top: -545px;
+  .headers-text {
+    padding-top: 78vh;
+  }
 }

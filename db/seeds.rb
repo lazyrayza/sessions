@@ -2,13 +2,15 @@ puts "destroying users"
 Review.destroy_all
 ChatRoom.destroy_all
 Booking.destroy_all
+
 puts "destroyed users"
 puts "destroying reviews"
 puts "destroyed reviews"
 puts "Starting seed"
 puts "making languages"
+
 english = Language.create!(
-  language_name: "English",
+  language_name: "Portuguese",
   )
 english = Language.create!(
   language_name: "English",
@@ -29,7 +31,11 @@ puts "done english"
 creole = Language.create!(
   language_name: "Creole",
   )
-puts "done english"
+
+puts "done languages"
+
+
+puts "done julia"
 julia = User.new(
   first_name: "Julia",
     last_name: "Stone",
@@ -56,8 +62,8 @@ julia = User.new(
 julia.remote_photo_url = 'https://res.cloudinary.com/dnqrlagsz/image/upload/v1552644275/girl_4.jpg'
 julia.save
 
+puts "mario"
 
-puts "done julia"
 mario = User.new(
   first_name: "Mario",
     last_name: "Vespachy",
@@ -79,7 +85,8 @@ mario = User.new(
 mario.remote_photo_url = 'https://res.cloudinary.com/dnqrlagsz/image/upload/v1552644289/boy_2.jpg'
 mario.save
 
-puts "done mario"
+puts "suze"
+
 suze = User.new(
   first_name: "Suze",
     last_name: "Delaweo",
@@ -100,7 +107,7 @@ suze = User.new(
 suze.remote_photo_url = 'https://res.cloudinary.com/dnqrlagsz/image/upload/v1552644275/girl_3.jpg'
 suze.save
 
-puts "done suze"
+puts "john"
 
 john = User.new(
   first_name: "Johnathan",
@@ -121,7 +128,8 @@ john = User.new(
 john.remote_photo_url = 'https://res.cloudinary.com/dnqrlagsz/image/upload/v1552644289/boy_1.jpg'
 john.save
 
-puts "finished john"
+puts "alex"
+
 alex = User.new(
   first_name: "Alex",
     last_name: "Sarvin",
@@ -142,7 +150,8 @@ alex = User.new(
 alex.remote_photo_url = 'https://res.cloudinary.com/dnqrlagsz/image/upload/v1552645710/adult-beach-beard-736716.jpg'
 alex.save
 
-puts "done alex"
+puts "andrew"
+
 andrew = User.new(
   first_name: "Andrew",
     last_name: "Littlehorn",
@@ -166,7 +175,8 @@ andrew = User.new(
 andrew.remote_photo_url = 'https://res.cloudinary.com/dnqrlagsz/image/upload/v1552644290/boy_3.jpg'
 andrew.save
 
-puts "done andrew"
+puts "kirk"
+
 kirk = User.new(
   first_name: "Kirk",
     last_name: "Nelson",
@@ -186,7 +196,8 @@ kirk = User.new(
 kirk.remote_photo_url = 'https://res.cloudinary.com/dnqrlagsz/image/upload/v1552644290/boy_5.jpg'
 kirk.save
 
-puts "done ricardo"
+puts "joel"
+
 joel = User.new(
   first_name: "Ricardo",
     last_name: "Vieira",
@@ -210,7 +221,8 @@ joel = User.new(
 joel.remote_photo_url = 'https://res.cloudinary.com/dnqrlagsz/image/upload/v1552644875/ricardo.jpg'
 joel.save
 
-puts "done ricardo"
+puts "done leticia"
+
 leticia = User.new(
   first_name: "Leticia",
     last_name: "Valles",
@@ -237,7 +249,8 @@ leticia = User.new(
 leticia.remote_photo_url = 'https://res.cloudinary.com/dnqrlagsz/image/upload/v1552644275/girl_2.jpg'
 leticia.save
 
-puts "done leticia"
+puts "anna"
+
 anna = User.new(
   first_name: "Anna",
     last_name: "Sinksi",
@@ -258,10 +271,8 @@ anna = User.new(
   )
 anna.remote_photo_url = 'https://res.cloudinary.com/dnqrlagsz/image/upload/v1552645709/attractive-beautiful-beauty-764529.jpg'
 anna.save
-puts "done anna"
 
-
-
+puts "raza"
 
 raza = User.new(
   first_name: "Raza",

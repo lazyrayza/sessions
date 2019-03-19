@@ -5,174 +5,197 @@
     display: flex;
     align-items: center;
   }
-  #search-form {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    margin: 24px 0;
-    #input {
-      font-size: 18px;
-      margin-right: 20px;
-      &:active, &:focus {
+
+#search-form {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin: 24px 0;
+  #input {
+    font-size: 18px;
+    margin-right: 20px;
+    &:active, &:focus {
       outline: none;
       border: 1px solid #6ECAD6;
       box-shadow: none;
     }
   }
-  }
-  .lhs {
-    width: 20%;
-  }
-  .container-holder {
+}
+
+.lhs {
+  width: 20%;
+}
+
+.container-holder {
+  display: flex;
+  flex-direction: row;
+}
+
+.holding-container {
+  padding: 25px;
+}
+
+.container-rs {
+  width: 50%;
+}
+
+.conatiner-ls {
+  width: 50%;
+}
+
+.container-reviews {
+  overflow: scroll;
+  width: 60%;
+  height: 40%;
+}
+
+.mapboxgl-canvas {
+  height: 600px;
+  width: 600px;
+}
+
+.modal-content {
+  width: 600px !important;
+  margin: 30px auto !important;
+}
+
+.cards-user {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px 0;
+  margin-bottom: 16px;
+}
+
+.snip1336 {
+  position: relative;
+  overflow: hidden;
+  margin: 10px;
+  min-width: 350px;
+  max-width: 315px;
+  width: 100%;
+  color: #ffffff;
+  text-align: left;
+  line-height: 1.4em;
+  background-color: white;
+}
+
+.snip1336 * {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+}
+
+.snip1336 img {
+  max-width: 100%;
+  vertical-align: top;
+  opacity: 0.85;
+  border: 1px solid #6ECAD6;
+}
+
+.snip1336 figcaption {
+  width: 100%;
+  border: 1px solid #6ECAD6;
+  background-color: white;
+  padding: 25px;
+  position: relative;
+}
+
+.snip1336 figcaption:before {
+  position: absolute;
+  content: '';
+  bottom: 100%;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 55px 0 0 400px;
+  border-color: transparent transparent transparent white;
+  border: 0px 1px solid #6ECAD6;
+}
+
+.snip1336 .profile {
+  border-radius: 50%;
+  position: absolute;
+  bottom: 100%;
+  left: 25px;
+  z-index: 1;
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  opacity: 1;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.snip1336 .follow {
+  width: 80px;
+  height: 35px;
+  margin-right: 4%;
+  border-color: #489099;
+  color: #489099;
+}
+.snip1336 .info {
+  border-color: #489099;
+  color: #489099;
+  width: 80px;
+  height: 35px;
+}
+
+.snip1336 h4 {
+  margin: 0 0 5px;
+  font-weight: 400;
+  color: #489099;
+}
+
+.snip1336 h4 span {
+  display: block;
+  font-size: 0.8em;
+  color: #2980b9;
+}
+
+.snip1336 p {
+  margin: 0 0 10px;
+  font-size: 0.8em;
+  letter-spacing: 1px;
+  color: black;
+}
+
+.snip1336 i {
+  color: #489099;
+}
+
+.card-details {
+  display: flex;
+  justify-content: space-between;
+
+  .card-name-details {
     display: flex;
-    flex-direction: row;
-  }
-  .holding-container {
-    padding: 25px;
-    // display: flex;
-  }
-  .container-rs {
-    width: 50%;
-  }
-  .conatiner-ls {
-    width: 50%;
-  }
-  .container-reviews {
-    overflow: scroll;
-    width: 60%;
-    height: 40%;
-  }
-  .mapboxgl-canvas {
-    height: 600px;
-    width: 600px;
-  }
-   .modal-content {
-           width: 600px !important;
-           margin: 30px auto !important;
-       }
-  .cards-user {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 16px 0;
-    margin-bottom: 16px;
-  }
-  .snip1336 {
-    position: relative;
-    overflow: hidden;
-    margin: 10px;
-    min-width: 350px;
-    max-width: 315px;
-    width: 100%;
-    color: #ffffff;
-    text-align: left;
-    line-height: 1.4em;
-    background-color: white;
-  }
-  .snip1336 * {
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    -webkit-transition: all 0.25s ease;
-    transition: all 0.25s ease;
-  }
-  .snip1336 img {
-    max-width: 100%;
-    vertical-align: top;
-    opacity: 0.85;
-    border: 1px solid #6ECAD6;
-  }
-  .snip1336 figcaption {
-    width: 100%;
-    border: 1px solid #6ECAD6;
-    background-color: white;
-    padding: 25px;
-    position: relative;
-  }
-  .snip1336 figcaption:before {
-    position: absolute;
-    content: '';
-    bottom: 100%;
-    left: 0;
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 55px 0 0 400px;
-    border-color: transparent transparent transparent white;
-    border: 0px 1px solid #6ECAD6;
-  }
-  .snip1336 .profile {
-    border-radius: 50%;
-    position: absolute;
-    bottom: 100%;
-    left: 25px;
-    z-index: 1;
-    width: 90px;
-    height: 90px;
-    object-fit: cover;
-    opacity: 1;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
-  }
-  .snip1336 .follow {
-    width: 80px;
-    height: 35px;
-    margin-right: 4%;
-    border-color: #489099;
-    color: #489099;
-  }
-  .snip1336 .info {
-    border-color: #489099;
-    color: #489099;
-    width: 80px;
-    height: 35px;
-  }
-  .snip1336 h4 {
-    margin: 0 0 5px;
-    font-weight: 400;
-    color: #489099;
-  }
-  .snip1336 h4 span {
-    display: block;
-    font-size: 0.8em;
-    color: #2980b9;
-  }
-  .snip1336 p {
-    margin: 0 0 10px;
-    font-size: 0.8em;
-    letter-spacing: 1px;
-    // opacity: 0.8;
-    color: black;
-  }
-  .snip1336 i {
-    color: #489099;
-  }
-  .card-details {
-    display: flex;
-    justify-content: space-between;
-    .card-name-details {
-      display: flex;
-      flex-direction: column;
-      .card-expertise {
-        p {
-          font-size: 18px;
-          margin-top: 20px !important;
-        }
-      }
-    }
-    .review-stars{
-      display: flex;
-      padding-top: 16px;
-       i {
-        padding: 0px 5px;
-        color: #000000;
-        }
-      }
-    }
-  .card-price-view {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-top: 16px;
+    flex-direction: column;
+    .card-expertise {
       p {
-        font-size: 24px;
-        font-weight: 700;
+        font-size: 18px;
+        margin-top: 20px !important;
       }
     }
+  }
+
+  .review-stars{
+    display: flex;
+    padding-top: 16px;
+     i {
+      padding: 0px 5px;
+      color: #000000;
+      }
+    }
+  }
+
+.card-price-view {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 16px;
+  p {
+    font-size: 24px;
+    font-weight: 700;
+  }
+}

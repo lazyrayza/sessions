@@ -1,98 +1,59 @@
 <div id="myModal_<%= therapist.id %>" class="modal fade" aria-labelledby="myLargeModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
-      <div class="modal-body">
-        <div class="modal-content">
-          <div class="modal-banneri"  style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.5)), url(<%= asset_path "session-mountain.png" %>)">
+    <div class="modal-body">
+      <div class="modal-content">
+        <div class="modal-banneri" style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.5)), url(<%= asset_path "session-mountain.png" %>)"></div>
+        <%= cl_image_tag(therapist.photo.url, class: 'modal-therapist-avatar-container')%>
+        <div class="modal-master-box">
+          <div class="modal-left-side">
+            <div class="modal-user-show-therapist-name">
+              <h3><strong><%= therapist.first_name %> <%= therapist.last_name %></strong></h3>
             </div>
-            <%= cl_image_tag(therapist.photo.url, class: 'modal-therapist-avatar-container')%>
-
-
-
-            <div class="modal-master-box">
-              <div class="modal-left-side">
-                <div class="modal-user-show-therapist-name">
-                  <h3><strong><%= therapist.first_name %> <%= therapist.last_name %></strong></h3>
+            <div class="modal-user-show-therapist-address">
+              <h5><%= therapist.address %></h5>
+            </div>
+            <div class="modal-user-show-therapist-languages">
+              <% therapist.languages.each do |language|%>
+                <div class="modal-language">
+                  <p><%= language.language_name %></p>
                 </div>
-                <div class="modal-user-show-therapist-address">
-                  <h5><%= therapist.address %></h5>
-                </div>
-                <div class="modal-user-show-therapist-languages">
-                  <% therapist.languages.each do |language|%>
-                  <%# raise %>
-                  <div class="modal-language">
-                    <p><%= language.language_name %></p>
+              <% end %>
+            </div>
+            <div class="modal-user-show-expertise">
+              <p><%= therapist.expertise%></p>
+            </div>
+            <br>
+            <div class="modal-user-show-therapist-description">
+              <%= therapist.bio %>
+            </div>
+          </div>
+          <div class="modal-right-side">
+            <h3>£<%= therapist.price %></h3>
+            <div class="modal-container-reviews">
+              <div class="tables-title-row">REVIEWS</div>
+              <% if therapist.therapist_reviews != nil %>
+                <% therapist.therapist_reviews.each do |review| %>
+                  <div class="modal-review-card">
+                    <p><%= review.client.first_name %><%= review.client.last_name %></p>
+                    <%= review.description %>
+                    <% counter = 0 %>
+                    <div class="modal-review-icons-container d-flex flex-row">
+                      <% 5.times do %>
+                        <i class="fa <%= review.rating > counter ? 'fa-star' : 'fa-star-o' %>"></i>
+                        <% counter += 1 %>
+                      <% end %>
                     </div>
-                  <% end %>
-                </div>
-                <div class="modal-user-show-expertise">
-                  <p><%= therapist.expertise%></p>
-                </div>
-                <br>
-                <div class="modal-user-show-therapist-description">
-                  <%= therapist.bio %>
-                </div>
-              </div>
-              <div class="modal-right-side">
-                <h3>£<%= therapist.price %></h3>
-                <div class="modal-container-reviews">
-                   <div class="tables-title-row">REVIEWS</div>
-                  <% if therapist.therapist_reviews != nil %>
-                    <% therapist.therapist_reviews.each do |review| %>
-                      <div class="modal-review-card">
-                        <p><%= review.client.first_name %><%= review.client.last_name %></p>
-                          <%# review.client_id.photo.url %>
-                          <%= review.description %>
-                          <% counter = 0 %>
-                            <div class="modal-review-icons-container d-flex flex-row">
-                            <% 5.times do %>
-                              <i class="fa <%= review.rating > counter ? 'fa-star' : 'fa-star-o' %>"></i>
-                              <% counter += 1 %>
-                            <% end %>
-                            </div>
-                      </div>
-                    <% end %>
-                  <% end %>
-                </div>
-                <br>
-                <div class="modal-user-show-book-btn">
-                  <%= link_to "Book", new_user_booking_path(therapist), class: "primary-button-user-show"%>
-                </div>
+                  </div>
+                <% end %>
+              <% end %>
+            </div>
+            <br>
+            <div class="modal-user-show-book-btn">
+              <%= link_to "Book", new_user_booking_path(therapist), class: "primary-button-user-show"%>
             </div>
           </div>
         </div>
       </div>
+    </div>
   </div>
 </div>
-
-
-
-
-
-
-<!--     <div class="modal-content"> -->
-<!--     </div> -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

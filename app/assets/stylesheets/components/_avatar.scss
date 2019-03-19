@@ -2,29 +2,36 @@
   width: 200px;
   border-radius: 50%;
   object-fit: cover;
-}.avatar-small {
+}
+
+.avatar-small {
   width: 60px;
   height: 60px;
   border-radius: 50%;
   padding-top: 10px;
 }
+
 .avatar img {
   height: 50px;
 }
+
 .avatar-box {
   padding-left: 20px;
 }
+
 .avatar-bruce {
   width: 80px;
   border-radius: 50%;
   padding-top: 10px;
 }
+
 .avatar-card {
   width: 80px;
   height: 80px;
   border-radius: 50%;
   padding-top: 10px;
 }
+
 .showbox {
   display: flex;
   margin: 10px;

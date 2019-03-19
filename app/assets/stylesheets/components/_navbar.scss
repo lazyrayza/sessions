@@ -7,9 +7,12 @@
 .navbar-brand{
   width: 65px;
 }
+
 .navbar-lewagon-home {
+
   .nav-item {
-  text-decoration: none;
+    text-decoration: none;
+
   .login-home {
     a {
       margin: 0 0 0 0;
@@ -26,6 +29,7 @@
 
 .navbar-lewagon-white {
   background-color: white;
+
   .nav-item {
     text-decoration: none;
     a {
@@ -35,6 +39,7 @@
     }
   }
 }
+
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }
@@ -47,6 +52,7 @@
     color: gray;
   }
 }
+
 .nav-main-items {
   margin-top: 3px;
   li {

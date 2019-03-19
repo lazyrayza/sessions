@@ -10,11 +10,13 @@
           <th id="days-booking-index" >Days to start</th>
           <th>Duration</th>
           <th>View</th>
+
           <% if current_user.therapist %>
             <th>Confirm</th>
           <% end %>
           <th>Delete</th>
         </thead>
+
         <tbody class="table-body">
           <% @bookings.each do |booking| %>
             <%= render 'table', booking: booking %>
@@ -22,9 +24,10 @@
           <% end %>
         </tbody>
       </table>
-  <div id="bookings-index-btn">
-    <%= link_to "Browse Therapist", users_path, class: "button-primary" %>
-  </div>
+
+    <div id="bookings-index-btn">
+      <%= link_to "Browse Therapist", users_path, class: "button-primary" %>
+    </div>
   </div>
 </div>
 
