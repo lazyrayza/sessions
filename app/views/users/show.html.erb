@@ -1,5 +1,6 @@
 <% content_for :meta_title, "#{@user.full_name} is on #{DEFAULT_META["meta_product_name"]}" %>
 <% content_for :meta_description, @user.expertise %>
+<% content_for :meta_image, cl_image_path(@user.photo.ul) %>
 
 
 <div class="banneri"  style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.5)), url(<%= asset_path "session-mountain.png" %>)">
