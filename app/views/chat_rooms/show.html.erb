@@ -70,7 +70,11 @@
     </div>
 
     <div class="banneri-content">
-      <p>Session with <%= @booking.therapist.full_name %></p>
+      <% if current_user.therapist == true %>
+        <p>Session with <%= @booking.client.full_name %></p>
+      <% else %>
+        <p>Session with <%= @booking.therapist.full_name %></p>
+      <% end %>
     </div>
     <div class="countdown-container">
       <p id="count-down" data-time="<%= @booking.start_time %>"> </p>
